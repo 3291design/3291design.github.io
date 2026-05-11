@@ -1,38 +1,49 @@
-/* 3291design Master Navigation Styles */
+/* 3291design Master Navigation - The Final Blueprint */
+
 #master-nav-2026 {
-    background-color: #2c3e50;
-    padding: 15px 0;
-    text-align: center;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    border-bottom: 3px solid #0078d4;
-    width: 100%;
+    /* Critical Positioning: Force it to stay at the top */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    
+    /* Layering: Stay above the Hero and Container boxes */
+    z-index: 10000 !important;
+    
+    /* Aesthetics */
+    background-color: #1a1a1a !important; /* Dark Grey/Black */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #master-nav-2026 a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: 0.3s ease;
+    padding: 20px 5px; /* Makes the clickable area bigger */
 }
 
 #master-nav-2026 a:hover {
-    color: #0078d4;
+    color: #0078d4 !important;
 }
 
-/* Highlight for the page you are currently on */
 #master-nav-2026 a.active {
-    color: #0078d4;
-    border-bottom: 2px solid #0078d4;
-    padding-bottom: 5px;
+    color: #0078d4 !important;
+    border-bottom: 2px solid #0078d4 !important;
 }
 
-@media (max-width: 600px) {
-    #master-nav-2026 a {
-        display: block;
-        margin: 10px 0;
-    }
+/* Force every page to respect the Navbar height */
+body {
+    padding-top: 60px !important;
 }
