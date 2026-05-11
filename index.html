@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="/css/3291-nav.css" />    
     
     <style>
-        body { margin: 0; background-color: #f9f9f9; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { margin: 0; background-color: #f9f9f9; font-family: 'Tahoma', Arial, sans-serif; }
         .hero { padding: 80px 20px; text-align: center; background: #ffffff; border-bottom: 1px solid #ddd; }
-        .hero h1 { font-size: 3.5rem; letter-spacing: -2px; margin: 0; color: #1a1a1a; }
-        .hero p { color: #666; font-size: 1.2rem; max-width: 600px; margin: 20px auto; }
         
-        /* The Project Grid */
-        .container { max-width: 1000px; margin: 40px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 30px; border: 1px solid #eee; border-radius: 8px; transition: 0.3s; text-decoration: none; color: inherit; }
-        .card:hover { transform: translateY(-5px); border-color: #0078d4; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card h3 { margin-top: 0; color: #0078d4; }
-        .card p { font-size: 0.9rem; line-height: 1.6; color: #444; }
+/* The Project Grid */
+  .container { max-width: 1000px; margin: 20px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card { background: white; padding: 20px; border: 1px solid #eee; border-radius: 8px; transition: 0.3s; text-decoration: none; color: inherit; }
+  .card:hover { transform: translateY(-5px); border-color: #ccc; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  
+  .head { font-size: 3.5rem; font-weight: bold; letter-spacing: -2px; margin: 0; color: #777; }
+  .deck { color: #777; font-size: 1.2rem; line-height: 1.8rem; max-width: 600px; margin: 20px auto; }
+  .subhead { font-size: 1.2rem; color: #777; font-weight: bold; margin-bottom: 5px;  }
+  .body-text { font-size: 0.9rem; line-height: 1.5; color: #777;
     </style>
 </head>
 <body>
@@ -27,32 +28,31 @@
     <div id="master-nav-anchor"></div>
 
     <section class="hero">
-        <h1>3291design</h1>
-        <p>A multi-disciplinary design studio specializing in digital archives, online travel documentaries,  and creative tech.</p>
-        <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #999;">Est. 2026 | Factory Restoration Project</span>
+        <div class="head">3291design</div>
+        <div class="deck">A multi-disciplinary design studio specializing in digital archives, online travel documentaries,  and creative tech.</div>
+        <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-top: 40px;">Est. 2026 | Factory Restoration Project</div>
     </section>
 
    <div class="container">
-        <a href="/ourfamilytree/" class="card">
-            <h3>Our Family Tree</h3>
-            <p>The ancestral foundation. Documenting the lineage and stories that define our history.</p>
+        <a class="card" href="/ourfamilytree/">
+            <div class="subhead">Our Family Tree</div>
+            <div class="body-text">The ancestral foundation. Documenting our various family's lineages and stories that define our lives today.</div>
         </a>
-       <a href="/bikewales/" class="card">
-            <h3>Bike Wales</h3>
-            <p>The flagship project. A large collection of personal ride reports covering cycling cycle routes through South East Wales.</p>
+       <a class="card" href="/bikewales/">
+            <div class="subhead">Bike Wales</div>
+            <div class="body-text">The flagship project. A large collection of personal ride reports covering cycling cycle routes through South East Wales.</div>
         </a>
-       <a href="/oakdalewarmemorial/" class="card">
-            <h3>Oakdale War Memorial</h3>
-            <p>Preserving history through interactive digital war memorials and local heritage.</p>
+       <a class="card" href="/oakdalewarmemorial/">
+            <div class="subhead">Oakdale War Memorial</div>
+            <div class="body-text">"Lest we forget." Preserving our shared histories through interactive digital memorials and local heritage.</div>
         </a>
-       <a href="/curtisfieldsdesign/" class="card">
-            <h3>The Studio</h3>
-            <p>A showcase of professional design work, covering print publications, Internet &amp; multipedia designs, and technical illustrations.</p>
+       <a class="card" href="/curtisfieldsdesign/">
+            <div class="subhead">The Studio</div>
+            <div class="body-text">A showcase of professional design work, covering print, online &amp; multipedia designs, and technical illustrations.</div>
         </a>
-         <!-- The Legacy Wing -->
-        <a href="/techlab/" class="card">
-            <h3>Tech Lab</h3>
-            <p>The sandbox for CSS experiments, JS logic, and high-tech web blueprints.</p>
+        <a class="card" href="/techlab/">
+            <div class="subhead">Tech Lab</div>
+            <div class="body-text">The sandbox for all the things we can imagine - CSS experiments, JS logic, and high-tech web doodads.</div>
         </a>
     </div>
 
