@@ -12,7 +12,7 @@
     z-index: 10000 !important;
     
     /* Aesthetics */
-    background-color: #1a1a1a !important; /* Dark Grey/Black */
+    background-color: #244255 !important; /* Dark Grey/Black */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -35,11 +35,11 @@
 }
 
 #master-nav-2026 a:hover {
-    color: #0078d4 !important;
+    color: #2897eb !important;
 }
 
 #master-nav-2026 a.active {
-    color: #0078d4 !important;
+    color: #2897eb !important;
     border-bottom: 2px solid #0078d4 !important;
 }
 
