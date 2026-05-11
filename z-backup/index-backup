@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3291design | Master Studio</title>
+    
+    <!-- The Master Stylesheet -->
+    <link rel="stylesheet" href="/css/3291-nav.css" />    
+    
+    <style>
+        body { margin: 0; background-color: #f9f9f9; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        .hero { padding: 80px 20px; text-align: center; background: #ffffff; border-bottom: 1px solid #ddd; }
+        .hero h1 { font-size: 3.5rem; letter-spacing: -2px; margin: 0; color: #1a1a1a; }
+        .hero p { color: #666; font-size: 1.2rem; max-width: 600px; margin: 20px auto; }
+        
+        /* The Project Grid */
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 30px; border: 1px solid #eee; border-radius: 8px; transition: 0.3s; text-decoration: none; color: inherit; }
+        .card:hover { transform: translateY(-5px); border-color: #0078d4; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card h3 { margin-top: 0; color: #0078d4; }
+        .card p { font-size: 0.9rem; line-height: 1.6; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div id="master-nav-anchor"></div>
+
+    <section class="hero">
+        <h1>3291design</h1>
+        <p>A multi-disciplinary design studio specializing in digital archives, online travel documentaries,  and creative tech.</p>
+        <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #999;">Est. 2026 | Factory Restoration Project</span>
+    </section>
+
+   <div class="container">
+        <a href="/ourfamilytree/" class="card">
+            <h3>Our Family Tree</h3>
+            <p>The ancestral foundation. Documenting the lineage and stories that define our history.</p>
+        </a>
+       <a href="/bikewales/" class="card">
+            <h3>Bike Wales</h3>
+            <p>The flagship project. A large collection of personal ride reports covering cycling cycle routes through South East Wales.</p>
+        </a>
+       <a href="/oakdalewarmemorial/" class="card">
+            <h3>Oakdale War Memorial</h3>
+            <p>Preserving history through interactive digital war memorials and local heritage.</p>
+        </a>
+       <a href="/curtisfieldsdesign/" class="card">
+            <h3>The Studio</h3>
+            <p>A showcase of professional design work, covering print publications, Internet &amp; multipedia designs, and technical illustrations.</p>
+        </a>
+         <!-- The Legacy Wing -->
+        <a href="/techlab/" class="card">
+            <h3>Tech Lab</h3>
+            <p>The sandbox for CSS experiments, JS logic, and high-tech web blueprints.</p>
+        </a>
+    </div>
+
+    <script src="/scripts/3291-nav.js" defer></script>
+
+</body>
+</html>
