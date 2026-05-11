@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="https://3291design.github.io/" id="nav-home">Home</a>
                 <a href="https://3291design.github.io/bikewales/" id="nav-bikewales">Bike Wales</a>
                 <a href="https://3291design.github.io/ourfamilytree/" id="nav-family">Our Family Tree</a>
-                <a href="https://3291design.github.io/curtisfieldsdesign/" id="nav-studio">Architect's Studio</a>
+                <a href="https://3291design.github.io/curtisfieldsdesign/" id="nav-studio">The Studio</a>
                 <a href="https://3291design.github.io/oakdalewarmemorial/" id="nav-memorial">Oakdale War Memorial</a>
                 <a href="https://3291design.github.io/techlab/" id="nav-techlab">Tech Lab</a>
             </nav>
