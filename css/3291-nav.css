@@ -23,6 +23,13 @@
     color: #0078d4;
 }
 
+/* Highlight for the page you are currently on */
+#master-nav-2026 a.active {
+    color: #0078d4;
+    border-bottom: 2px solid #0078d4;
+    padding-bottom: 5px;
+}
+
 @media (max-width: 600px) {
     #master-nav-2026 a {
         display: block;
