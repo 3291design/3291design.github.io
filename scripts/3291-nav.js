@@ -1,26 +1,52 @@
-// 3291design Master Navigation Logic with Auto-Highlight
-const masterNavContainer = document.getElementById('master-nav-anchor');
+/* 3291design Master Navigation Styles - 2026 Edition */
 
-const navHTML = `
-<nav id="master-nav-2026">
-    <a href="https://3291design.github.io/" id="nav-home">Home</a>
-    <a href="https://3291design.github.io/ourfamilytree/" id="nav-family">Our Family Tree</a>
-    <a href="https://3291design.github.io/oakdalewarmemorial/" id="nav-memorial">Oakdale War Memorial</a>
-    <a href="https://3291design.github.io/bikewales/" id="nav-bikewales">Bike Wales</a>
-    <a href="https://3291design.github.io/curtisfieldsdesign/" id="nav-studio">Architect's Studio</a>
-    <a href="https://3291design.github.io/techlab/" id="nav-techlab">Tech Lab</a>
-</nav>
-`;
-
-if (masterNavContainer) {
-    masterNavContainer.innerHTML = navHTML;
+#master-nav-2026 {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Space between links */
     
-    // The "Brain": This part finds where you are and adds the 'active' class
-    const currentUrl = window.location.href;
-    if (currentUrl.includes('ourfamilytree')) { document.getElementById('nav-family').classList.add('active'); }
-    else if (currentUrl.includes('oakdalewarmemorial')) { document.getElementById('nav-memorial').classList.add('active'); }
-    else if (currentUrl.includes('bikewales')) { document.getElementById('nav-bikewales').classList.add('active'); }
-    else if (currentUrl.includes('curtisfieldsdesign')) { document.getElementById('nav-studio').classList.add('active'); }
-    else if (currentUrl.includes('techlab')) { document.getElementById('nav-techlab').classList.add('active'); }
-    else { document.getElementById('nav-home').classList.add('active'); }
+    /* Position */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Force to full screen width */
+    z-index: 9999; /* Stay on top of all other content */
+    
+    /* Styling */
+    background-color: #1a1a1a; /* Professional Dark Grey/Black */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+#master-nav-2026 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent; /* Prepare for the highlight */
+}
+
+/* Hover State */
+#master-nav-2026 a:hover {
+    color: #0078d4; /* Studio Blue */
+    letter-spacing: 1.5px; /* Subtle expansion effect */
+}
+
+/* THE BRAIN: The Active Page Highlight */
+#master-nav-2026 a.active {
+    color: #0078d4 !important;
+    border-bottom: 2px solid #0078d4;
+    font-weight: 700;
+}
+
+/* Ensure body doesn't hide under the fixed navbar */
+body {
+    padding-top: 70px; 
 }
