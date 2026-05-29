@@ -1,49 +1,156 @@
-/* 3291design Master Navigation - The Final Blueprint */
-
-#master-nav-2026 {
-    /* Critical Positioning: Force it to stay at the top */
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 60px !important;
-    
-    /* Layering: Stay above the Hero and Container boxes */
-    z-index: 10000 !important;
-    
-    /* Aesthetics */
-    background-color: #244255 !important; /* Dark Grey/Black */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 30px !important;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#master-nav-2026 a {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-family: 'Helvetica Neue', Arial, sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: 0.3s ease;
-    padding: 20px 5px; /* Makes the clickable area bigger */
-}
-
-#master-nav-2026 a:hover {
-    color: #2897eb !important;
-}
-
-#master-nav-2026 a.active {
-    color: #2897eb !important;
-    border-bottom: 2px solid #0078d4 !important;
-}
+/* ==========================================================================
+   3291design Master Navigation - 2026 Global Architecture
+   ========================================================================== */
 
 /* Force every page to respect the Navbar height */
 body {
-    padding-top: 60px !important;
+    padding-top: 60px;
+}
+
+/* Master Fixed Header Container */
+.uber-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #244255; /* Your signature deep blue-grey */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Inside Layout Alignment */
+.navbar-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand Logo Styling */
+.nav-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.nav-logo span {
+    color: #6897bb; /* Accent color matching your index subheads */
+    font-weight: 300;
+}
+
+/* Desktop Navigation Menu Links */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover & Active States */
+.nav-link:hover {
+    color: #2897eb;
+}
+.nav-link.active {
+    color: #2897eb;
+    border-bottom: 2px solid #2897eb;
+}
+
+/* ==========================================================================
+   Mobile Responsive Hamburger Button
+   ========================================================================== */
+.menu-toggle {
+    display: none; /* Hidden on desktop screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Responsive Breakpoint (Tablet & Mobile Layouts)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Activate hamburger */
+    }
+
+    /* Transform the Link Tray into a Mobile Dropdown Panel */
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #1e3747; /* Darker tone for mobile panel depth */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 20px;
+        
+        /* Interactive Animation Hooks */
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.1, 1, 0.1, 1), opacity 0.3s ease;
+    }
+
+    /* Reveal Menu Panel when '.open' is appended by JS */
+    .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Full-width Stacked Mobile Links */
+    .nav-link {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .nav-link.active {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: rgba(40, 151, 235, 0.1);
+    }
+
+    /* Hamburger Morphing Animations (Changes bars into an 'X') */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
