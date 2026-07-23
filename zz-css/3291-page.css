@@ -1,0 +1,389 @@
+/* 3291design V18 Core Blueprint Architectural Stylesheet */
+
+/* Core Schematic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e3d59; /* Authentic Cyanotype Blueprint Blue */
+    color: #ffffff;
+    font-family: 'Share Tech Mono', monospace; /* Technical drafting font */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Subtle drafting grid background matrix */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Main Workspace Container */
+.workspace {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Updated Header Block */
+.blueprint-header {
+    position: relative;
+    text-align: center; 
+    height: 270px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+    margin-bottom: 30px;
+
+    /* The Vintage Duotone Display */
+    background-color: #1e3d59; 
+    background-image: 
+        linear-gradient(rgba(30, 61, 89, 0.65), rgba(30, 61, 89, 0.75)), 
+        url('../zz-images/Gemini_Generated_Image_03_cropped_.jpg'); /* Architectural Image */
+    background-size: cover;
+    background-position: center 40%;
+    background-blend-mode: luminosity; 
+    border-radius: 4px; 
+}
+
+.brand-block, 
+.sys-specs {
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Restored Brand Hierarchy Layout */
+.brand-block {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 15px;
+}
+
+.smooch-sans-headA { 
+    font-family: "Smooch Sans", sans-serif; 
+    font-size: 11rem; 
+    font-weight: 400; 
+    font-style: normal; 
+    color: #ffffff; 
+    line-height: 1;
+    text-shadow: 6px 6px 4px rgba(23, 42, 58, 0.7);
+}
+
+.orbitron-headA { 
+    font-family: "Orbitron", sans-serif; 
+    font-size: 4rem; 
+    font-weight: 500; 
+    font-style: normal; 
+    color: #ff6b35; /* Signature Highlighter Orange */
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    text-shadow: 6px 6px 4px rgba(23, 42, 58, 0.7);
+}
+
+/* Centered System Specs Metadata */
+.sys-specs {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.blueprint-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ff6b35;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff6b35;
+}
+
+/* Schematic Grid for Subdomain Nodes */
+.blueprint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* --- UPDATED Schematic Grid Cards (Blueprint V18.5) --- */
+.schematic-card {
+    background: rgba(169, 207, 238, 0.1); /* Original reduced opacity */
+    backdrop-filter: blur(4px); 
+    border-left: 3px solid rgba(255, 107, 53, 0.85); /* Slightly muted structural anchor */
+    padding: 30px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.25s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Needed for the clean clip-path */
+
+    /* --- THE NEW CLIPPED EDGE ENGINEERING (V18.5) --- */
+    /* Creates a 20px diagonal clip on the bottom right corner */
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%);
+    
+    /* We also need to add a subtle "border" to replace the soft border removed by clip-path */
+    background-image: 
+        linear-gradient(90deg, transparent, transparent calc(100% - 20px), transparent calc(100% - 20px), rgba(255,255,255,0.1) calc(100% - 20px), rgba(255,255,255,0.1) 100%);
+}
+
+//* Technical crosshair accent on TOP-RIGHT corner (Hidden by default) */
+.schematic-card::before {
+    content: '';
+    position: absolute;
+    top: 0px; right: 0px;
+    width: 10px; height: 10px;
+    border-right: 1.5px solid #b0cddb; /* Swapped to that light blue you noticed! */
+    border-top: 1.5px solid #b0cddb;
+    z-index: 2; 
+    opacity: 0; /* Makes the doodad invisible */
+    transition: opacity 0.25s ease-in-out; /* Smooth fade-in to match the other hover effects */
+}
+
+/* --- NEW ::AFTER ACCENT LINE FOR THE BEVEL (V18.5) --- */
+/* This adds the signature diagonal 'factory-cut' line across the clip-path. */
+.schematic-card::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Overlaps slightly for a clean look */
+    right: -1px; /* Overlaps slightly for a clean look */
+    width: 29px; /* The hypotenuse length for the 20px clip */
+    height: 1px;
+    background-color: rgba(255,255,255,0.25); /* Subtle white accent line */
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+    transition: all 0.25s ease-in-out;
+}
+
+/* --- THE UPDATED DYNAMIC MOUSE-OVER INVERSION (V18.5) --- */
+.schematic-card:hover {
+    background: rgba(69, 94, 118, 0.9); 
+    border-left-color: #b0cddb; 
+    transform: translateY(-2px);
+}
+
+/* Activate the top-right doodad on hover */
+.schematic-card:hover::before {
+    opacity: 1; 
+}
+
+/* Activate the bottom-right clipped accent line on hover */
+.schematic-card:hover::after {
+    background-color: #b0cddb; 
+}
+
+/* --- THE UPDATED DYNAMIC MOUSE-OVER INVERSION (V18.5) --- */
+.schematic-card:hover {
+    background: rgba(69, 94, 118, 0.9); /* Same background inversion as before */
+    border-left-color: #b0cddb; /* Same structural anchor update */
+    transform: translateY(-2px);
+}
+
+/* When the card is hovered, we brighten the new bevel accent line too */
+.schematic-card:hover::after {
+    background-color: #b0cddb; /* Matches the updated left-border color */
+}
+
+/* Existing title/icon hover effects (No changes needed) */
+.schematic-card:hover .card-title { color: #ffffff; }
+.schematic-card:hover .title-icon { transform: scale(1.25); }
+
+.card-id {
+    font-size: 1rem;
+    color: rgba(255, 107, 53);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Card Title */
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #bbb;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.25s ease-in-out; 
+}
+
+/* Technical SVG Line Properties */
+.title-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0; 
+    transition: transform 0.25s ease-in-out;
+    stroke-width: 1.5; /* Keeping the fine stroke weight */
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* --- THE DYNAMIC MOUSE-OVER INVERSION --- */
+.schematic-card:hover {
+    background: rgba(69, 94, 118, 0.9);
+    border-color: rgba(255, 255, 255, 0.4);
+    border-left-color: #b0cddb; 
+    transform: translateY(-2px);
+}
+
+.schematic-card:hover .card-title {
+    color: #ffffff; 
+}
+
+.schematic-card:hover .title-icon {
+    transform: scale(1.25)
+}
+
+/* --- MASTER BLUEPRINT FOOTER COMPONENT --- */
+.blueprint-footer {
+    background-color: #172a3a; 
+    border-top: 1px dashed rgba(255, 255, 255, 0.25); 
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr; 
+    gap: 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.col-tag {
+    font-size: 0.7rem;
+    color: #ff6b35; 
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* --- FOOTER BRAND ARCHITECTURE --- */
+.footer-brand-block {
+    display: inline-flex;
+    align-items: baseline; 
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.smooch-sans-footer {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 3.8rem; 
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 0.8;
+}
+
+.orbitron-footer {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem; 
+    font-weight: 500;
+    color: #ff6b35; 
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.footer-about {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.copyright-stamp {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #b0cddb; 
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ff6b35; 
+    transform: translateX(2px);
+}
+
+.social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-node {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.5;
+}
+
+.social-node:hover {
+    color: #ffffff;
+}
+
+.social-node:hover .social-icon {
+    color: #ff6b35; 
+    transform: scale(1.1);
+}
+
+/* Global Animations */
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .brand-block { flex-direction: column; align-items: center; gap: 0; }
+    .smooch-sans-headA { font-size: 6rem; }
+    .orbitron-headA { font-size: 2rem; margin-top: -10px; }
+    .workspace { padding: 0px 16px; }
+    .footer-wrapper {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 40px 16px;
+    }
+}
