@@ -1,1 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Smooch+Sans:wght@300;400;700&display=swap');
 
+/* 3291design V5 Premium Navbar Architecture */
+
+.studio-nav {
+    background-color: #172a3a; /* Deep Steel Blue Drafting Base */
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 24px; /* Slightly tightened padding to keep the giant logo compact */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- The Mini-Homepage Logo Simulation --- */
+.nav-logo-block {
+    display: inline-flex;
+    align-items: baseline; /* Locks them perfectly to the same drafting line */
+    text-decoration: none;
+    gap: 6px;
+}
+
+/* Add smooth transitions for both color and shadow */
+.nav-smooch-3291, .nav-orbitron-design {
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* 3291 flips to Signature Orange with a matching glow */
+.nav-logo-block:hover .nav-smooch-3291 {
+    color: #ff6b35;
+    text-shadow: 0 0 24px rgba(255, 255, 255);
+}
+
+/* "design" flips to White with a soft white glow */
+.nav-logo-block:hover .nav-orbitron-design {
+    color: #ffffff;
+    text-shadow: 0 0 18px rgba(255, 255, 255);
+}
+
+.nav-smooch-3291 {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 3.2rem; /* Scaled down perfectly to match standard navbar heights */
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 0.8;
+}
+
+.nav-orbitron-design {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ff6b35; /* Signature Highlighter Orange */
+    text-transform: lowercase; /* Matches homepage design exactly */
+    letter-spacing: 1px;
+}
+
+/* --- Desktop Links Configuration --- */
+.nav-links {
+    display: flex;
+    gap: 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 4px 0;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #ffffff;
+}
+
+/* 1. Base setup: The animated underline exists on ALL links, but is hidden (scaleX: 0) */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6b35;
+    transform: scaleX(0); 
+    transform-origin: right; /* Sweeps out to the right on mouse-out */
+    transition: transform 0.3s ease;
+}
+
+/* 2. The active page displays the line by default */
+.nav-item.active::after {
+    transform: scaleX(1);
+    transform-origin: left; 
+}
+
+/* 3. Container Hover: Hides the active line when your mouse enters the .nav-links area */
+.nav-links:hover .nav-item.active::after {
+    transform: scaleX(0);
+}
+
+/* 4. Item Hover: Sweeps the line in on the specific link you are hovering over */
+.nav-links .nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left; /* Sweeps in from the left on mouse-in */
+}
+
+.nav-accent-line {
+    height: 3px;
+    background-color: #ff6b35;
+    width: 100%;
+}
+
+/* --- Sexy Hamburger Menu Trigger Box --- */
+.menu-toggle {
+    display: none; /* Invisible on broad screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Mobile Viewport Engineering Layout --- */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex; /* Appears only when needed */
+    }
+
+    /* Animated Morph States for the Hamburger Icon */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: #ff6b35; }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: #ff6b35; }
+
+    /* Collapsible Drawer Grid Overlay */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Drops exactly below the line */
+        left: 0;
+        width: 100%;
+        background-color: #172a3a;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0; /* Hidden state */
+        overflow: hidden;
+        border-bottom: 0 solid rgba(255,255,255,0.1);
+    }
+
+    /* Trigger Class added via the engine */
+    .nav-links.open {
+        max-height: 400px; /* Expands open fluidly */
+        border-bottom: 2px solid #ff6b35;
+    }
+
+   .nav-item {
+        display: inline-block; /* Forces the element to wrap tightly around the text */
+        width: auto;         /* Removes the full-width stretch */
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .nav-item::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 10px; /* Sits nicely above the bottom padding */
+        left: 24px;   /* Matches the left text padding */
+        height: 2px;
+        background-color: #ff6b35;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+        /* Width is dynamically governed by the text inline-block size */
+        right: auto;
+        width: calc(100% - 48px); /* Adapts perfectly to the text boundary */
+    }
+    
+    .nav-item.active {
+        border-left: 4px solid #ff6b35;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Mobile Menu Underline Configuration */
+    .nav-links.open .nav-item {
+        position: relative;
+    }
+
+    /* Reset and re-enable the line specifically for the open mobile drawer */
+    .nav-links.open .nav-item::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 8px; /* Positioned nicely inside the padding */
+        left: 24px;  /* Aligns with the mobile left padding */
+        width: 110px;
+        height: 2px;
+        background-color: #ff6b35;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    /* Sweeps the underline in when active or hovered on mobile */
+    .nav-links.open .nav-item.active::after,
+    .nav-links.open .nav-item:hover::after {
+        transform: scaleX(1);
+    }
+}
