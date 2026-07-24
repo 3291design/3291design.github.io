@@ -1,1 +1,114 @@
+/*--------------------------- UNIVERSAL NAVBAR MASTER ------------------------ */
+
+/* 1. Main Container & Table Structure */
+.navbar2 {
+  width: 100%;
+  max-width: 930px;
+  margin: 0 auto 8px auto;
+  border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
+  position: relative;
+  z-index: 9999;
+}
+
+.navbar2 td {
+  padding: 0;
+  margin: 0;
+  text-align: center !important;
+  vertical-align: middle;
+  border: none !important;
+}
+
+/* 2. Link Styling */
+.navbar2 a, .navbar2 a:link, .navbar2 a:visited, .navbar2 a:active {
+  display: block; /* Important: makes the whole cell clickable */
+  width: 100%;
+  color: #777;
+  font-family: tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 11px 0; 
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
+
+/* 3. Hover & Active States */
+.navbar2 a:hover, .dropdown:hover .dropbtn {
+  color: #ffffff !important;
+  background-color: #9c8461;
+  text-decoration: none;
+}
+
+.nav-active { 
+  background-color: #485175 !important; 
+}
+
+.nav-active a { 
+  color: #ffffff !important; 
+}
+
+/* 4. Dropdown Menus (Level 1) */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #666;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+  border: 1px solid #555;
+}
+
+.dropdown-content a {
+  color: #fff !important;
+  text-decoration: none;
+  display: block;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  letter-spacing: 0px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* 5. Nested Dropdowns (Level 2) */
+.dropbtn2 {
+  position: relative;
+}
+
+.dropbtn2 a { font-weight: bold; }
+.dropbtn2 span { font-size: 10px; vertical-align: middle; }
+.dropbtn2:hover .dropdown-content2 {
+  display: block;
+}
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  left: 100% !important; /* Pops out to the right */
+  top: 0 !important;
+}
+
+.dropdown-content2 a:hover, .dropbtn2:hover {
+  background-color: #9c8461;
+}
+
+/* 6. Utility Classes */
+.nav-hr { 
+  border: 0; 
+  border-top: 1px solid #888; 
+  margin: 8px auto; 
+  width: 90%; 
+}
+
+/*--------------------------- END NAVBAR ------------------------ */
 
