@@ -1,0 +1,11 @@
+/* ==========================================================================
+   OAKDALE WAR MEMORIAL - COMPONENTS ROUTER HUB (odw-components.css)
+   Purpose: Legacy hub that imports all modularized component stylesheets
+            so existing soldier profiles and pages inherit them seamlessly.
+   File Version: v1.1 (Relative Path Fix)
+   ========================================================================== */
+
+@import url('odw-ui-components.css');
+@import url('odw-story-blocks.css');
+@import url('odw-lightbox.css');
+@import url('odw-maps.css');

@@ -1,0 +1,405 @@
+ /* ==========================================================================
+   OAKDALE WAR MEMORIAL - UI COMPONENTS (odw-ui-components.css)
+   Purpose: Global artifact buttons, Wikipedia-style reference tooltips,
+            bottom-anchored Back-to-Top dock button, and page navigation states.
+   File Version: v1.3 (Refactored to inherit from odw-core.css Master Variables)
+   Notes: v1.3 Removes local :root block and hooks all colors/shadows into master tokens.
+   ========================================================================== */
+
+/* Global Overflow Guard */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* =================================================== */
+/* 1. MODAL INJECTION COMPONENTS (Medals & Showcases)  */
+/* =================================================== */
+
+/* --- Medal Array Display --- */
+.medal-display-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.medal-item {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+.medal-item img {
+    min-width: 150px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.medal-title {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+}
+
+/* --- Photo Showcase --- */
+.modal-photo-showcase {
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 0px !important;
+    border: 0px solid #ff0000;
+}
+
+.modal-photo-showcase img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.modal-photo-showcase .modal-caption {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.modal-showcase-link-wrap {
+    margin-bottom: 0;
+}
+
+/* =================================================== */
+/* 2. ARTIFACT & INTERACTIVE BUTTONS                   */
+/* =================================================== */
+.artifact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    background-color: var(--artifact-btn);
+}
+
+.artifact-btn.hybrid-fetch-trigger:hover,
+a.artifact-btn:hover {
+    background-color: var(--odw-red-hover); 
+    color: #fff;            
+    border-color: var(--odw-red-hover);     
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px);             
+    text-decoration: none !important;        
+}
+
+.artifact-btn:hover .artifact-label {
+    text-decoration: none !important;
+}
+
+/* Modifier class for an alternate button color */
+.artifact-btn.btn-alt {
+    background-color: var(--artifact-btn-alt);
+    border-color: #000;
+    color: #f1f1f1;
+}
+
+.artifact-btn.btn-alt:hover {
+    background-color: var(--odw-red-hover);
+    border-color: #000;
+}
+
+/* Modifier class for a 2nd alternate button color */
+.artifact-btn.btn-alt2 {
+    background-color: var(--artifact-btn-alt2);
+    border-color: #000;
+    color: #f1f1f1;
+}
+
+.artifact-btn.btn-alt2:hover {
+    background-color: var(--odw-red-hover);
+    border-color: #000;
+}
+
+/* --- Profile Buttons --- */
+.btn-gravestone, 
+.btn-group-photo,
+.btn-story  {
+    background-color: var(--artifact-btn);
+    color: #f1f1f1; 
+    border: 1px solid #000;
+}
+
+/* Dynamic CSS Masks for Buttons */
+.btn-story::before {
+    content: "";
+    display: block; 
+    width: 18px;
+    height: 18px;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V8L14 2M18 20H6V4H13V9H18V20M8 16H16V18H8V16M8 12H16V14H8V12Z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V8L14 2M18 20H6V4H13V9H18V20M8 16H16V18H8V16M8 12H16V14H8V12Z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* =================================================== */
+/* 3. SYSTEM NAVIGATION & TOOLTIPS                     */
+/* =================================================== */
+
+/* Centered Bottom-Anchored Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(35, 35, 35, 0.35); 
+    backdrop-filter: blur(2px); 
+    color: #ffffff !important;
+    padding: 6px 24px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--odw-red); 
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px); 
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        padding: 6px 18px 8px 18px;
+        font-size: 11px;
+    }
+}
+
+/* Isolated styling for the expanded references trigger */
+.references-btn a {
+    color: var(--text-body);
+    font-family: var(--font-serif);
+    font-weight: 800;
+    border: 1px solid var(--border-light); 
+    border-radius: 4px;
+    padding: 6px 18px;
+    /* Add a smooth transition to the base state so everything moves together */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.references-btn a:hover {
+    color: #fff;
+    border: 1px solid #000; 
+    background-color: var(--odw-red-hover);
+    text-decoration: none !important;
+    box-shadow: var(--shadow-card);
+}
+
+.references-trigger-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Page Navigation State Overrides */
+#page-beyond .nav-beyond,
+#page-monmouth .nav-monmouth,
+#page-prisoners .nav-prisoners,
+#page-return .nav-return {
+    background-color: #f2f2f2;
+    border: 1px solid #dcdcdc; 
+    border-left: 4px solid #d1d1d1; 
+    pointer-events: none; 
+    opacity: 0.6; 
+}
+
+/* Wikipedia-Style Reference Tooltips */
+sup.wiki-tooltip {
+    position: relative;
+    cursor: pointer;
+    color: var(--odw-red);
+    font-weight: bold;
+}
+
+sup.wiki-tooltip:hover::after {
+    content: attr(data-citation);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px; 
+    background: #2b2b2b;
+    color: #f9f9f9;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: normal;
+    border-radius: 6px;
+    box-shadow: var(--shadow-card);
+    z-index: 9999;
+    pointer-events: none;
+    text-align: left;
+}
+
+sup.wiki-tooltip:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #2b2b2b transparent transparent transparent;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    sup.wiki-tooltip:hover::after {
+        position: absolute; 
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px; 
+        max-width: 85vw;
+        box-shadow: var(--shadow-card);
+    }
+    sup.wiki-tooltip:hover::before {
+        display: block; 
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: #2b2b2b transparent transparent transparent;
+    }
+}
+
+/* =================================================== */
+/* 4. GRAPHICS & HOVER EFFECTS                         */
+/* =================================================== */
+
+/* TIMELINE PREVIEW GRAPHIC (For Overview Page) */
+.timeline-preview-graphic {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: #f4f1ea;
+    background-image: url('/oakdalewarmemorial/images/paper-3.jpg');
+    background-repeat: repeat;
+    border: 1px solid #333;
+    box-shadow: inset 0px 6px 16px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden; 
+    display: block;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.timeline-preview-graphic:hover {
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.35); 
+    cursor: pointer;
+}
+
+.tp-watermark {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7rem;
+    font-weight: 800;
+    color: rgba(153, 0, 51, 0.40);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.tp-axis {
+    position: absolute;
+    top: 85px; 
+    left: 0;
+    width: 100%;
+    height: 30px; 
+    background-color: #d0c7a4;
+    z-index: 2;
+}
+
+.tp-node {
+    position: absolute;
+    top: 0;
+    height: 200px;
+    width: 180px;
+    border-left: 1px solid #000;
+    z-index: 3;
+}
+
+.tp-node.n1 { left: 160px; background-color: rgba(208, 199, 164, 0.60); }
+.tp-node.n2 { left: 340px; background-color: rgba(208, 199, 164, 0.40); }
+.tp-node.n3 { left: 520px; background-color: rgba(208, 199, 164, 0.60); }
+
+.tp-badge {
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid #000;
+    margin-left: -1px;
+    margin-top: 15px;
+    padding: 4px 8px;
+    width: 65px;
+    font-weight: bold;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.tp-fade {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 200px;
+    background: linear-gradient(to right, transparent, rgba(244, 241, 234, 0.95));
+    z-index: 4;
+}
+
+/* THE FALLEN BANNER IMAGE HOVER EFFECT */
+a img[src*="fallen_"] {
+    display: block;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+a:has(img[src*="fallen_"]) {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+a:has(img[src*="fallen_"]):hover img {
+    box-shadow: var(--shadow-lightbox);
+}

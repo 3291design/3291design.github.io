@@ -1,0 +1,420 @@
+ /* ==========================================================================
+   OAKDALE WAR MEMORIAL - TYPOGRAPHY (odw-typography.css)
+   Purpose: Subheads, display text, captions, battle headers, soldier links, and text block formatting.
+   File Version: v2.2 (Refactored to inherit from odw-core.css Master Variables)
+   ========================================================================== */
+
+.artifact-label {
+    color: #fff;
+}
+
+
+.award-verify {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.6; 
+    color: var(--text-body);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.battle-box {
+    border-left: 10px solid var(--odw-red);
+}
+
+.battle-date {
+    display: block;
+    font-family: var(--font-serif); 
+    font-size: clamp(12px, 4vw, 14px); 
+    font-weight: 800;
+    line-height: 1.2em;  
+    color: var(--text-muted); 
+    padding-left: 15px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+
+.battle-head {
+    display: block;
+    font-family: var(--font-serif); 
+    font-size: clamp(15px, 4vw, 24px); 
+    font-weight: 800; 
+    line-height: 1.2em; 
+    color: var(--text-dark); 
+    padding-left: 15px; 
+    letter-spacing: 1px; 
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.battle-sub-style {
+    font-family: var(--font-serif); 
+    font-size: clamp(14px, 4vw, 18px); 
+    font-weight: 800; 
+    line-height: 1.2em; 
+    color: var(--text-dark); 
+    padding-left: 15px; 
+    border-left: 8px solid var(--odw-red-hover); 
+    letter-spacing: 1px; 
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.campaign-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 20px;
+    float: right;
+    margin-left: 20px;
+}
+
+.campaign-title {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(15px, 4vw, 17px); 
+    font-weight: 800;
+    line-height: 1.6; 
+    color: var(--text-dark);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0px 0px 0px; 
+}
+
+.caption {
+    font-family: var(--font-sans); 
+    font-size: 0.9em; 
+    margin-top: 12px; 
+    line-height: 1.4;
+}
+
+.casualty-detail {
+    display: block;
+    color: var(--text-body);
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.casualty-event {
+    display: block;
+    color: var(--text-body);
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.casualty-highlight-box {
+    font-style: italic;
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(13px, 4vw, 15px); 
+    line-height: 1.7; 
+    color: var(--text-dark);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px auto; 
+}
+
+.casualty-highlight-box a {
+    color: var(--text-dark) !important; 
+    font-weight: bold;
+}
+
+.casualty-highlight-box a:hover {
+    color: var(--odw-red-hover) !important;                   
+    text-decoration: underline dashed 1px !important;
+    text-underline-offset: 4px !important; 
+}
+
+.chapter {
+    display: block;
+    font-family: var(--font-serif);
+    color: var(--text-muted); 
+    font-size: 17px; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    text-align: center;
+    letter-spacing: 2px; 
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.credit {
+    font-family: var(--font-sans); 
+    font-size: 0.75em; 
+    margin-top: 6px; 
+    margin-bottom: 0px !important;
+    line-height: 1.4;
+    opacity: 0.8;
+    text-align: center;
+    width: 165px;
+}
+
+.credit a {
+    color: var(--text-dark) !important;
+    text-decoration: none;
+}
+
+.credit a:hover {
+    color: var(--odw-red-hover) !important;                        
+    text-decoration: underline dashed 1px !important;
+    text-underline-offset: 4px !important;
+}
+
+.deck {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(15px, 4vw, 20px); 
+    line-height: clamp(1.8em, 4vw, 1.8em); 
+    font-style: italic;
+    color: #777777;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0px auto; 
+    padding: 0px clamp(16px, 4vw, 40px); 
+}
+
+.display-text {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(13px, 4vw, 15px); 
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-word; 
+    color: var(--text-body);
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.display-text a {
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.display-text a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.display-text li {
+    margin-bottom: 8px;         
+    line-height: 1.4;           
+}
+
+.display-text sup a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.display-text sup a:hover {
+    text-decoration: underline;
+}
+
+.display-text ul {
+    list-style-type: disc;      
+    margin-top: 15px;           
+    margin-bottom: 15px;        
+    padding-left: 40px;         
+}
+
+.lightbox-caption {
+    color: var(--text-body);             
+    margin-top: 15px;           
+    font-size: 1.1rem;          
+    text-align: center;         
+    display: block;             
+}
+
+#modal-caption-text {
+    color: #ffffff;             
+    margin-top: 15px;           
+    font-size: 1.1rem;          
+    text-align: center;         
+    display: block;             
+}
+
+.note {
+    background-color: var(--bg-note);
+    border-left: 4px solid var(--odw-red);
+    font-family: var(--font-sans);
+    font-size: 0.9em;
+    font-style: italic;
+    line-height: 1.6; 
+    color: var(--text-dark);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 20px 0 30px 0;
+    display: block;
+}
+
+.plain-text {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: clamp(12px, 1.5vw, 14px); 
+    line-height: 1.6; 
+    color: var(--text-body);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px auto 30px auto; 
+    padding: 0px clamp(16px, 4vw, 40px); 
+}
+
+.plain-text a {
+    color: var(--text-body);
+    font-weight: 600;
+}
+
+.plain-text a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.references-block {
+    font-family: var(--font-sans); 
+    font-size: 0.85em; 
+    line-height: 1.6em;
+    margin-bottom: 30px;
+    padding: 0px clamp(16px, 4vw, 40px); 
+}
+
+.references-block a {
+    text-decoration: none;
+}
+
+.references-block a:hover {
+    text-decoration: underline;
+}
+
+.soldier-link {
+    color: var(--text-dark);
+    font-weight: bold;
+    margin-top: 12px;
+    white-space: nowrap; 
+}
+
+a.soldier-link {
+    color: var(--text-dark);
+    font-weight: bold;
+    white-space: nowrap; 
+    text-decoration: none; 
+}
+
+a.soldier-link:hover {
+    color: var(--odw-red-hover) !important;                   
+    text-decoration: underline dashed 1px !important;
+    text-underline-offset: 4px !important;
+}
+
+a.soldier-link::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: currentColor; 
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E") no-repeat center / contain;
+    vertical-align: -2px; 
+    opacity: 0.7;
+    margin-left: 6px;
+}
+
+.subhead {
+    color: var(--odw-red); 
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 4vw, 32px); 
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: clamp(10px, 4vw, 25px) auto;
+    font-style: italic; 
+    max-width: 700px;
+}
+
+.subhead_sm {
+    color: var(--text-dark); 
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 4vw, 26px); 
+    font-weight: bold;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    margin-top: 6px; 
+    margin-bottom: clamp(6px, 4vw, 0px); 
+    text-align: left;
+}
+
+.subhead_sm a {
+    color: var(--odw-red);
+}
+
+.subhead_sm a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.subhead_sm2 {
+    color: var(--odw-red); 
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 4vw, 23px); 
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-top: 6px; 
+    margin-bottom: clamp(6px, 4vw, 8px); 
+    text-align: left;
+}
+
+.subhead_sm2 a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.subnav-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+.subnav-link:hover {
+    color: var(--odw-red);
+}
+
+.timeline-subhead {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 1.5vw, 32px); 
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: left;
+    color: var(--text-dark); 
+    margin-top: clamp(15px, 1.5vw, 30px);
+}
+
+.war-front {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6; 
+    color: var(--text-body);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}

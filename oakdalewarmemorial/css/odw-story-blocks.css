@@ -1,0 +1,506 @@
+ /* ==========================================================================
+   OAKDALE WAR MEMORIAL - STORY BLOCKS COMPONENT (odw-story-blocks.css)
+   Purpose: Multi-track timelines, Chapter TOC grids, story card grids,
+            footnote layout boxes, and premium floated feature images.
+   File Version: v1.3 (Refactored to inherit from odw-core.css Master Variables)
+   Notes: v1.3 Hooks background shades, borders, and reds into master tokens.
+   ========================================================================== */
+
+/* ==========================================================================
+    SECTION 1: Core Utility & Battle Highlights
+    SECTION 2: Chapter TOC & Reference Blocks
+    SECTION 3: Floated Feature Images, Galleries & Media Blocks
+    SECTION 4: Timeline Grid Engine & Markers
+    SECTION 5: Story Cards & Footer Card Grids
+    SECTION 6: Story Footnote Grids & Thumbnails
+    SECTION 7: Two-Column TOC Grid Layout
+========================================================================== */
+
+/* ==========================================================================
+   SECTION 1. CORE UTILITY & BATTLE HIGHLIGHTS
+   ========================================================================== */
+
+.battle-box {
+    border-left: 10px solid var(--odw-red);
+}
+
+.caption-wrapper {
+    font-family: inherit;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   SECTION 2. CHAPTER TOC & REFERENCE BLOCKS
+   ========================================================================== */
+
+.chapter-index-block {
+    font-family: Arial, sans-serif;
+    margin: 0 clamp(16px, 4vw, 40px);
+}
+
+.chapter-index-block li {
+    margin-bottom: 10px;
+}
+
+.chapter-index-block ol, 
+.chapter-index-block ul {
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.references-list-layout {
+    font-family: Arial, sans-serif;
+    margin: 0 clamp(16px, 4vw, 40px);
+    width: 95%;
+}
+
+.references-list-layout li {
+    margin-bottom: 12px;
+}
+
+.references-list-layout ol {
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+
+/* ==========================================================================
+   SECTION 3. FLOATED FEATURE IMAGES, GALLERIES & MEDIA BLOCKS
+   ========================================================================== */
+
+.feature-block {
+    border: 0px dashed #ff0000; 
+    display: flow-root;
+    margin: auto;
+    max-width: 720px; 
+    width: 100% !important; 
+}
+
+/* 1. Default for chapters inside feature blocks (Desktop & Mobile) */
+.feature-block .chapter {
+    text-align: left;
+}
+
+/* 2. TABLET ONLY: Center headers when the image drops below them */
+@media (min-width: 501px) and (max-width: 768px) {
+    .feature-block .chapter,
+    .feature-block .subhead_sm {
+        text-align: center;
+    }
+}
+
+/* --- THE IMAGE WRAPPERS --- */
+.feature-image {
+    float: left;
+    margin: 36px 40px 0px 0px;
+    max-width: 440px;
+    width: 100%;
+}
+
+.feature-image-sm {
+    float: left;
+    margin: 0px 25px 0px 0px;
+    max-width: 290px;
+    width: 100%;
+}
+
+/* THE NEW MULTI-IMAGE GALLERY WRAPPER */
+.feature-image-gallery {
+    display: flex;
+    gap: 15px;           
+    margin-top: 30px;    
+    width: 100%;
+    clear: both;         
+}
+
+.gallery-item {
+    flex: 1;             
+    margin: 0; 
+}
+
+/* --- SHARED IMAGE & CAPTION STYLES --- */
+.feature-image img,
+.feature-image-sm img,
+.feature-image-gallery img {
+    border-radius: 6px;
+    box-shadow: var(--shadow-subtle);
+    cursor: zoom-in;
+    width: 100%;         
+    height: auto;
+    display: block; 
+    transition: box-shadow 0.2s ease-in-out; 
+}
+
+.feature-image .caption-wrapper,
+.feature-image-sm .caption-wrapper,
+.feature-image-gallery .caption-wrapper {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.feature-image .credit a,
+.feature-image-sm .credit a,
+.feature-image-gallery .credit a {
+    color: inherit;
+}
+
+a.feature-image:hover img,
+a.feature-image-sm:hover img,
+.feature-image a:hover img,
+.feature-image-sm a:hover img,
+.feature-image-gallery a:hover img,
+.feature-image-gallery .gallery-item:hover img {
+    box-shadow: var(--shadow-lightbox); 
+}
+
+/* --- TABLET RESPONSIVE RULES --- */
+@media (max-width: 768px) {
+    .feature-image, 
+    .feature-image-sm {
+        float: none !important;
+        display: block !important; 
+        margin: 2% auto !important;
+        text-align: center !important; 
+    }
+
+    .feature-image {
+        max-width: 420px !important;
+        width: 100% !important;
+    }
+    
+    .feature-image-sm {
+        max-width: 290px !important;
+        width: 100% !important;
+    }
+    
+    .feature-image img, 
+    .feature-image-sm img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* --- MOBILE RESPONSIVE RULES (Phones) --- */
+@media (max-width: 640px) {
+    .feature-image-gallery {
+        flex-direction: column;
+        align-items: center; 
+        gap: 25px;
+    }
+    
+    .feature-image-gallery .gallery-item {
+        max-width: 400px; 
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   SECTION 4. TIMELINE GRID ENGINE & MARKERS
+   ========================================================================== */
+
+.multi-track-timeline {
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+    line-height: 1.3em;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.timeline-row {
+    align-items: start;
+    border-bottom: 1px solid #f0f0f0;
+    display: grid;
+    gap: 1.5rem; 
+    grid-template-columns: 70px minmax(300px, 1.2fr) 1.5fr;
+    padding: 0.75rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .timeline-row:not(.timeline-row-span) {
+        background: #fafafa;
+        border: 1px solid var(--border-light);
+        gap: 0.5rem 2rem;
+        grid-template-columns: minmax(240px, 1.2fr) 1.5fr !important;
+        grid-template-rows: auto auto;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    .timeline-row:not(.timeline-row-span) .track-date {
+        grid-column: 1 / -1; 
+        margin: 0 0 4px 0;
+    }
+    .timeline-row:not(.timeline-row-span) .track-date::before {
+        content: "Date: ";
+        font-weight: bold;
+    }
+    .timeline-row:not(.timeline-row-span) .track-event {
+        grid-column: 1;
+        grid-row: 2;
+        margin-right: 5px; 
+        white-space: nowrap; 
+    }
+    .timeline-row:not(.timeline-row-span) .track-oakdale {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 545px) {
+    .timeline-row:not(.timeline-row-span),
+    .timeline-row.timeline-row-span {
+        background: #fafafa;
+        border: 1px solid var(--border-light);
+        gap: 0.5rem;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    .timeline-row:not(.timeline-row-span) .track-date,
+    .timeline-row.timeline-row-span .track-date {
+        grid-column: auto;
+        margin: auto 0px;
+    }
+    .timeline-row:not(.timeline-row-span) .track-date::before,
+    .timeline-row.timeline-row-span .track-date::before {
+        content: "Date: ";
+        font-weight: bold;
+    }
+    .timeline-row:not(.timeline-row-span) .track-event,
+    .timeline-row:not(.timeline-row-span) .track-oakdale {
+        grid-column: auto;
+        grid-row: auto;
+        padding-right: 0;
+        white-space: normal; 
+    }
+}
+
+.timeline-row-span {
+    grid-template-columns: 70px 1fr !important;
+}
+
+.timeline-row-span .track-event {
+    width: 100% !important;
+}
+
+.timeline-section-header {
+    margin-bottom: 2rem;
+}
+
+.timeline-year-block {
+    border-top: 2px solid var(--border-light);
+    margin-bottom: 0px;
+}
+
+.track-date {
+    color: var(--text-muted);
+    font-weight: 600;
+    margin: auto 10px auto;
+}
+
+.track-event {
+    display: inline-flex;
+    line-height: 1.3em; 
+    margin: auto 0px;
+    padding: 10px 0px;
+    white-space: wrap;
+    width: clamp(230px, 1.2fr 400px);
+}
+
+.track-oakdale {
+    align-items: center;
+}
+
+.year-marker {
+    background: #eaeaea;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+}
+
+
+/* ==========================================================================
+   SECTION 5. STORY CARDS & FOOTER CARD GRIDS
+   ========================================================================== */
+
+.story-block {
+    margin-bottom: 40px; 
+    overflow: hidden; 
+    padding: 0 clamp(16px, 4vw, 40px);
+}
+
+.story-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.story-card-grid.story-card-grid-footer {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 40px 0 30px 0;
+}
+
+@media (max-width: 768px) {
+    .story-card-grid.story-card-grid-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.story-card-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card-item:hover{
+    background-color: #f7f7f7;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.story-card-img {
+    width: 80px; 
+    height: 80px; 
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    float: left; 
+    margin-right: 15px;
+}
+
+.story-card-text {
+    color: var(--text-dark);
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 13px; 
+    line-height: 1.4; 
+}
+
+.story-card-text a {
+    color: var(--text-dark);
+    font-weight: 800;
+}
+
+.story-card-text a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+/* ==========================================================================
+   SECTION 6. STORY FOOTNOTE GRIDS & THUMBNAILS
+   ========================================================================== */
+
+.story-footnote-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 545px) {
+    .story-footnote-grid {
+        flex-direction: column;
+    }
+}
+
+.story-footnote-link {
+    background-color: #fff;
+    border-left: 4px solid var(--odw-red-hover);
+    box-sizing: border-box;
+    color: inherit;
+    display: flex;
+    flex: 1 1 calc(25% - 15px);
+    flex-direction: column;
+    gap: 12px; 
+    min-width: 120px;
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.story-footnote-link:hover {
+    background-color: #f7f7f7; 
+    box-shadow: var(--shadow-subtle);
+    text-decoration: none;
+    transform: translateY(-2px); 
+}
+
+.story-footnote-part {
+    color: var(--text-muted); 
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 0.75em;
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    margin-bottom: 5px;
+    text-transform: uppercase; 
+}
+
+.story-footnote-thumb {
+    border-radius: 4px; 
+    box-shadow: var(--shadow-subtle); 
+    height: auto;
+    max-width: 100px;
+    object-fit: cover; 
+    width: 100%; 
+}
+
+.story-footnote-title {
+    display: block;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   SECTION 7. TOC SPECIFIC TWO-COLUMN GRID LAYOUT
+   ========================================================================== */
+
+.toc-grid-layout li {
+    break-inside: avoid;
+}
+
+.toc-grid-layout li::before {
+    color: var(--odw-red);
+    content: "\25B8"; 
+    display: inline-block;
+    margin-left: -1em;
+    width: 1em;
+}
+
+.toc-grid-layout li a {
+    color: var(--text-dark);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.toc-grid-layout li a:hover {
+    color: var(--odw-red);
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.toc-grid-layout ul {
+    column-count: 2;
+    column-gap: 40px;
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .toc-grid-layout ul {
+        column-count: 1;
+    }
+}

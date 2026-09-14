@@ -1,0 +1,113 @@
+ /* ==========================================================================
+   OAKDALE WAR MEMORIAL - HOME GATEWAY (odw-home.css)
+   Purpose: Pure, plain-English layout controls for the main landing page.
+   File Version: v1.2 (Refactored to inherit from odw-core.css Master Variables)
+   Notes: v1.2 Hooks colors and shadows into master design tokens.
+   ========================================================================== */
+
+#footer-placeholder {
+    flex: 0 0 auto; /* Keeps the footer from stretching */
+}
+
+.home-core {
+    flex: 1 1 auto; /* The magic property: grow to fill all empty space */
+    padding: 40px 20px;
+}
+
+.home-header-zone {
+    flex: 0 0 auto; /* Natural height, no flex-grow */
+    width: 100%;
+    text-align: center;
+    
+    /* Fluid top margin pushes title down gracefully on desktop, shrinks on mobile */
+    margin-top: clamp(20px, 5vw, 45px);
+    margin-bottom: 0px;
+}
+
+@media (max-width: 530px) {
+    .home-header-zone {
+        /* Extra structural safety for mobile canvas ceilings */
+        margin-top: clamp(15px, 6vw, 25px);
+    }
+}
+
+.home-main-title {
+    color: var(--text-body);
+    font-family: Garamond, Georgia, serif;
+    font-weight: bold;
+    
+    /* Dynamically sizes the text so it never clips or wraps awkwardly */
+    font-size: clamp(40px, 7vw, 72px);
+    letter-spacing: -2px;
+    line-height: 1.1em;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.home-nav-item {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 4vw, 18px); 
+}
+
+.home-nav-item a {
+    color: var(--text-body);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+}
+
+.home-nav-item a:hover {
+    color: var(--odw-red);
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 530px) {
+    .home-nav-item {
+        /* Comfortable, uniform thumb-tapping size on mobile screens */
+        font-size: 22px;
+    }
+}
+
+.home-navigation-menu {
+    flex: 0 0 auto; /* Natural height, no flex-grow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* DESKTOP MODE: Line links up side-by-side */
+    flex-direction: row;
+    
+    /* Accordion gap shrinks link spaces smoothly on tablet windows */
+    gap: clamp(10px, 4vw, 50px);
+    
+    /* FLUID TOP ANCHOR: Keeps links clustered right under the main title */
+    margin-top: clamp(10px, 3vw, 20px);
+}
+
+@media (max-width: 530px) {
+    .home-navigation-menu {
+        /* SMARTPHONES: Instantly shift into a vertical single-column block */
+        flex-direction: column;
+        
+        /* Crushes dead vertical spaces so links cluster tightly together */
+        gap: 12px;
+        margin-top: 20px;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-container.home-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forces container to span full browser height */
+    margin: 0 auto;
+}
+
+/* Hide the global lightbox modal by default on the homepage */
+#odw-lightbox-modal {
+    display: none;
+}

@@ -1,0 +1,477 @@
+/* ==========================================================================
+   OAKDALE WAR MEMORIAL - MAP COMPONENT (odw-maps.css version 2.0)
+   Purpose: Streamlined styles for lightweight map thumbnails, interactive 
+            modal pan-and-zoom engine, custom scrollbars, pins, tooltips, 
+            and the Uber Map-UI Lightbox Theme.
+   ========================================================================== */
+
+/* --- 1. LIGHTWEIGHT CAMPAIGN MAP THUMBNAILS --- */
+.campaign-figure {
+    margin-top: 30px;
+}
+
+.campaign-map-thumb {
+    display: block;
+    position: relative;
+    width: 175px;
+    height: 138px;
+    border: 1px solid var(--border-light);
+    background-color: #fcfbfa;
+    padding: 4px;
+    box-shadow: var(--shadow-subtle);
+    text-decoration: none;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.campaign-map-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    opacity: 0.85;
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.campaign-map-thumb:hover img {
+    opacity: 1.0;
+    transform: scale(1.03);
+}
+
+.campaign-thumb-caption {
+    text-align: center;
+    width: 180px;
+    margin: 6px 0px;
+}
+
+/* --- 2. UBER MAP LIGHTBOX THEME (map-ui) --- */
+#odw-lightbox-modal[data-theme="map-ui"] .modal-content-wrapper {
+    background-color: var(--bg-panel);
+    padding: 50px 25px 25px 25px; 
+    border-radius: 6px;
+    box-shadow: var(--shadow-lightbox);
+    width: 95%;
+    max-width: 920px;             
+    max-height: 94vh;            
+    overflow-y: auto;             
+    position: relative;
+    text-align: left;
+}
+
+#odw-lightbox-modal[data-theme="map-ui"] #modal-target-html {
+    display: block; 
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100%;
+    margin: 0;
+    overflow: visible !important; 
+}
+
+#odw-lightbox-modal[data-theme="map-ui"] .modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #fff; 
+    width: 28px;
+    height: 28px;
+    border: 1px solid;
+    border-radius: 3px; 
+    color: #000; 
+    border-color: #000;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000 !important;
+    transition: all 0.2s ease;
+    text-shadow: none !important; 
+}
+
+#odw-lightbox-modal[data-theme="map-ui"] .modal-close-btn:hover {
+    background-color: var(--odw-red); 
+    color: #ffffff;
+    box-shadow: var(--shadow-card); 
+}
+
+/* --- 3. MAP INTERACTIVE WRAPPER & PAN CONTAINER --- */
+.map-interactive-wrapper {
+    position: relative;          
+    width: 100%;
+}
+
+.pan-container,
+.map-scroll-container {
+    width: 100%;
+    max-width: 920px;             
+      /*  REMOVED!!! Locks the container to a strict pixel height */
+    max-height: clamp(300px, 94vh, 600px);   /* Ensures it never exceeds the screen height */
+    margin: 0px auto;
+    position: relative; 
+    background-color: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    overflow: scroll !important; 
+    scrollbar-width: auto;
+    scrollbar-color: #555555 #e0e0e0;
+    overflow-anchor: none;
+    cursor: zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>'), zoom-in;
+}
+
+.map-scroll-container.is-dragging,
+.pan-container.is-dragging {
+    cursor: grabbing !important;
+}
+
+.map-scroll-container::-webkit-scrollbar,
+.pan-container::-webkit-scrollbar {
+    width: 16px !important;
+    height: 16px !important;
+    -webkit-appearance: none !important;
+    display: block !important;
+}
+
+.map-scroll-container::-webkit-scrollbar-track,
+.pan-container::-webkit-scrollbar-track {
+    background: #e0e0e0 !important; 
+    border-radius: 4px;
+    border: 1px solid var(--border-light) !important;
+}
+
+.map-scroll-container::-webkit-scrollbar-thumb,
+.pan-container::-webkit-scrollbar-thumb {
+    background-color: #555555 !important; 
+    border-radius: 6px;
+    border: 3px solid #e0e0e0 !important;
+}
+
+.map-scroll-container::-webkit-scrollbar-thumb:hover,
+.pan-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--odw-red) !important; 
+    cursor: pointer;
+}
+
+.map-scroll-container::-webkit-scrollbar-corner,
+.pan-container::-webkit-scrollbar-corner {
+    background: #e0e0e0 !important; 
+}
+
+/* --- 4. MASTER MAP & COORDINATE SYSTEM --- */
+.full-master-img {
+    max-width: none !important;
+    display: block;
+    user-select: none; 
+    -webkit-user-drag: none; 
+}
+
+.map-coordinate-system {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.map-coordinate-system img {
+    width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* --- 5. ZOOM CONTROLS OVERLAY --- */
+.map-zoom-controls-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100; 
+    display: flex;
+    gap: 6px; 
+    background: rgba(0, 0, 0, 0.25); 
+    padding: 6px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-zoom-controls-overlay button {
+    background: #d6cdae;
+    color: #333;
+    border: 1px solid var(--border-light);
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.map-zoom-controls-overlay button:disabled {
+    background: #e9e9e9;
+    color: #b0b0b0;
+    border-color: #ddd;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.map-zoom-controls-overlay button:hover:not(:disabled) {
+    background: var(--odw-red); 
+    color: #fff;
+    border-color: var(--odw-red);
+}
+
+/* --- 6. PINS, LINES & TOOLTIPS --- */
+.map-line {
+    position: absolute;
+    height: 6px; /* The thickness of the front line */
+    background-color: #ffd700; /* Matches your yellow dots */
+    border: 1px solid #222; /* Gives it contrast against the map imagery */
+    border-radius: 4px; /* Slightly rounds the ends */
+    cursor: pointer;
+    z-index: 10;
+    
+    /* This anchors the rotation to the starting point (left side) */
+    transform-origin: center left; 
+    
+    /* Smooth transition for hover effects */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Optional hover effect: makes the line glow and slightly thicker */
+.map-line:hover {
+    background-color: #ffea00;
+    transform: scaleY(1.5); /* Thickens the line without changing its length or angle */
+}
+
+.map-line-dashed {
+    position: absolute;
+    height: 0; /* We use the border for thickness instead of height */
+    border-top: 10px dashed #ff9500; /* Creates the military dash effect */
+    cursor: pointer;
+    z-index: 20;
+    transform-origin: center left; 
+    /* A drop shadow works better here than a standard border, 
+       keeping the gaps between dashes completely transparent! */
+    filter: drop-shadow(0px 0px 2px #222);
+    transition: filter 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect to make it glow when users interact */
+.map-line-dashed:hover {
+    border-color: #ff1900; 
+    filter: drop-shadow(0px 0px 4px #222);
+}
+
+/* --- PINS & RICH TOOLTIPS --- */
+.map-pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #ffde0b; 
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 30; /* Reset back to standard level */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: background-color 0.2s ease;
+}
+
+.map-pin:hover {
+    background-color: var(--odw-red);
+    z-index: 50 !important; /* Now ONLY the hovered pin jumps to the front! */
+}
+
+.map-pin-square {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: #ff9500; 
+    border: 2px solid #fff;
+    border-radius: 0%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 30; /* Reset back to standard level */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: background-color 0.2s ease;
+}
+
+.map-pin-square:hover {
+    background-color: var(--odw-red);
+    z-index: 50 !important; /* Now ONLY the hovered pin jumps to the front! */
+}
+
+/* --- 1. SHARED BASE PROPERTIES (Bulletproof Box Scaling) --- */
+.pin-tooltip {
+    position: absolute;
+    /* Force-reset all coordinates so they never fight each other */
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-align: left;
+    white-space: normal;
+    
+    /* Let the box grow with the text, but cap it so it doesn't get ridiculously wide */
+    min-width: 240px;
+    width: max-content;
+    max-width: 340px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    z-index: 999 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pin-tooltip::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+}
+
+/* --- 2. TOP (The Default Fallback) --- */
+.pin-tooltip:not([data-pos]),
+.pin-tooltip[data-pos="top"] {
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.map-pin:hover .pin-tooltip:not([data-pos]),
+.map-pin-square:hover .pin-tooltip:not([data-pos]),
+.map-pin:hover .pin-tooltip[data-pos="top"],
+.map-pin-square:hover .pin-tooltip[data-pos="top"] {
+    bottom: 110%;
+    opacity: 1;
+    visibility: visible;
+}
+.pin-tooltip:not([data-pos])::after,
+.pin-tooltip[data-pos="top"]::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0 5px;
+    border-color: rgba(0,0,0,0.75) transparent transparent transparent;
+}
+
+/* --- 3. BOTTOM --- */
+.pin-tooltip[data-pos="bottom"] {
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.map-pin:hover .pin-tooltip[data-pos="bottom"],
+.map-pin-square:hover .pin-tooltip[data-pos="bottom"] {
+    top: 110%;
+    opacity: 1;
+    visibility: visible;
+}
+.pin-tooltip[data-pos="bottom"]::after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent rgba(0,0,0,0.75) transparent;
+}
+
+/* --- 4. RIGHT --- */
+.pin-tooltip[data-pos="right"] {
+    top: 50%;
+    left: 150%;
+    transform: translateY(-50%);
+}
+.map-pin:hover .pin-tooltip[data-pos="right"],
+.map-pin-square:hover .pin-tooltip[data-pos="right"] {
+    left: 110%;
+    opacity: 1;
+    visibility: visible;
+}
+.pin-tooltip[data-pos="right"]::after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-color: transparent rgba(0,0,0,0.75) transparent transparent;
+}
+
+/* --- 5. LEFT --- */
+.pin-tooltip[data-pos="left"] {
+    top: 50%;
+    right: 150%;
+    transform: translateY(-50%);
+}
+.map-pin:hover .pin-tooltip[data-pos="left"],
+.map-pin-square:hover .pin-tooltip[data-pos="left"] {
+    right: 110%;
+    opacity: 1;
+    visibility: visible;
+}
+.pin-tooltip[data-pos="left"]::after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent rgba(0,0,0,0.75);
+}
+
+/* --- TOOLTIP TYPOGRAPHY & LAYOUT CLASSES (DRY) --- */
+.tooltip-campaign-title {
+    font-size: clamp(15px, 4vw, 18px);
+    color: #ffc107;               /* Warm amber accent for campaign headers */
+    font-weight: 800;
+    margin-bottom: 0px;
+    display: block;
+    padding-bottom: 4px;
+}
+
+.tooltip-campaign-date {
+    font-size: clamp(12px, 4vw, 15px);
+    color: #ccc;    
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.tooltip-casualty {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tooltip-casualty:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip-name {
+    font-weight: 700;
+    font-size: clamp(13px, 4vw, 16px);
+    color: #ffffff;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.tooltip-status {
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(12px, 4vw, 15px);
+    color: #cccccc;
+    margin-bottom: 12px;
+    display: block;
+}
