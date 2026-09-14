@@ -1,0 +1,457 @@
+ <!-- ==========================================================================
+     OAKDALE WAR MEMORIAL - MAP TEMPLATE SNIPPET (map-template-snippet.html)
+     Purpose: Stores interactive campaign maps for dynamic Lightbox injection.
+     File Version: v2.0 (2026 Refactor)
+     Notes: Major architecture update. Converted from legacy modal divs to 
+            <template> tags. Legacy close buttons and background links have 
+            been completely removed. Governed by odw-lightbox.css (map-ui theme) 
+            and odw-common.js (v5.10+).
+     ========================================================================== -->
+
+<!-- ========================================== -->
+<!-- 1. The Western Front Map Modal             -->
+<!-- ========================================== -->
+
+<template id="modal-western-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 1 - The Western Front - 1915
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; max-width: none; display: block; user-select: none; -webkit-user-drag: none;">
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.25%;">
+                        <div class="pin-tooltip">Ypres Salient</div>                    
+                    </div>
+                    <div class="map-pin" style="top: 46.25%; left: 28%;">
+                        <div class="pin-tooltip">Armentières Sector</div>                    
+                    </div>
+                    <div class="map-line-dashed" style="top: 52.5%; left: 28.5%; width: 7%; transform: rotate(-98deg);" title="The Western Front"></div>
+                </div> 
+            </div> 
+        </div> 
+        
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 2. YPRES MAP MODAL                         -->
+<!-- ========================================== -->
+
+<template id="modal-ypres-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 2 - 2nd Battle of Ypres (22 April &ndash; 25 May 1915)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.15%;">
+                        <div class="pin-tooltip">2nd Battle of Ypres; 22 April &ndash; 25 May 1915</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 3. GIVENCHY MAP MODAL                      -->
+<!-- ========================================== -->
+
+<template id="modal-givenchy-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 3 - Givenchy-lès-la-Bassée Sector
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 47%; left: 28%;">
+                        <div class="pin-tooltip">Givenchy-lès-la-Bassée Sector</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 4. SOMME MAP MODAL                         -->
+<!-- ========================================== -->
+
+<template id="modal-somme-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 4 - Battle of the Somme (1 July – 18 November 1916)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 48%; left: 28%;">
+                        <div class="pin-tooltip">Battle of the Somme (1 July – 18 November 1916)</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 5. LENS MAP MODAL                          -->
+<!-- ========================================== -->
+
+<template id="modal-lens-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 5 - Defense of Lens (August 15 to August 25, 1917)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 50%; left: 28%;">
+                        <div class="pin-tooltip">Defense of Lens (August 15 to August 25, 1917)</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 6. PASSCHENDAELE MAP MODAL                 -->
+<!-- ========================================== -->
+
+<template id="modal-pass-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 6 - Passchendaele (31 July – 10 November 1917)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.75%;">
+                        <div class="pin-tooltip">Passchendaele (31 July – 10 November 1917)</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 7. CAMBRAI MAP MODAL                       -->
+<!-- ========================================== -->
+
+<template id="modal-cambrai-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 7 - Battle of Cambrai (20 November – 6 December 1917)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 47%; left: 27%;">
+                        <div class="pin-tooltip">Battle of Cambrai (20 November – 6 December 1917)</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 8. GERMAN MAP MODAL                        -->
+<!-- ========================================== -->
+
+<template id="modal-german-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 8 - German Spring Offensive (21 March – 5 April 1918)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.75%;">
+                        <div class="pin-tooltip">German Spring Offensive (21 March – 5 April 1918)</div> 
+                    </div>                   
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ============================================ -->
+<!-- 9. 100 DAYS MAP MODAL                        -->
+<!-- ============================================ -->
+
+<template id="modal-100-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 9 - 100 Days Offensive (8 August – 11 November 1918)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.75%;">
+                        <div class="pin-tooltip">100 Days Offensive (8 August – 11 November 1918)</div>
+                    </div>                    
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ============================================ -->
+<!-- 10. HINDENBURG MAP MODAL                     -->
+<!-- ============================================ -->
+
+<template id="modal-hindenburg-map">
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 10 - Assault on the Hindenburg Line (12 September – 9 October 1918)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+            
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; height: auto; display: block; user-select: none; -webkit-user-drag: none;">                    
+                    
+                    <div class="map-pin" style="top: 45.25%; left: 28.75%;">
+                        <div class="pin-tooltip">Assault on the Hindenburg Line (12 September – 9 October 1918)</div>                    
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 11. The Gallipoli Campaign Map Modal  ------->
+<!-- ========================================== -->
+
+<template id="modal-gallipoli-map" class="odw-modal">
+    <a href="#close" class="modal-bg-close" tabindex="-1"></a>
+    <a href="#close" class="modal-close-btn" style="text-decoration: none;">&times;</a>
+
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 11 - Gallipoli Campaign - 1915
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0;">                    
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; max-width: none; display: block; user-select: none; -webkit-user-drag: none;">
+                    
+                    <div class="map-pin" style="position: aboslute; top: 81%; left: 72%;">
+                        <div class="pin-tooltip">Gallipoli Campaign</div>                    
+                    </div>
+                    
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Left-click to zoom-in (+), right-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 12. The Mesopotamia Campaign Map Modal  ------->
+<!-- ========================================== -->
+
+<template id="modal-mesopotamia-map" class="odw-modal">
+    <a href="#close" class="modal-bg-close" tabindex="-1"></a>
+    <a href="#close" class="modal-close-btn" style="text-decoration: none;">&times;</a>
+
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 12 - Mesopotamian Campaign (1915 - 1918)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0">
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; max-width: none; display: block; user-select: none; -webkit-user-drag: none;">
+                    
+                    <div class="map-pin" style="position: aboslute; top: 93%; left: 95%;">
+                        <div class="pin-tooltip">Mesopotamian Campaign</div>                    
+                    </div>
+                    
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Left-click to zoom-in (+), right-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>
+
+<!-- ========================================== -->
+<!-- 13. The Palestine Campaign Map Modal  ------->
+<!-- ========================================== -->
+
+<template id="modal-palestine-map" class="odw-modal">
+    <a href="#close" class="modal-bg-close" tabindex="-1"></a>
+    <a href="#close" class="modal-close-btn" style="text-decoration: none;">&times;</a>
+
+    <div class="wide-map-modal">
+        <div class="subhead_sm" style="text-align: center; margin: 0px auto 20px auto; font-size: 1.2em; font-weight: bold;">
+            Fig. 13 - Palestine Campaign (1917 - 1918)
+        </div>
+
+        <div class="map-interactive-wrapper" style="margin-top: 20px;">
+            
+            <div class="map-zoom-controls-overlay">
+                <button class="zoom-in-btn" title="Zoom In">+</button>
+                <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+            </div>
+
+            <div class="map-scroll-container pan-container">
+                <div class="full-master-img map-coordinate-system map-target" style="max-width: none !important; height: auto; position: absolute; top: 0; left: 0">
+                    <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_16c.jpg" alt="Master Map" style="width: 100%; max-width: none; display: block; user-select: none; -webkit-user-drag: none;">
+                    
+                    <div class="map-pin" style="position: aboslute; top: 98%; left: 90%;">
+                        <div class="pin-tooltip">Palestine<br>Campaign</div>                    
+                    </div>
+                    
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="plain-text" style="text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Left-click to zoom-in (+), right-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</template><!------ END TEMPLATE BLOCK ------>

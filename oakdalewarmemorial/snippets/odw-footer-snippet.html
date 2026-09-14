@@ -1,28 +1,39 @@
-<!-- ==========================================================================
-     OAKDALE WAR MEMORIAL - FOOTER SNIPPET (v4.9.1)
+ <!-- ==========================================================================
+     OAKDALE WAR MEMORIAL - FOOTER SNIPPET (v4.9.2)
      Note: Contains global footer, copyright, and universal lightbox modal.
      ========================================================================== -->
 
 <footer class="footer-system-row">
     <div class="footer-nav-inner-flex">
-        <div class="footer-system-item"><a href="/odw-links.html">Links</a></div>
-        <div class="footer-system-item"><a href="/odw-bib.html">Bibliography</a></div>
-        <div class="footer-system-item"><a href="/odw-copy.html">Copyright</a></div>
-        <div class="footer-system-item"><a href="/odw-credits.html">Credits</a></div>
-        <div class="footer-system-item"><a href="/odw-sitemap.html">Sitemap</a></div>
-        <div class="footer-system-item"><a href="/odw-contact.html">Contact</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-links.html">&nbsp;Links&nbsp;</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-bibliography.html">Bibliography</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-copyright.html">Copyright</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-credits.html">Credits</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-sitemap.html">Sitemap</a></div>
+        <div class="footer-system-item"><a href="{ROOT}odw-contact.html">Contact</a></div>
     </div>
 </footer>
 
 <div class="copyright">
-    &copy; 2014-2026 Oakdale War Memorial | <a href="http://3291design.com" target="_blank" rel="noopener">3291design</a>. All Rights Reserved.
+    &copy; 2014-2026 Oakdale War Memorial | <a href="https://3291design.com/"><span style="font-family: arial, san-serif; font-weight: 800;">3291</span><span style="font-family: verdana, san-serif; font-weight: 400;">design&#8482</span></a> | All Rights Reserved.
 </div>
 
 <!-- GLOBAL LIGHTBOX MODAL SOCKET -->
 <div id="odw-lightbox-modal">
-    <span class="modal-close-btn">&times;</span>
     <div class="modal-content-wrapper">
+        
+        <!-- MOVED: Close button is now inside the wrapper so it can pin to the panel -->
+        <span class="modal-close-btn">&times;</span>
+        
         <img id="modal-target-img" src="" alt="Artifact">
         <div id="modal-caption-text"></div>
+        
+        <!-- NEW: HTML Bio / Map Mode -->
+        <div id="modal-target-html"></div>
+        
+        <!-- NEW: Universal Map Instructions (Hidden by default) -->
+        <div id="modal-map-instructions" class="plain-text" style="display: none; text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
     </div>
 </div>
