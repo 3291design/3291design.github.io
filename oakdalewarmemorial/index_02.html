@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I and II.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, WWII, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston">
+    
+   <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-home.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+    
+</head>
+
+<body data-era="home" data-root="/oakdalewarmemorial/">
+
+  <!-- Restored the 'home-layout' modifier to break free from the 4-tier profile grid -->
+  <div class="main-container home-layout">
+
+    <!-- TIER 1: BESPOKE HOME HEADER & NAV -->
+    <header class="home-header-zone">
+      <div class="home-main-title">Oakdale War Memorial</div>  
+    </header>
+
+    <nav class="home-navigation-menu">
+        <div class="home-nav-item"><a href="/oakdalewarmemorial/odw-memorial.html">The Memorial</a></div>
+        <div class="home-nav-item"><a href="/oakdalewarmemorial/ww1/ww1-overview.html">World War I</a></div>
+        <div class="home-nav-item"><a href="/oakdalewarmemorial/ww2/ww2-overview.html">World War II</a></div>
+        <div class="home-nav-item"><a href="/oakdalewarmemorial/odw-about.html">About Oakdale</a></div>   
+    </nav>
+    
+    <!-- TIER 2: HOMEPAGE CONTENT SPACER (Restored .home-core instead of .page-core) -->
+    <main class="home-core"></main>
+    
+    <!-- TIER 3: UNIVERSAL FOOTER SOCKET -->
+    <div id="footer-placeholder"></div>
+
+  </div> 
+  
+  <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>
