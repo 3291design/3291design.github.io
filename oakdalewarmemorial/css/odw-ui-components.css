@@ -228,8 +228,8 @@ a.artifact-btn:hover {
 }
 
 /* Page Navigation State Overrides */
+#page-western .nav-western,
 #page-beyond .nav-beyond,
-#page-monmouth .nav-monmouth,
 #page-prisoners .nav-prisoners,
 #page-return .nav-return {
     background-color: #f2f2f2;
