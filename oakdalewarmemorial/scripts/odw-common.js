@@ -1,8 +1,8 @@
 /* ==========================================================================
-   OAKDALE WAR MEMORIAL - UNIFIED INJECTION ENGINE (v5.11)
+   OAKDALE WAR MEMORIAL - UNIFIED INJECTION ENGINE (v5.2)
    Purpose: Centralized orchestrator using ES6 Modules.
    Features: Universal Lightbox, Navigation Injection, Hybrid Fetch, Dynamic Path Routing, Interactive Maps, Bookmark Routing
-   Notes: v5.11 Migrates map modals to standalone physical files fetched via 
+   Notes: v5.2 Migrates map modals to standalone physical files fetched via 
           Hybrid Fetch, integrating the external v7 map zoom engine.
    ========================================================================== */
 
@@ -186,17 +186,22 @@ document.addEventListener('click', (e) => {
 
         // CLOSE MODAL LOGIC
         if (e.target.closest('.modal-close-btn') || e.target.id === 'odw-lightbox-modal') {
-            modal.classList.remove('modal-active');
-            modal.removeAttribute('data-theme'); 
-            document.body.style.overflow = ''; 
             
-            const mapInstructions = document.getElementById('modal-map-instructions');
-            if (mapInstructions) mapInstructions.style.display = 'none';
+            if (history.state && history.state.isHybridModal) {
+                history.back(); 
+            } else {
+                modal.classList.remove('modal-active');
+                modal.removeAttribute('data-theme'); 
+                document.body.style.overflow = ''; 
+                
+                const mapInstructions = document.getElementById('modal-map-instructions');
+                if (mapInstructions) mapInstructions.style.display = 'none';
 
-            setTimeout(() => {
-                const htmlTarget = document.getElementById('modal-target-html');
-                if (htmlTarget) htmlTarget.innerHTML = '';
-            }, 300);
+                setTimeout(() => {
+                    const htmlTarget = document.getElementById('modal-target-html');
+                    if (htmlTarget) htmlTarget.innerHTML = '';
+                }, 300);
+            }
         }
     }
 
