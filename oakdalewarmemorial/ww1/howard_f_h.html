@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Herbert Howard - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Frank Herbert Howard Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Frank Herbert Howard</div>
+                <div class="soldier-detail">Age: <strong>30</strong></div>
+                <div class="soldier-detail">Rank: <strong>Acting Corporal</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>19904</strong></div>
+                <div class="soldier-detail">Regiment: <strong>4th Battalion South Wales Borderers</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-howard-f" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock (SVGs Stripped) -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_mesopotamian_campaign.html" 
+                class="artifact-btn btn-alt btn-story hybrid-fetch-trigger" 
+                data-target="sidebar">
+                    <span class="artifact-label">Mesopotamian Campaign</span>
+                </a>
+            </div>
+            
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-basra-memorial" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/basra_memorial.jpg" alt="Interior colonnade walls and name panels of the Basra War Memorial, Iraq">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Basra War Memorial, Iraq.<br>
+                        <span class="bio-thumb-sub">Photo: Memorials Officer / Wikimedia</span>
+                    </span>
+                </div>
+                <strong>Frank Herbert Howard</strong>, a coal miner, of Penmaen, but originally from Somerset, husband of Margaret Jane, had three children. He served in the 4th Battalion South Wales Borderers and arrived in the Gallipoli Peninsula in December 1915.
+            </div>
+            
+            <div class="bio-text">
+                The battalion, part of the rear-guard, was evacuated in January 1916 to Egypt then to Basra, southern <a href="/oakdalewarmemorial/stories/mh-ww1_mesopotamian_campaign.html" class="hybrid-fetch-trigger soldier-link">Mesopotamia</a> (modern Iraq), the part of the Turkish Ottoman Empire. In March the battalion, part of 13th (Western) Division, Tigris Corps, Mesopotamia Expeditionary Force, was sent north.
+            </div>
+            
+            <div class="bio-text">
+                On 9 April, at Sannaiyat, in an attempt to relieve the besieged Kut Garrison which was upstream to the south west, the division made a frontal assault across 650 yards of open marshy ground and were repulsed with heavy losses by the Turks.
+            </div>
+            
+            <div class="bio-text">
+                Acting Corporal F H Howard (19904) was killed in action on 9 April 1916, aged 30, and is commemorated on the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/88400/BASRA%20MEMORIAL" target="_blank" rel="noopener" class="profile-external-link">Basra Memorial</a>, Iraq.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Frank's widow Margaret J received pay of £1 19s and 10d and a gratuity of £11.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Mesopotamian Campaign</div>
+              <h2 class="subhead_sm">A.Cpl. Frank Herbert Howard</h2>
+              
+              <div class="bio-text">
+              <strong>Fate:</strong> Killed in Action, 9 April 1916 (Aged 30)
+              </div>
+              <hr class="main">
+              
+              <p class="display-text">Frank Herbert Howard, a coal miner from Penmaen, served with the 4th Battalion South Wales Borderers. After surviving the evacuation from Gallipoli, he was redeployed to the searing heat and marshlands of Mesopotamia in early 1916. On 9 April 1916, serving with the Tigris Corps, Acting Corporal Howard took part in a desperate frontal assault across 650 yards of open, flooded ground at Sannaiyat in an attempt to relieve the besieged garrison at Kut. The attack met with murderous fire, resulting in heavy losses. Howard was killed in action at age 30 and is commemorated on the Basra Memorial in Iraq. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/howard_fh.html">Read Full Profile</a></p>
+              
+               <!-- Story Sidebar Trigger -->
+                  <a href="/oakdalewarmemorial/stories/mh-ww1_mesopotamian_campaign.html" class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar"><span class="artifact-label">Mesopotamian Campaign</span>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Howard) -->
+  <template id="modal-medals-howard-f">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Acting Corporal Frank Herbert Howard</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Basra Memorial) -->
+  <template id="modal-basra-memorial">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/basra_memorial.jpg" alt="Basra War Memorial, Iraq">
+          
+          <div class="modal-caption">
+              Basra War Memorial, Iraq
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/88400/BASRA%20MEMORIAL" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+  <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+   <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

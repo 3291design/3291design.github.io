@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Young - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Albert Young Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Albert Young</div>
+                <div class="soldier-detail">Age: <strong>23</strong></div>
+                <div class="soldier-detail">Rank: <strong>Rifleman</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>2362</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1st Battalion, Monmouthshire Regiment (28th Division)</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-young-a" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+         <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_return-home.html" 
+                class="artifact-btn btn-alt2 btn-story hybrid-fetch-trigger" 
+                data-target="sidebar"><span class="artifact-label">Reserve Battalions</span>
+                </a>
+            </div> 
+            
+            <!-- Biography Body Paragraphs -->
+            <div class="bio-text">
+                <strong>Albert Young</strong> was a local coal miner, the eldest son of William and Catherine Young of Llangynidr Road, Beaufort. He traveled to Blackwood to answer the call to arms, enlisting into the 1st Battalion, Monmouthshire Regiment. As part of the 28th Division, he deployed overseas with his battalion, braving the winter crossing to arrive on the battlefields of France and Flanders in February 1915. 
+            </div>
+            
+            <div class="bio-text">
+                He survived the bitter initial combat campaigns of 1915 on the Western Front. Later, while serving with the 3rd/1st Battalion (a home-based reserve and training unit established to supply fresh drafts to the front-line elements), he was stationed back on home soil. 
+            </div>
+            
+            <div class="bio-text">
+                Tragically, Rifleman Young (2362) was killed accidentally while on duty in Great Britain on 31 March 1916, aged just 23. Because his passing occurred at home, his family was spared the agony of a distant, unreachable grave. His body was returned to the valley, and he is buried locally within the <a href="#" target="_blank" rel="noopener" class="profile-external-link">Jerusalem Chapelyard, Woodfieldside</a>, where his resting place is permanently marked with an official Commonwealth War Graves Commission headstone. He is also honored on the grand Battalion War Memorial housed inside St. Woolos Cathedral, Newport.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Home Front — Spring 1916</div>
+              <h2 class="subhead_sm">Rifleman Albert Young</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed accidentally on duty, 31 March 1916 (Aged 23)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">A local coal miner, Albert Young survived the bitter campaigns of 1915 on the Western Front with the 1st Battalion Monmouthshire Regiment. While serving with the reserve 3rd/1st Battalion back on home soil, he was tragically killed in an accident on duty. Because his passing occurred in the UK, his family was spared a distant grave; he rests locally at the Jerusalem Chapelyard in Woodfieldside. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/young_a.html">Read Full Profile</a></p>
+
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_return-home.html" 
+                 class="artifact-btn btn-story btn-alt2 hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Reserve Battalions</span>
+              </a>
+              
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Young) -->
+  <template id="modal-medals-young-a">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Rifleman Albert Young</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

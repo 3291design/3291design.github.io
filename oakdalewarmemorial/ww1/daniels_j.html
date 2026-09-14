@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehoida Daniels - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+    
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Jehoida Daniels Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Jehoida Daniels</div>
+                <div class="soldier-detail">Age: <strong>30</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>85937</strong></div>
+                <div class="soldier-detail">Regiment: <strong>Army Service Corps / 8th Battalion King's (Liverpool Reg.)</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-daniels-j" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Gravestone Button -->
+                <a href="/oakdalewarmemorial/images/daniels_j_headstone.jpg"
+                  data-lightbox="artifact"
+                  data-caption="Military Gravestone: Private Jehoida Daniels<br>Killed in Action, September 11, 1918 (Aged 30)"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 22V2h16v20H4zm2-2h12V4H6v16zm5-12h2v3h3v2h-3v5h-2v-5H8v-2h3V8z" fill="currentColor"/></svg>
+                   <span class="artifact-label">Gravestone Photo</span>
+                </a>
+                
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_hundred_days.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">100 Days Offensive</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-moeuvres-cemetery" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/moeuvres_cemetery.jpg" alt="Moeuvres Communal Cemetery Extension, France">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Moeuvres Communal Cemetery Extension.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Jehoida Daniels</strong>, a collier, was the youngest son of Mrs. Catherine Hughes of Rhiw Syr Dafydd and the late John Daniels, and likely the husband of Margaret. He initially joined the Army Service Corps but later transferred to the 8th Battalion King's (Liverpool Regiment). He arrived in France in April 1915. 
+            </div>
+            
+            <div class="bio-text">
+                By September 1918, the battalion was part of the 57th Division stationed southeast of Arras, fighting in Haig's <a href="/oakdalewarmemorial/stories/mh-ww1_hundred_days.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">100 Days Offensive</a>. On 11 September, the division captured part of the village of Moeuvres, west of Cambrai.
+            </div>
+            
+            <div class="bio-text">
+                Private J Daniels (85937) was killed in action during this engagement on 11 September 1918, aged 30. He is permanently commemorated and buried in the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/35700/MOEUVRES%20COMMUNAL%20CEMETERY%20EXTENSION" target="_blank" rel="noopener" class="profile-external-link">Moeuvres Communal Cemetery Extension</a> in France.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Jehoida's widow, Margaret M., received his remaining back-pay of £9 7s 9d and a war gratuity of £16.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | The 100 Days Offensive</div>
+              <h2 class="subhead_sm">Pte. Jehoida Daniels</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 11 September 1918 (Aged 30)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">A collier from Oakdale, Jehoida Daniels initially joined the Army Service Corps before transferring to the 8th Battalion King's (Liverpool Regiment). After arriving in France in 1915, he served through to the decisive 100 Days Offensive. During operations to capture the village of Moeuvres, west of Cambrai, Private Daniels was killed in action on 11 September 1918 at the age of 30. He rests in the Moeuvres Communal Cemetery Extension. 
+                <br>
+                <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/daniels_j.html">Read Full Profile</a></p>
+
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_hundred_days.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">100 Days Offensive</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Daniels) -->
+  <template id="modal-medals-daniels-j">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Jehoida Daniels</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template>
+
+  <!-- THUMBNAIL MODAL (Moeuvres Communal Cemetery Extension) -->
+  <template id="modal-moeuvres-cemetery">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/moeuvres_cemetery.jpg" alt="Moeuvres Communal Cemetery Extension, France">
+          
+          <div class="modal-caption">
+              Moeuvres Communal Cemetery Extension, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/35700/MOEUVRES%20COMMUNAL%20CEMETERY%20EXTENSION" target="_blank" rel="noopener" class="plain-text"><span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website</a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

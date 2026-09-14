@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Edward Dyer - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+    
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Albert Edward Dyer Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Albert Edward Dyer</div>
+                <div class="soldier-detail">Age: <strong>47</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>387635</strong></div>
+                <div class="soldier-detail">Regiment: <strong>King's Own Yorkshire Light Infantry and Labour Corps</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-dyer" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!--Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_homefront-labour.html" 
+                   class="artifact-btn btn-alt2 btn-story hybrid-fetch-trigger" data-target="sidebar">
+                 <span class="artifact-label">The Return Home</span>
+                </a>
+            </div> 
+            
+            <!-- Biography Body Paragraphs -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger (Optional/Commented out in original, kept clean) -->
+                <strong>Albert Edward Dyer</strong>, stone cutter, of Oakdale, widower of Mary Jane, served initially in the King's Own (Yorkshire Light Infantry), arriving in France in May 1915. Later he transferred to the Labour Corps.
+            </div>
+            
+            <div class="bio-text">
+                Private A E Dyer (387635) succumbed to his wounds on 6 April 1919, aged 47, at <a href="/oakdalewarmemorial/stories/mh-ww1_homefront-labour.html" class="hybrid-fetch-trigger soldier-link">Manor Hill Auxiliary Hospital</a> in Birkenhead. He was brought home to Wales and is buried in the <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/42562/woodfieldside-jerusalem-chapelyard/" target="_blank" rel="noopener" class="profile-external-link">Jerusalem Chapelyard, Woodfieldside</a>, with a CWGC headstone bearing the inscription, "In loving memory of our dear Father."
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Albert died of wounds in Manor Hill Auxiliary Hospital, Birkenhead (a Red Cross hospital for those less seriously wounded or convalescing). His daughter, Mrs Annie Tedstone of Blackwood received pay of £35 3s and 10d and a gratuity of £24 and 10s.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Return Home | Labour Corps &amp; Post-War Hospitals</div>
+              <h2 class="subhead_sm">Pte. Albert Edward Dyer</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds in Great Britain, 6 April 1919 (Aged 47)
+              </div>
+              
+              <hr class="basic">
+              
+              <p class="display-text">Forty-seven-year-old Albert Edward Dyer, a stone cutter of Oakdale and widower of Mary Jane, landed in France in May 1915 with the King's Own Yorkshire Light Infantry before later transferring to the Labour Corps. Having survived the frontline years of the war, Private Dyer tragically succumbed to his wounds on April 6, 1919, at Manor Hill Auxiliary Hospital in Birkenhead. He rests in the Jerusalem Chapelyard at Woodfieldside. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/dyer_ae.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_homefront-labour.html" 
+                 class="artifact-btn btn-story btn-alt2 hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">The Return Home</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Dyer) -->
+  <template id="modal-medals-dyer">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Albert Edward Dyer</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Jerusalem Chapelyard) -->
+  <template id="modal-jerusalem">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/woodfieldside_chapelyard.jpg" alt="Jerusalem Chapelyard, Woodfieldside landscape view">
+          
+          <div class="modal-caption">
+              Jerusalem Chapelyard, Woodfieldside
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/42562/woodfieldside-jerusalem-chapelyard/" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+  <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

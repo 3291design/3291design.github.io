@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilbert Phillips - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Gilbert Phillips Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Gilbert Phillips</div>
+                <div class="soldier-detail">Age: <strong>23</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>1355</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1st Battalion Welsh Guards</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-phillips" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock (Single Button - No Gravestone) -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Passchendaele</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-dozinghem" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/dozinghem_cemetery.jpg" alt="Beautiful sunlit panorama of Dozinghem Military Cemetery, Poperinge, Belgium, showcasing pristine rows of white headstones under a mature tree canopy">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Dozinghem Military Cemetery, Belgium.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Gilbert Phillips</strong> was a local coal miner and the son of William and Charlotte Phillips, a couple from the Forest of Dean who moved to Wales and settled at 27 Central Avenue, Oakdale. He answered the call early on, enlisting in the elite 1st Battalion, Welsh Guards, and proceeded overseas to arrive in France in August 1915.
+            </div>
+            
+            <div class="bio-text">
+                At the tail end of July 1917, during the intense preparations for the massive Allied offensive in <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Flanders</a>, his battalion was stationed on waterlogged, flooded ground surrounding Boesinghe Chateau north of Ypres. On 29 July, the battalion advanced to occupy the front-line trenches situated just west of the Yser Canal under relentless enemy shellfire.
+            </div>
+            
+            <div class="bio-text">
+                Private G Phillips (1355) sustained fatal injuries in the line and died of wounds the following day on 30 July 1917, aged 23. He is buried in <a href="http://www.cwgc.org/find-a-cemetery/cemetery/15300/DOZINGHEM%20MILITARY%20CEMETERY" target="_blank" rel="noopener" class="profile-external-link">Dozinghem Military Cemetery, Poperinge, Belgium</a>, a burial ground deliberately placed in close proximity to the cluster of front-line Casualty Clearing Stations. He is commemorated also on the regional Abertillery War Memorial.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Following his service, Gilbert's mother Charlotte received an outstanding back-pay settlement of £1 3s 9d.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE PAYLOAD -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Passchendaele (Third Ypres)</div>
+              <h2 class="subhead_sm">Pte. Gilbert Phillips</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 30 July 1917 (Aged 23)
+              </div>
+              <hr class="main">
+              
+              <p class="display-text">Gilbert Phillips, a local coal miner, enlisted in the elite 1st Battalion, Welsh Guards. In the summer of 1917, as the Allies prepared for a massive offensive in Flanders, his battalion was stationed on waterlogged, flooded ground surrounding Boesinghe Chateau north of Ypres. Pushing forward to occupy front-line trenches west of the Yser Canal, Private Phillips sustained fatal injuries under relentless enemy shellfire. He died of his wounds on 30 July 1917 at just 23 years old and is buried in Dozinghem Military Cemetery. 
+                <br /><span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/phillips_g.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Passchendaele</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Phillips) -->
+  <template id="modal-medals-phillips">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Gilbert Phillips</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Dozinghem) -->
+  <template id="modal-dozinghem">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/dozinghem_cemetery.jpg" alt="Beautiful sunlit panorama of Dozinghem Military Cemetery, Poperinge, Belgium, showcasing pristine rows of white headstones under a mature tree canopy">
+          
+          <div class="modal-caption">
+              Dozinghem Military Cemetery, Belgium
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/15300/DOZINGHEM%20MILITARY%20CEMETERY" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

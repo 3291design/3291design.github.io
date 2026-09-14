@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Shaw - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Frank Shaw Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Frank Shaw</div>
+                <div class="soldier-detail">Age: <strong>28</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>17668</strong></div>
+                <div class="soldier-detail">Regiment: <strong>12th (Service) Battalion (3rd Gwent) South Wales Borderers</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-shaw" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <div class="profile-artifact-dock">
+            
+                <a href="/oakdalewarmemorial/images/shaw_f_headstone.jpg"
+                  data-lightbox="artifact"
+                  data-caption="Military Gravestone: Pte. Frank Shaw<br />Died of Wounds, February 4, 1918 (Aged 28)"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 22V2h16v20H4zm2-2h12V4H6v16zm5-12h2v3h3v2h-3v5h-2v-5H8v-2h3V8z" fill="currentColor"/></svg>
+                    <span class="artifact-label">Gravestone Photo</span>
+                </a>
+                
+                <!-- Story Sidebar Trigger -->
+                    <a href="/oakdalewarmemorial/stories/mh-ww1_battle_of_cambrai.html" 
+                      class="artifact-btn btn-story hybrid-fetch-trigger" 
+                      data-target="sidebar"><span class="artifact-label">Battle of Cambrai</span>
+                    </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-achiet" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/achiet_le_grand.jpg" alt="Immaculate stone rows extending across green lawns at Achiet-le-Grand Communal Cemetery Extension, France">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Achiet-le-Grand Extension, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Frank Shaw</strong> was born in Hastings, Sussex, later relocating to Monmouthshire to find employment in the industrial valleys. He enlisted into the 12th (Service) Battalion (3rd Gwent), South Wales Borderers, deploying early in the war and arriving in France in July 1915.
+            </div>
+            
+            <div class="bio-text">
+                Throughout December 1917 and January 1918, his battalion—operating as a frontline attack unit within the 40th Division—held a dangerous, cold sector in the lines directly west of Cambrai. This area saw constant attrition following the major tank battles of the previous autumn.
+            </div>
+            
+            <div class="bio-text">
+                Private F Shaw (17668) sustained severe battlefield injuries during intense winter trench service during the <a href="/oakdalewarmemorial/stories/mh-ww1_battle_of_cambrai.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Battle of Cambrai</a> and succumbed to his injuries on 4 February 1918, aged 28. He is buried in <a href="http://www.cwgc.org/find-a-cemetery/cemetery/30002/ACHIET-LE-GRAND%20COMMUNAL%20CEMETERY%20EXTENSION" target="_blank" rel="noopener" class="profile-external-link">Achiet-le-Grand Communal Cemetery Extension, France</a>. This specific site was chosen as it sat immediately adjacent to the concentrated railheads and casualty clearing stations managing frontline evacuees.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Battle of Cambrai</div>
+              <h2 class="subhead_sm">Pte. Frank Shaw</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 4 February 1918 (Aged 28)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Frank Shaw originally hailed from Hastings before moving to the Welsh valleys to work. A veteran of the 1915 campaigns with the 12th South Wales Borderers, he served through the bitter winter trench holdouts west of Cambrai. Severely wounded during operations, he succumbed to his injuries on 4 February 1918 at the age of 28, and rests at Achiet-le-Grand Communal Cemetery Extension. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/shaw_f.html">Read Full Profile</a></p>
+              
+             <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_battle_of_cambrai.html" 
+                class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Battle of Cambrai</span>
+                </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Shaw) -->
+  <template id="modal-medals-shaw">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Frank Shaw</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Achiet-le-Grand Extension) -->
+  <template id="modal-achiet">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/achiet_le_grand.jpg" alt="Immaculate stone rows extending across green lawns at Achiet-le-Grand Communal Cemetery Extension, France">
+          
+          <div class="modal-caption">
+              Achiet-le-Grand Communal Cemetery Extension, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/30002/ACHIET-LE-GRAND%20COMMUNAL%20CEMETERY%20EXTENSION" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

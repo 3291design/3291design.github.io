@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frederick John Symons - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Frederick John Symons Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Frederick John Symons</div>
+                <div class="soldier-detail">Age: <strong>18</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>2896</strong></div>
+                <div class="soldier-detail">Regiment: <strong>2nd Battalion Monmouthshire</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-symons" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock -->
+            <div class="profile-artifact-dock">
+                
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html"  
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">2nd Battle of Ypres</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-menin-gate" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/menin_gate_memorial.jpg" alt="Menin Gate Memorial to the Missing in Belgium">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Ypres (Menin Gate) Memorial, Belgium.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Frederick John Symons</strong>—erroneously listed on the local stone war memorial under the surname "Simmonds"—was a young colliery worker. Born in Plymouth, Devon, he was the eldest son of John and Emily Symons, a Cornish couple who migrated to Wales and settled at Rhiw Syr Dafydd. He enlisted with the local Territorial forces, joining the 2nd Battalion, Monmouthshire Regiment, and deployed across the English Channel to arrive in France in February 1915.
+            </div>
+            
+            <div class="bio-text">
+                In early May 1915, during the brutal, shell-torn days of the <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Second Battle of Ypres</a>, his battalion operated as part of the 12th Brigade. They were pushed straight into defensive positions near the Frezenberg Ridge to stem a massive German breakthrough attempt that was accompanied by heavy artillery bombardments.
+            </div>
+            
+            <div class="bio-text">
+                Private Symons (2896) was killed in action during this desperate stand on 8 May 1915, aged just 18 years old. Because his body could never be identified or recovered from the devastated landscape, he is commemorated on the historic walls of the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/91800/YPRES%20(MENIN%20GATE)%20MEMORIAL" target="_blank" rel="noopener" class="profile-external-link">Ypres (Menin Gate) Memorial, Belgium</a>. His name stands engraved among the missing who fell in the Ypres Salient. He is also honored on the Battalion Memorial within St Cadoc's Church, Trevethin.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-data-italic"><b>Note:</b> Remembered on Oakdale War Memorial as "Simmonds"</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Western Front | 2nd Battle of Ypres</div>
+              <h2 class="subhead_sm">Pte. Frederick J. Symons</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 8 May 1915 (Aged 18)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Eighteen-year-old colliery worker Frederick John Symons—remembered locally under the misspelled surname "Simmonds"—crossed the Channel in early 1915 with the 2nd Battalion, Monmouthshire Regiment. Born in Plymouth but raised in Rhiw Syr Dafydd, the young soldier was thrust into the brutal defense of Frezenberg Ridge during the Second Battle of Ypres. On 8 May 1915, Private Symons fell in action alongside his comrades. Claimed by the devastated landscape, he has no known grave. Today, his name rests peacefully among the missing on the Menin Gate, forever eighteen. 
+                <br />
+                <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/symons_f_j.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">2nd Battle of Ypres</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Symons) -->
+  <template id="modal-medals-symons">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Frederick John Symons</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Menin Gate) -->
+  <template id="modal-menin-gate">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/menin_gate_memorial.jpg" alt="The Menin Gate Memorial at Ypres, Belgium spanning the road">
+          
+          <div class="modal-caption">
+              Menin Gate Memorial, Ypres, Belgium
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/91800/YPRES%20(MENIN%20GATE)%20MEMORIAL" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

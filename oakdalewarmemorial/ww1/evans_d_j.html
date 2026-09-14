@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David John Evans - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+    
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="David John Evans Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">David John Evans*</div>
+                <div class="soldier-detail">Age: <strong>24 (?)</strong></div>
+                <div class="soldier-detail">Rank: <strong>Gunner</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>44181</strong></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Garrison Artillery</strong></div>
+                <div class="soldier-detail">Medals: <strong>Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-evans" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_palestine_campaign.html" 
+                   class="artifact-btn btn-alt btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Palestine Campaign</span>
+                </a>
+            </div>
+            
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-ramleh" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/ramleh_war_cemetery.jpg" alt="Beautiful sunlit rows of headstones at Ramleh War Cemetery">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Ramleh War Cemetery, Israel.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>David John Evans</strong>, of Oakdale, <em>(eldest son of Henry and Mary Evans of Pontypridd?)</em> served in the Royal Garrison Artillery. In late 1917 he was in the 380th Siege Battery, a heavy artillery unit of XXI Corps, part of the Egyptian Expeditionary Force in <a href="/oakdalewarmemorial/stories/mh-ww1_palestine_campaign.html" class="hybrid-fetch-trigger soldier-link">Palestine</a>, part of the Ottoman Empire.
+            </div>
+            
+            <div class="bio-text">
+                At the beginning of November, having captured Beersheba from the Turks, the Expeditionary Force took Gaza and pushed north, with XXI Corps on the left nearer the coast, taking Jerusalem in early December.
+            </div>
+            
+            <div class="bio-text">
+                Gunner D J Evans (44181) died of wounds 19 December 1917, <em>aged 24?</em>, and is buried in the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/72001/RAMLEH%20WAR%20CEMETERY" target="_blank" rel="noopener" class="profile-external-link">Ramleh War Cemetery</a>, Palestine (now modern day Israel).
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Pay of £12-15-3 & gratuity of £1-2-5 to brother Andrew J; £13-17-7 to Gwilym M.</span>
+                <span class="source-heading" style="margin-top: 10px;">Omission Historical Note:</span>
+                <span class="source-data-italic">*His name does not appear on the physical Oakdale Memorial.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Beyond the Western Front | The Palestine Campaign</div>
+              <h2 class="subhead_sm">Gunner David John Evans</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 19 December 1917 (Aged 24)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Twenty-four-year-old David John Evans served in the Royal Garrison Artillery. In late 1917, he was in the 380th Siege Battery, a heavy artillery unit of XXI Corps, part of the Egyptian Expeditionary Force. After taking part in the push north through Gaza and the capture of Jerusalem, Gunner Evans died of wounds on 19 December 1917. He is buried in the Ramleh War Cemetery in modern-day Israel. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/evans_d_j.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_palestine_campaign.html" 
+                 class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Palestine Campaign</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Evans) -->
+  <template id="modal-medals-evans">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Gunner David John Evans</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Ramleh War Cemetery) -->
+  <template id="modal-ramleh">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/ramleh_war_cemetery.jpg" alt="Beautiful sunlit rows of headstones at Ramleh War Cemetery">
+          
+          <div class="modal-caption">
+              Ramleh War Cemetery, Israel
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/72001/RAMLEH%20WAR%20CEMETERY" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+  <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

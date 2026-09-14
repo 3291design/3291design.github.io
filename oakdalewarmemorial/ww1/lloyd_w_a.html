@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Arthur Lloyd - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="William Arthur Lloyd Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">William Arthur Lloyd</div>
+                <div class="soldier-detail">Age: <strong>22</strong></div>
+                <div class="soldier-detail">Rank: <strong>Sapper</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>Deal/1361/S</strong></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Marines Divisional Engineers</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-lloyd-w" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock with Dual Buttons (SVGs Stripped) -->
+            <div class="profile-artifact-dock">
+                <!-- Gravestone Button -->
+                <a href="/oakdalewarmemorial/images/lloyd_w_headstone.jpg"
+                  data-lightbox="artifact"
+                  data-caption="Military Gravestone: Sapper William Arthur Lloyd<br />Killed in Action, 30 November 1915, (Aged 22)"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 22V2h16v20H4zm2-2h12V4H6v16zm5-12h2v3h3v2h-3v5h-2v-5H8v-2h3V8z" fill="currentColor"/></svg>
+                   <span class="artifact-label">Gravestone Photo</span>
+               </a>
+               
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" 
+                   class="artifact-btn btn-alt btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar">
+                    <span class="artifact-label">Gallipoli Campaign</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-pink-farm" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/pink_farm_cemetery.jpg" alt="Beautiful sunlit panorama of Pink Farm Cemetery, Gallipoli, Turkey">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Pink Farm Cemetery, Helles.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>William Arthur Lloyd</strong>, born 19 November 1893, farmer's son of Edwin and Maria Lloyd of Tir Sais Farm, enlisted in April 1915.
+            </div>
+            
+            <div class="bio-text">
+                In the autumn he was posted to the divisional signal company of the Royal Marines Divisional Engineers, attached to 2nd Royal Naval Brigade HQ, Royal Naval Division.
+            </div>
+            
+            <div class="bio-text">
+                In late 1915 the division was in <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" class="hybrid-fetch-trigger soldier-link">Gallipoli</a>, stationed at the Helles Front at the southern tip of the peninsula. Sapper W A Lloyd (Deal/1361/S) was shot in the head and killed in action 30 November 1915, aged 22. He lies in <a href="http://www.cwgc.org/find-a-cemetery/cemetery/66301/PINK%20FARM%20CEMETERY,%20HELLES" target="_blank" rel="noopener" class="profile-external-link">Pink Farm Cemetery, Helles</a>.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Beyond the Western Front | Gallipoli Campaign</div>
+              <h2 class="subhead_sm">Sapper William Arthur Lloyd</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 30 November 1915 (Aged 22)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">William Arthur Lloyd, a farmer's son from Tir Sais Farm, enlisted in April 1915 and served as a Sapper in the Royal Marines Divisional Engineers. Deployed to the perilous Helles Front at the southern tip of the Gallipoli peninsula, he endured the brutal conditions of the campaign. On 30 November 1915, at just 22 years of age, Sapper Lloyd was shot in the head and killed in action. He rests today in Pink Farm Cemetery at Helles. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/lloyd_w_a.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+                  <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Gallipoli Campaign</span>
+                  </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Lloyd) -->
+  <template id="modal-medals-lloyd-w">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Sapper William Arthur Lloyd</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Pink Farm Cemetery) -->
+  <template id="modal-pink-farm">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/pink_farm_cemetery.jpg" alt="Pink Farm Cemetery, Gallipoli, Turkey">
+          
+          <div class="modal-caption">
+              Pink Farm Cemetery, Helles, Gallipoli
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/66301/PINK%20FARM%20CEMETERY,%20HELLES" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

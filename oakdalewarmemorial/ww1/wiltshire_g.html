@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Wiltshire - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <a href="/oakdalewarmemorial/images/wiltshire_g_oakdale_lg_02.jpg" data-lightbox="artifact"
+                  data-caption="Historical photograph of George Wiltshire"><img src="/oakdalewarmemorial/images/wiltshire_g_oakdale_sm.gif" alt="George Wiltshire" class="soldier-portrait-img"></a>
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">George Wiltshire*</div>
+                <div class="soldier-detail">Age: <strong>26</strong></div>
+                <div class="soldier-detail">Rank: <strong>Gunner</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>97039</strong></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Horse Artillery and Royal Field Artillery (RFA)</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-wiltshire" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <div class="profile-artifact-dock">
+                <!-- Newspaper Clipping Button -->
+                <a href="/oakdalewarmemorial/images/wiltshire_g_oakdale_lg.jpg"
+                  data-lightbox="artifact"
+                  data-caption="Historical newspaper obituary clipping for George Wiltshire"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18">
+                       <path d="M19 19H5V5H19M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M13.96 12.29L11.21 15.83L9.25 13.47L6.5 17H17.5L13.96 12.29Z" fill="currentColor"/>
+                   </svg>
+                   <span class="artifact-label">View Press Clipping</span>
+                </a>
+
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_spring_offensive.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">German Spring Offensive</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-roclincourt" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/roclincourt_military_cemetery.jpg" alt="Beautifully aligned lines of white stone commonwealth graves at Roclincourt Military Cemetery, France, surrounded by green borders">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Roclincourt Military Cemetery, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>George Wiltshire</strong>, born in Bristol, a collier at Oakdale, was the husband of Polly. He served in the Royal Horse Artillery and Royal Field Artillery (RFA), and arrived in France in October 1915. In early 1918 he was in the 55th Division in the divisional ammunition column, RFA. In March the division was in the front line at Givenchy and Festubert east of Béthune and, facing strong enemy raids during the <a href="/oakdalewarmemorial/stories/mh-ww1_spring_offensive.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">German Spring Offensive</a>, made a courageous stand.
+            </div>
+            
+            <div class="bio-text">
+                Gunner G Wiltshire (97039) was killed in action 28 March 1918, aged 26, and is buried at <a href="http://www.cwgc.org/find-a-cemetery/cemetery/58500/ROCLINCOURT%20MILITARY%20CEMETERY" target="_blank" rel="noopener" class="profile-external-link">Roclincourt Military Cemetery</a>, France, a frontline cemetery. He is also commemorated on the Abertillery War Memorial and on the St Michael's Church War Memorial, Abertillery.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">George's wife Polly received pay of £4 15s 11d and a gratuity of £16 10s.</span>
+                <span class="source-heading" style="margin-top: 10px;">Omission Historical Note:</span>
+                <span class="source-data-italic">*His name does not appear on the physical Oakdale Memorial.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | German Spring Offensive</div>
+              <h2 class="subhead_sm">Gunner George Wiltshire</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 28 March 1918 (Aged 26)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Gunner George Wiltshire of the Royal Field Artillery served with the 55th Division's ammunition column during the critical defensive stands around Givenchy and Festubert in March 1918. Married to Polly and working as an Oakdale collier, he fell in action on March 28, 1918, at the height of the German Spring Offensive. He rests at Roclincourt Military Cemetery. Note: Although closely tied to the valley, his name does not appear on the physical Oakdale war memorial. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/wiltshire_g.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_spring_offensive.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">German Spring Offensive</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Wiltshire) -->
+  <template id="modal-medals-wiltshire">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Gunner George Wiltshire</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Roclincourt Military Cemetery) -->
+  <template id="modal-roclincourt">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/roclincourt_military_cemetery.jpg" alt="Beautifully aligned lines of white stone commonwealth graves at Roclincourt Military Cemetery, France, surrounded by green borders">
+          
+          <div class="modal-caption">
+              Roclincourt Military Cemetery, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/58500/ROCLINCOURT%20MILITARY%20CEMETERY" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+ <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+   <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

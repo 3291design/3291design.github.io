@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edward Watkins - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <a href="/oakdalewarmemorial/images/watkins_e_sm.gif" 
+                   data-lightbox="artifact" 
+                   data-caption="Photograph of Edward Watkins">
+                    <img src="/oakdalewarmemorial/images/watkins_e_sm.gif" alt="Private Edward Watkins Portrait" class="soldier-portrait-img">
+                </a>
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Edward Watkins</div>
+                <div class="soldier-detail">Age: <strong>23</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>13206</strong></div>
+                <div class="soldier-detail">Regiment: <strong>4th (Service) Battalion South Wales Borderers</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-watkins-e" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock (Dual Assets: SVGs Stripped) -->
+            <div class="profile-artifact-dock">
+                <a href="/oakdalewarmemorial/images/watkins_e_group_sm.gif" 
+                   data-lightbox="artifact" 
+                   class="artifact-btn btn-group-photo">
+                    <span class="artifact-label">View Group Photo</span>
+                </a>
+
+                <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" 
+                   class="artifact-btn btn-alt btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar">
+                    <span class="artifact-label">Gallipoli Campaign</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-helles-memorial" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/helles_memorial.jpg" alt="Towering stone obelisk of the Helles Memorial in Gallipoli, Turkey, overlooking the Aegean Sea under a bright blue sky">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        The Helles Memorial, Turkey.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Edward Watkins</strong> was a local coal miner, the son of Edward and Emily Watkins of 58 Markham Crescent, Oakdale. He enlisted into the 4th (Service) Battalion, South Wales Borderers, which formed a vital component of the 40th Brigade within the Mediterranean Expeditionary Force (MEF). The overarching goal of this campaign was to seize the mountainous, heavily defended <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Gallipoli Peninsula</a> in south-west Turkey to gain total strategic control over the critical Dardanelles Straits.
+            </div>
+            
+            <div class="bio-text">
+                The battalion first disembarked at the southern tip of Gallipoli in July 1915. Shortly thereafter, on 4 August, they made landfall at Anzac Cove. On 6 August, despite being entirely unblooded in major combat, these young Welsh troops successfully led a daring brigade assault on Damakjelik Ridge—a vital spur running off the dominant Sari Bair landmass—stubbornly holding the high ground against fierce Turkish counter-attacks.
+            </div>
+            
+            <div class="bio-text">
+                On 21 August, the battalion launched a costly, unsuccessful frontal attack on the fortified heights of Scimitar Hill, marking the bloody conclusion of the Battle of Sari Bair. In a testament to the sheer scale of the fighting, over 400 officers and men out of the initial 775 who landed on 4 August had been killed, wounded, or lost in the intense summer heat on that rocky, inhospitable terrain.
+            </div>
+
+            <div class="bio-text">
+                Private Watkins (13206) was severely wounded during these high-altitude assaults and was evacuated to an allied hospital ship anchored off the coast. He tragically died of his wounds at sea on 24 August 1915, aged 23, while on board the <strong>HM Hospital Ship <em>Gloucester Castle</em></strong>. Having no known terrestrial grave, he is permanently commemorated on the historic <a href="http://www.cwgc.org/find-a-cemetery/cemetery/76100/HELLES%20MEMORIAL" target="_blank" rel="noopener" class="profile-external-link">Helles Memorial, Gallipoli, Turkey</a>.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Following his passing at sea, Edward's father, also named Edward, received his remaining back-pay settlement of £3 10s 8d, along with a standard war gratuity of £3.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Beyond the Western Front | Gallipoli Campaign</div>
+              <h2 class="subhead_sm">Pte. Edward Watkins</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds at Sea, 24 August 1915 (Aged 23)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Edward Watkins was a local coal miner from Markham Crescent who served as a Private in the 4th South Wales Borderers. Landing at Gallipoli in July 1915, he fought through the brutal assaults at Damakjelik Ridge and Scimitar Hill during the August offensive. Severely wounded during the fighting, he was evacuated to HM Hospital Ship Gloucester Castle, where he tragically succumbed to his injuries on 24 August 1915 at the age of 23. Commemorated on the Helles Memorial. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/watkins_e.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+                  <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Gallipoli Campaign</span>
+                  </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Watkins) -->
+  <template id="modal-medals-watkins-e">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Edward Watkins</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Helles Memorial) -->
+  <template id="modal-helles-memorial">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/helles_memorial.jpg" alt="The Helles Memorial in Turkey">
+          
+          <div class="modal-caption">
+              The Helles Memorial, Turkey
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/76100/HELLES%20MEMORIAL" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

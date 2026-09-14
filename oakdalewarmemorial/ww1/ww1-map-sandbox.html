@@ -1,0 +1,521 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Map Sandbox</title>
+    
+    <style>
+        /* Sandbox Dark Canvas */
+        body {
+            background-color: #444;
+            color: #ddd;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* --- SANDBOX OVERRIDE: FORCE LIGHTBOX TO STAY OPEN & CENTERED --- */
+        #odw-lightbox-modal {
+            position: relative !important;
+            display: flex !important;
+            background-color: rgba(0, 0, 0, 0.85) !important;
+            backdrop-filter: blur(5px);
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+    </style>
+
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css?v=2">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-lightbox.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-maps.css">
+
+</head>
+
+<body>
+
+<!-- ========================================================== -->
+<!-- PASTE YOUR <template> MAP BLOCK RIGHT HERE TO TEST IT LIVE -->
+<!-- ========================================================== -->
+
+<!-- ========================================== -->
+<!-- A. Master Map -->
+<!-- ========================================== -->
+
+<template id="hybrid-summary-payload">
+    <div class="subhead_sm" style="text-align: center; margin: 0px auto 15px auto; font-size: 1.2em; font-weight: bold;">
+        Sandbox Map
+    </div>
+
+    <div class="map-interactive-wrapper" data-start-zoom="100" data-start-x="0" data-start-y="0">        
+        <div class="map-zoom-controls-overlay">
+            <button class="zoom-in-btn" title="Zoom In">+</button>
+            <button class="zoom-out-btn" title="Zoom Out">&minus;</button>
+        </div>
+        
+        <div class="map-scroll-container pan-container">
+           <div class="full-master-img map-coordinate-system map-target"> 
+                <img src="/oakdalewarmemorial/images/WW1-Alliances-Map_18b.jpg" alt="Master Map">                   
+                
+                <!--- 1. FLANDERS ---> 
+                 <div class="map-pin" style="position: absolute; top: 18.25%; left: 23%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Trench Warfare in Flanders</span>
+                        <span class="tooltip-campaign-date">1914 - 1915</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Albert Stewart Price</span>
+                            <span class="tooltip-status">killed in action, 5 April 1915</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END FLANDERS --->
+        
+                <!--- 2. 2ND BATTLE OF YPRES ---> 
+                <div class="map-pin" style="position: absolute; top: 19.65%; left: 19.85%;">
+                    <div class="pin-tooltip" data-pos="right">
+                        <span class="tooltip-campaign-title">2nd Battle of Ypres</span>
+                        <span class="tooltip-campaign-date">22 April – 25 May 1915</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Thomas Benjamin Havard,</span>
+                            <span class="tooltip-name">Pte. Frederick John Symons, and</span>
+                            <span class="tooltip-name">Pte. Phillip Arthur Williams</span>
+                            <span class="tooltip-status">all three killed in action, 8 May 1915</span>
+                        </span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">L/Cpl. George Lovell</span>
+                            <span class="tooltip-status">later killed in action, 13 May 1915</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END 2ND BATTLE OF YPRES ---> 
+                
+                <!--- 3. GIVENCHY SECTOR ---> 
+                <div class="map-pin" style="position: absolute; top: 21.15%; left: 18.85%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Givenchy Sector</span>
+                        <span class="tooltip-campaign-date">December 1915 – May 1916</span>
+                        
+                        <span class="tooltip-casualty">
+                        <span class="tooltip-name">Pte. John T. Williams</span>
+                        <span class="tooltip-status">died of wounds, 25 May 1916</span>
+                    </span>
+                    </span>
+                    </div>                    
+                </div> 
+                <!--- END GIVENCHY SECTOR ---> 
+
+                <!--- 4. SOMME CAMPAIGN ---> 
+                <div class="map-pin" style="top: 25.5%; left: 18%;">
+                    <div class="pin-tooltip" data-pos="left">                        
+                        <span class="tooltip-campaign-title">Somme Campaign</span>
+                        <span class="tooltip-campaign-date">1 July – 18 November 1916</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pioneer Edmund S. Rowlands</span>
+                            <span class="tooltip-status">died of wounds, 19 August 1916</span>
+                        </span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Michael Farrell</span>
+                            <span class="tooltip-status">killed in action, 5 September 1916</span>
+                        </span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">L/Cpl. John Richard John</span>
+                            <span class="tooltip-status">killed in action, 8 September 1916</span>
+                        </span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Earnest Prosser</span>
+                            <span class="tooltip-status">killed in action, 23 September 1916</span>
+                        </span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. William Charles John</span>
+                            <span class="tooltip-status">killed in action, 23 November 1916</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END SOMME CAMPAIGN --->
+
+                <!--- 5. ATTACK ON LENS ---> 
+                <div class="map-pin" style="position: absolute; top: 21.25%; left: 21.5%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Attack on Lens</span>
+                        <span class="tooltip-campaign-date">15 August - 25 August 1917</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. William Jones Onions</span>
+                            <span class="tooltip-status">killed in action, 26 May 1917</span>
+                            <span class="tooltip-name">Rifleman Wyndham Workman</span>
+                            <span class="tooltip-status">died of wounds, 4 June 1917</span>
+                        </span>
+                    </div>                    
+                </div>  
+                <!--- END ATTACK ON LENS--->   
+
+                <!--- 6. PASSCHENDAELE ---> 
+                <div class="map-pin" style="position: absolute; top: 18.25%; left: 20.35%;">
+                    <div class="pin-tooltip" data-pos="right">
+                        <span class="tooltip-campaign-title">Passchendaele (3rd Battle of Ypres)</span>
+                        <span class="tooltip-campaign-date">31 July – 10 November 1917</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Gilbert Phillips</span>
+                            <span class="tooltip-status">died of wounds, 30 July 1917</span>
+                            <span class="tooltip-name">Pte. Thomas G. Coombs</span>
+                            <span class="tooltip-status">killed in action, 11 August 1917</span>
+                            <span class="tooltip-name">Pte. David J. Rees</span>
+                            <span class="tooltip-status">died of wounds, 24 September 1917</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END PASSCHENDAELE --->
+        
+                <!--- 7. BATTLE OF CAMBRAI ---> 
+                <div class="map-pin" style="position: absolute; top: 23.75%; left: 20.25%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Battle of Cambrai</span>
+                        <span class="tooltip-campaign-date">20 November – 6 December 1917</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Lance Corporal Earnest Havard</span>
+                            <span class="tooltip-status">killed in action, 2 December 1917</span>
+                            <span class="tooltip-name" >Pte. Frank Shaw</span>
+                            <span class="tooltip-status">died of wounds, 4 February 1918</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END BATTLE OF CAMBRAI --->
+        
+                <!--- 8. GERMAN SPRING OFFENSIVE --->
+                <div class="map-pin-square" style="position: absolute; top: 28%; left: 20.25%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">German Spring Offensive</span>
+                        <span class="tooltip-campaign-date">21 March – 5 April 1918</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Arthur Owens</span>
+                            <span class="tooltip-status">killed in action, 24 March 1918</span>
+                            <span class="tooltip-name" >Gunner George Wiltshire</span>
+                            <span class="tooltip-status">killed in action, 28 March 1918</span>
+                        </span>
+                    </div>                    
+                </div> 
+                
+                <div class="map-line-dashed" style="width: 3.5%; top: 18.5%; left: 19%; rotate: 85deg;">
+                    <div class="pin-tooltip">Georgette</div>                    
+                </div> 
+                 <div class="map-line-dashed" style="width: 3.5%; top: 25%; left: 19.5%; rotate: 65deg;">
+                    <div class="pin-tooltip">Michael</div>                    
+                </div> 
+                <div class="map-line-dashed" style="width: 3.5%; top: 30.5%; left: 21.25%; rotate: 35deg;">
+                    <div class="pin-tooltip">Gneisenau</div>                    
+                </div> 
+                <div class="map-line-dashed" style="width: 3.5%; top: 34%; left: 24.5%; rotate: 5deg;">
+                    <div class="pin-tooltip">Blücher-Yorck</div>            
+                </div> 
+                <!--- END GERMAN SPRING OFFENSIVE --->
+
+                <!--- 9. 100 DAYS OFFENSIVE --->
+                <div class="map-pin-square" style="position: absolute; top: 24.5%; left: 23.75%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">100 Days Offensive</span>
+                        <span class="tooltip-campaign-date">8 August – 11 November 1918</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. William John Paulk</span>
+                            <span class="tooltip-status">died of wounds, 31 August 1918</span>
+                            <span class="tooltip-name" >Pte. Jehoida Daniels</span>
+                            <span class="tooltip-status">killed in action, 11 September 1918</span>
+                        </span>
+                    </div>                    
+                </div> 
+                
+                <div class="map-line-dashed" style="width: 3.5%; top: 18.5%; left: 19%; rotate: 30deg;">
+                    <div class="pin-tooltip">1</div>                    
+                </div> 
+                <div class="map-line-dashed" style="width: 3.5%; top: 22%; left: 22.5%; rotate: 48deg;">
+                    <div class="pin-tooltip">2</div>                    
+                </div>                    
+                <div class="map-line-dashed" style="width: 3.5%; top: 27%; left: 25.5%; rotate: 22deg;">
+                    <div class="pin-tooltip">3</div>                  
+                </div> 
+                <!--- END 100 DAYS OFFENSIVE --->
+
+                <!--- 10. HINDENBURG LINE ---> 
+                 <div class="map-pin-square" style="position: absolute; top: 21.25%; left: 24.25%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Hindenburg Line</span>
+                        <span class="tooltip-campaign-date">12 September – 9 October 1918</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Milson Ellway</span>
+                            <span class="tooltip-status">killed in action, 18 September 1918</span>
+                        </span>
+                    </div>  
+                </div> 
+                <div class="map-line-dashed" style="width: 3.5%; top: 19%; left: 23%; rotate: 45deg;">
+                    <div class="pin-tooltip">2</div>                    
+                </div>    
+                <!--- END HINDENBURG --->
+
+                <!--- 11. Gallipoli ---> 
+                <div class="map-pin" style="position: absolute; top: 73.5%; left: 72%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Gallipoli Campaign</span>
+                        <span class="tooltip-campaign-date">1915</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Pte. Edward Watkins</span>
+                            <span class="tooltip-status">died of wounds, 24 August 1915</span>
+                            <span class="tooltip-name">Sapper William Arthur Lloyd</span>
+                            <span class="tooltip-status">killed in action, 30 November 1917</span>
+                            <span class="tooltip-name">Pte. Samuel Fisher</span>
+                            <span class="tooltip-status">died of pneumonia, likely related to <br />wartime injuries, 24 September 1917</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END Gallipoli --->
+
+                <!--- 12. Mesopotamia ---> 
+                <div class="map-pin" style="position: absolute; top: 82%; left: 96%;">
+                    <div class="pin-tooltip" data-pos="left">
+                        <span class="tooltip-campaign-title">Mesopotamian Campaign</span>
+                        <span class="tooltip-campaign-date">1915 - 1918</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">A.Cpl. Frank Herbert Howard</span>
+                            <span class="tooltip-status">killed in action, 9 April 1916</span>
+                            <span class="tooltip-name">Pte. Richard Henry Harvey</span>
+                            <span class="tooltip-status">killed in action, 22 April 1916</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END Mesopotamia --->
+
+                <!--- 13. Palestine ---> 
+                <div class="map-pin" style="position: absolute; top: 98.5%; left: 94.5%;">
+                    <div class="pin-tooltip" data-pos="top">
+                        <span class="tooltip-campaign-title">Palestine Campaign</span>
+                        <span class="tooltip-campaign-date">1915 - 1918</span>
+                        
+                        <span class="tooltip-casualty">
+                            <span class="tooltip-name">Gunner David John Evans</span>
+                            <span class="tooltip-status">died of wounds, 19 December 1917</span>
+                        </span>
+                    </div>                    
+                </div>
+                <!--- END Palestine --->
+                
+            </div>
+        </div> 
+    </div> 
+</template> <!-- END TEMPLATE -->
+
+<!-- REAL PRODUCTION LIGHTBOX STRUCTURE -->
+<div id="odw-lightbox-modal" data-theme="map-ui">
+    <div class="modal-content-wrapper">
+        <!-- The Close Button -->
+        <a href="#close" class="modal-close-btn" title="Close">&times;</a>
+        
+        <!-- Target HTML where template injects -->
+        <div id="modal-target-html" style="display: block;"></div>
+
+        <!-- FIXED: Added Instructions to the Sandbox -->
+        <div id="modal-map-instructions" class="plain-text" style="display: block; text-align: center; margin-bottom: 0; margin-top: 15px;">
+            [ Right-click to zoom-in (+), left-click to zoom-out (-) then click &amp; drag to explore the map. ]
+        </div>
+    </div>
+</div>
+    
+<script>
+   /* =======================================================
+   THE UNIVERSAL MAP ZOOM & PAN ENGINE (v7 - Clean Engine)
+   =======================================================
+   We wrap it in a window object so odw-common.js can trigger it later
+   ======================================================= */
+window.initMapZoomEngine = function() {
+    document.querySelectorAll('.map-interactive-wrapper').forEach(wrapper => {
+        if (wrapper.dataset.engineActive === 'true') return;
+        wrapper.dataset.engineActive = 'true';
+        
+        const mapTarget = wrapper.querySelector('.map-target');
+        const panContainer = wrapper.querySelector('.pan-container');
+        const btnIn = wrapper.querySelector('.zoom-in-btn');
+        const btnOut = wrapper.querySelector('.zoom-out-btn');
+        
+        if (!mapTarget || !panContainer) return;
+
+        const initialZoom = parseInt(wrapper.getAttribute('data-start-zoom'), 10) || 100;
+        let currentZoom = initialZoom;
+        const minZoom = 100;
+        const maxZoom = 400; 
+        const zoomStep = 50;
+
+        mapTarget.style.width = currentZoom + '%';
+
+        function updateButtonStates() {
+            if (btnOut) btnOut.disabled = (currentZoom <= minZoom);
+            if (btnIn) btnIn.disabled = (currentZoom >= maxZoom);
+        }
+        updateButtonStates();
+
+        // --- ROBUST STARTING POSITION LOGIC ---
+        const startX = wrapper.getAttribute('data-start-x');
+        const startY = wrapper.getAttribute('data-start-y');
+
+        const applyInitialPosition = () => {
+            if (startX !== null && startY !== null) {
+                const targetScrollX = (mapTarget.scrollWidth * (parseFloat(startX) / 100)) - (panContainer.clientWidth / 2);
+                const targetScrollY = (mapTarget.scrollHeight * (parseFloat(startY) / 100)) - (panContainer.clientHeight / 2);
+                
+                panContainer.scrollLeft = targetScrollX;
+                panContainer.scrollTop = targetScrollY;
+            } else {
+                panContainer.scrollLeft = (mapTarget.scrollWidth - panContainer.clientWidth) / 2;
+                panContainer.scrollTop = (mapTarget.scrollHeight - panContainer.clientHeight) / 2;
+            }
+        };
+
+        const mapImg = mapTarget.querySelector('img');
+        if (mapImg && !mapImg.complete) {
+            mapImg.addEventListener('load', applyInitialPosition);
+        } else {
+            setTimeout(applyInitialPosition, 50);
+        }
+
+        // --- PURE V3 MATH + V6 HARD LIMITS ---
+        function applyZoom(newZoom, mouseEvent = null) {
+            if (newZoom < minZoom) newZoom = minZoom;
+            if (newZoom > maxZoom) newZoom = maxZoom;
+            if (newZoom === currentZoom) return;
+
+            const rect = panContainer.getBoundingClientRect();
+            let pointerX, pointerY;
+
+            if (mouseEvent) {
+                pointerX = mouseEvent.clientX - rect.left;
+                pointerY = mouseEvent.clientY - rect.top;
+            } else {
+                pointerX = rect.width / 2;
+                pointerY = rect.height / 2;
+            }
+
+            const targetPixelX = panContainer.scrollLeft + pointerX;
+            const targetPixelY = panContainer.scrollTop + pointerY;
+
+            const oldZoom = currentZoom;
+            currentZoom = newZoom;
+            const ratio = currentZoom / oldZoom;
+
+            mapTarget.style.width = currentZoom + '%';
+            updateButtonStates();
+
+            panContainer.scrollLeft = (targetPixelX * ratio) - pointerX;
+            panContainer.scrollTop = (targetPixelY * ratio) - pointerY;
+        }
+
+        if (btnIn) btnIn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            applyZoom(currentZoom + zoomStep);
+        });
+        
+        if (btnOut) btnOut.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            applyZoom(currentZoom - zoomStep);
+        });
+
+        let isDown = false;
+        let hasDragged = false;
+        let startXCoord, startYCoord, scrollLeft, scrollTop;
+
+        panContainer.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return; 
+            isDown = true;
+            hasDragged = false;
+            startXCoord = e.pageX - panContainer.offsetLeft;
+            startYCoord = e.pageY - panContainer.offsetTop;
+            scrollLeft = panContainer.scrollLeft;
+            scrollTop = panContainer.scrollTop;
+        });
+
+        panContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            const x = e.pageX - panContainer.offsetLeft;
+            const y = e.pageY - panContainer.offsetTop;
+            const walkX = (x - startXCoord);
+            const walkY = (y - startYCoord);
+
+            if (Math.abs(walkX) > 5 || Math.abs(walkY) > 5) {
+                hasDragged = true;
+                panContainer.classList.add('is-dragging');
+            }
+
+            if (hasDragged) {
+                e.preventDefault();
+                panContainer.scrollLeft = scrollLeft - (walkX * 1.5);
+                panContainer.scrollTop = scrollTop - (walkY * 1.5);
+            }
+        });
+
+        panContainer.addEventListener('mouseup', (e) => {
+            if (!isDown) return;
+            isDown = false;
+            panContainer.classList.remove('is-dragging');
+            
+            if (!hasDragged && e.button === 0) {
+                applyZoom(currentZoom + zoomStep, e);
+            }
+        });
+
+        panContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            panContainer.classList.remove('is-dragging');
+        });
+
+        panContainer.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); 
+            applyZoom(currentZoom - zoomStep, e);          
+        });
+    });
+};
+</script>
+
+<script>    
+    // ==========================================
+    // UNPACK TEMPLATE & TURN THE ENGINE ON
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+        const template = document.querySelector('template');
+        const htmlTarget = document.getElementById('modal-target-html');
+
+        if (template && htmlTarget) {
+            htmlTarget.appendChild(template.content.cloneNode(true));
+        }
+
+        // Fire the newly wrapped function
+        window.initMapZoomEngine();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phillip Arthur Williams - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+   <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Phillip Arthur Williams Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Phillip Arthur Williams</div>
+                <div class="soldier-detail">Age: <strong>19</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>2380</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1st (Rifle) Battalion, The Monmouthshire Regiment (TF)</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-williams-p" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock -->
+            <div class="profile-artifact-dock">
+                
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html" 
+                class="artifact-btn btn-story hybrid-fetch-trigger" 
+                data-target="sidebar">
+                <span class="artifact-label">2nd Battle of Ypres</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-menin-gate" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/menin_gate_memorial.jpg" alt="Menin Gate Memorial to the Missing in Belgium">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Ypres (Menin Gate) Memorial, Belgium.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Phillip Arthur Williams</strong> was a local coal miner and the second son of Mrs. Mary Jane Williams of Syr Dafydd Avenue, Oakdale, and the late Phillip Williams. He stepped forward to serve with the Territorial Force, enlisting into the 1st (Rifle) Battalion, Monmouthshire Regiment. He deployed overseas with his comrades, arriving on the battlefields of France and Flanders in February 1915.
+            </div>
+            
+            <div class="bio-text">
+                In early May 1915, during the brutal opening phases of the <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Second Battle of Ypres</a>, his battalion operated as part of the 84th Brigade, 28th Division, positioned directly to the right flank of the 12th Brigade. On 8 May, the brigade was dug into highly exposed forward slopes on the ridge running between Frezenberg village and the fortified ruins of Shell Trap Farm. Sitting right on the shoulder of the vulnerable British salient, they were subjected to a monstrous, concentrated artillery bombardment before being hit by waves of German infantry.
+            </div>
+            
+            <div class="bio-text">
+                Vastly outnumbered and cut off from reinforcements, the units were slowly surrounded, fighting tenaciously before the remnants could fall back over the low crest of the ridge. The 1st Mons were virtually annihilated; out of 588 soldiers who stood in the lines that morning, 439 were killed, wounded, or reported missing. Private Williams was killed in action during this desperate defense on 8 May 1915, aged just 19.
+            </div>
+
+            <div class="bio-text">
+                Because his remains were swallowed by the shattered landscape of the salient, he is permanently commemorated on the panels of the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/91800/YPRES%20(MENIN%20GATE)%20MEMORIAL" target="_blank" rel="noopener" class="profile-external-link">Ypres (Menin Gate) Memorial, Belgium</a>. He is also honored on the Battalion War Memorial inside St. Woolos Cathedral, Newport. Today, a dedicated memorial stands at Roeselarestraat, north-east of Ypres, honoring the 203 men of the battalion who perished on 8 May—a day remembered back home in the valleys as "Monmouthshire's Black Day."
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">The official records confirm Phillip fell during the fierce fighting at Verlorenhoek. Following the loss, his mother, Mary Jane, received his outstanding back-pay of £5 11s 4d, alongside a standard war gratuity of £3.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Western Front | 2nd Battle of Ypres</div>
+              <h2 class="subhead_sm">Pte. Phillip A. Williams</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 8 May 1915 (Aged 19)
+              </div>
+              <hr class="baic">
+              
+              <p class="display-text">Nineteen-year-old Oakdale collier Phillip Arthur Williams traded the mines of his hometown for the trenches of Flanders in early 1915. On 8 May—a date forever mourned in the valleys as "Monmouthshire's Black Day"—his heavily outnumbered battalion was practically annihilated while fiercely defending the exposed slopes of Frezenberg ridge at Ypres. Private Williams fell alongside hundreds of his local comrades. With his remains lost to the shattered landscape, the young miner is remembered today on the Menin Gate, a quiet testament to a boy who gave everything. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/williams_p_a.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_2nd-battle-ypres.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">2nd Battle of Ypres</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Williams) -->
+  <template id="modal-medals-williams-p">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Phillip Arthur Williams</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Menin Gate) -->
+  <template id="modal-menin-gate">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/menin_gate_memorial.jpg" alt="The Menin Gate Memorial at Ypres, Belgium spanning the road">
+          
+          <div class="modal-caption">
+              Menin Gate Memorial, Ypres, Belgium
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/91800/YPRES%20(MENIN%20GATE)%20MEMORIAL" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

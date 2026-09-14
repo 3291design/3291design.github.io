@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivor James Nelmes - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Ivor James Nelmes Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Ivor James Nelmes</div>
+                <div class="soldier-detail">Age: <strong>20</strong></div>
+                <div class="soldier-detail">Rank: <strong>Seaman, Second Class</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>J26377</strong></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Navy</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-nelmes" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock with Dual Buttons -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_royal_navy.html" 
+                   class="artifact-btn btn-story btn-alt hybrid-fetch-trigger"
+                   data-target="sidebar"><span class="artifact-label">Royal Navy Service</span>
+                </a>
+            </div>
+            
+            <!-- Biography Body Paragraphs -->
+            <div class="bio-text">
+                <strong>Ivor James Nelmes</strong>, born 28 May 1898, was the son of Mrs. Martha Evans and the adopted son of John and Elizabeth Higgs of Tredegar. He worked as a local collier's boy before choosing a life at sea, joining the Royal Navy as a boy seaman, second class, in August 1913.
+            </div>
+            
+            <div class="bio-text">
+                Upon the outbreak of hostilities, he served continuously from September 1914 through July 1917 across several strategic warships, including the light cruiser <em>HMS Minerva</em>, the battleship <em>HMS Implacable</em>, and lastly the town-class light cruiser <em>HMS Dublin</em>.
+            </div>
+            
+            <div class="bio-text">
+                In August 1917, Able Seaman Nelmes (J26377) was invalided out of active service suffering from advanced tuberculosis, at which point he was paid a standard war gratuity. Having returned home to recuperate, he ultimately succumbed to the illness at the end of 1918 in Monmouthshire, dying at the age of 20.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+               <div class="war-front">Beyond the Western Front | The War at Sea</div>
+              <h2 class="subhead_sm">Seaman Ivor James Nelmes</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Illness, Late 1918 (Aged 20)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Ivor James Nelmes joined the Royal Navy as a boy seaman in 1913. Throughout the First World War, he served on strategic warships including the light cruisers <em>HMS Minerva</em> and <em>HMS Dublin</em>, as well as the battleship <em>HMS Implacable</em>. Tragically invalided out of service in August 1917 due to advanced tuberculosis, he returned home to recuperate but succumbed to the illness at the end of 1918. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/nelmes_i_j.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_royal_navy.html" 
+                 class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Royal Navy Service</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Nelmes) -->
+  <template id="modal-medals-nelmes">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Seaman Ivor James Nelmes</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Fisher - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Samuel Fisher Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Samuel Fisher</div>
+                <div class="soldier-detail">Age: <strong>44</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>3/13341</strong></div>
+                <div class="soldier-detail">Regiment: <strong>South Wales Borderers</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-fisher" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" 
+                   class="artifact-btn btn-alt btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Gallipoli Campaign</span>
+                </a>
+            </div>
+            
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-penmaen" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/penmaen_chapel.jpg" alt="Penmaen Chapel and historic gravestones, Wales">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Penmaen Chapelyard, Wales.<br>
+                        <span class="bio-thumb-sub">Photo: J. Agg / Geograph / CC BY-SA 2.0</span>
+                    </span>
+                </div>
+                <strong>Samuel Fisher</strong>, coal miner, son of the late Alfred and late Sarah Fisher, of Blackwood served in the South Wales Borderers, and arrived in the Balkans, presumably <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" class="hybrid-fetch-trigger soldier-link">Gallipoli</a>, in June 1915.
+            </div>
+            
+            <div class="bio-text">
+                Wounded, he returned home to his aunt, Mrs M Crew, High Street, Blackwood. Pte. Samuel Fisher later died of pneumonia, presumably related to his wounds, 25 July 1917, aged 44.
+            </div>
+            
+            <div class="bio-text">
+                He had been transferred previously to the Class W Reserve — soldiers who were more valuable in civil rather than military employment. He is buried in the <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/42560/penmaen-congregational-chapelyard/" target="_blank" rel="noopener" class="profile-external-link">Penmaen Chapelyard</a> with a CWG headstone.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">Beyond the Western Front | The Gallipoli Campaign</div>
+              <h2 class="subhead_sm">Pte. Samuel Fisher</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Pneumonia, 25 July 1917 (Aged 44)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Samuel Fisher, a coal miner from Blackwood, served with the South Wales Borderers. In June 1915, he was deployed to the Balkans theater, entering the grueling Gallipoli Campaign against the Ottoman Empire. Sustaining wounds during the harsh coastal engagements, Private Fisher returned home to Wales and was transferred to the Class W Reserve. He later succumbed to pneumonia, likely related to his wartime injuries, on 25 July 1917, at the age of 44. He is buried locally in the Penmaen Chapelyard. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/fisher_s.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_gallipoli_campaign.html" 
+                 class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Gallipoli Campaign</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Fisher) -->
+  <template id="modal-medals-fisher">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Samuel Fisher</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Penmaen) -->
+  <template id="modal-penmaen">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/penmaen_chapel.jpg" alt="Penmaen Chapel and historic gravestones, Wales">
+          
+          <div class="modal-caption">
+              Penmaen Chapelyard, Wales
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/42560/penmaen-congregational-chapelyard/" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+   <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

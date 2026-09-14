@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyndham Workman - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Wyndham Workman Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Wyndham Workman</div>
+                <div class="soldier-detail">Age: <strong>25</strong></div>
+                <div class="soldier-detail">Rank: <strong>Rifleman</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>226544</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1st Battalion Monmouthshire</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-workman" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Newspaper Clipping Button -->
+               <a href="/oakdalewarmemorial/images/workman_w_memoriam.gif"
+                  data-lightbox="artifact"
+                  data-caption="In Memoriam: Rifleman Wyndham Workman"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18">
+                       <path d="M19 19H5V5H19M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M13.96 12.29L11.21 15.83L9.25 13.47L6.5 17H17.5L13.96 12.29Z" fill="currentColor"/>
+                   </svg>
+                   <span class="artifact-label">Press Clipping</span>
+               </a>
+
+                <!-- Gravestone Button -->
+                <a href="/oakdalewarmemorial/images/workman_w_headstone.jpg" 
+                   data-lightbox="artifact" 
+                   data-caption="Military Gravestone: Rifleman Wyndham Workman<br />Died of Wounds, June 4, 1917 (Aged 25)" 
+                   class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 22V2h16v20H4zm2-2h12V4H6v16zm5-12h2v3h3v2h-3v5h-2v-5H8v-2h3V8z" fill="currentColor"/></svg>
+                    <span class="artifact-label">Gravestone Photo</span>
+                </a>
+                
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" 
+                class="artifact-btn btn-story hybrid-fetch-trigger" 
+                data-target="sidebar"><span class="artifact-label">Attack on Lens</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-noeux" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/noeux_les_mines.jpg" alt="Immaculate stone rows extending across green lawns at Noeux-les-Mines Communal Cemetery, France">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Noeux-les-Mines Cemetery, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Wyndham Workman</strong>, coal miner, son of a Gloucestershire couple, Frederick and Blanche Workman of Penmain Crossings Cottage, Courtybella, Argoed, served with the 1st Battalion Monmouthshire Regiment, and arrived in France in October 1915. In May-June 1917, the 46th Division, with his battalion serving as pioneers in front of the northern city of <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Lens</a>, Artois, faced continuous frontline sector engagements.
+            </div>
+            
+            <div class="bio-text">
+                Rifleman W Workman (226544) died of wounds 4 June 1917, aged 25. He is buried northwest of Lens at <a href="http://www.cwgc.org/find-a-cemetery/cemetery/53501/NOEUX-LES-MINES%20COMMUNAL%20CEMETERY" target="_blank" rel="noopener" class="profile-external-link">Noeux-les-Mines Communal Cemetery</a>, which in mid-1917 was used by the 7th Casualty Clearing Station. He is commemorated also on the Battalion War Memorial in St Woolos Cathedral, Newport.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Wyndham's mother Blanche received pay of £11 9s 5d and a gratuity of £9.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Attack on Lens</div>
+              <h2 class="subhead_sm">Rifleman Wyndham Workman</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 4 June 4 1917 (Aged 25)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Rifleman Wyndham Workman of the 1st Battalion Monmouthshire Regiment served as a pioneer in the grueling trench networks surrounding the industrial city of Lens in mid-1917. Severely wounded during operations in the Artois sector, he passed away at the 7th Casualty Clearing Station on June 4, 1917, at the age of 25, and rests at Noeux-les-Mines Communal Cemetery. <br />
+              <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/workman_w.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Attack on Lens</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Workman) -->
+  <template id="modal-medals-workman">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Rifleman Wyndham Workman</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Noeux-les-Mines) -->
+  <template id="modal-noeux">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/noeux_les_mines.jpg" alt="Immaculate stone rows extending across green lawns at Noeux-les-Mines Communal Cemetery, France">
+          
+          <div class="modal-caption">
+              Noeux-les-Mines Cemetery, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/53501/NOEUX-LES-MINES%20COMMUNAL%20CEMETERY" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

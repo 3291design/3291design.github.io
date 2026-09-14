@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David J. Rees - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="David J. Rees Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">David J. Rees</div>
+                <div class="soldier-detail">Age: <strong>21</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>202272</strong></div>
+                <div class="soldier-detail">Regiment: <strong>9th (Service) Battalion Welsh</strong></div>
+                <div class="soldier-detail">Medals: <strong>Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-rees" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock (Single Button - Story Trigger) -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Passchendaele</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-st-sever" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/st_sever_cemetery.jpg" alt="Beautiful landscape panorama of St. Sever Cemetery Extension in Rouen, France, showing uniform lines of white headstones">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        St. Sever Cemetery Extension, Rouen.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>David J. Rees</strong> was a local coal miner, the son of David and Naomi Rees of Markham Crescent, Oakdale. He enlisted into the 9th (Service) Battalion, Welsh Regiment, which operated as part of the 19th (Western) Division. Early in his front-line service, he was wounded in action but successfully recuperated in Britain before bravely returning to active duty on the Western Front.
+            </div>
+            
+            <div class="bio-text">
+                In the late summer of 1917, his division was thrown into the meat-grinder of the <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" class="hybrid-fetch-trigger soldier-link">Third Battle of Ypres</a> (Passchendaele), engaging in fierce, muddy assaults against fortified German lines. Private Rees sustained severe combat wounds during these intense operations and was evacuated via ambulance trains down to the massive British base hospital complex in Normandy.
+            </div>
+            
+            <div class="bio-text">
+                He tragically succumbed to his injuries on 24 September 1917, aged just 21. He is buried at <a href="http://www.cwgc.org/find-a-cemetery/cemetery/2800/ST.%20SEVER%20CEMETERY%20EXTENSION,%20ROUEN" target="_blank" rel="noopener" class="profile-external-link">Saint Sever Cemetery Extension, Rouen, France</a>, resting alongside thousands of other casualties who passed away in the nearby military hospital wards.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Following his passing, his grandmother, Mrs. Sarah A. Knight, received his remaining back-pay of £16 19s 5d, while his father, David, was granted a standard war gratuity of £3.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MINI-PROFILE MODAL -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Passchendaele (Third Ypres)</div>
+              <h2 class="subhead_sm">Pte. David J. Rees</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 24 September 1917 (Aged 21)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">David J. Rees, a local coal miner from Oakdale, served with the 9th (Service) Battalion, Welsh Regiment. Having previously recovered from earlier wounds to return to the front, he was thrust into the muddy horrors of the Third Battle of Ypres in late 1917. Severely wounded during the assaults, he was evacuated to Rouen, where he tragically succumbed to his injuries on 24 September 1917 at the age of 21. He rests in Saint Sever Cemetery Extension. 
+                <br />
+                <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/rees_d_j.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_third-ypres.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Passchendaele</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Rees) -->
+  <template id="modal-medals-rees">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. David J. Rees</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (St. Sever Cemetery Extension) -->
+  <template id="modal-st-sever">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/st_sever_cemetery.jpg" alt="Beautiful landscape panorama of St. Sever Cemetery Extension in Rouen, France, showing uniform lines of white headstones">
+          
+          <div class="modal-caption">
+              St. Sever Cemetery Extension, Rouen, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/2800/ST.%20SEVER%20CEMETERY%20EXTENSION,%20ROUEN" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

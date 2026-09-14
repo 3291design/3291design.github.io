@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Charles John - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="William Charles John Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">William Charles John</div>
+                <div class="soldier-detail">Age: <strong>22</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>3137</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1/2nd Battalion Monmouth</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-john-wc" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_somme.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Somme Campaign</span>
+                </a>
+            </div>
+            
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-aif" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/aif_burial_ground.jpg" alt="A.I.F. Burial Ground at Flers, Somme, France showcasing headstone lines and the Cross of Sacrifice">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        A.I.F. Burial Ground, Flers, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>William Charles John</strong>, second son of Thomas and late Rachel John of 2 Penmain Villas, served in the 1/2nd Battalion Monmouth Regiment and arrived in France in May 1915.
+            </div>
+            
+            <div class="bio-text">
+                In May 1916 the battalion joined the 29th Division as the designated pioneer battalion. In October the division fought on the <a href="/oakdalewarmemorial/stories/mh-ww1_somme.html" class="hybrid-fetch-trigger soldier-link">Somme</a> south west of Bapaume. Wintry weather caused offensive operations to be called off on 19 November.
+            </div>
+            
+            <div class="bio-text">
+                Towards the end of the month the battalion, enduring cold wet weather, was building trenches in a morass of mud and subjected to sporadic German shelling. Pte W C John (3137) was killed in action 23 November 1916, aged 22, and is buried at the <a href="http://www.cwgc.org/find-a-cemetery/cemetery/26300/A.I.F.%20BURIAL%20GROUND,%20FLERS" target="_blank" rel="noopener" class="profile-external-link">A.I.F. Burial Ground, Flers</a>, Somme.
+            </div>
+
+            <div class="bio-text">
+                He is commemorated also on the Battalion Memorial in <a href="https://www.jlb2011.co.uk/walespic/churches/trevethin1.htm" target="_blank" rel="noopener" class="profile-external-link">St Cadoc's Church, Trevethin</a>. His older brother John had fallen in France in September 1916.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE PAYLOAD -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+               <div class="war-front">The Western Front | Somme Campaign</div>
+              <h2 class="subhead_sm">Pte. William Charles John</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 23 November 1916 (Aged 22)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">William Charles John, the second son of Thomas and Rachel John of Penmaen, served as a pioneer with the 1/2nd Battalion Monmouth Regiment. By late 1916, his battalion was enduring the brutal, waterlogged conditions of the Somme south-west of Bapaume. On November 23, 1916, while building trenches in a freezing morass of mud under sporadic enemy shelling, 22-year-old Private John was killed in action. He rests at the A.I.F. Burial Ground at Flers and is commemorated at St Cadoc's Church, Trevethin—sharing his tragic fate just two months after his older brother, John Richard John, fell in the same sector. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/john_w_c.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_somme.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Somme Campaign</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (William Charles John) -->
+  <template id="modal-medals-john-wc">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. William Charles John</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (A.I.F. Burial Ground) -->
+  <template id="modal-aif">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/aif_burial_ground.jpg" alt="A.I.F. Burial Ground at Flers, Somme, France showcasing headstone lines and the Cross of Sacrifice">
+          
+          <div class="modal-caption">
+              A.I.F. Burial Ground, Flers, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/26300/A.I.F.%20BURIAL%20GROUND,%20FLERS" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

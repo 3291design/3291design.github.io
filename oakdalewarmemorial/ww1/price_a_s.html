@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Stewart Price - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="Albert Stewart Price Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">Albert Stewart Price</div>
+                <div class="soldier-detail">Age: <strong>18</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>2693</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1st (Rifle) Battalion Monmouthshire</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-price-a-s" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock -->
+            <div class="profile-artifact-dock">
+                <a href="/oakdalewarmemorial/stories/mh-ww1_armentieres_1915.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar">
+                    <span class="artifact-label">Early Trench Warfare</span>
+                </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <div class="bio-inline-thumb">
+                    <a href="#modal-bailleul-cemetery" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/bailleul_cemetery.jpg" alt="Immaculate white stone headstone rows extending across green turf at Bailleul Communal Cemetery, France">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Bailleul Communal Cemetery, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>Albert Stewart Price</strong> was born in Aberdare, Glamorgan, the second son of Jonah and Harriet Price, who later settled down in the growing colliery community of Oakdale. He worked as a local coal miner before enlisting in the 1st (Rifle) Battalion, Monmouthshire Regiment—a dedicated Territorial Force unit. Albert deployed overseas early, arriving in France with his battalion in February 1915.
+            </div>
+            
+            <div class="bio-text">
+                Only two months after arriving on the continent, his unit was pushed into heavy service securing front line sectors along the <a href="/oakdalewarmemorial/stories/mh-ww1_armentieres_1915.html" class="hybrid-fetch-trigger soldier-link" data-target="sidebar">Western Front</a>. Private A S Price (2693) sustained catastrophic combat injuries and died of wounds on 5 April 1915, aged just 18.
+            </div>
+            
+            <div class="bio-text">
+                He was interred at <a href="http://www.cwgc.org/find-a-cemetery/cemetery/2000048/BAILLEUL%20COMMUNAL%20CEMETERY%20EXTENSION,%20NORD" target="_blank" rel="noopener" class="profile-external-link">Bailleul Communal Cemetery, France</a>, which was actively utilized by the medical staff managing nearby No. 8 Casualty Clearing Station. He is also formally commemorated on the Battalion War Memorial mounted inside St Woolos Cathedral, Newport.
+            </div>
+            
+            <!-- Archive Source Note -->
+            <div class="archive-source-note">
+                <span class="source-heading">Additional information taken from the Army Registers of Soldiers' Effects, 1901-1929:</span>
+                <span class="source-data-italic">Following Albert's battlefield sacrifice, his grieving mother Harriet received his remaining back-pay of £4 11s 6d, alongside a war gratuity of £3.</span>
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE PAYLOAD -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Early Trench Warfare in Flanders</div>
+              <h2 class="subhead_sm">Pte. Albert Stewart Price</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Died of Wounds, 5 April 1915 (Aged 18)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">Albert Stewart Price, a young coal miner from Oakdale, enlisted in the 1st (Rifle) Battalion, Monmouthshire Regiment. Deploying to France in February 1915, he was thrust into early front-line trench duties on the Western Front. Just two months later, at only 18 years of age, Private Price sustained severe combat wounds and tragically died on 5 April 1915. He rests in Bailleul Communal Cemetery Extension. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/price_a_s.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+                <a href="/oakdalewarmemorial/stories/mh-ww1_armentieres_1915.html" 
+                     class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Early Trench Warfare</span>
+                </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Price) -->
+  <template id="modal-medals-price-a-s">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. Albert Stewart Price</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Bailleul Communal Cemetery Extension) -->
+  <template id="modal-bailleul-cemetery">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/bailleul_cemetery.jpg" alt="Immaculate white stone headstone rows extending across green turf at Bailleul Communal Cemetery, France">
+          
+          <div class="modal-caption">
+              Bailleul Communal Cemetery Extension, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/2000048/BAILLEUL%20COMMUNAL%20CEMETERY%20EXTENSION,%20NORD" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

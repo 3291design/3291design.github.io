@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Jones Onions - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+   <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+  
+</head>
+
+<!-- CRITICAL: data-era must be "ww1-profile" for the Prev/Next pagination to load -->
+<body data-era="ww1-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- ========================================== -->
+    <!-- TIER 1: AUTOMATED HEADER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="header-socket"></div>
+   
+    <!-- ========================================== -->
+    <!-- TIER 2: PAGE CORE (Main Content Blocks)    -->
+    <!-- ========================================== -->
+    <div class="page-core profile-core-flush">
+
+        <!-- Flexbox Core Presentation Component -->
+        <div class="flex-container">
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="William Jones Onions Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+
+            <div class="profile">
+                <div class="soldier-name">William Jones Onions</div>
+                <div class="soldier-detail">Age: <strong>20</strong></div>
+                <div class="soldier-detail">Rank: <strong>Private</strong></div>
+                <div class="soldier-detail">Regtl. No.: <strong>226022</strong></div>
+                <div class="soldier-detail">Regiment: <strong>1/1st (Rifle) Battalion Monmouthshire Regiment</strong></div>
+                <div class="soldier-detail">Medals: <strong>1914-1915 Star, Victory, British War</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied) -->
+            <a href="#modal-medals-onions" class="medal hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <img alt="1914-1915 Star Medal Ribbon" src="/oakdalewarmemorial/images/medal_1914-15-star_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="Victory Medal Ribbon" src="/oakdalewarmemorial/images/medal_victory_sm.jpg" class="medal-ribbon-img">
+                </div>
+                <div class="soldier-medals-box">
+                    <img alt="British War Medal Ribbon" src="/oakdalewarmemorial/images/medal_war_sm.jpg" class="medal-ribbon-img">
+                </div>
+            </a>
+        </div> 
+        
+        <!-- Narrative Biography Panel -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Profile Artifact Dock with Dual Buttons -->
+            <div class="profile-artifact-dock">
+               <!-- Gravestone Button -->
+                <a href="/oakdalewarmemorial/images/onions_wj_headstone.jpg"
+                  data-lightbox="artifact"
+                  data-caption="Military Gravestone: Pte. William Jones Onions<br>Killed in Action, 26 May 1917 (Aged 20)"
+                  class="artifact-btn btn-gravestone">
+                   <svg class="artifact-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 22V2h16v20H4zm2-2h12V4H6v16zm5-12h2v3h3v2h-3v5h-2v-5H8v-2h3V8z" fill="currentColor"/></svg>
+                   <span class="artifact-label">Gravestone Photo</span>
+               </a>
+
+                <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" 
+                 data-target="sidebar"><span class="artifact-label">Attack on Lens</span>
+              </a>
+            </div>
+
+            <!-- Biography Body Paragraphs with Floating Thumbnail -->
+            <div class="bio-text">
+                <!-- Thumbnail Trigger -->
+                <div class="bio-inline-thumb">
+                    <a href="#modal-beehive" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                        <img src="/oakdalewarmemorial/images/beehive_cemetery.jpg" alt="Panoramic view of Beehive Cemetery, Willerval, France, showing rows of white headstones against an open field landscape">
+                    </a>
+                    <span class="bio-thumb-caption">
+                        Beehive Cemetery, Willerval, France.<br>
+                        <span class="bio-thumb-sub">Photo: CWGC Archive</span>
+                    </span>
+                </div>
+                <strong>William Jones Onions</strong>, a coal miner at Oakdale Colliery and an active member of the Wesleyan Social Club in Pontllanfraith, was the second son of Richard and Gertrude Onions of Rhiw-Syr-Dafydd. He served in the 1/1st (Rifle) Battalion, Monmouthshire Regiment, arriving on the continent in France in August 1915.
+            </div>
+            
+            <div class="bio-text">
+                Late in 1915, the battalion became the designated pioneer unit for the 46th (North Midland) Division. In December of that year, the division was shipped out to Egypt to secure imperial assets, but was returned to the Western Front in France by January 1916.
+            </div>
+            
+            <div class="bio-text">
+                In late May 1917, the division was holding the line directly in front of <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" class="hybrid-fetch-trigger soldier-link">Lens</a>, a small industrial and coal-mining city heavily fortified and occupied by German forces, with the front line cutting right through the western perimeter of the industrial works. Private W J Onions (226022) was killed in action during this intense sector defense on 26 May 1917, aged 20. He is buried in <a href="http://www.cwgc.org/find-a-cemetery/cemetery/27001/BEEHIVE%20CEMETERY,%20WILLERVAL" target="_blank" rel="noopener" class="profile-external-link">Beehive Cemetery, Willerval, France</a>, and is commemorated on the Battalion War Memorial inside St Woolos Cathedral, Newport.
+            </div>
+
+            <!-- PROJECT GREEN: AUTOMATED SYSTEM NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> <!-- END bio-paragraph-wrap -->
+
+    </div> <!-- END TIER 2: page-core wrapper -->
+
+    <!-- ========================================== -->
+    <!-- TIER 3: ROSTER PHOTO BRIDGE                -->
+    <!-- ========================================== -->
+    <div class="roster-photo-bridge"></div>
+
+    <!-- ========================================== -->
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET            -->
+    <!-- ========================================== -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- ========================================== -->
+  <!-- MODALS AND TEMPLATES                       -->
+  <!-- ========================================== -->
+
+  <!-- MICRO-PROFILE PAYLOAD -->
+  <template id="hybrid-summary-payload">
+      <div class="mini-profile-content">
+          <div class="sidebar-abbreviated-story">
+              <div class="war-front">The Western Front | Attack on Lens</div>
+              <h2 class="subhead_sm">Private William Jones Onions</h2>
+              
+              <div class="bio-text">
+                  <strong>Fate:</strong> Killed in Action, 26 May 1917 (Aged 20)
+              </div>
+              <hr class="basic">
+              
+              <p class="display-text">William Jones Onions, a coal miner at Oakdale Colliery, served in the 1/1st (Rifle) Battalion, Monmouthshire Regiment, acting as the pioneer unit for the 46th (North Midland) Division. In late May 1917, while holding the heavily fortified front line directly through the industrial ruins of Lens, France, Private Onions was killed in action at just 20 years old. He is buried in Beehive Cemetery, Willerval. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww1/onions_w_j.html">Read Full Profile</a></p>
+              
+              <!-- Story Sidebar Trigger -->
+              <a href="/oakdalewarmemorial/stories/mh-ww1_lens_sector.html" 
+                 class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                 <span class="artifact-label">Attack on Lens</span>
+              </a>
+          </div>
+      </div>
+  </template>
+
+  <!-- MEDAL MODAL (Onions) -->
+  <template id="modal-medals-onions">
+      <div class="mini-profile-content">
+          <div class="award-verify">Award Verification</div>
+          <h2 class="subhead_sm">Medals Awarded: Pte. William Jones Onions</h2>
+          <hr class="basic">
+          
+          <div class="medal-display-row">
+              <div class="medal-item">
+                  <img alt="1914-1915 Star Medal" src="/oakdalewarmemorial/images/medal_1914-15-star_lg.jpg">
+                  <p class="medal-title">1914-1915 Star</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="Victory Medal" src="/oakdalewarmemorial/images/medal_victory_lg.jpg">
+                  <p class="medal-title">Victory Medal</p>
+              </div>
+              
+              <div class="medal-item">
+                  <img alt="British War Medal" src="/oakdalewarmemorial/images/medal_war_lg.jpg">
+                  <p class="medal-title">British War Medal</p>
+              </div>
+          </div>
+      </div>
+  </template> <!-- End Medal Modal -->
+
+  <!-- THUMBNAIL MODAL (Beehive Cemetery) -->
+  <template id="modal-beehive">
+      <div class="modal-photo-showcase">
+          <img src="/oakdalewarmemorial/images/beehive_cemetery.jpg" alt="Panoramic view of Beehive Cemetery, Willerval, France, showing rows of white headstones against an open field landscape">
+          
+          <div class="modal-caption">
+              Beehive Cemetery, Willerval, France
+          </div>
+          
+          <div class="modal-showcase-link-wrap">
+              <a href="http://www.cwgc.org/find-a-cemetery/cemetery/27001/BEEHIVE%20CEMETERY,%20WILLERVAL" target="_blank" rel="noopener" class="plain-text">
+                  <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+              </a>
+          </div>
+      </div>
+  </template> <!-- End Thumbnail Modal -->
+
+    <!-- MASTER UNIFIED INJECTION ENGINE (v5.10)-->
+    <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>
