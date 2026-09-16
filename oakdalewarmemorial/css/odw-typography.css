@@ -381,6 +381,23 @@ a.soldier-link::after {
     text-underline-offset: 4px;
 }
 
+.subhead_sm3 {
+    color: var(--text-dark); 
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 4vw, 18px); 
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-top: 6px; 
+    margin-bottom: clamp(6px, 4vw, 8px); 
+    text-align: left;
+}
+
+.subhead_sm3 a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
 .subnav-link {
     font-size: 12px;
     font-weight: bold;
