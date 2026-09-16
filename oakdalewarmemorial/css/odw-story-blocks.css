@@ -173,7 +173,7 @@ a.feature-image-main:hover img,
 /* --- TABLET RESPONSIVE RULES --- */
 @media (max-width: 768px) {
     .feature-image, 
-    .feature-image-sm
+    .feature-image-sm,
     .feature-image-main {
         float: none !important;
         display: block !important; 
@@ -197,7 +197,7 @@ a.feature-image-main:hover img,
     }
     
     .feature-image img, 
-    .feature-image-sm img
+    .feature-image-sm img,
     .feature-image-main img {
         margin: 0 auto;
         display: block;
@@ -210,6 +210,12 @@ a.feature-image-main:hover img,
         flex-direction: column;
         align-items: center; 
         gap: 25px;
+    }
+
+    .feature-image-main {
+        text-align: center; 
+        margin: 0 auto;
+        display: block;
     }
     
     .feature-image-gallery .gallery-item {
