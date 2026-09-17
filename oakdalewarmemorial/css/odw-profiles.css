@@ -326,33 +326,6 @@
     }
 }
 
-/* Forces the roster bridge container into Tier 3 */
-.roster-photo-bridge {
-    grid-column: 1; 
-    grid-row: 3 !important;
-    width: 100%;
-    max-width: 820px;       
-    margin: 0px auto;       
-    padding: 0;
-    display: block;
-    overflow: hidden;       
-    aspect-ratio: 820 / 220; 
-    background-image: url('../images/footer_image02.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.roster-photo-bridge img {
-    background-color: transparent;
-    background-image: url('../images/footer_image05.jpg');
-    width: 100%;
-    max-width: 820px;
-    margin: 0px auto;
-    height: auto;
-    display: block;
-}
-
 .soldier-detail {
     font-family: var(--font-sans);
     font-size: clamp(14px, 2vw, 16px); 
