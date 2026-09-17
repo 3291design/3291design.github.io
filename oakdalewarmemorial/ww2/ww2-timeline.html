@@ -1,1 +1,231 @@
+ <!--==========================================================================
+   OAKDALE WAR MEMORIAL - Timeline 
+   File Version: v2.0 (2026 Refactor)
+   ========================================================================== -->
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakdale War Memorial - WWI Timeline</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABSOLUTE PATHS! -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-timeline.css">
+    
+</head>
 
+<body id="page-timeline" data-era="ww2-master" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+
+    <!-- Automated Header Sockets (Grid Tier 1) -->
+    <div id="header-socket"></div>
+
+    <div class="page-core">
+        
+        <!-- Element 1: MAIN INTRO TEXT BLOCK -->
+        <div class="subhead" style="font-size: clamp(18px, 4vw, 28px) !important;">Chronological Cross-Reference: Date – Date</div>
+        <div class="deck">
+            World War II reshaped the world, sweeping Oakdale's men into history's most devastating battles.
+        </div>
+
+        <!-- <hr class="main"> -->
+        
+        <!-- Oakdale War Memorial: Modular Timeline -->
+        <section class="multi-track-timeline">
+          
+        <!-- THE NEW INVISIBLE MASTER WRAPPER -->
+        <div class="timeline-master-wrapper" style="position: relative;">
+    
+        <!-- 1. THE VIEWPORT -->
+          <div class="horizontal-timeline-container" id="timeline-viewport">
+            
+            
+          </div> <!-- closes -- 2. The Viewport -- .horizontal-timeline-container -->
+
+          <!-- THE GHOST LIVES HERE (Outside the scroller, inside the wrapper) -->
+            <div id="floating-year-indicator">Date</div>
+
+          </div>
+
+          <!-- THE BOOKMARKS NAV BAR (1914-1919 Justified Panel) -->
+          <div class="timeline-bookmarks display-text-bold">
+              <!-- <span>Jump to Year:</span>
+              <a href="#year-1907">1907</a>
+              <a href="#year-1914">1914</a>
+              <a href="#year-1915">1915</a>
+              <a href="#year-1916">1916</a>
+              <a href="#year-1917">1917</a>
+              <a href="#year-1918">1918</a>
+              <a href="#year-1919">1919</a> -->
+          </div>
+          
+        </section>
+
+        <hr class="main-half">
+            
+       <!-- Responsive Footer Cards Container (Horizontal Sub-Section Nav) -->
+        <div class="story-card-grid story-card-grid-footer">
+            
+           <!-- Footer Card: WWI - The Fallen -->
+            <div class="story-card-item">
+              <div>
+                  <img class="story-card-img" src="#" alt="#" class="story-footnote-thumb">
+                  <span class="subhead_sm2"><a href="#">WWII - The Fallen</a></span>
+                  <span class="story-card-text">View the registry of the men commemorated on the Oakddale War Memorial. <span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="#">Read more...</a></span>
+              </div>
+            </div>
+            
+             <!-- Footer Card: WWI - Stories -->
+            <div class="story-card-item">
+                <div>
+                    <img class="story-card-img" src="#" alt="#" class="story-footnote-thumb">
+                    <span class="subhead_sm2"><a href="#">WWI - Stories</a></span>
+                    <span class="story-card-text">Explore the experiences of the soldiers from Oakdale who paid the ultimate price.<span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="#">Read more...</a></span>
+                </div>
+            </div> 
+
+        </div><!-- END Responsive Footer Cards Container -->
+
+    </div> <!-- CLOSES PAGE-CORE (Grid Tier 2) -->
+
+    <!-- NOW THE BRIDGE SITS DIRECTLY IN THE MAIN-CONTAINER -->
+    <div class="roster-photo-bridge-2"></div>
+
+    <!-- THE UNIVERSAL FOOTER SOCKET (Grid Tier 4 Floor) -->
+    <div id="footer-placeholder"></div>
+
+  </div> <!-- /main-container -->
+
+  <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+
+ <!-- Smooth horizontal scrolling and active state for timeline bookmarks -->
+  <script>
+    document.querySelectorAll('.timeline-bookmarks a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 1. Remove 'active' class from all bookmark links
+            document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 2. Add 'active' class to the clicked link
+            this.classList.add('active');
+
+            // 3. Perform precision-centered smooth horizontal scroll
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            const viewport = document.getElementById('timeline-viewport');
+            
+            if(targetElement && viewport) {
+                // Calculate position to center the year node nicely in the viewport, 
+                // or align it to the left with a slight padding offset (e.g., 20px)
+                const scrollLeft = targetElement.offsetLeft - viewport.offsetLeft - 20; 
+                
+                viewport.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
+        });
+    });
+  </script>
+
+  <!-- Floating Ghost Year & Bookmark Scroll Spy -->
+  <script>
+    const scrollViewport = document.getElementById('timeline-viewport');
+    const ghostIndicator = document.getElementById('floating-year-indicator');
+    
+    // Grab all the year blocks dynamically by looking at your bookmark links
+    const yearNodes = Array.from(document.querySelectorAll('.timeline-bookmarks a'))
+        .map(link => {
+            const targetId = link.getAttribute('href').substring(1);
+            return document.getElementById(targetId);
+        })
+        .filter(node => node !== null);
+
+    scrollViewport.addEventListener('scroll', () => {
+        let activeNodeId = "";
+        
+        // Create an invisible "tripwire" 33% of the way into the screen from the left
+        const tripwire = scrollViewport.scrollLeft + (scrollViewport.clientWidth * 0.33);
+
+        yearNodes.forEach(node => {
+            if ((node.offsetLeft - scrollViewport.offsetLeft) <= tripwire) {
+                activeNodeId = node.id; // e.g., 'year-1916'
+            }
+        });
+
+        // If we found a year...
+        if (activeNodeId) {
+            const cleanYear = activeNodeId.replace('year-', ''); // e.g., '1916'
+            
+            // Only update the DOM if the year ACTUALLY changed to save processor power
+            if (ghostIndicator.textContent !== cleanYear) {
+                
+                // 1. Update the giant ghost text
+                ghostIndicator.textContent = cleanYear;
+                
+                // 2. Sync the bookmark buttons!
+                document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
+                    if (link.getAttribute('href') === '#' + activeNodeId) {
+                        link.classList.add('active'); // Turn on the Heritage Red background
+                    } else {
+                        link.classList.remove('active'); // Turn off all the others
+                    }
+                });
+            }
+        }
+    });
+  </script>
+
+  <!-- Drag-to-Scroll / Grab Physics for the Timeline -->
+  <script>
+    const slider = document.getElementById('timeline-viewport');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // When the user clicks down
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('is-dragging');
+        // Record the exact X position of the click
+        startX = e.pageX - slider.offsetLeft;
+        // Record the current scroll position
+        scrollLeft = slider.scrollLeft;
+    });
+
+    // When the mouse leaves the timeline area
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('is-dragging');
+    });
+
+    // When the user lets go of the mouse button
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('is-dragging');
+    });
+
+    // When the user drags the mouse
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return; // Stop the function from running if they aren't holding the click
+        e.preventDefault();  // Stop default browser behavior
+        
+        const x = e.pageX - slider.offsetLeft;
+        // Calculate how far they've dragged. Multiply by 2 to make it feel a bit faster/looser.
+        const walk = (x - startX) * 2; 
+        slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+  
+</body>
+</html>
