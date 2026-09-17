@@ -73,7 +73,7 @@ html, body {
 }
 
 .modal-showcase-link-wrap {
-    margin-bottom: -30px;
+    margin-bottom: -30px !important;
 }
 
 /* =================================================== */
