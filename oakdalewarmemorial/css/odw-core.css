@@ -332,6 +332,39 @@ img {
     padding-right: 0;
 }
 
+/* Forces the roster bridge container into Tier 3 */
+.roster-photo-bridge {
+    grid-column: 1; 
+    grid-row: 3 !important;
+    width: 100%;
+    max-width: 820px;       
+    margin: 0px auto;       
+    padding: 0;
+    display: block;
+    overflow: hidden;       
+    aspect-ratio: 820 / 220; 
+    background-image: url('/oakdalewarmemorial/images/footer_image-ww1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.roster-photo-bridge-2 {
+    grid-column: 1; 
+    grid-row: 3 !important;
+    width: 100%;
+    max-width: 820px;       
+    margin: 0px auto;       
+    padding: 0;
+    display: block;
+    overflow: hidden;       
+    aspect-ratio: 820 / 220; 
+    background-image: url('/oakdalewarmemorial/images/footer_image-ww2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .subhead-core {
     width: 100%;
     max-width: 820px;
