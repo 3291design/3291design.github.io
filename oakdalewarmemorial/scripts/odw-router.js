@@ -81,22 +81,16 @@ export function initRouter(eraType, rootPrefix = "./") {
                     titleSocket.setAttribute("href", rootPrefix + "ww1/ww1-map-master.html");
                 } else if (currentFile === "odw-links.html") {
                     titleSocket.textContent = "Links";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-links.html");
                 } else if (currentFile === "odw-bibliography.html") {
                     titleSocket.textContent = "Bibliography";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-bibliography.html");
                 } else if (currentFile === "odw-copyright.html") {
                     titleSocket.textContent = "Copyright";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-copyright.html");
                 } else if (currentFile === "odw-credits.html") {
                     titleSocket.textContent = "Credits";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-credits.html");
                 } else if (currentFile === "odw-sitemap.html") {
                     titleSocket.textContent = "Site Map";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-sitemap.html");
                 } else if (currentFile === "odw-contact.html") {
                     titleSocket.textContent = "Contact";
-                    titleSocket.setAttribute("href", rootPrefix + "odw-contact.html");
                 } else if (currentFile === "odw-memorial.html") {
                     titleSocket.textContent = "The Memorial";
                     titleSocket.setAttribute("href", rootPrefix + "odw-memorial.html");
