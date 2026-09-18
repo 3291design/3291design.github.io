@@ -488,7 +488,7 @@ a.feature-image-main:hover img,
 
 
 /* ==========================================================================
-   SECTION 7. TOC SPECIFIC TWO-COLUMN GRID LAYOUT
+   SECTION 7. TOC & References SPECIFIC TWO-COLUMN GRID LAYOUT
    ========================================================================== */
 
 .toc-grid-layout li {
@@ -526,6 +526,44 @@ a.feature-image-main:hover img,
 
 @media (max-width: 768px) {
     .toc-grid-layout ul {
+        column-count: 1;
+    }
+}
+
+.ref-grid-layout li {
+    break-inside: avoid;
+}
+
+.ref-grid-layout li::before {
+    color: var(--odw-red);
+    display: inline-block;
+    margin-left: -1em;
+    width: 1em;
+}
+
+.ref-grid-layout li a {
+    color: var(--text-dark);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ref-grid-layout li a:hover {
+    color: var(--odw-red);
+    text-decoration: underline dashed 1px;
+    text-underline-offset: 4px;
+}
+
+.ref-grid-layout ul {
+    column-count: 2;
+    column-gap: 40px;
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .ref-grid-layout ul {
         column-count: 1;
     }
 }
