@@ -379,6 +379,7 @@ img {
     font-family: var(--font-display);
     font-weight: 400;
     font-size: clamp(32px, 7vw, 62px); 
+    color: #ededed;
     text-align: center;
     letter-spacing: -1px;
     line-height: 1.2em;
