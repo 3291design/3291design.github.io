@@ -76,18 +76,6 @@
     margin-left: 20px;
 }
 
-.campaign-title {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: clamp(15px, 4vw, 17px); 
-    font-weight: 800;
-    line-height: 1.6; 
-    color: var(--text-dark);
-    width: 100%;
-    box-sizing: border-box;
-    margin: 20px 0px 0px 0px; 
-}
-
 .caption {
     font-family: var(--font-sans); 
     font-size: 0.9em; 
