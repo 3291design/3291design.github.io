@@ -94,6 +94,9 @@ export function initRouter(eraType, rootPrefix = "./") {
                 } else if (currentFile === "odw-memorial.html") {
                     titleSocket.textContent = "The Memorial";
                     titleSocket.setAttribute("href", rootPrefix + "odw-memorial.html");
+                 } else if (currentFile === "odw-about.html") {
+                    titleSocket.textContent = "About Oakdale";
+                    titleSocket.setAttribute("href", rootPrefix + "odw-about.html");
                 } else {
                     titleSocket.textContent = "Oakdale War Memorial";
                     titleSocket.setAttribute("href", rootPrefix + "index.html");
