@@ -208,7 +208,6 @@
 }
 
 .display-text ul {
-    list-style-type: disc;      
     margin-top: 15px;           
     margin-bottom: 15px;        
     padding-left: 40px;         
@@ -248,7 +247,7 @@
 .plain-text {
     display: block;
     font-family: var(--font-sans);
-    font-size: clamp(12px, 1.5vw, 14px); 
+    font-size: clamp(12px, 4vw, 14px); 
     line-height: 1.6; 
     color: var(--text-body);
     width: 100%;
@@ -266,6 +265,25 @@
     color: var(--odw-red-hover);                        
     text-decoration: underline dashed 1px;
     text-underline-offset: 4px;
+}
+
+.plain-text ul {
+    margin-top: 18px;           
+    margin-bottom: 18px;        
+    padding-left: 40px;         
+}
+.plain-text li {
+    margin-bottom: 8px;         
+    line-height: 1.4;           
+}
+
+.plain-text sup a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.plain-text sup a:hover {
+    text-decoration: underline;
 }
 
 .references-block {
