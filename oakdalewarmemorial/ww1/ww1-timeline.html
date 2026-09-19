@@ -80,7 +80,7 @@
                         <i style="margin-bottom: 10px;">The sinking of Oakdale Colliery's mine shafts begins.</i>
                         <a href="/oakdalewarmemorial/images/oakdale-colliery_01_lg.jpg" data-lightbox="artifact" data-lightbox="artifact" data-caption="The sinking of three mine shafts for the new colliery at Oakdale began in 1907. The north shaft was 626 yards deep and south 650 yards deep, making them the largest diameter mine shafts in South Wales at the time.
                         <br>[ Photo credit: <a href='https://storymaps.arcgis.com/stories/82136a5a1bfd441387d456a01871d541' target='_blank'>Cadw / Story Maps</a> ]" class="image-lightbox-link">  
-                        <img src="/oakdalewarmemorial/images/oakdale-colliery_01_vsm.jpg" class="timeline-image" style="width: 140px; height: 160px;" alt="Oakdale Colliery.">
+                        <img src="/oakdalewarmemorial/images/oakdale-colliery_01_vsm.jpg" class="timeline-image" style="width: 140px; height: 158px;" alt="Oakdale Colliery.">
                         </a>
 
                     </div>
@@ -423,7 +423,7 @@
               </div>
 
               <!-- NODE (GIVENCHY TRENCHES - JOHN WILLIAMS) -->
-              <div class="node-base node-battle">
+              <div class="node-base node-battle" id="event-25may1916">
                 <div class="node-top-section">
                     <div class="node-date-badge display-text">25 May</div>
                     <div class="node-content-top">
@@ -1277,73 +1277,54 @@
   <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
   <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
 
- <!-- Smooth scrolling and active state for timeline bookmarks -->
-  <script>
-    document.querySelectorAll('.timeline-bookmarks a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // 1. Remove 'active' class from all bookmark links
-            document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // 2. Add 'active' class to the clicked link
-            this.classList.add('active');
-
-            // 3. Perform context-aware smooth scrolling
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            const viewport = document.getElementById('timeline-viewport');
-            
-            if(targetElement && viewport) {
-                // If on Mobile (Vertical Stack)
-                if (window.innerWidth <= 768) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } 
-                // If on Desktop/Tablet (Horizontal Track)
-                else {
-                    const scrollLeft = targetElement.offsetLeft - viewport.offsetLeft - 20; 
-                    viewport.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-                }
-            }
-        });
-    });
-  </script>
-
-  <!-- Floating Ghost Year & Bookmark Scroll Spy (Desktop + Mobile Dual-Mode) -->
-  <script>
-    const scrollViewport = document.getElementById('timeline-viewport');
+<!-- ======================================================= -->
+<!-- MASTER TIMELINE ENGINE: Scrolling, Routing, and Physics -->
+<!-- ======================================================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const viewport = document.getElementById('timeline-viewport');
     const ghostIndicator = document.getElementById('floating-year-indicator');
+    const bookmarks = document.querySelectorAll('.timeline-bookmarks a');
     
-    // Grab all year nodes dynamically
-    const yearNodes = Array.from(document.querySelectorAll('.timeline-bookmarks a'))
-        .map(link => {
-            const targetId = link.getAttribute('href').substring(1);
-            return document.getElementById(targetId);
-        })
+    if (!viewport) return; 
+
+    // Extract year nodes for the scroll-spy
+    const yearNodes = Array.from(bookmarks)
+        .map(link => document.getElementById(link.getAttribute('href').substring(1)))
         .filter(node => node !== null);
 
+    // ==========================================
+    // 2. THE NATIVE SCROLLING ENGINE
+    // ==========================================
+    function scrollToTarget(targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
+
+        // Natively centers the node on desktop (inline) and mobile (block)
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',   
+            inline: 'center'   
+        });
+    }
+
+    // ==========================================
+    // 3. THE SCROLL-SPY ENGINE
+    // ==========================================
     function updateActiveState() {
         let activeNodeId = "";
         const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
-            // Mobile: check vertical position relative to viewport top (e.g., 30% down the screen)
             const triggerLine = window.innerHeight * 0.35;
             yearNodes.forEach(node => {
                 const rect = node.getBoundingClientRect();
-                if (rect.top <= triggerLine) {
-                    activeNodeId = node.id;
-                }
+                if (rect.top <= triggerLine) activeNodeId = node.id;
             });
         } else {
-            // Desktop: horizontal tripwire 33% into the scrollViewport
-            const tripwire = scrollViewport.scrollLeft + (scrollViewport.clientWidth * 0.33);
+            const tripwire = viewport.scrollLeft + (viewport.clientWidth * 0.33);
             yearNodes.forEach(node => {
-                if ((node.offsetLeft - scrollViewport.offsetLeft) <= tripwire) {
-                    activeNodeId = node.id;
-                }
+                if ((node.offsetLeft - viewport.offsetLeft) <= tripwire) activeNodeId = node.id;
             });
         }
 
@@ -1352,9 +1333,7 @@
             if (ghostIndicator && ghostIndicator.textContent !== cleanYear) {
                 ghostIndicator.textContent = cleanYear;
             }
-            
-            // Sync all matching bookmark links (top and bottom)
-            document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
+            bookmarks.forEach(link => {
                 if (link.getAttribute('href') === '#' + activeNodeId) {
                     link.classList.add('active');
                 } else {
@@ -1364,55 +1343,62 @@
         }
     }
 
-    // Listen to horizontal scroll on desktop viewport, and vertical scroll/resize globally
-    scrollViewport.addEventListener('scroll', updateActiveState);
+    // ==========================================
+    // 4. EVENT LISTENERS
+    // ==========================================
+    bookmarks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToTarget(this.getAttribute('href').substring(1));
+        });
+    });
+
+    viewport.addEventListener('scroll', updateActiveState);
     window.addEventListener('scroll', updateActiveState);
     window.addEventListener('resize', updateActiveState);
-    
-    // Initial trigger
-    updateActiveState();
-  </script>
 
-  <!-- Drag-to-Scroll / Grab Physics for the Timeline -->
-  <script>
-    const slider = document.getElementById('timeline-viewport');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    // When the user clicks down
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('is-dragging');
-        // Record the exact X position of the click
-        startX = e.pageX - slider.offsetLeft;
-        // Record the current scroll position
-        scrollLeft = slider.scrollLeft;
+    let isDown = false, startX, scrollLeftPos;
+    viewport.addEventListener('mousedown', (e) => {
+        isDown = true; viewport.classList.add('is-dragging');
+        startX = e.pageX - viewport.offsetLeft; scrollLeftPos = viewport.scrollLeft;
+    });
+    viewport.addEventListener('mouseleave', () => { isDown = false; viewport.classList.remove('is-dragging'); });
+    viewport.addEventListener('mouseup', () => { isDown = false; viewport.classList.remove('is-dragging'); });
+    viewport.addEventListener('mousemove', (e) => {
+        if (!isDown) return; e.preventDefault();
+        const x = e.pageX - viewport.offsetLeft;
+        viewport.scrollLeft = scrollLeftPos - ((x - startX) * 2);
     });
 
-    // When the mouse leaves the timeline area
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('is-dragging');
-    });
+    // ==========================================
+    // 5. THE BULLDOZER HASH ROUTER
+    // ==========================================
+    function handleHashJump() {
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Pass 1: Try immediately upon load
+                scrollToTarget(targetId);
+                
+                // Pass 2: Force it again 600ms later to overpower the browser's native load behaviors
+                setTimeout(() => {
+                    scrollToTarget(targetId);
+                    updateActiveState();
+                }, 600);
+            }
+        } else {
+            updateActiveState(); 
+        }
+    }
 
-    // When the user lets go of the mouse button
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('is-dragging');
-    });
-
-    // When the user drags the mouse
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return; // Stop the function from running if they aren't holding the click
-        e.preventDefault();  // Stop default browser behavior
-        
-        const x = e.pageX - slider.offsetLeft;
-        // Calculate how far they've dragged. Multiply by 2 to make it feel a bit faster/looser.
-        const walk = (x - startX) * 2; 
-        slider.scrollLeft = scrollLeft - walk;
-    });
-  </script>
+    // Run the bulldozer once HTML is parsed...
+    handleHashJump();
+    // ...and run it one last time just in case images loading caused the layout to shift!
+    window.addEventListener('load', handleHashJump);
+});
+</script>
   
 </body>
 </html>
