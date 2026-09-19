@@ -1,6 +1,7 @@
- <!--==========================================================================
+  <!--==========================================================================
    OAKDALE WAR MEMORIAL - Timeline 
-   File Version: v2.0 (2026 Refactor)
+   File Version: v3.0 (19 September 2026)
+   Refactored Horizontal layout for mobile/vertical orientation
    ========================================================================== -->
    
 <!DOCTYPE html>
@@ -36,13 +37,23 @@
         <div class="deck">
             The Great War reshaped Europe and the Middle East, sweeping Oakdale's men into history's most devastating battles.
         </div>
-
-        <!-- <hr class="main"> -->
         
         <!-- Oakdale War Memorial: Modular Timeline -->
         <section class="multi-track-timeline">
           
-        <!-- THE NEW INVISIBLE MASTER WRAPPER -->
+        <!-- NEW TOP NAV (Hidden on Desktop, Visible on Mobile) -->
+        <div class="timeline-bookmarks tabs-top">
+            <span>Jump to Year:</span>
+            <a href="#year-1907" class="active">1907</a>
+            <a href="#year-1914">1914</a>
+            <a href="#year-1915">1915</a>
+            <a href="#year-1916">1916</a>
+            <a href="#year-1917">1917</a>
+            <a href="#year-1918">1918</a>
+            <a href="#year-1919">1919</a>
+        </div>
+
+    <!-- THE NEW INVISIBLE MASTER WRAPPER -->
         <div class="timeline-master-wrapper" style="position: relative;">
     
         <!-- 1. THE VIEWPORT -->
@@ -66,7 +77,7 @@
                 <div class="node-top-section">
                     <div class="node-date-badge display-text">1907</div>
                     <div class="node-content-top">
-                        <i style="margin-bottom: 10px;">Sinking of Oakdale's mine shafts begins</i>
+                        <i style="margin-bottom: 10px;">The sinking of Oakdale Colliery's mine shafts begins.</i>
                         <a href="/oakdalewarmemorial/images/oakdale-colliery_01_lg.jpg" data-lightbox="artifact" data-lightbox="artifact" data-caption="The sinking of three mine shafts for the new colliery at Oakdale began in 1907. The north shaft was 626 yards deep and south 650 yards deep, making them the largest diameter mine shafts in South Wales at the time.
                         <br>[ Photo credit: <a href='https://storymaps.arcgis.com/stories/82136a5a1bfd441387d456a01871d541' target='_blank'>Cadw / Story Maps</a> ]" class="image-lightbox-link">  
                         <img src="/oakdalewarmemorial/images/oakdale-colliery_01_vsm.jpg" class="timeline-image" style="width: 140px; height: 160px;" alt="Oakdale Colliery.">
@@ -93,7 +104,7 @@
                 <div class="node-top-section">
                     <div class="node-date-badge display-text">1911</div>
                     <div class="node-content-top">
-                        <i style="margin-bottom: 10px;">Oakdale Colliery produces first coal</i>
+                        <i>Oakdale Colliery produces its first coal.</i>
                     </div>
                 </div>
                 <div class="node-axis-band"></div>
@@ -115,7 +126,7 @@
                 <div class="node-top-section">
                     <div class="node-date-badge display-text">13 March</div>
                     <div class="node-content-top">
-                        <i style="margin-bottom: 10px;">New hotel for Oakdale proposed</i>
+                        <i style="margin-bottom: 10px;">A new hotel for Oakdale is proposed.</i>
                     </div>
                 </div>
                 <div class="node-axis-band"></div>
@@ -130,7 +141,7 @@
                             <div style="font-family: Georgia, serif; font-size: clamp(15px, 4vw, 22px); font-weight: 800; line-height: 1.2; color: #222222; padding-left: 30px; background-image: linear-gradient(to right, #000080 8px, transparent 8px, transparent 11px, #903 11px); background-position: left; background-size: 19px 100%; background-repeat: no-repeat; letter-spacing: 1px; margin-bottom: 0px; text-transform: uppercase;">Britain Declares War on Germany</div>
                             
                             <div style="margin-top: 15px; position: relative; z-index: 10;">
-                                <a href="/oakdalewarmemorial/images/britain-declares-war_02_lg.jpg" data-lightbox="artifact" data-caption="Britain Declares War! Crowds outside Buckingham Palace cheer King George, Queen Mary and the Prince of Wales (who can just be seen on the balcony) following the Declaration of War in August 1914.<br>[ Photo collage/credit: <a href='https://www.iwm.org.uk/collections/item/object/205022448' target='_blank'>Imperial War Museums</a> ]" class="image-lightbox-link" style="position: absolute; top: 0; left: 0;"> 
+                                <a href="/oakdalewarmemorial/images/britain-declares-war_02_lg.jpg" data-lightbox="artifact" data-caption="Britain Declares War! Crowds outside Buckingham Palace cheer King George, Queen Mary and the Prince of Wales (who can just be seen on the balcony) following the Declaration of War in August 1914.<br>[ Photo collage/credit: <a href='https://www.iwm.org.uk/collections/item/object/205022448' target='_blank'>Imperial War Museums</a> ]" class="image-lightbox-link hide-on-mobile" style="position: absolute; top: 0; left: 0;"> 
                                 
                                 <img src="/oakdalewarmemorial/images/britain-declares-war_02_sm.jpg" class="timeline-image" style="height: 320px; max-width: 280px; object-fit: cover;" alt="Britain Declares War!">
                                 </a>
@@ -1209,28 +1220,19 @@
 
           </div>
 
-          <!-- THE BOOKMARKS NAV BAR (1914-1919 Justified Panel) -->
-          <div class="timeline-bookmarks display-text-bold">
-              <span>Jump to Year:</span>
-              <a href="#year-1907">1907</a>
-              <a href="#year-1914">1914</a>
-              <a href="#year-1915">1915</a>
-              <a href="#year-1916">1916</a>
-              <a href="#year-1917">1917</a>
-              <a href="#year-1918">1918</a>
-              <a href="#year-1919">1919</a>
-          </div>
+          <!-- NEW BOTTOM NAV (Visible on Desktop & Mobile) -->
+            <div class="timeline-bookmarks tabs-bottom">
+                <span>Jump to Year:</span>
+                <a href="#year-1907">1907</a>
+                <a href="#year-1914">1914</a>
+                <a href="#year-1915">1915</a>
+                <a href="#year-1916">1916</a>
+                <a href="#year-1917">1917</a>
+                <a href="#year-1918">1918</a>
+                <a href="#year-1919">1919</a>
+            </div>
           
         </section>
-
-        <!-- <div class="track-event" style="gap: 15px; margin-bottom: 10px;">
-            <a href="/oakdalewarmemorial/ww1/ww1-western-front.html" class="artifact-btn btn-story hybrid-fetch-trigger" data-target="sidebar">
-            <span class="artifact-label">The Western Front</span>
-            </a>
-            <a href="oakdalewarmemorial/ww1/ww1-beyond-western.html" class="artifact-btn btn-story btn-alt hybrid-fetch-trigger" data-target="sidebar">
-            <span class="artifact-label">Beyond the Western Front</span>
-            </a>
-        </div> -->
 
         <hr class="main-half">
             
@@ -1262,6 +1264,11 @@
     <!-- NOW THE BRIDGE SITS DIRECTLY IN THE MAIN-CONTAINER -->
     <div class="roster-photo-bridge"></div>
 
+    <!-- Centered Bottom-Anchored Half-Ellipse Back to Top Button -->
+    <a href="#page-timeline" class="back-to-top-btn" title="Back to Top">
+        <span style="font-size: 10px;">&#9650;</span> Top
+    </a>
+
     <!-- THE UNIVERSAL FOOTER SOCKET (Grid Tier 4 Floor) -->
     <div id="footer-placeholder"></div>
 
@@ -1270,7 +1277,7 @@
   <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
   <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
 
- <!-- Smooth horizontal scrolling and active state for timeline bookmarks -->
+ <!-- Smooth scrolling and active state for timeline bookmarks -->
   <script>
     document.querySelectorAll('.timeline-bookmarks a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -1284,28 +1291,32 @@
             // 2. Add 'active' class to the clicked link
             this.classList.add('active');
 
-            // 3. Perform precision-centered smooth horizontal scroll
+            // 3. Perform context-aware smooth scrolling
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             const viewport = document.getElementById('timeline-viewport');
             
             if(targetElement && viewport) {
-                // Calculate position to center the year node nicely in the viewport, 
-                // or align it to the left with a slight padding offset (e.g., 20px)
-                const scrollLeft = targetElement.offsetLeft - viewport.offsetLeft - 20; 
-                
-                viewport.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                // If on Mobile (Vertical Stack)
+                if (window.innerWidth <= 768) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } 
+                // If on Desktop/Tablet (Horizontal Track)
+                else {
+                    const scrollLeft = targetElement.offsetLeft - viewport.offsetLeft - 20; 
+                    viewport.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
             }
         });
     });
   </script>
 
-  <!-- Floating Ghost Year & Bookmark Scroll Spy -->
+  <!-- Floating Ghost Year & Bookmark Scroll Spy (Desktop + Mobile Dual-Mode) -->
   <script>
     const scrollViewport = document.getElementById('timeline-viewport');
     const ghostIndicator = document.getElementById('floating-year-indicator');
     
-    // Grab all the year blocks dynamically by looking at your bookmark links
+    // Grab all year nodes dynamically
     const yearNodes = Array.from(document.querySelectorAll('.timeline-bookmarks a'))
         .map(link => {
             const targetId = link.getAttribute('href').substring(1);
@@ -1313,39 +1324,53 @@
         })
         .filter(node => node !== null);
 
-    scrollViewport.addEventListener('scroll', () => {
+    function updateActiveState() {
         let activeNodeId = "";
-        
-        // Create an invisible "tripwire" 33% of the way into the screen from the left
-        const tripwire = scrollViewport.scrollLeft + (scrollViewport.clientWidth * 0.33);
+        const isMobile = window.innerWidth <= 768;
 
-        yearNodes.forEach(node => {
-            if ((node.offsetLeft - scrollViewport.offsetLeft) <= tripwire) {
-                activeNodeId = node.id; // e.g., 'year-1916'
-            }
-        });
-
-        // If we found a year...
-        if (activeNodeId) {
-            const cleanYear = activeNodeId.replace('year-', ''); // e.g., '1916'
-            
-            // Only update the DOM if the year ACTUALLY changed to save processor power
-            if (ghostIndicator.textContent !== cleanYear) {
-                
-                // 1. Update the giant ghost text
-                ghostIndicator.textContent = cleanYear;
-                
-                // 2. Sync the bookmark buttons!
-                document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
-                    if (link.getAttribute('href') === '#' + activeNodeId) {
-                        link.classList.add('active'); // Turn on the Heritage Red background
-                    } else {
-                        link.classList.remove('active'); // Turn off all the others
-                    }
-                });
-            }
+        if (isMobile) {
+            // Mobile: check vertical position relative to viewport top (e.g., 30% down the screen)
+            const triggerLine = window.innerHeight * 0.35;
+            yearNodes.forEach(node => {
+                const rect = node.getBoundingClientRect();
+                if (rect.top <= triggerLine) {
+                    activeNodeId = node.id;
+                }
+            });
+        } else {
+            // Desktop: horizontal tripwire 33% into the scrollViewport
+            const tripwire = scrollViewport.scrollLeft + (scrollViewport.clientWidth * 0.33);
+            yearNodes.forEach(node => {
+                if ((node.offsetLeft - scrollViewport.offsetLeft) <= tripwire) {
+                    activeNodeId = node.id;
+                }
+            });
         }
-    });
+
+        if (activeNodeId) {
+            const cleanYear = activeNodeId.replace('year-', '');
+            if (ghostIndicator && ghostIndicator.textContent !== cleanYear) {
+                ghostIndicator.textContent = cleanYear;
+            }
+            
+            // Sync all matching bookmark links (top and bottom)
+            document.querySelectorAll('.timeline-bookmarks a').forEach(link => {
+                if (link.getAttribute('href') === '#' + activeNodeId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    // Listen to horizontal scroll on desktop viewport, and vertical scroll/resize globally
+    scrollViewport.addEventListener('scroll', updateActiveState);
+    window.addEventListener('scroll', updateActiveState);
+    window.addEventListener('resize', updateActiveState);
+    
+    // Initial trigger
+    updateActiveState();
   </script>
 
   <!-- Drag-to-Scroll / Grab Physics for the Timeline -->
