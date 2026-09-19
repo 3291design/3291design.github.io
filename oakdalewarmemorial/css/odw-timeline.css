@@ -1,7 +1,18 @@
-/* =================================================== */
+ /* =================================================== */
 /* OAKDALE WAR MEMORIAL: MODULAR TIMELINE ENGINE 
-   23 August 2026 - version 2.2 (Token Architecture)
+   19 September 2026 - version 3.0 
+   File Version: v3.0 - Token Architecture (19 September 2026)
+   Refactored Horizontal layout for mobile/vertical orientation
    =================================================== */
+
+/* =================================================== */
+/* UNIVERSAL BOX MODEL FIX                             */
+/* Forces padding/borders to compute INWARD            */
+/* =================================================== */
+.multi-track-timeline, 
+.multi-track-timeline * {
+    box-sizing: border-box;
+}
 
 /* --- 1. THE VIEWPORT --- */
 .horizontal-timeline-container {
@@ -19,7 +30,7 @@
     border-radius: 0; 
     box-shadow: inset 0px 4px 12px rgba(0,0,0,0.25); 
     
-    margin: 30px 0 0 0; 
+    margin: 20px 0 0 0; 
     padding: 20px 0 20px 0; 
     
     -webkit-overflow-scrolling: touch; 
@@ -154,29 +165,66 @@
     flex-grow: 1; 
 }
 
-/* --- BOOKMARK NAVIGATION --- */
+/* --- BOOKMARK NAVIGATION (NOTEBOOK TABS) --- */
 .timeline-bookmarks {
-    background: #fdfdfd;
-    border: 1px solid var(--text-dark);
-    border-top: none;
-    padding: 15px 25px;
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    justify-content: flex-start;
+    gap: 3px; 
+    padding: 0 25px;
+    background: transparent;
+    border: none;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif; 
-    font-size: 0.95em;
+    font-size: 0.85em; /* Slightly tighter type scale */
     font-weight: 800;
-    margin-bottom: 40px;
 }
-.timeline-bookmarks span { color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.timeline-bookmarks a { color: var(--odw-node-blue); text-decoration: none; padding: 4px 12px; border: 1px solid transparent; }
-.timeline-bookmarks a:hover { color: #fffafa; border-color: #fffafa; background: var(--odw-red-hover); }
+
+.timeline-bookmarks span { 
+    color: var(--text-muted); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    padding: 6px 12px 6px 0;
+}
+
+.timeline-bookmarks a { 
+    position: relative;
+    background: var(--timeline-bg);
+    padding: 4px 11px; /* Tighter horizontal footprint */
+    color: #555555; 
+    text-decoration: none; 
+    border: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.timeline-bookmarks a:hover { 
+    background: var(--odw-red-hover);
+    color: #fffafa; 
+}
 
 .timeline-bookmarks a.active {
     background-color: var(--odw-node-blue);
     color: #fff;
-    border-color: var(--text-dark);
 }
+
+/* Shape the Top Tabs (pointing UP, subtle 4px chamfer upper-left) */
+.tabs-top {
+    display: none; 
+}
+.tabs-top a {
+    border-radius: 0;
+    clip-path: polygon(4px 0, 100% 0, 100% 100%, 0 100%, 0 4px);
+}
+
+/* Shape the Bottom Tabs (hanging DOWN, subtle 4px chamfer lower-left) */
+.tabs-bottom {
+    margin-bottom: 40px;
+}
+.tabs-bottom a {
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* ---------- END BOOKMARK NAVIGATION ----------*/
 
 .timeline-image {
     width: 100%;
@@ -231,4 +279,191 @@ a.image-lightbox-link:hover .timeline-image {
 #timeline-viewport.is-dragging .horizontal-timeline-track {
     user-select: none;
     -webkit-user-select: none;
+}
+
+/* =================================================== */
+/* DESKTOP/TABLET HIDDEN ELEMENTS                      */
+/* =================================================== */
+
+/* 1. Hide the Back to Top button on horizontal view */
+#page-timeline .back-to-top-btn {
+    display: none;
+}
+
+/* 2. Hide the Top Notebook Tabs on horizontal view */
+#page-timeline .tabs-top {
+    display: none;
+}
+
+/* =================================================== */
+/* =================================================== */
+/* MOBILE TIMELINE REFACTOR (Max-width: 768px)         */
+/* =================================================== */
+/* =================================================== */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Reset the Viewport (Kill horizontal scroll constraint) */
+    .horizontal-timeline-container {
+        overflow-x: hidden;
+        overflow-y: visible;
+        height: auto; 
+        padding: 10px 0px;
+        box-sizing: border-box; /* THE FIX: Ensures padding doesn't push the width past 100% */
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    /* 2. Switch Track to Vertical Stack */
+    .horizontal-timeline-track {
+        flex-direction: column;
+        
+        /* THE FIX: Override the desktop width constraints */
+        min-width: 0; 
+        width: 100%;
+        margin-left: 0px;
+        box-sizing: border-box;
+        overflow-wrap: break-word; /* Safeguard: forces long URLs or words to wrap instead of pushing the screen wide */
+    }
+
+    /* 3. Reformat the Giant Year Markers into Header Rows */
+    .rail-year-node {
+        flex: auto;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: flex-start; 
+        height: auto; 
+        background-color: #fdfdfd;
+        padding: 20px 15px; 
+        
+        /* THE FIX: 40px top gap, 0px bottom gap to sit flush with the first event */
+        margin: 20px 0 0 0; 
+        
+        /* THE FIX: Add the continuous spine border */
+        border-left: 4px solid var(--text-dark); 
+        
+        /* Optional: You can keep or remove this bottom border depending on if you want a horizontal divider */
+        border-bottom: 3px solid var(--text-dark); 
+    }
+
+    /* Hide horizontal-specific year elements */
+    .year-top-spacer, 
+    .year-bottom-spacer,
+    .rail-year-node .node-axis-band {
+        display: none; 
+    }
+
+    .year-text-wrapper {
+        height: auto;
+        width: 100%; 
+        display: block; /* Normalizes the container */
+    }
+
+    /* Rotate the text back to normal and scale down */
+    .year-text {
+        position: static;
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 6rem; /* Pulled back slightly so it doesn't break very narrow screens */
+        letter-spacing: -6px;
+        line-height: 1; /* THE FIX: Stops the browser from adding weird invisible spacing above/below */
+        margin: 0; 
+    }
+
+    /* 4. Fluid Nodes & The Left Spine */
+    .node-base {
+        flex: auto !important; /* Override all the fixed flex widths (180, 260, 340) */
+        width: 100%;
+        border-left: 4px solid var(--text-dark); /* This left border now forms a continuous vertical spine! */
+        margin-bottom: 0px;
+        padding-left: 0px; /* Pushes content slightly away from the spine */
+    }
+
+    /* 5. Flatten the Content Areas */
+    .node-top-section, 
+    .node-top-section-alt {
+        min-height: auto; 
+        padding: 10px 10px;
+    }
+
+    .node-content-bottom, 
+    .node-content-bottom-alt {
+        min-height: auto; 
+        padding-left: 20px;
+    }
+
+    /* Adjust the center band (where the story buttons live) */
+    .node-axis-band, 
+    .node-axis-band-alt {
+        height: auto; 
+        padding-left: 20px;
+    }
+
+    .node-date-badge {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: -11px;
+        display: inline-block; /* Prevents it from stretching full width */
+    }
+
+    /* 6. Override Inline Image Styles */
+    .timeline-image {
+        width: 100%;
+        max-width: 220px !important; 
+        height: auto !important; /* Prevents stretching */
+        margin-top: 15px;
+    }
+
+    /* 7. Notebook Tabs for Mobile */
+    .timeline-bookmarks {
+        padding: 0 10px;
+        flex-wrap: nowrap; 
+        gap: 2px; 
+        max-width: 100%; 
+        box-sizing: border-box;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; 
+    }
+    
+    .timeline-bookmarks::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .timeline-bookmarks a {
+        padding: 6px 8px; 
+        font-size: 0.8rem; 
+        flex-shrink: 0; 
+    }
+
+    /* THE FIX: Add the #page-timeline ID to overpower the desktop 'display: none' */
+    #page-timeline .tabs-top {
+        display: flex; 
+        justify-content: flex-end; 
+        margin-top: 30px; 
+    }
+
+    /* You don't need the ID here because .tabs-bottom was never hidden globally */
+    .tabs-bottom {
+        margin-bottom: 30px; 
+    }
+
+    .timeline-bookmarks span {
+        display: none; 
+    }
+
+    /* 8. Hide Desktop Only Elements */
+    #floating-year-indicator {
+        display: none; 
+    }
+
+    /* 9. Utility class to hide specific elements on mobile */
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    /* 10. Utility class to show specific elements on mobile */
+    #page-timeline .back-to-top-btn {
+        display: block;
+}
 }
