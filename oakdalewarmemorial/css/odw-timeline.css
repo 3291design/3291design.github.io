@@ -119,8 +119,18 @@
 .node-date-badge {
     width: 120px;
     background-color: rgba(255, 255, 255, 0.65);
-    border: 1px solid var(--text-dark);
+    border: 1px solid var(--text-body);
     margin-left: -1px; 
+    margin-top: 15px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.node-casualty-badge {
+    width: 120px;
+    background-color: none;
+    border: 1px solid var(--border-dark);
+    margin-left: 15px; 
     margin-top: 15px;
     padding: 5px 10px;
     text-align: center;
@@ -338,12 +348,8 @@ a.image-lightbox-link:hover .timeline-image {
         
         /* THE FIX: 40px top gap, 0px bottom gap to sit flush with the first event */
         margin: 20px 0 0 0; 
-        
-        /* THE FIX: Add the continuous spine border */
-        border-left: 4px solid var(--text-dark); 
-        
-        /* Optional: You can keep or remove this bottom border depending on if you want a horizontal divider */
-        border-bottom: 3px solid var(--text-dark); 
+        border-left: none !important;
+        border-bottom: none !important;
     }
 
     /* Hide horizontal-specific year elements */
@@ -374,7 +380,6 @@ a.image-lightbox-link:hover .timeline-image {
     .node-base {
         flex: auto !important; /* Override all the fixed flex widths (180, 260, 340) */
         width: 100%;
-        border-left: 4px solid var(--text-dark); /* This left border now forms a continuous vertical spine! */
         margin-bottom: 0px;
         padding-left: 0px; /* Pushes content slightly away from the spine */
     }
@@ -460,8 +465,18 @@ a.image-lightbox-link:hover .timeline-image {
     /* 9. Utility class to hide specific elements on mobile */
     .hide-on-mobile {
         display: none !important;
+        border-left: 4px solid var(--text-dark) !important;
+        border-bottom: 3px solid var(--text-dark) !important;
     }
 
+    .node-base {
+        display: flex;
+        flex-direction: column;
+        border-left: none; 
+        min-height: 100%; 
+        box-sizing: border-box;
+}
+   
     /* 10. Utility class to show specific elements on mobile */
     #page-timeline .back-to-top-btn {
         display: block;
