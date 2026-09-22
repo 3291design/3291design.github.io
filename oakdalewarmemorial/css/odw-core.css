@@ -29,6 +29,8 @@
     --bg-panel: #ffffff;
     --bg-note: #f9f9f9;
     --border-light: #d4d4d4;
+    --border-dark: #a9a9a9;
+
 
     /* --- 5. Centralized Shadow Profiles --- */
     --shadow-subtle: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -223,8 +225,10 @@ body {
     grid-row: 1; 
     width: 100%;
     margin-bottom: 0px; 
-    display: block;      
-    border: 0px solid #ff0000;
+    display: block;
+    /* Restores stacking context for injected subnav links */
+    position: relative;
+    z-index: 50;      
 }
 
 hr.basic {
