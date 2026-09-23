@@ -24,7 +24,7 @@
     float: right;                       
     width: 100%;
     max-width: 270px;   
-    margin: 4px 0 15px 20px;          
+    margin: 4px 0 0px 20px;          
     background-color: #fbf9f4;          
     border: 1px solid var(--border-light);          
     padding: 6px;                       
@@ -324,6 +324,49 @@
         text-align: center; 
         margin: 10px 20px 10px 20px;
     }
+}
+
+/* ========================================== */
+/* SHARED BROTHERS PROFILE - FLEX LAYOUT      */
+/* ========================================== */
+
+.shared-profile-header {
+  max-width: 800px;
+  margin: 40px auto 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.shared-profile-header hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.shared-profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0px auto 40px auto; 
+  padding: 0 20px;
+}
+
+.shared-profile-card {
+  background-color: #ffffff;
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+}
+
+/* RESPONSIVE STACKING FOR MOBILE/TABLETS */
+@media (max-width: 768px) {
+  .shared-profile-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .shared-profile-card {
+    max-width: 100%;        
+  }
 }
 
 .soldier-detail {
