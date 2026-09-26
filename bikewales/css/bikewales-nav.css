@@ -1,132 +1,113 @@
-/* --- BIKE WALES NAVBAR 6.0 GLOBAL STYLES --- 
-   VERSION: 6 (3291design Master)
-   REFINED: 2026-09-26 (GitHub Pages Migration & Tech Lab Rebuild)
-*/
+/*--------------------------- UNIVERSAL NAVBAR MASTER ------------------------ */
 
-/* --- 1. MAIN TABLE FRAMEWORK --- */
+/* 1. Main Container & Table Structure */
 .navbar2 {
-    border-collapse: collapse;
-    table-layout: fixed; /* Ensures proportional columns */
-    width: 100%;
-    text-align: center;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 930px;
+  margin: 0 auto 8px auto;
+  border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
+  position: relative;
+  z-index: 9999;
 }
 
-/* --- 2. TOP LEVEL MENU ITEMS --- */
 .navbar2 td {
-    background-color: #ffffff; 
-    height: 40px; 
-    transition: background-color 0.2s ease;
-    vertical-align: middle;
-    border-right: 1px solid #f0f0f0; /* Subtle divider between tabs */
-}
-.navbar2 td:last-child { border-right: none; }
-
-.navbar2 td > a, .dropbtn {
-    color: #485175; /* Signature Blue-Grey */
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    line-height: 40px; 
-    font-size: 14px;
-    font-weight: bold;
+  padding: 0;
+  margin: 0;
+  text-align: center !important;
+  vertical-align: middle;
+  border: none !important;
 }
 
-/* --- 3. TOP LEVEL HOVER & ACTIVE STATES --- */
-.navbar2 td:hover { background-color: #9c8461 !important; }
-.navbar2 td:hover > a, .navbar2 td:hover > .dropbtn { color: #ffffff !important; }
+/* 2. Link Styling */
+.navbar2 a, .navbar2 a:link, .navbar2 a:visited, .navbar2 a:active {
+  display: block; /* Important: makes the whole cell clickable */
+  width: 100%;
+  color: #777;
+  font-family: tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 11px 0; 
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
 
-.nav-active { background-color: #485175 !important; }
-.nav-active > a, .nav-active > .dropbtn { color: #ffffff !important; }
+/* 3. Hover & Active States */
+.navbar2 a:hover, .dropdown:hover .dropbtn {
+  color: #ffffff !important;
+  background-color: #9c8461;
+  text-decoration: none;
+}
 
+.nav-active { 
+  background-color: #485175 !important; 
+}
 
-/* --- 4. FIRST LEVEL DROPDOWN (Vertical Menus) --- */
-.dropdown { position: relative; }
+.nav-active a { 
+  color: #ffffff !important; 
+}
+
+/* 4. Dropdown Menus (Level 1) */
+.dropdown {
+  position: relative;
+}
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 40px; /* Drops down right below the 40px tall cell */
-    left: 0;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 999;
-    text-align: left;
-    border-top: 3px solid #9c8461; /* Gold accent line */
+  display: none;
+  position: absolute;
+  background-color: #666;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+  border: 1px solid #555;
 }
 
-.dropdown:hover .dropdown-content { display: block; }
-
-/* Links inside the first dropdown */
-.dropdown-content a, .dropbtn2 > a {
-    color: #485175;
-    padding: 0 15px;
-    text-decoration: none;
-    display: block;
-    line-height: 35px;
-    font-size: 13px;
-    font-weight: normal;
-    background-color: transparent;
-    transition: all 0.2s;
+.dropdown-content a {
+  color: #fff !important;
+  text-decoration: none;
+  display: block;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  letter-spacing: 0px;
 }
 
-.dropdown-content > a:hover, .dropbtn2:hover > a {
-    background-color: #edf2f7;
-    color: #9c8461 !important;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
+/* 5. Nested Dropdowns (Level 2) */
+.dropbtn2 {
+  position: relative;
+}
 
-/* --- 5. SECOND LEVEL DROPDOWN (Nested Flyouts) --- */
-.dropbtn2 { position: relative; }
-
+.dropbtn2 a { font-weight: bold; }
+.dropbtn2 span { font-size: 10px; vertical-align: middle; }
+.dropbtn2:hover .dropdown-content2 {
+  display: block;
+}
 .dropdown-content2 {
-    display: none;
-    position: absolute;
-    /* Left and Top are controlled via inline HTML styles in your JS */
-    background-color: #ffffff;
-    min-width: 200px;
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-    border-left: 3px solid #485175; /* Blue accent for flyouts */
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  left: 100% !important; /* Pops out to the right */
+  top: 0 !important;
 }
 
-.dropbtn2:hover .dropdown-content2 { display: block; }
-
-/* Links inside the nested flyout */
-.dropdown-content2 a {
-    border-bottom: 1px solid #f0f0f0;
-}
-.dropdown-content2 a:last-child { border-bottom: none; }
-
-.dropdown-content2 a:hover {
-    background-color: #edf2f7;
-    color: #9c8461 !important;
+.dropdown-content2 a:hover, .dropbtn2:hover {
+  background-color: #9c8461;
 }
 
-
-/* --- 6. UTILITIES (Dividers & Disabled Links) --- */
-.nav-hr {
-    margin: 0;
-    border: 0;
-    border-top: 1px solid #dcdcdc;
+/* 6. Utility Classes */
+.nav-hr { 
+  border: 0; 
+  border-top: 1px solid #888; 
+  margin: 8px auto; 
+  width: 90%; 
 }
 
-hr.main {
-    margin-top: 6px; 
-    margin-bottom: 0px; 
-    width: 100%; 
-    border: 0;
-    border-top: 2px solid #666666;
-}
-
-.coming-soon {
-    color: #a0aec0 !important;
-    font-style: italic;
-    cursor: not-allowed;
-    background-color: #f5f7fa;
-}
-.coming-soon:hover {
-    background-color: #f5f7fa !important;
-    color: #a0aec0 !important;
-}
+/*--------------------------- END NAVBAR ------------------------ */
