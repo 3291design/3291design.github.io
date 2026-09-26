@@ -1,6 +1,6 @@
 /* =========================================================
-   Gear Calculator v.19.9.2 - "2026 Factory Restoration"
-   Preset Library + Dynamic Preset/Custom Toggle Engine
+   Gear Calculator v.19.9.3 - "2026 Factory Restoration"
+   Clean Preset Text Display + Strict Count-Matching Custom Inputs
    ========================================================= */
 
 /* --- 1. GLOBAL MODAL CONTROLS --- */
@@ -74,7 +74,7 @@ const CASSETTE_PRESETS = {
           cadVal = document.getElementById('bcalc-cadence-val'),
           cadWrap = document.getElementById('bcalc-cadence-wrap');
           
-    // Create secondary Preset dropdown wrapper matching existing styling
+    // 1. Create secondary Preset Dropdown wrapper
     let presetWrap = document.createElement('div');
     presetWrap.id = 'bcalc-preset-wrap';
     presetWrap.style.cssText = "display: none; margin-top: 10px;";
@@ -84,6 +84,12 @@ const CASSETTE_PRESETS = {
     `;
     speedSel.parentNode.insertBefore(presetWrap, speedSel.nextSibling);
     const presetSel = document.getElementById('bcalc-preset-select');
+
+    // 2. Create plain text display element for preset progressions
+    let progressionDisplay = document.createElement('div');
+    progressionDisplay.id = 'bcalc-progression-text';
+    progressionDisplay.style.cssText = "display: none; margin-top: 8px; font-size: 13px; color: #4a5568; font-family: monospace; background: #edf2f7; padding: 8px; border-radius: 4px;";
+    presetWrap.parentNode.insertBefore(progressionDisplay, presetWrap.nextSibling);
 
     let hasCalculated = false;
 
@@ -97,7 +103,26 @@ const CASSETTE_PRESETS = {
     const liveUpdate = function() { triggerStale(); };
     if(wheelSel) wheelSel.onchange = liveUpdate;
     if(cadVal) cadVal.oninput = liveUpdate;
-    if(presetSel) presetSel.onchange = liveUpdate;
+
+    // Function to update the plain text tooth progression string
+    function updateProgressionText() {
+        const speedVal = speedSel.value;
+        if (speedVal && speedVal !== 'custom' && CASSETTE_PRESETS[speedVal]) {
+            const idx = parseInt(presetSel.value) || 0;
+            const preset = CASSETTE_PRESETS[speedVal][idx];
+            if (preset) {
+                progressionDisplay.innerText = "Progression: [" + preset.cogs.join(', ') + "]T";
+                progressionDisplay.style.display = 'block';
+            }
+        } else {
+            progressionDisplay.style.display = 'none';
+        }
+        liveUpdate();
+    }
+
+    if(presetSel) {
+        presetSel.onchange = updateProgressionText;
+    }
 
     Array.from(radioModes).forEach(r => {
         r.onchange = function() {
@@ -110,6 +135,7 @@ const CASSETTE_PRESETS = {
         const val = this.value; 
         cogCont.innerHTML = '';
         presetWrap.style.display = 'none';
+        progressionDisplay.style.display = 'none';
 
         if (!val) {
             liveUpdate();
@@ -117,18 +143,20 @@ const CASSETTE_PRESETS = {
         }
 
         if (val === 'custom') {
-            let customCount = prompt("How many cogs/speeds on your custom cassette?", "9");
-            customCount = parseInt(customCount) || 9;
-            
             presetWrap.style.display = 'none';
+            progressionDisplay.style.display = 'none';
             cogCont.style.display = 'grid'; // Uses your .bcalc-input-grid layout
             
-            for(let i=0; i<customCount; i++) {
+            const numSpeeds = parseInt(val) || 9; // Fallback, though we know exact count from speedSel
+            // Better: parse integer from the speed value directly
+            const totalCogs = parseInt(speedSel.value) || 9;
+            
+            for(let i=0; i<totalCogs; i++) {
                 const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
                 if(i === 0) wrapper.innerHTML = '<div class="bcalc-mini-label">Smallest</div>';
-                if(i === customCount-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
+                if(i === totalCogs-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
                 const input = document.createElement('input'); input.type='number'; input.className='bcalc-val-input bcalc-cog-item';
-                input.value = (i===0)?11:(i===customCount-1)?32:Math.round(11 + (i * 2)); 
+                input.value = (i===0)?11:(i===totalCogs-1)?32:Math.round(11 + (i * 2)); 
                 input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
             }
         } else if (CASSETTE_PRESETS[val]) {
@@ -141,6 +169,7 @@ const CASSETTE_PRESETS = {
             });
             presetWrap.style.display = 'block';
             cogCont.style.display = 'none';
+            updateProgressionText();
         }
         liveUpdate();
     };
@@ -191,7 +220,7 @@ const CASSETTE_PRESETS = {
         document.getElementById('snap-wheel').innerText = wheelSel.options[wheelSel.selectedIndex].text;
         document.getElementById('snap-rings').innerText = rings.join('/') + 'T';
         
-        let cassetteDescription = speedSel.options[speedSel.selectedIndex].text;
+        let cassetteDescription = speedSel.options[speedSel.selectedIndex].text + "-Speed Custom";
         if (speedSel.value !== 'custom') {
             const presetIndex = parseInt(presetSel.value);
             cassetteDescription = CASSETTE_PRESETS[speedSel.value][presetIndex].label;
