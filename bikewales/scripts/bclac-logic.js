@@ -1,6 +1,6 @@
 /* =========================================================
-   Gear Calculator v.19.9.1 - "2026 Factory Restoration"
-   Expanded Preset Library (5-Speed to 12-Speed) + Custom
+   Gear Calculator v.19.9.2 - "2026 Factory Restoration"
+   Preset Library + Dynamic Preset/Custom Toggle Engine
    ========================================================= */
 
 /* --- 1. GLOBAL MODAL CONTROLS --- */
@@ -74,12 +74,13 @@ const CASSETTE_PRESETS = {
           cadVal = document.getElementById('bcalc-cadence-val'),
           cadWrap = document.getElementById('bcalc-cadence-wrap');
           
+    // Create secondary Preset dropdown wrapper matching existing styling
     let presetWrap = document.createElement('div');
     presetWrap.id = 'bcalc-preset-wrap';
-    presetWrap.style.cssText = "display: none; margin-top: 10px; align-items: center; gap: 10px;";
+    presetWrap.style.cssText = "display: none; margin-top: 10px;";
     presetWrap.innerHTML = `
-        <label style="font-weight:bold; font-size:13px; color:#485175;">Preset Cassette:</label>
-        <select id="bcalc-preset-select" class="bcalc-val-input" style="flex-grow:1;"></select>
+        <label class="bcalc-label" style="margin-top: 6px;">Preset Cassette</label>
+        <select id="bcalc-preset-select" class="bcalc-select"></select>
     `;
     speedSel.parentNode.insertBefore(presetWrap, speedSel.nextSibling);
     const presetSel = document.getElementById('bcalc-preset-select');
@@ -120,7 +121,7 @@ const CASSETTE_PRESETS = {
             customCount = parseInt(customCount) || 9;
             
             presetWrap.style.display = 'none';
-            cogCont.style.display = 'flex';
+            cogCont.style.display = 'grid'; // Uses your .bcalc-input-grid layout
             
             for(let i=0; i<customCount; i++) {
                 const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
@@ -138,7 +139,7 @@ const CASSETTE_PRESETS = {
                 opt.text = p.label;
                 presetSel.appendChild(opt);
             });
-            presetWrap.style.display = 'flex';
+            presetWrap.style.display = 'block';
             cogCont.style.display = 'none';
         }
         liveUpdate();
