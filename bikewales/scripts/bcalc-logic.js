@@ -152,7 +152,7 @@ const GEARING_PRESETS = {
             const idx = parseInt(val);
             const preset = GEARING_PRESETS[speedSel.value][idx];
             if (preset) {
-                progressionText.innerText = "Cogs:<br> [" + preset.cogs.join(', ') + "]T";
+                progressionText.innerText = "Cogs: [" + preset.cogs.join(', ') + "]T";
                 progressionText.style.display = 'block';
             }
         }
