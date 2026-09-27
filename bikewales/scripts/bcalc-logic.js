@@ -201,7 +201,7 @@ const GEARING_PRESETS = {
             cassetteDescription = speedSel.options[speedSel.selectedIndex].text + " Custom";
         } else {
             const presetIndex = parseInt(presetSel.value);
-            const selectedPreset = CASSETTE_PRESETS[speedSel.value][presetIndex];
+            const selectedPreset = GEARING_PRESETS[speedSel.value][presetIndex];
             cogs = [...selectedPreset.cogs].sort((a,b)=>b-a);
             cassetteDescription = selectedPreset.label;
         }
