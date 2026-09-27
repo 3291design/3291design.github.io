@@ -6,7 +6,19 @@
 /* --- 1. GLOBAL MODAL CONTROLS --- */
 window.openModal = function() { 
     const modal = document.getElementById("infoLabModal");
-    if (modal) modal.style.display = "block"; 
+    const launcherBtn = document.getElementById("bcalc-lab-launcher");
+    
+    if (modal) {
+        modal.style.display = "block"; 
+        
+        // Homing Missile: Find the button and place the modal box near it
+        if (launcherBtn) {
+            const modalContent = modal.querySelector(".bcalc-modal-content");
+            // Find how far down the iframe the button is, and place the modal just above it
+            const distanceDown = launcherBtn.offsetTop;
+            modalContent.style.marginTop = (distanceDown - 150) + "px";
+        }
+    }
 };
 
 window.closeModal = function() { 
