@@ -1,6 +1,6 @@
 /* =========================================================
-   Gear Calculator v.19.9.3 - "2026 Factory Restoration"
-   Synchronized HTML-Driven Preset & Custom Logic
+   Gear Calculator v.19.8.3 - "2026 Factory Restoration"
+   Original Dynamic Input Engine (Backup)
    ========================================================= */
 
 /* --- 1. GLOBAL MODAL CONTROLS --- */
@@ -14,55 +14,7 @@ window.closeModal = function() {
     if (modal) modal.style.display = "none"; 
 };
 
-/* --- 2. COMPREHENSIVE CASSETTE PRESET LIBRARY --- */
-const CASSETTE_PRESETS = {
-    "5": [
-        { label: "14-28T Standard Tour", cogs: [14, 16, 18, 21, 28] },
-        { label: "14-32T Wide Range", cogs: [14, 17, 20, 24, 32] },
-        { label: "13-24T Close Ratio", cogs: [13, 15, 17, 20, 24] }
-    ],
-    "6": [
-        { label: "14-28T Standard 6-Speed", cogs: [14, 16, 18, 21, 24, 28] },
-        { label: "13-26T Sport", cogs: [13, 15, 17, 20, 23, 26] },
-        { label: "14-34T MegaRange", cogs: [14, 17, 20, 24, 28, 34] }
-    ],
-    "7": [
-        { label: "12-28T Road/Tour", cogs: [12, 14, 16, 18, 21, 24, 28] },
-        { label: "13-32T Wide Range", cogs: [13, 15, 18, 21, 24, 28, 32] },
-        { label: "11-28T Sport", cogs: [11, 13, 15, 18, 21, 24, 28] }
-    ],
-    "8": [
-        { label: "11-28T Standard 8-Speed", cogs: [11, 13, 15, 18, 21, 24, 28] },
-        { label: "12-32T Touring", cogs: [12, 14, 16, 18, 21, 24, 28, 32] },
-        { label: "11-34T MegaRange", cogs: [11, 13, 15, 18, 21, 24, 28, 34] }
-    ],
-    "9": [
-        { label: "12-36T Touring / Trekking (Your Setup)", cogs: [12, 14, 16, 18, 21, 24, 28, 32, 36] },
-        { label: "11-32T Shimano Deore", cogs: [11, 12, 14, 16, 18, 21, 24, 28, 32] },
-        { label: "12-25T Road Standard", cogs: [12, 13, 14, 15, 17, 19, 21, 23, 25] },
-        { label: "11-34T Wide Range", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 34] }
-    ],
-    "10": [
-        { label: "11-36T Classic MTB / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
-        { label: "11-32T Road / Gravel", cogs: [11, 12, 14, 16, 18, 20, 22, 25, 28, 32] },
-        { label: "11-42T Wide 1x Off-Road", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
-        { label: "12-25T Tight Road", cogs: [12, 13, 14, 15, 16, 17, 19, 21, 23, 25] }
-    ],
-    "11": [
-        { label: "11-34T Gravel / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 27, 30, 34] },
-        { label: "11-32T Road Performance", cogs: [11, 12, 13, 14, 16, 18, 20, 22, 25, 28, 32] },
-        { label: "11-42T Wide Adventure", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
-        { label: "11-46T Extreme Climbing", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42, 46] }
-    ],
-    "12": [
-        { label: "11-34T Road / Gravel 12-Speed", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 24, 27, 30, 34] },
-        { label: "10-36T SRAM Force / Rival XPLR", cogs: [10, 11, 12, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
-        { label: "10-50T MTB Wide Range", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 50] },
-        { label: "10-52T SRAM Eagle", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 52] }
-    ]
-};
-
-/* --- 3. MAIN CALCULATOR ENGINE --- */
+/* --- 2. MAIN CALCULATOR ENGINE --- */
 (function() {
     const wheelSel = document.getElementById('bcalc-wheel-size'), 
           speedSel = document.getElementById('bcalc-speed-select'), 
@@ -72,10 +24,7 @@ const CASSETTE_PRESETS = {
           runBtn = document.getElementById('bcalc-run'), 
           radioModes = document.getElementsByName('bcalc-mode'), 
           cadVal = document.getElementById('bcalc-cadence-val'),
-          cadWrap = document.getElementById('bcalc-cadence-wrap'),
-          presetWrap = document.getElementById('bcalc-preset-wrap'),
-          presetSel = document.getElementById('bcalc-preset-select'),
-          progressionText = document.getElementById('bcalc-progression-text');
+          cadWrap = document.getElementById('bcalc-cadence-wrap');
 
     let hasCalculated = false;
 
@@ -90,25 +39,6 @@ const CASSETTE_PRESETS = {
     if(wheelSel) wheelSel.onchange = liveUpdate;
     if(cadVal) cadVal.oninput = liveUpdate;
 
-    function updateProgressionText() {
-        const speedVal = speedSel.value;
-        if (speedVal && speedVal !== 'custom' && CASSETTE_PRESETS[speedVal]) {
-            const idx = parseInt(presetSel.value) || 0;
-            const preset = CASSETTE_PRESETS[speedVal][idx];
-            if (preset) {
-                progressionText.innerText = "[" + preset.cogs.join(', ') + "]T";
-                progressionText.style.display = 'block';
-            }
-        } else {
-            progressionText.style.display = 'none';
-        }
-        liveUpdate();
-    }
-
-    if(presetSel) {
-        presetSel.onchange = updateProgressionText;
-    }
-
     Array.from(radioModes).forEach(r => {
         r.onchange = function() {
             cadWrap.style.display = (this.value === 'speed') ? 'flex' : 'none';
@@ -117,42 +47,23 @@ const CASSETTE_PRESETS = {
     });
 
     speedSel.onchange = function() {
-        const val = this.value; 
+        const val = parseInt(this.value); 
         cogCont.innerHTML = '';
-        presetWrap.style.display = 'none';
-        progressionText.style.display = 'none';
-        cogCont.style.display = 'none';
-
-        if (!val) {
+        
+        if (!val || isNaN(val)) {
             liveUpdate();
             return;
         }
 
-        if (val === 'custom') {
-            const totalCogs = 9; // Default fallback if custom is clicked
-            let customCount = prompt("How many cogs/speeds on your custom cassette?", "9");
-            customCount = parseInt(customCount) || 9;
-            
-            cogCont.style.display = 'grid';
-            
-            for(let i=0; i<customCount; i++) {
-                const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
-                if(i === 0) wrapper.innerHTML = '<div class="bcalc-mini-label">Smallest</div>';
-                if(i === customCount-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
-                const input = document.createElement('input'); input.type='number'; input.className='bcalc-val-input bcalc-cog-item';
-                input.value = (i===0)?11:(i===customCount-1)?32:Math.round(11 + (i * 2)); 
-                input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
-            }
-        } else if (CASSETTE_PRESETS[val]) {
-            presetSel.innerHTML = '';
-            CASSETTE_PRESETS[val].forEach((p, idx) => {
-                const opt = document.createElement('option');
-                opt.value = idx;
-                opt.text = p.label;
-                presetSel.appendChild(opt);
-            });
-            presetWrap.style.display = 'block';
-            updateProgressionText();
+        cogCont.style.display = 'grid';
+        
+        for(let i=0; i<val; i++) {
+            const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
+            if(i === 0) wrapper.innerHTML = '<div class="bcalc-mini-label">Smallest</div>';
+            if(i === val-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
+            const input = document.createElement('input'); input.type='number'; input.className='bcalc-val-input bcalc-cog-item';
+            input.value = (i===0) ? 11 : (i===val-1) ? 32 : Math.round(11 + (i * 2.5)); 
+            input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
         }
         liveUpdate();
     };
@@ -189,26 +100,13 @@ const CASSETTE_PRESETS = {
         
         const mode = Array.from(radioModes).find(r => r.checked).value;
         const rings = Array.from(document.querySelectorAll('.bcalc-ring-item')).map(n => parseFloat(n.value)).sort((a,b)=>a-b);
+        const cogs = Array.from(document.querySelectorAll('.bcalc-cog-item')).map(n => parseFloat(n.value)).sort((a,b)=>b-a);
         const wheel = parseFloat(wheelSel.value);
-
-        let cogs = [];
-        if (speedSel.value === 'custom') {
-            cogs = Array.from(document.querySelectorAll('.bcalc-cog-item')).map(n => parseFloat(n.value)).sort((a,b)=>b-a);
-        } else {
-            const presetIndex = parseInt(presetSel.value);
-            const selectedPreset = CASSETTE_PRESETS[speedSel.value][presetIndex];
-            cogs = [...selectedPreset.cogs].sort((a,b)=>b-a);
-        }
 
         document.getElementById('snap-wheel').innerText = wheelSel.options[wheelSel.selectedIndex].text;
         document.getElementById('snap-rings').innerText = rings.join('/') + 'T';
         
-        let cassetteDescription = speedSel.options[speedSel.selectedIndex].text + "-Speed Custom";
-        if (speedSel.value !== 'custom') {
-            const presetIndex = parseInt(presetSel.value);
-            cassetteDescription = CASSETTE_PRESETS[speedSel.value][presetIndex].label;
-        }
-        document.getElementById('snap-cogs').innerText = cassetteDescription + ' (' + cogs[cogs.length-1] + '-' + cogs[0] + 'T)';
+        document.getElementById('snap-cogs').innerText = speedSel.options[speedSel.selectedIndex].text + ' (' + cogs[cogs.length-1] + '-' + cogs[0] + 'T)';
         
         const ringDiff = (rings.length > 1) ? (rings[rings.length-1]-rings[0]) : 0;
         document.getElementById('res-cap').innerText = ringDiff + (cogs[0]-cogs[cogs.length-1]) + 'T';
@@ -301,7 +199,7 @@ const CASSETTE_PRESETS = {
     document.getElementById('bcalc-reset-table').onclick = () => window.location.reload();
 })();
 
-/* --- 4. BULLETPROOF GHOST TIP ENGINE --- */
+/* --- 3. BULLETPROOF GHOST TIP ENGINE --- */
 (function() {
     const ghost = document.createElement('div'); 
     ghost.className = 'bcalc-ghost-tip'; 
