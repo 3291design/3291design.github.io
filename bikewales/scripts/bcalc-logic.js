@@ -97,18 +97,25 @@ const GEARING_PRESETS = {
         };
     });
 
-   // 1. Primary Speed Selection Logic
+  // 1. Primary Speed Selection Logic
     speedSel.onchange = function() {
         const val = this.value; 
         cogCont.innerHTML = '';
-        presetWrap.style.display = 'none';
         progressionText.style.display = 'none';
         cogCont.style.display = 'none';
 
-        if (!val) { liveUpdate(); return; }
+        if (!val) { 
+            // If they reset the speed, lock the gearing box again
+            presetSel.innerHTML = '<option value="" selected>Select speeds first...</option>';
+            presetSel.disabled = true;
+            liveUpdate(); 
+            return; 
+        }
 
-        // Populate the secondary dropdown using GEARING_PRESETS
+        // A speed was selected! Unlock the box and populate it.
+        presetSel.disabled = false;
         presetSel.innerHTML = '';
+        
         GEARING_PRESETS[val].forEach((p, idx) => {
             const opt = document.createElement('option');
             opt.value = idx;
@@ -116,13 +123,11 @@ const GEARING_PRESETS = {
             presetSel.appendChild(opt);
         });
         
-        // Add Custom to the bottom of the secondary list
         const customOpt = document.createElement('option');
         customOpt.value = 'custom';
         customOpt.text = 'Custom Setup...';
         presetSel.appendChild(customOpt);
 
-        presetWrap.style.display = 'block';
         presetSel.onchange(); // Trigger the secondary logic for the first item
         liveUpdate();
     };
