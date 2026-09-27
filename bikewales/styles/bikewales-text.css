@@ -6,8 +6,6 @@
    color: #777
 }
 
-
-
 .deck a:link {
   color: #485175;
   font-weight: bold;
@@ -47,19 +45,7 @@ hr.minor {
    margin-bottom: 30px;
 }
 
-.title {
-   font-family: 'Big Shoulders Inline Display', 'Helvetica', 'Arial', sans-serif; 
-   font-size: 96px; 
-   letter-spacing: 6px;
-   color: #777; 
-   width: 100%;
-   border: 0px solid #000;
-   font-weight: normal;
-   line-height: 96px;
-   margin-top: 0px; 
-   margin-bottom: 0px;
-   text-align: center;
-}  
+
   
 .title a:link {
   color: #777;
