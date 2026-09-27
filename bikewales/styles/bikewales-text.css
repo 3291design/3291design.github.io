@@ -33,3 +33,27 @@
   text-decoration: none;
 }
 
+hr.main {
+   color: #d4d4d4;
+   background-color: #d4d4d4; 
+   width: 100%;
+   height: 1px;
+   border: 0px; 
+   clear: both; 
+   margin-top: 30px; 
+   margin-bottom: 30px;
+}
+
+hr.minor {
+   color: #d4d4d4;
+   background-color: #d4d4d4; 
+   width: 50%;
+   height: 1px;
+   border: 0px; 
+   clear: both; 
+   color: #d4d4d4; 
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+
+
