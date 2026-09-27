@@ -236,7 +236,7 @@
 }
 
 /* --- 8. MOBILE RESPONSIVE BREAKPOINTS --- */
-@media (max-width: 768px) {
+@media (max-width: 568px) {
     .bcalc-box { min-width: 100%; max-width: 100%; min-height: auto; padding: 15px; }
     .bcalc-radio-group { height: auto !important; flex-direction: column; align-items: flex-start !important; gap: 12px !important; }
     .bcalc-btn-row { flex-direction: column; }
