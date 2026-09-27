@@ -15,7 +15,7 @@ window.closeModal = function() {
 };
 
 /* --- 2. COMPREHENSIVE CASSETTE PRESET LIBRARY --- */
-const CASSETTE_PRESETS = {
+const GEARING_PRESETS = {
     "5": [
         { label: "13-24T Close Ratio", cogs: [13, 15, 17, 20, 24] },
         { label: "14-28T Standard Tour", cogs: [14, 16, 18, 21, 28] },
