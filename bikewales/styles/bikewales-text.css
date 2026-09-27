@@ -56,4 +56,11 @@ hr.minor {
    margin-bottom: 30px;
 }
 
+.title {
+   font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+   font-weight: normal;
+   font-size: 60px;
+   color: #485175;
+}
+
 
