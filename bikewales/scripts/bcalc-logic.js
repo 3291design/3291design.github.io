@@ -97,7 +97,7 @@ const GEARING_PRESETS = {
         };
     });
 
-    // 1. Primary Speed Selection Logic
+   // 1. Primary Speed Selection Logic
     speedSel.onchange = function() {
         const val = this.value; 
         cogCont.innerHTML = '';
@@ -107,9 +107,9 @@ const GEARING_PRESETS = {
 
         if (!val) { liveUpdate(); return; }
 
-        // Populate the secondary dropdown
+        // Populate the secondary dropdown using GEARING_PRESETS
         presetSel.innerHTML = '';
-        CASSETTE_PRESETS[val].forEach((p, idx) => {
+        GEARING_PRESETS[val].forEach((p, idx) => {
             const opt = document.createElement('option');
             opt.value = idx;
             opt.text = p.label;
