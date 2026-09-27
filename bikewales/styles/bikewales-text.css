@@ -6,18 +6,7 @@
    color: #777
 }
 
-.deck {
-   color: #888; 
-   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-   font-size: 1.3em; 
-   font-weight: normal;
-   font-style: italic;
-   line-height: 1.8em;
-   text-align: center;
-   width: 100%;
-   max-width: 860px;
-   margin: 30px;
-}
+
 
 .deck a:link {
   color: #485175;
