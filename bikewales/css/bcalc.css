@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&family=Big+Shoulders+Inline+Display&family=Josefin+Sans:wght@300&display=block');
+
+/* =========================================================
+   GEAR CALCULATOR V.20.3 - COMPONENT STYLESHEET
+   ========================================================= */
+
+/* --- 1. VARIABLES (BRAND COLORS) --- */
+:root {
+    --bw-primary: #485175;
+    --bw-primary-hover: #9c8461;
+    --bw-text-main: #333333;
+    --bw-text-muted: #718096;
+    --bw-bg-light: #f8f9fb;
+    --bw-border: #cbd5e0;
+    --bw-border-light: #eef0f5;
+}
+
+/* --- 2. BASE & LAYOUT CONTAINERS --- */
+#bcalc-main-container * { 
+    box-sizing: border-box; 
+}
+.bcalc-layout { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    align-items: stretch; 
+}
+.bcalc-box { 
+    flex: 1; 
+    min-width: 320px; 
+    max-width: 420px; 
+    min-height: 280px; 
+    background: var(--bw-bg-light); 
+    padding: 25px; 
+    border-radius: 8px; 
+    border: 1px solid var(--bw-border-light); 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* --- 3. TYPOGRAPHY & LABELS --- */
+.bcalc-label { 
+    display: block; 
+    font-weight: bold; 
+    font-size: 13px; 
+    margin-bottom: 8px; 
+    color: var(--bw-primary); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+.bcalc-mini-label { 
+    position: absolute; 
+    top: -18px; 
+    font-size: 9px; 
+    font-weight: bold; 
+    color: var(--bw-text-muted); 
+    text-transform: uppercase; 
+    width: 60px; 
+    text-align: center; 
+    pointer-events: none; 
+}
+.formula-box { 
+    display: block; 
+    background: #fdfbf7; 
+    padding: 10px 15px; 
+    border-radius: 6px; 
+    font-family: 'Courier New', monospace; 
+    font-size: 13px; 
+    color: #4a5568; 
+    margin-top: 8px; 
+    border-left: 4px solid var(--bw-primary-hover); 
+    font-weight: bold;
+}
+
+/* --- 4. FORMS & INPUTS --- */
+.bcalc-select { 
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border: 1px solid var(--bw-border); 
+    border-radius: 5px; 
+    background: #fff; 
+    cursor: pointer; 
+    font-family: inherit; 
+}
+.bcalc-input-grid { 
+    position: relative; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr)); 
+    gap: 25px 10px; 
+    align-items: start; 
+    margin-top: 15px; 
+}
+.bcalc-val-input { 
+    width: 60px; 
+    height: 34px; 
+    padding: 4px 8px; 
+    border: 1px solid var(--bw-border); 
+    border-radius: 4px; 
+    text-align: center; 
+    font-family: inherit; 
+    font-size: 14px; 
+}
+.bcalc-radio-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    cursor: pointer; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: var(--bw-primary); 
+}
+
+/* --- 5. BUTTONS --- */
+.bcalc-btn-pri, .bcalc-btn-sec {
+    flex: 1; 
+    padding: 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 13px; 
+    transition: all 0.2s; 
+    text-decoration: none; 
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,.2);
+}
+.bcalc-btn-pri { 
+    background: var(--bw-primary); 
+    color: #fff; 
+    border: none; 
+}
+.bcalc-btn-sec { 
+    background: #f1f3f5; 
+    color: #4a5568; 
+    border: none;
+}
+.bcalc-btn-pri:hover, .bcalc-btn-sec:hover { 
+    color: #ffffff !important; 
+    background-color: var(--bw-primary-hover) !important; 
+}
+.bcalc-btn-stale { 
+    animation: button-recalc-glow 1.5s infinite ease-in-out; 
+    border: 1px solid #4299e1 !important; 
+    background: #3182ce !important; 
+}
+@keyframes button-recalc-glow {
+    0% { box-shadow: 0 0 5px rgba(66, 153, 225, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(66, 153, 225, 0.9); }
+    100% { box-shadow: 0 0 5px rgba(66, 153, 225, 0.4); }
+}
+
+/* --- 6. SNAPSHOT & TABLE (RESULTS) --- */
+.bcalc-snapshot { 
+    background: #f1f3f9; 
+    border: 1px solid var(--bw-primary); 
+    border-radius: 8px; 
+    padding: 15px 20px; 
+    margin-top: 25px; 
+    display: none; 
+    text-align: center; 
+}
+.bcalc-snap-title { 
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    color: var(--bw-primary); 
+    margin-bottom: 12px; 
+    padding-bottom: 8px; 
+    border-bottom: 2px solid var(--bw-border); 
+    letter-spacing: 1px; 
+}
+.bcalc-snap-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 8px 0; }
+.bcalc-snap-row:not(:last-child) { border-bottom: 1px solid var(--bw-border); }
+.bcalc-snap-item { display: flex; align-items: baseline; gap: 8px; }
+.bcalc-snap-lab { font-size: 12px; font-weight: bold; color: var(--bw-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.bcalc-snap-val { font-size: 15px; font-weight: bold; color: #2d3748; }
+
+.bcalc-table-wrap { overflow-x: auto; margin-top: 15px; border-radius: 8px; border: 1px solid #e2e8f0; display: none; }
+.bcalc-table { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; }
+.bcalc-table th { background-color: var(--bw-primary); color: white; padding: 12px 8px; font-size: 13px; text-transform: uppercase; text-align: center; }
+.bcalc-table td { padding: 12px 8px; text-align: center; font-size: 14px; font-weight: bold; border-radius: 4px; }
+
+.bcalc-legend { margin-top: 15px; padding: 12px; font-size: 11px; color: #4a5568; background: var(--bw-bg-light); border-radius: 6px; display: none; border: 1px solid var(--bw-border-light); }
+.legend-swatch { display: inline-block; width: 14px; height: 14px; margin-right: 5px; border-radius: 3px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.2); }
+
+/* --- 7. MODAL & GHOST TIPS --- */
+.bcalc-ghost-tip {
+    display: none; position: fixed; background: rgba(0, 0, 0, 0.95); color: #ffffff !important;
+    padding: 15px 20px; border-radius: 10px; font-family: 'Tahoma', sans-serif; font-size: 16px !important;
+    line-height: 1.5; max-width: 380px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10000; pointer-events: none; border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.help-term { border-bottom: 2px dashed var(--bw-border); cursor: help; }
+
+.bcalc-modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+}
+.bcalc-modal-content {
+    background-color: #ffffff; margin: 5% auto; padding: 40px; border-radius: 12px;
+    max-width: 850px; width: 95%; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    font-family: 'Tahoma', sans-serif;
+}
+.bcalc-close { position: absolute; right: 20px; top: 15px; color: #a0aec0; font-size: 28px; font-weight: bold; cursor: pointer; }
+.bcalc-close:hover { color: var(--bw-primary); }
+.bcalc-modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+
+/* --- 8. MOBILE RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 768px) {
+    .bcalc-box { min-width: 100%; max-width: 100%; min-height: auto; padding: 15px; }
+    .bcalc-radio-group { height: auto !important; flex-direction: column; align-items: flex-start !important; gap: 12px !important; }
+    .bcalc-btn-row { flex-direction: column; }
+    .bcalc-btn-pri, .bcalc-btn-sec { width: 100%; }
+    .bcalc-snap-row { flex-direction: column; align-items: center; gap: 10px; }
+    .bcalc-modal-content { padding: 25px 20px; margin: 10% auto; }
+    .bcalc-modal-grid { grid-template-columns: 1fr; gap: 15px; }
+}
