@@ -1,1 +1,57 @@
+<!-- ==========================================================================
+   PROJECT:     Bike Wales - 2026 Factory Restoration
+   COMPONENT:   Gear Calculator (Standalone iFrame Host)
+   VERSION:     20.3
+   DATE:        27 September 2026
+   AUTHOR:      Muse Kidd | 3291design.com
+   
+   DESCRIPTION: 
+   Responsive, standalone HTML container designed to be embedded via 
+   iframe into the Bike Wales Blogger environment. Separates layout, 
+   logic, and styling into modular files.
+   ========================================================================== -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- CRITICAL: Enforces mobile responsiveness on devices like tablets/phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bike Wales - Gear Calculator Tool</title>
+    
+    <!-- 1. Global Typography (Uncomment when bikewales-text.css is ready) -->
+    <!-- <link rel="stylesheet" href="https://3291design.com/bikewales/styles/bikewales-text.css"> -->
+    
+    <!-- 2. Tool-Specific Component Stylesheet -->
+    <link rel="stylesheet" href="https://3291design.com/bikewales/styles/bcalc.css?v=20.3">
+    
+    <!-- Base styling for iframe transparency and fallback fonts -->
+    <style>
+        body {
+            margin: 0; 
+            padding: 10px;
+            background-color: transparent; 
+            font-family: 'Tahoma', sans-serif; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =======================================================================
+         TOOL UI CONTENT START
+         ======================================================================= -->
+         
+    <!-- PASTE YOUR ENTIRE GEAR CALCULATOR HTML HERE -->
+    <!-- (Everything from <div class="display-sleeve"> down to the closing Modal </div>) -->
+
+    <!-- =======================================================================
+         TOOL UI CONTENT END
+         ======================================================================= -->
+
+    <!-- 3. Tool Logic Engine -->
+    <script src="https://3291design.com/bikewales/scripts/bcalc-logic.js?v=20.3"></script>
+
+</body>
+</html>
