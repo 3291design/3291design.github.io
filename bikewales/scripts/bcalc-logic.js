@@ -17,19 +17,19 @@ window.closeModal = function() {
 /* --- 2. COMPREHENSIVE CASSETTE PRESET LIBRARY --- */
 const CASSETTE_PRESETS = {
     "5": [
+        { label: "13-24T Close Ratio", cogs: [13, 15, 17, 20, 24] },
         { label: "14-28T Standard Tour", cogs: [14, 16, 18, 21, 28] },
-        { label: "14-32T Wide Range", cogs: [14, 17, 20, 24, 32] },
-        { label: "13-24T Close Ratio", cogs: [13, 15, 17, 20, 24] }
+        { label: "14-32T Wide Range", cogs: [14, 17, 20, 24, 32] }
     ],
     "6": [
-        { label: "14-28T Standard 6-Speed", cogs: [14, 16, 18, 21, 24, 28] },
         { label: "13-26T Sport", cogs: [13, 15, 17, 20, 23, 26] },
+        { label: "14-28T Standard 6-Speed", cogs: [14, 16, 18, 21, 24, 28] },
         { label: "14-34T MegaRange", cogs: [14, 17, 20, 24, 28, 34] }
     ],
     "7": [
+        { label: "11-28T Sport", cogs: [11, 13, 15, 18, 21, 24, 28] },
         { label: "12-28T Road/Tour", cogs: [12, 14, 16, 18, 21, 24, 28] },
-        { label: "13-32T Wide Range", cogs: [13, 15, 18, 21, 24, 28, 32] },
-        { label: "11-28T Sport", cogs: [11, 13, 15, 18, 21, 24, 28] }
+        { label: "13-32T Wide Range", cogs: [13, 15, 18, 21, 24, 28, 32] }
     ],
     "8": [
         { label: "11-28T Standard 8-Speed", cogs: [11, 13, 15, 18, 21, 24, 28] },
@@ -37,20 +37,20 @@ const CASSETTE_PRESETS = {
         { label: "11-34T MegaRange", cogs: [11, 13, 15, 18, 21, 24, 28, 34] }
     ],
     "9": [
-        { label: "12-36T Touring / Trekking (Your Setup)", cogs: [12, 14, 16, 18, 21, 24, 28, 32, 36] },
-        { label: "11-32T Shimano Deore", cogs: [11, 12, 14, 16, 18, 21, 24, 28, 32] },
         { label: "12-25T Road Standard", cogs: [12, 13, 14, 15, 17, 19, 21, 23, 25] },
-        { label: "11-34T Wide Range", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 34] }
+        { label: "11-32T Shimano Deore", cogs: [11, 12, 14, 16, 18, 21, 24, 28, 32] },
+        { label: "11-34T Wide Range", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 34] },
+        { label: "12-36T Touring / Trekking", cogs: [12, 14, 16, 18, 21, 24, 28, 32, 36] }
     ],
     "10": [
-        { label: "11-36T Classic MTB / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
+        { label: "12-25T Tight Road", cogs: [12, 13, 14, 15, 16, 17, 19, 21, 23, 25] },
         { label: "11-32T Road / Gravel", cogs: [11, 12, 14, 16, 18, 20, 22, 25, 28, 32] },
-        { label: "11-42T Wide 1x Off-Road", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
-        { label: "12-25T Tight Road", cogs: [12, 13, 14, 15, 16, 17, 19, 21, 23, 25] }
+        { label: "11-36T Classic MTB / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
+        { label: "11-42T Wide 1x Off-Road", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] }
     ],
     "11": [
-        { label: "11-34T Gravel / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 27, 30, 34] },
         { label: "11-32T Road Performance", cogs: [11, 12, 13, 14, 16, 18, 20, 22, 25, 28, 32] },
+        { label: "11-34T Gravel / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 27, 30, 34] },
         { label: "11-42T Wide Adventure", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
         { label: "11-46T Extreme Climbing", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42, 46] }
     ],
