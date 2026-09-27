@@ -57,10 +57,32 @@ hr.minor {
 }
 
 .title {
-   font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif;
-   font-weight: normal;
-   font-size: 60px;
-   color: #485175;
+   font-family: 'Big Shoulders Inline Display', 'Helvetica', 'Arial', sans-serif; 
+  font-size: 96px; 
+  letter-spacing: 6px;
+  color: #777; 
+  width: 100%;
+  border: 0px solid #000;
+  font-weight: normal;
+  line-height: 96px;
+  margin-top: 0px; 
+  margin-bottom: 20px;
+  text-align: center;
+}  
+  
+.title a:link {
+  color: #777;
+  text-decoration: none;
+}
+
+.title a:visited {
+  color: #777;
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: #b99c18;
+  text-decoration: none;
 }
 
 
