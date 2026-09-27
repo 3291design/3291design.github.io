@@ -13,8 +13,9 @@
    font-weight: normal;
    font-style: italic;
    line-height: 1.8em;
-   margin-top: 20px;
-   margin-bottom: 30px;
+   width: 100%;
+   max-width: 860px;
+   margin: 30px;
 }
 
 .deck a:link {
@@ -58,16 +59,16 @@ hr.minor {
 
 .title {
    font-family: 'Big Shoulders Inline Display', 'Helvetica', 'Arial', sans-serif; 
-  font-size: 96px; 
-  letter-spacing: 6px;
-  color: #777; 
-  width: 100%;
-  border: 0px solid #000;
-  font-weight: normal;
-  line-height: 96px;
-  margin-top: 0px; 
-  margin-bottom: 0px;
-  text-align: center;
+   font-size: 96px; 
+   letter-spacing: 6px;
+   color: #777; 
+   width: 100%;
+   border: 0px solid #000;
+   font-weight: normal;
+   line-height: 96px;
+   margin-top: 0px; 
+   margin-bottom: 0px;
+   text-align: center;
 }  
   
 .title a:link {
