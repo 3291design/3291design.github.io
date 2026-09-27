@@ -1,9 +1,10 @@
 /* =========================================================
    Gear Calculator v.19.8.3 - "2026 Factory Restoration"
-   Original Dynamic Input Engine (Backup)
+   Host: 3291design / Bike Wales Repository Engine
    ========================================================= */
 
-/* --- 1. GLOBAL MODAL CONTROLS --- */
+/* --- 1. GLOBAL MODAL CONTROLS --- 
+   Attached to 'window' so HTML buttons can find them immediately. */
 window.openModal = function() { 
     const modal = document.getElementById("infoLabModal");
     if (modal) modal.style.display = "block"; 
@@ -25,7 +26,7 @@ window.closeModal = function() {
           radioModes = document.getElementsByName('bcalc-mode'), 
           cadVal = document.getElementById('bcalc-cadence-val'),
           cadWrap = document.getElementById('bcalc-cadence-wrap');
-
+          
     let hasCalculated = false;
 
     function triggerStale() { 
@@ -47,23 +48,16 @@ window.closeModal = function() {
     });
 
     speedSel.onchange = function() {
-        const val = parseInt(this.value); 
-        cogCont.innerHTML = '';
-        
-        if (!val || isNaN(val)) {
-            liveUpdate();
-            return;
-        }
-
-        cogCont.style.display = 'grid';
-        
-        for(let i=0; i<val; i++) {
-            const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
-            if(i === 0) wrapper.innerHTML = '<div class="bcalc-mini-label">Smallest</div>';
-            if(i === val-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
-            const input = document.createElement('input'); input.type='number'; input.className='bcalc-val-input bcalc-cog-item';
-            input.value = (i===0) ? 11 : (i===val-1) ? 32 : Math.round(11 + (i * 2.5)); 
-            input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
+        const s = parseInt(this.value); cogCont.innerHTML = '';
+        if(!isNaN(s)) {
+            for(let i=0; i<s; i++) {
+                const wrapper = document.createElement('div'); wrapper.style.position = 'relative';
+                if(i === 0) wrapper.innerHTML = '<div class="bcalc-mini-label">Smallest</div>';
+                if(i === s-1) wrapper.innerHTML = '<div class="bcalc-mini-label">Largest</div>';
+                const input = document.createElement('input'); input.type='number'; input.className='bcalc-val-input bcalc-cog-item';
+                input.value = (i===0)?11:(i===s-1)?32:Math.round(11 + (i * 2)); 
+                input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
+            }
         }
         liveUpdate();
     };
@@ -99,14 +93,13 @@ window.closeModal = function() {
         runBtn.innerText = "Calculate Gear Chart";
         
         const mode = Array.from(radioModes).find(r => r.checked).value;
-        const rings = Array.from(document.querySelectorAll('.bcalc-ring-item')).map(n => parseFloat(n.value)).sort((a,b)=>a-b);
         const cogs = Array.from(document.querySelectorAll('.bcalc-cog-item')).map(n => parseFloat(n.value)).sort((a,b)=>b-a);
+        const rings = Array.from(document.querySelectorAll('.bcalc-ring-item')).map(n => parseFloat(n.value)).sort((a,b)=>a-b);
         const wheel = parseFloat(wheelSel.value);
 
         document.getElementById('snap-wheel').innerText = wheelSel.options[wheelSel.selectedIndex].text;
         document.getElementById('snap-rings').innerText = rings.join('/') + 'T';
-        
-        document.getElementById('snap-cogs').innerText = speedSel.options[speedSel.selectedIndex].text + ' (' + cogs[cogs.length-1] + '-' + cogs[0] + 'T)';
+        document.getElementById('snap-cogs').innerText = speedSel.options[speedSel.selectedIndex].text + ' ' + cogs[cogs.length-1] + '-' + cogs[0] + 'T';
         
         const ringDiff = (rings.length > 1) ? (rings[rings.length-1]-rings[0]) : 0;
         document.getElementById('res-cap').innerText = ringDiff + (cogs[0]-cogs[cogs.length-1]) + 'T';
