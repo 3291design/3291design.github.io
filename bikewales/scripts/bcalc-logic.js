@@ -127,7 +127,7 @@ const GEARING_PRESETS = {
         liveUpdate();
     };
 
-    // 2. Secondary Cassette Selection Logic
+    // 2. Secondary Gearing Selection Logic
     presetSel.onchange = function() {
         const val = this.value;
         const speedCount = parseInt(speedSel.value);
@@ -147,10 +147,10 @@ const GEARING_PRESETS = {
                 input.oninput = liveUpdate; wrapper.appendChild(input); cogCont.appendChild(wrapper);
             }
         } else {
-            // It's a standard preset
+            // It's a standard preset from GEARING_PRESETS
             cogCont.style.display = 'none';
             const idx = parseInt(val);
-            const preset = CASSETTE_PRESETS[speedSel.value][idx];
+            const preset = GEARING_PRESETS[speedSel.value][idx];
             if (preset) {
                 progressionText.innerText = "Cogs: [" + preset.cogs.join(', ') + "]T";
                 progressionText.style.display = 'block';
