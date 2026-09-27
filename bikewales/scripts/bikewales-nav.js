@@ -161,16 +161,17 @@
         <div class="dropdown-content" style="min-width: 230px;">
             <div class="dropbtn2"><a href="#">&#9658;&nbsp;Desktop:</a>
                 <div class="dropdown-content2" style="min-width: 210px;">
-                    <a href="https://bikewalesgear-home.blogspot.com/2026/04/online-project-list.html">Online Project List</a>
+                    <a href="https://bikewalesgear-home.blogspot.com/2026/04/online-project-list.html">Digital Project List</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2026/04/ride-reports.html">Outstanding: Ride Reports</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2026/04/routes-to-ride.html">Future: Routes to Ride</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2026/04/future-places-to-visit.html">Future: Places to Visit</a>
                 </div>
             </div>
-            <div class="dropbtn2"><a href="#">&#9658;&nbsp;Workbench:</a>
+           <div class="dropbtn2"><a href="#">&#9658;&nbsp;Workbench:</a>
                 <div class="dropdown-content2" style="min-width: 210px;">
                     <a href="https://bikewalesgear-home.blogspot.com/2026/04/mechanical-project-list.html">Mechanical Project List</a>
                     <a href="https://bikewalesgear-home.blogspot.com/p/gear-calculator-1983.html">Gear Ratio Calculator</a>
+                    <a href="https://3291design.com/bikewales/workshop/gear-calculator.html">Gear Ratio Calculator 2.0</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2022/05/parts-accessories.html">Parts &amp; Accessories</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2022/05/service-maintenance-records.html">Service Records</a>
                 </div>
