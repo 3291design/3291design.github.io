@@ -43,8 +43,193 @@
          TOOL UI CONTENT START
          ======================================================================= -->
          
-    <!-- PASTE YOUR ENTIRE GEAR CALCULATOR HTML HERE -->
-    <!-- (Everything from <div class="display-sleeve"> down to the closing Modal </div>) -->
+   <div class="display-sleeve">
+    <div class="deck" style="margin-left: 20px; margin-right: 20px; letter-spacing: -.15px;">If you're building a new bike or want to know how to improve your drivetrain, this calculator can help determine which gearing suits you best.</div>
+    <hr class="minor">
+    
+    <div id="bcalc-outer-wrap" style="text-align: center; width: 100%; margin: 30px 0; clear: both; font-family: Tahoma, sans-serif;">
+        <div style="max-width: 900px; margin-bottom: 25px; text-align: center; margin-left: auto; margin-right: auto;">
+            <h2 class="help-term" style="color: #485175; font-size: 1.6rem; display: inline-block;" 
+                data-ghost-tip="<b>HOW TO USE</b>
+                                <br>1. Select Wheel &amp; Tyre Size.
+                                <br>2. Select Crankset Type (1x, 2x, 3x).
+                                <br>3. Select Freewheel / Cassette (speed) 
+                                <br>4. Specify Gearing.
+                                <br>5. Click Calculate.
+                                <br><br><b>NOTE:</b> This calculator is not designed for internal hubs, fixed gear, or single-speeds.">How to Use This Calculator &#9432;
+            </h2>
+        </div>
+
+        <div id="bcalc-main-container" style="display: inline-block; text-align: left; border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; background-color: #ffffff; color: #333; max-width: 900px; width: 100%; box-sizing: border-box;">
+            <div class="bcalc-layout">
+                <div class="bcalc-box">
+                    <label class="bcalc-label">Wheel &amp; Tyre Size</label>
+                    <select id="bcalc-wheel-size" class="bcalc-select">
+                        <option value="" selected>Select below...</option>
+                        <optgroup label="Road (700c / 622mm)">
+                            <option value="26.5">700c x 25mm</option>
+                            <option value="26.7">700c x 28mm</option>
+                            <option value="26.9">700c x 30mm</option>
+                            <option value="27.1">700c x 32mm</option>
+                        </optgroup>
+                        <optgroup label="Gravel & CX (700c / 622mm)">
+                            <option value="27.3">700c x 35mm</option>
+                            <option value="27.5">700c x 38mm</option>
+                            <option value="27.7">700c x 40mm</option>
+                            <option value="28.0">700c x 45mm</option>
+                            <option value="28.4">700c x 50mm (29 x 2.0")</option>
+                        </optgroup>
+                        <optgroup label="Road Plus / Gravel (650b / 584mm)">
+                            <option value="26.2">650b x 42mm</option>
+                            <option value="26.4">650b x 45mm</option>
+                            <option value="26.6">650b x 47mm</option>
+                            <option value="26.8">650b x 50mm</option>
+                        </optgroup>
+                        <optgroup label="MTB (29er / 622mm)">
+                            <option value="28.6">29" x 2.1"</option>
+                            <option value="28.8">29" x 2.25"</option>
+                            <option value="29.1">29" x 2.4"</option>
+                        </optgroup>
+                        <optgroup label="Classic Standards">
+                            <option value="25.0">26" x 1.5"</option>
+                            <option value="25.5">26" x 1.75"</option>
+                            <option value="26.0">26" x 2.0"</option>
+                            <option value="26.3">26" x 2.2"</option>
+                        </optgroup>
+                    </select>
+
+                    <label class="bcalc-label">Crankset Type</label>
+                    <select id="bcalc-ring-count" class="bcalc-select">
+                        <option value="" selected>Select below...</option>
+                        <option value="1">1x (Single)</option>
+                        <option value="2">2x (Double)</option>
+                        <option value="3">3x (Triple)</option>
+                    </select>
+                    <div id="bcalc-ring-container" class="bcalc-input-grid"></div>
+                </div>
+
+                <!-- VERSION 20.2: Always-Visible Gearing Box -->
+                <div class="bcalc-box">
+                    <label class="bcalc-label">Freewheel / Cassette Speeds</label>
+                    <select id="bcalc-speed-select" class="bcalc-select">
+                        <option value="" selected>Select below...</option>
+                        <option value="5">5-Speed</option>
+                        <option value="6">6-Speed</option>
+                        <option value="7">7-Speed</option>
+                        <option value="8">8-Speed</option>
+                        <option value="9">9-Speed</option>
+                        <option value="10">10-Speed</option>
+                        <option value="11">11-Speed</option>
+                        <option value="12">12-Speed</option>
+                    </select>
+
+                    <!-- Secondary Preset Dropdown (Now always visible, but disabled by default) -->
+                    <div id="bcalc-preset-wrap" style="display: block; margin-top: 0px;">
+                        <label class="bcalc-label">Gearing</label>
+                        <select id="bcalc-preset-select" class="bcalc-select" disabled>
+                            <option value="" selected>Select speeds first...</option>
+                        </select>
+                    </div>
+
+                    <!-- Read-Only Progression Text Display -->
+                    <div id="bcalc-progression-text" style="display: none; margin-top: 8px; font-size: 13px; color: #4a5568; font-family: monospace; background: #edf2f7; padding: 8px; border-radius: 4px;"></div>
+
+                    <!-- Dynamic Input Grid for Custom Options -->
+                    <div id="bcalc-cog-container" class="bcalc-input-grid" style="display: none; margin-top: 10px;"></div>
+                </div>
+
+                </div>
+
+                <div class="bcalc-radio-group" style="height: 70px; display: flex; align-items: center; gap: 20px; background: #f8f9fb; padding: 15px; border-radius: 8px; border: 1px solid #eef0f5; margin-top: 10px;">
+                   <label class="bcalc-label" style="margin:0; margin-left:16px;">Please specify:</label>
+                   <label class="bcalc-radio-item help-term" data-ghost-tip="<b>GEAR INCHES</b><br>A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher = Harder."><input type="radio" name="bcalc-mode" id="mode-inches" value="inches" checked> GEAR INCHES</label>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <label class="bcalc-radio-item help-term" data-ghost-tip="<b>CADENCE / SPEED</b><br>Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is usually between 80–95 RPM."><input type="radio" name="bcalc-mode" id="mode-speed" value="speed"> CADENCE / SPEED</label>
+                        <div id="bcalc-cadence-wrap" style="display:none; align-items:center; gap:8px; border-left: 1px solid #cbd5e0; padding-left: 15px;">
+                            <input type="number" id="bcalc-cadence-val" class="bcalc-val-input" value="90">
+                            <span style="font-size: 11px; font-weight: bold; color: #718096;">RPM</span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="bcalc-btn-row" style="margin-top: 20px; display: flex; gap: 12px;">
+                <button id="bcalc-reset-all" class="bcalc-btn-sec">Reset All</button>
+                <button id="bcalc-run" class="bcalc-btn-pri">Calculate Gear Chart</button>
+            </div>
+
+            <div id="bcalc-snapshot" class="bcalc-snapshot">
+                <div id="snap-dynamic-title" class="bcalc-snap-title">Gear Calculator Summary</div>
+                <div class="bcalc-snap-row">
+                    <div class="bcalc-snap-item"><span class="bcalc-snap-lab">Wheel:</span><span id="snap-wheel" class="bcalc-snap-val">-</span></div>
+                    <div class="bcalc-snap-item"><span class="bcalc-snap-lab">Crankset:</span><span id="snap-rings" class="bcalc-snap-val">-</span></div>
+                    <div class="bcalc-snap-item"><span class="bcalc-snap-lab">Cassette:</span><span id="snap-cogs" class="bcalc-snap-val">-</span></div>
+                </div>
+                <div class="bcalc-snap-row">
+                    <div class="bcalc-snap-item"><span class="bcalc-snap-lab help-term" data-ghost-tip="<b>DRIVETRAIN CAPACITY</b><br>The total 'chain slack' managed by the rear derailleur. Critical for determining the required rear derailleur cage length.">Drivetrain Capacity:</span><span id="res-cap" class="bcalc-snap-val bcalc-snap-highlight">-</span></div>
+                    <div class="bcalc-snap-item"><span class="bcalc-snap-lab help-term" data-ghost-tip="<b>TOTAL GEAR RANGE</b><br>The span between your easiest climbing gear and hardest sprint gear. A higher % means a wider range of gears and more versatility.">Total Gear Range:</span><span id="res-range" class="bcalc-snap-val bcalc-snap-highlight">-</span></div>
+                </div>
+            </div>
+
+            <div id="bcalc-result-area" class="bcalc-table-wrap"></div>
+            <div id="bcalc-legend" class="bcalc-legend">
+                <strong style="margin-right: 10px;">Legend:</strong>
+                <span class="legend-swatch" style="background-color:#b2dafa;"></span> Climbing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-swatch" style="background-color:#c6f0d7;"></span> Standard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-swatch" style="background-color:#fde6b6;"></span> Fast&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-swatch" style="background-color:#fecaca;"></span> Sprint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="legend-swatch" style="background-color:#cbd5e0;"></span> <span class="help-term" data-ghost-tip="<b>CROSS-CHAINING ALERT</b><br>Highlighted values represent extreme chain angles (Big-to-Big or Small-to-Small). Values are faded and italicized to indicate these gears are mechanically inefficient, cause excessive wear and should be avoided.">Cross-Chaining</span>
+            </div>
+
+            <div id="bcalc-actions" class="bcalc-btn-row" style="display: none; margin-top: 20px; gap: 12px;">
+                <button id="bcalc-reset-table" class="bcalc-btn-sec">Reset Table</button>
+                <button id="bcalc-print" class="bcalc-btn-pri">Print Gear Chart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bcalc-lab-launcher" style="text-align: center; margin-top: 30px; display: none;">
+        <button onclick="openModal()" class="bcalc-btn-pri" style="width: 270px;">What the Numbers Mean</button>
+      <hr class="main">
+    </div>
+
+    <div class="copyright" style="width: 100%; text-align: center;">© Copyright 2012 - 2026 Muse Kidd &amp; Bike Wales. All Rights Reserved.</div>
+</div>
+
+<div id="infoLabModal" class="bcalc-modal">
+    <div class="bcalc-modal-content">
+        <span class="bcalc-close" onclick="closeModal()">&times;</span>
+        <h2 style="color: #485175; font-size: 1.4rem; margin-bottom: 5px; border-bottom: 2px solid #cbd5e0; padding-bottom: 10px;">What the Numbers Mean</h2>
+        
+        <div class="bcalc-modal-grid">
+            <div>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #485175; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px 0;">Gear Inches</h3>
+                    <div class="plain-text" style="font-size: 13px;">A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher numbers = harder resistance.</div>
+                    <div class="formula-box">Formula: (Chainring ÷ Cog) × Tyre Diameter</div>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #485175; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px 0;">Cadence / Speed</h3>
+                    <div class="plain-text" style="font-size: 13px;">Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is 80–95 RPM.</div>
+                    <div class="formula-box">Speed: (GI × π × Cadence × 60) ÷ 63,360</div>
+                </div>
+                <div>
+                    <h3 style="color: #485175; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px 0;">Cross-Chaining</h3>
+                    <div class="plain-text" style="font-size: 13px;">Highlighted values represent extreme chain angles (Big-to-Big or Small-to-Small). Values are faded and italicized to indicate these gears are mechanically inefficient, cause excessive wear and should be avoided.</div>
+                </div>
+            </div>
+            <div>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #485175; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px 0;">Drivetrain Capacity</h3>
+                    <div class="plain-text" style="font-size: 13px;">The total 'chain slack' managed by the rear derailleur. Critical for determining the required rear derailleur cage length.</div>
+                    <div class="formula-box">Formula: (Big Ring - Small Ring) + (Big Cog - Small Cog)</div>
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #485175; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px 0;">Total Gear Range</h3>
+                    <div class="plain-text" style="font-size: 13px; line-height: 1.4;">The span between your easiest climbing gear and hardest sprint gear. A higher % means a wider range of gears and more versatility.</div>
+                    <div class="formula-box">Formula: (Highest Gear Ratio ÷ Lowest Gear Ratio) × 100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;"><button onclick="closeModal()" class="bcalc-btn-pri" style="width: 270px; margin-top: 30px;">Return to Calculator</button></div>
+    </div>
+</div>
 
     <!-- =======================================================================
          TOOL UI CONTENT END
