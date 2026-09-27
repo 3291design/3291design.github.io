@@ -1,1 +1,27 @@
+.deck {
+   color: #888; 
+   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+   font-size: 1.3em; 
+   font-weight: normal;
+   font-style: italic;
+   line-height: 1.8em;
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+
+.deck a:link {
+  color: #485175;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.deck a:visited {
+  color: #485175;
+  text-decoration: none;
+}
+
+.deck a:hover {
+  color: #b99c18;
+  text-decoration: none;
+}
 
