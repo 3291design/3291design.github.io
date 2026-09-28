@@ -115,6 +115,7 @@
 /* --- 5. BUTTONS --- */
 .bcalc-btn-pri, .bcalc-btn-sec {
     flex: 1; 
+    width: 340px;
     padding: 12px; 
     border-radius: 6px; 
     cursor: pointer; 
@@ -159,6 +160,7 @@
     display: none; 
     text-align: center; 
 }
+
 .bcalc-snap-title { 
     font-size: 1.6rem; 
     font-weight: bold; 
@@ -168,7 +170,8 @@
     border-bottom: 2px solid var(--bw-border); 
     letter-spacing: 1px; 
 }
-.bcalc-snap-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 8px 0; }
+
+.bcalc-snap-row { display: flex; justify-content: center; margin: 12px auto; flex-wrap: wrap; gap: 20px; padding: 8px 0; }
 .bcalc-snap-row:not(:last-child) { border-bottom: 1px solid var(--bw-border); }
 .bcalc-snap-item { display: flex; align-items: baseline; gap: 8px; }
 .bcalc-snap-lab { font-size: 12px; font-weight: bold; color: var(--bw-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
