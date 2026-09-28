@@ -19,6 +19,7 @@
 #bcalc-main-container * { 
     box-sizing: border-box; 
 }
+
 .bcalc-layout { 
     display: flex; 
     flex-wrap: wrap; 
@@ -26,6 +27,7 @@
     justify-content: center; 
     align-items: stretch; 
 }
+
 .bcalc-box { 
     flex: 1; 
     min-width: 320px; 
@@ -40,6 +42,7 @@
 }
 
 /* --- 3. TYPOGRAPHY & LABELS --- */
+
 .bcalc-label { 
     display: block; 
     font-weight: bold; 
@@ -49,6 +52,7 @@
     text-transform: uppercase; 
     letter-spacing: 1px; 
 }
+
 .bcalc-mini-label { 
     position: absolute; 
     top: -18px; 
@@ -60,6 +64,7 @@
     text-align: center; 
     pointer-events: none; 
 }
+
 .formula-box { 
     display: block; 
     background: #fdfbf7; 
@@ -74,6 +79,7 @@
 }
 
 /* --- 4. FORMS & INPUTS --- */
+
 .bcalc-select { 
     width: 100%; 
     padding: 10px; 
@@ -84,6 +90,7 @@
     cursor: pointer; 
     font-family: inherit; 
 }
+
 .bcalc-input-grid { 
     position: relative; 
     display: grid; 
@@ -92,6 +99,7 @@
     align-items: start; 
     margin-top: 15px; 
 }
+
 .bcalc-val-input { 
     width: 60px; 
     height: 34px; 
@@ -102,6 +110,7 @@
     font-family: inherit; 
     font-size: 14px; 
 }
+
 .bcalc-radio-item { 
     display: flex; 
     align-items: center; 
@@ -113,6 +122,7 @@
 }
 
 /* --- 5. BUTTONS --- */
+
 .bcalc-btn-pri, .bcalc-btn-sec {
     flex: 1; 
     width: 340px !important;
@@ -125,25 +135,30 @@
     text-decoration: none; 
     box-shadow: 3px 3px 3px 0px rgba(0,0,0,.2);
 }
+
 .bcalc-btn-pri { 
     background: var(--bw-primary); 
     color: #fff; 
     border: none; 
 }
+
 .bcalc-btn-sec { 
     background: #f1f3f5; 
     color: #4a5568; 
     border: none;
 }
+
 .bcalc-btn-pri:hover, .bcalc-btn-sec:hover { 
     color: #ffffff !important; 
     background-color: var(--bw-primary-hover) !important; 
 }
+
 .bcalc-btn-stale { 
     animation: button-recalc-glow 1.5s infinite ease-in-out; 
     border: 1px solid #4299e1 !important; 
     background: #3182ce !important; 
 }
+
 @keyframes button-recalc-glow {
     0% { box-shadow: 0 0 5px rgba(66, 153, 225, 0.4); }
     50% { box-shadow: 0 0 20px rgba(66, 153, 225, 0.9); }
@@ -151,6 +166,7 @@
 }
 
 /* --- 6. SNAPSHOT & TABLE (RESULTS) --- */
+
 .bcalc-snapshot { 
     background: #f1f3f9; 
     border: 1px solid var(--bw-primary); 
@@ -187,6 +203,7 @@
 
 /* --- 7. MODAL & GHOST TIPS --- */
 /* --- MODAL STYLES (Oakdale Standalone Edition) --- */
+
 .bcalc-modal {
     display: none; 
     position: fixed; /* Covers the true browser window */
