@@ -115,7 +115,7 @@
 /* --- 5. BUTTONS --- */
 .bcalc-btn-pri, .bcalc-btn-sec {
     flex: 1; 
-    width: 340px;
+    width: 340px !important;
     padding: 12px; 
     border-radius: 6px; 
     cursor: pointer; 
