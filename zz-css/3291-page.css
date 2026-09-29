@@ -1,6 +1,23 @@
-/* 3291design V18 Core Blueprint Architectural Stylesheet */
+ /* ==========================================================================
+   3291design V18 Core Blueprint Architectural Stylesheet
+   ========================================================================== */
 
-/* Core Schematic Reset */
+/* 
+   INDEX:
+   01. Core Architecture & Resets
+   02. Master Header Component
+   03. Brand Typography & System Specs
+   04. Schematic Grid & Hub Cards
+   05. Workspace Inner Template
+   06. Master Footer Component
+   07. Global Animations
+   08. Responsive Breakpoints
+*/
+
+/* ==========================================================================
+   01. CORE ARCHITECTURE & RESETS
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    
     /* Subtle drafting grid background matrix */
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -22,7 +40,6 @@ body {
     background-size: 20px 20px;
 }
 
-/* Main Workspace Container */
 .workspace {
     flex: 1;
     max-width: 1200px;
@@ -33,24 +50,35 @@ body {
     justify-content: center;
 }
 
-/* Updated Header Block */
+
+/* ==========================================================================
+   02. MASTER HEADER COMPONENT
+   ========================================================================== */
+
 .blueprint-header {
     position: relative;
     text-align: center; 
     height: 270px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
-    margin-bottom: 30px;
+    margin: 0px auto 20px auto;
+    max-width: 1160px;
+    width: 100%;
 
     /* The Vintage Duotone Display */
     background-color: #1e3d59; 
     background-image: 
         linear-gradient(rgba(30, 61, 89, 0.65), rgba(30, 61, 89, 0.75)), 
-        url('../zz-images/Gemini_Generated_Image_03_cropped_.jpg'); /* Architectural Image */
+        url('../zz-images/Gemini_Generated_Image_03_cropped_.jpg'); 
     background-size: cover;
     background-position: center 40%;
     background-blend-mode: luminosity; 
     border-radius: 4px; 
 }
+
+
+/* ==========================================================================
+   03. BRAND TYPOGRAPHY & SYSTEM SPECS
+   ========================================================================== */
 
 .brand-block, 
 .sys-specs {
@@ -59,7 +87,6 @@ body {
     z-index: 2;
 }
 
-/* Restored Brand Hierarchy Layout */
 .brand-block {
     display: inline-flex;
     align-items: baseline;
@@ -88,7 +115,6 @@ body {
     text-shadow: 6px 6px 4px rgba(23, 42, 58, 0.7);
 }
 
-/* Centered System Specs Metadata */
 .sys-specs {
     font-size: 0.85rem;
     letter-spacing: 2px;
@@ -109,95 +135,65 @@ body {
     box-shadow: 0 0 8px #ff6b35;
 }
 
-/* Schematic Grid for Subdomain Nodes */
+
+/* ==========================================================================
+   04. SCHEMATIC GRID & HUB CARDS (Blueprint V18.5)
+   ========================================================================== */
+
 .blueprint-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 0px 30px 0px 30px;
     gap: 30px;
 }
 
-/* --- UPDATED Schematic Grid Cards (Blueprint V18.5) --- */
 .schematic-card {
-    background: rgba(169, 207, 238, 0.1); /* Original reduced opacity */
+    background: rgba(169, 207, 238, 0.1); 
     backdrop-filter: blur(4px); 
-    border-left: 3px solid rgba(255, 107, 53, 0.85); /* Slightly muted structural anchor */
-    padding: 30px;
+    border-left: 3px solid rgba(255, 107, 53, 0.85); 
+    padding: 20px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.85);
     transition: all 0.25s ease-in-out;
     position: relative;
-    overflow: hidden; /* Needed for the clean clip-path */
+    overflow: hidden; 
 
-    /* --- THE NEW CLIPPED EDGE ENGINEERING (V18.5) --- */
-    /* Creates a 20px diagonal clip on the bottom right corner */
+    /* Clipped edge engineering (Bottom Right) */
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%);
     
-    /* We also need to add a subtle "border" to replace the soft border removed by clip-path */
+    /* Replaces the soft border removed by clip-path */
     background-image: 
         linear-gradient(90deg, transparent, transparent calc(100% - 20px), transparent calc(100% - 20px), rgba(255,255,255,0.1) calc(100% - 20px), rgba(255,255,255,0.1) 100%);
 }
 
-//* Technical crosshair accent on TOP-RIGHT corner (Hidden by default) */
+/* Technical crosshair accent (Top Right) */
 .schematic-card::before {
     content: '';
     position: absolute;
     top: 0px; right: 0px;
     width: 10px; height: 10px;
-    border-right: 1.5px solid #b0cddb; /* Swapped to that light blue you noticed! */
+    border-right: 1.5px solid #b0cddb; 
     border-top: 1.5px solid #b0cddb;
     z-index: 2; 
-    opacity: 0; /* Makes the doodad invisible */
-    transition: opacity 0.25s ease-in-out; /* Smooth fade-in to match the other hover effects */
+    opacity: 0; 
+    transition: opacity 0.25s ease-in-out; 
 }
 
-/* --- NEW ::AFTER ACCENT LINE FOR THE BEVEL (V18.5) --- */
-/* This adds the signature diagonal 'factory-cut' line across the clip-path. */
+/* Factory-cut bevel accent line (Bottom Right) */
 .schematic-card::after {
     content: '';
     position: absolute;
-    bottom: -1px; /* Overlaps slightly for a clean look */
-    right: -1px; /* Overlaps slightly for a clean look */
-    width: 29px; /* The hypotenuse length for the 20px clip */
+    bottom: -1px; 
+    right: -1px; 
+    width: 29px; 
     height: 1px;
-    background-color: rgba(255,255,255,0.25); /* Subtle white accent line */
+    background-color: rgba(255,255,255,0.25); 
     transform: rotate(-45deg);
     transform-origin: bottom right;
     transition: all 0.25s ease-in-out;
 }
 
-/* --- THE UPDATED DYNAMIC MOUSE-OVER INVERSION (V18.5) --- */
-.schematic-card:hover {
-    background: rgba(69, 94, 118, 0.9); 
-    border-left-color: #b0cddb; 
-    transform: translateY(-2px);
-}
-
-/* Activate the top-right doodad on hover */
-.schematic-card:hover::before {
-    opacity: 1; 
-}
-
-/* Activate the bottom-right clipped accent line on hover */
-.schematic-card:hover::after {
-    background-color: #b0cddb; 
-}
-
-/* --- THE UPDATED DYNAMIC MOUSE-OVER INVERSION (V18.5) --- */
-.schematic-card:hover {
-    background: rgba(69, 94, 118, 0.9); /* Same background inversion as before */
-    border-left-color: #b0cddb; /* Same structural anchor update */
-    transform: translateY(-2px);
-}
-
-/* When the card is hovered, we brighten the new bevel accent line too */
-.schematic-card:hover::after {
-    background-color: #b0cddb; /* Matches the updated left-border color */
-}
-
-/* Existing title/icon hover effects (No changes needed) */
-.schematic-card:hover .card-title { color: #ffffff; }
-.schematic-card:hover .title-icon { transform: scale(1.25); }
-
+/* Base Card Content Styling */
 .card-id {
     font-size: 1rem;
     color: rgba(255, 107, 53);
@@ -206,7 +202,6 @@ body {
     display: block;
 }
 
-/* Card Title */
 .card-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.4rem;
@@ -221,22 +216,22 @@ body {
     transition: color 0.25s ease-in-out; 
 }
 
-/* Technical SVG Line Properties */
 .title-icon {
     width: 22px;
     height: 22px;
     flex-shrink: 0; 
     transition: transform 0.25s ease-in-out;
-    stroke-width: 1.5; /* Keeping the fine stroke weight */
+    stroke-width: 1.5; 
 }
 
 .card-desc {
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 10px;
 }
 
-/* --- THE DYNAMIC MOUSE-OVER INVERSION --- */
+/* Combined Interactive Hover States */
 .schematic-card:hover {
     background: rgba(69, 94, 118, 0.9);
     border-color: rgba(255, 255, 255, 0.4);
@@ -244,15 +239,188 @@ body {
     transform: translateY(-2px);
 }
 
+.schematic-card:hover::before {
+    opacity: 1; 
+}
+
+.schematic-card:hover::after {
+    background-color: #b0cddb; 
+}
+
 .schematic-card:hover .card-title {
     color: #ffffff; 
 }
 
 .schematic-card:hover .title-icon {
-    transform: scale(1.25)
+    transform: scale(1.25);
 }
 
-/* --- MASTER BLUEPRINT FOOTER COMPONENT --- */
+/* TechLab Card Metadata */
+.card-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2); /* Adjust color to match your theme */
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: #888; /* Muted text color */
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-item svg {
+    /* Ensures the stroke color inherits the text color */
+    stroke: currentColor; 
+}
+
+/* LED Status Lights */
+.status-led {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    /* The box-shadow gives it that nice optical glow */
+    box-shadow: 0 0 6px currentColor; 
+}
+
+.led-open {
+    background-color: #00ff00;
+    color: #00ff00; /* Drives the glow color */
+}
+
+.led-closed {
+    background-color: #ff3333;
+    color: #ff3333; /* Drives the glow color */
+}
+
+.led-dev {
+    background-color: #ffaa00; /* Amber/Orange */
+    color: #ffaa00; /* Drives the glow color */
+}
+
+/* Animated Stopwatch Hand */
+.stopwatch-hand {
+    /* The center of our SVG circle is at x=12, y=13 */
+    transform-origin: 12px 13px;
+    animation: sweep 2s linear infinite;
+}
+
+@keyframes sweep {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   05. WORKSPACE INNER TEMPLATE (Sub-pages)
+   ========================================================================== */
+
+.workspace-header {
+    margin: 30px; 
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5); /* Bumped opacity to 0.5 so it shows up nicely! */
+    padding-bottom: 10px;
+}
+
+/* Consolidated H1 properties */
+.workspace-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* Scale the icon to match the H1 text size */
+.workspace-header .title-icon {
+    width: 1em;
+    height: 1em;
+}
+
+.subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin-top: 6px;
+    opacity: 0.8; 
+}
+
+.subtitle a {
+    color: #b0cddb;
+    text-decoration: none;
+}
+
+.subtitle a:hover {
+    color: #ff6b35;
+    transform: translateX(2px);
+}
+
+.workspace-content {
+    margin: 0px 30px 0px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-block {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #ccc;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 0px solid #FF0000;
+}
+
+/* Scoped to avoid bleeding into the main homepage grid */
+.workspace-content h2 {
+    font-family: 'Smooch Sans', sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-bottom: 0px;
+}
+
+.workspace-content p {
+    margin-bottom: 20px;
+}
+
+.link-block h3 {
+    font-family: 'Smooch Sans', sans-serif;
+    letter-spacing: 1px;
+    margin: 30px 0px 0px 30px;
+}
+
+.resource-list {
+    list-style-type: square; 
+    margin: 10px 0px 0px 30px;
+    padding-left: 1.5rem;
+}
+
+.resource-list li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-list a {
+    color: #b0cddb; 
+    text-decoration: none;
+    font-size: 0.85rem;
+    /* Added transform to the transition list for smooth animation */
+    transition: color 0.2s ease, transform 0.2s ease; 
+    display: inline-block;
+}
+
+.resource-list a:hover {
+    color: #ff6b35; 
+    transform: translateX(2px);
+}
+
+/* ==========================================================================
+   06. MASTER FOOTER COMPONENT
+   ========================================================================== */
+
 .blueprint-footer {
     background-color: #172a3a; 
     border-top: 1px dashed rgba(255, 255, 255, 0.25); 
@@ -282,7 +450,7 @@ body {
     font-weight: 700;
 }
 
-/* --- FOOTER BRAND ARCHITECTURE --- */
+/* Footer Brand Architecture */
 .footer-brand-block {
     display: inline-flex;
     align-items: baseline; 
@@ -320,6 +488,7 @@ body {
     margin-top: 10px;
 }
 
+/* Footer Links & Social Grid */
 .footer-links {
     list-style: none;
     display: flex;
@@ -371,16 +540,44 @@ body {
     transform: scale(1.1);
 }
 
-/* Global Animations */
+
+/* ==========================================================================
+   07. GLOBAL ANIMATIONS
+   ========================================================================== */
+
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
 
+
+/* ==========================================================================
+   08. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
 @media (max-width: 768px) {
-    .brand-block { flex-direction: column; align-items: center; gap: 0; }
-    .smooch-sans-headA { font-size: 6rem; }
-    .orbitron-headA { font-size: 2rem; margin-top: -10px; }
-    .workspace { padding: 0px 16px; }
+    .brand-block { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 0; 
+    }
+    .smooch-sans-headA { 
+        font-size: 6rem; 
+    }
+    .orbitron-headA { 
+        font-size: 2rem; 
+        margin-top: -10px; 
+    }
+    .workspace { 
+        padding: 0px 16px; 
+    }
+    .card-title { 
+        font-size: 1.2rem;
+        margin-bottom: 6px; 
+    }
+    .blueprint-grid {
+        margin: 0px 0px 0px 0px;
+        gap: 16px;
+    }
     .footer-wrapper {
         grid-template-columns: 1fr; 
         gap: 30px;
