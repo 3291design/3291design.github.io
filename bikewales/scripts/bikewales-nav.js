@@ -171,7 +171,7 @@
                 <div class="dropdown-content2" style="min-width: 210px;">
                     <a href="https://bikewalesgear-home.blogspot.com/2026/04/mechanical-project-list.html">Mechanical Project List</a>
                     <a href="https://bikewalesgear-home.blogspot.com/p/gear-calculator-1983.html">Gear Ratio Calculator</a>
-                    <a href="https://3291design.com/bikewales/workshop/gear-calculator.html">Gear Ratio Calculator 2.0</a>
+                    <a href="https://3291design.com/bikewales/workshop/gear-calculator.html">Gear Ratio Calculator 3.0</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2022/05/parts-accessories.html">Parts &amp; Accessories</a>
                     <a href="https://bikewalesgear-home.blogspot.com/2022/05/service-maintenance-records.html">Service Records</a>
                 </div>
