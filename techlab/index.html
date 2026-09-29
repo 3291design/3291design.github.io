@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3291design // Node Standby // Tech Lab</title>
+    <title>3291design // TechLab</title>
     
-    <!-- Paths step up one level (../) to reach root directories -->
     <link rel="stylesheet" href="../zz-css/3291-nav.css">
     <link rel="stylesheet" href="../zz-css/3291-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,40 +15,126 @@
 
     <nav class="studio-nav"></nav>
 
-    <!-- Inline flex styles to perfectly center the holding message -->
-    <main class="workspace" style="align-items: center; padding: 10vh 20px;">
-        
-        <div class="schematic-card" style="max-width: 600px; text-align: center;">
-            <span class="card-id">Design Resource // 06</span>
-            
-            <!-- Added a spinning loading icon for the technical vibe -->
-            <h2 class="card-title" style="justify-content: center; color: #ffffff;">
-                <svg class="title-icon" style="animation: spin 4s linear infinite;" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="1.5">
-                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
-                NODE STANDBY
-            </h2>
-            
-            <!-- New Technical Directory Target Readout -->
-            <div style="border-top: 1px dashed rgba(255,255,255,0.15); border-bottom: 1px dashed rgba(255,255,255,0.15); padding: 10px 0; margin: 0 0 25px; color: #b0cddb; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">
-                Directory: <span style="color: #ffffff;">Tech Lab</span>
-            </div>
-            
-            <p class="card-desc" style="margin: 20px 0 30px;">
-                This directory is currently undergoing architectural upgrades. Data migration and high-fidelity media assets will be deployed to this sector shortly.
-            </p>
-            
-            <!-- Link back to root hub -->
-            <a href="/" style="color: #ff6b35; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,107,53,0.5); padding-bottom: 2px;">
-                &larr; Return to Core Hub
-            </a>
-        </div>
+    <main class="workspace">
 
+        <!-- Workspace Header -->
+        <header class="workspace-header">
+            <h1><svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M6 9l3 3-3 3M11 15h7" />
+                    </svg> TechLab Workspace</h1>
+            <p class="subtitle">Living environment for code experimentation and development.</p>
+        </header>
+
+        <section class="workspace-content">
+            
+            <article class="text-block">
+                <div style="float: left;"><img src="../zz-images/apple-computer.png" style="border: 0px; width: 120px; height: 160px; margin-right: 20px;"></div>
+                <h2><nobr>Primary Objectives</nobr></h2>
+                <p>Welcome to the <span style="font-family: arial, san-serif; font-weight: 800;">3291</span><span style="font-family: verdana, san-serif; font-weight: 400;">design&#8482</span> - <b>TechLab</b>. In this workspace we focus on creative solutions through specialised asset development. As well as testing and analysing our work, we often showcase interactive designs for use within websites or as standalone multimedia components.</p>
+
+                <p>To begin viewing some of our work, select a department below.
+            </article>
+
+        <section class="workspace-content" style="margin-top: 30px;">
+            
+            <article class="link-block">
+                <h3 style="margin-top: -30px!important; margin-left: -30px!important; margin-bottom: 20px!important;">Primary Departments</h3>
+            </article>
+
+        </section>
+
+        <section class="blueprint-grid" style="margin-left: 0px !important;">
+            
+            <a href="labs.html" class="schematic-card">
+                <span class="card-id">Department - [ A ]</span>
+                <h2 class="card-title">>> Labs</h2>
+                
+                <!-- SVG Timer and Date Block -->
+                <div class="card-meta" style="margin-top: 10px !important;">
+                    
+                    <!-- Status Indicator -->
+                    <span class="meta-item">
+                        <span class="status-led led-open"></span>&nbsp;
+                        OPEN
+                    </span>
+
+                    <!-- Animated Timer Icon -->
+                    <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
+                            <circle cx="12" cy="13" r="8"></circle>
+                            <path d="M10 3h4"></path>
+                            <path d="M12 3v2"></path>
+                            <!-- The animated hand -->
+                            <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line>
+                        </svg>
+                        ACTIVE
+                    </span>
+
+                    <!-- Calendar Icon & Date -->
+                    <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <path d="M16 2v4M8 2v4M3 10h18"></path>
+                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+                        </svg>
+                        JUL 2026
+                    </span>
+                </div>
+            </a>
+
+            <a href="library.html" class="schematic-card">
+                <span class="card-id">Department - [ B ]</span>
+                <h2 class="card-title">>> Library</h2>
+
+                <!-- SVG Timer and Date Block -->
+                <div class="card-meta">
+                    
+                    <!-- Status Indicator -->
+                    <span class="meta-item">
+                        <span class="status-led led-closed"></span>&nbsp;
+                        Closed
+                    </span>
+
+                    <!-- Animated Timer Icon -->
+                    <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
+                            <circle cx="12" cy="13" r="8"></circle>
+                            <path d="M10 3h4"></path>
+                            <path d="M12 3v2"></path>
+                            <!-- The animated hand -->
+                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
+                        </svg>
+                        HOLD
+                    </span>
+
+                    <!-- Calendar Icon & Date -->
+                    <span class="meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <path d="M16 2v4M8 2v4M3 10h18"></path>
+                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+                        </svg>
+                        JUL 2026
+                    </span>
+                </div>
+            </a>
+        </section> 
+        
+        <!-- <article class="link-block">
+                <h3>Primary Departments</h3>
+                <ul class="resource-list">
+                    <li><a href="projects.html">Labs - [ Ongoning Projects ]</a></li>
+                    <li><a href="directory.html">Library - [ Asset Directory ]</a></li>
+                    <li><a href="resources.html">Reference Desk - [ External Resources ]</a></li>
+                </ul>
+            </article> -->
+
+        </section> 
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <!-- Path stepped up to target the scripts folder -->
-    <script src="../zz-scripts/3291-nav.js"></script>
+    <script src="https://3291design.com/zz-scripts/3291-nav.js"></script>
 </body>
 </html>
