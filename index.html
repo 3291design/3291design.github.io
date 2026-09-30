@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3291design // Interactive Design</title>
+    <title>3291design // Interactive Design Studio & Site Hub</title>
     
     <link rel="stylesheet" href="zz-css/3291-nav.css">
-    <link rel="stylesheet" href="zz-css/3291-page.css">
+    <link rel="stylesheet" href="zz-css/3291-core.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Smooch+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -28,285 +28,222 @@
         </header>
 
         <section class="blueprint-grid">
-            <a href="/bikewales/" class="schematic-card">
-                <span class="card-id">Design Office - [ 101 ]</span>
-                <h2 class="card-title">
+     
+        <!--------------------------------------->
+        <!------------- BIKE WALES -------------->
+        <!--------------------------------------->
+
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 101 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/bikewales/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="6" />
-                        <circle cx="12" cy="12" r="2" />
-                        <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M6.34 6.34l1.42 1.42M16.24 16.24l1.42 1.42M6.34 16.24l1.42-1.42M16.24 6.34l1.42-1.42" />
+                        <use href="#icon-bw"></use>
                     </svg>
                     Bike Wales
-                </h2>
-                <p class="card-desc">A documentary and re-imagined archive created from 15 years of cycling in South Wales.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">A documentary and re-imagined archive created from 15 years of cycling in South Wales.</p>
 
-                <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-dev"></span>
-                        In-Dev
-                    </span>
-                
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <!-- Added stroke="currentColor" and stroke-linecap/linejoin for cleaner rendering -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        HOLD
-                    </span>
-                
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <!-- Added stroke="currentColor" -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        JUL 2026
-                    </span>
-                </div>
-            </a>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-dev"></span>
+                    In-Dev
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    HOLD
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    2026
+                </span>
+            </div>
+        </div>
 
-            <a href="/oakdalewarmemorial/" class="schematic-card">
-                <span class="card-id">Design Office - [ 201 ]</span>
-                <h2 class="card-title">
+        <!----------------------------------------->
+        <!------------- WAR MEMORIAL -------------->
+        <!----------------------------------------->
+
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 201 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/oakdalewarmemorial/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        <line x1="12" y1="6" x2="12" y2="16" />
-                        <line x1="9" y1="9" x2="15" y2="9" />
+                        <use href="#icon-wm"></use>
                     </svg>
                     War Memorial
-                </h2>
-                <p class="card-desc">Oakdale War Memorial website commemorating local military service and relevant history archive.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">Oakdale War Memorial website commemorating local military service and relevant history archive.</p>
 
-                <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-dev"></span>
-                        In-Dev
-                    </span>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-dev"></span>
+                    In-Dev
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    HOLD
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    JUL 2026
+                </span>
+            </div>
+        </div>
 
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        HOLD
-                    </span>
+        <!---------------------------------------->
+        <!------------- FAMILY TREE -------------->
+        <!---------------------------------------->
 
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        JUL 2026
-                    </span>
-                </div>
-            </a>
-
-            <a href="/ourfamilytree/" class="schematic-card">
-                <span class="card-id">Design Office - [ 301 ]</span>
-                <h2 class="card-title">
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 301 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/ourfamilytree/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 2v6M12 8H5v6M12 8h7v6M5 14v4M19 14v4" />
-                        <circle cx="12" cy="2" r="1" fill="currentColor"/>
-                        <circle cx="5" cy="16" r="2" />
-                        <circle cx="19" cy="16" r="2" />
+                        <use href="#icon-ft"></use>
                     </svg>
                     Family Tree
-                </h2>
-                <p class="card-desc">Our ancestral archive and historical family library, including resources and tools.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">Our ancestral archive and historical family library, including resources and tools.</p>
 
-                <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-closed"></span>
-                        FUTURE
-                    </span>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-closed"></span>
+                    FUTURE
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    PLANNING
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    2027
+                </span>
+            </div>
+        </div>
 
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        PLANNING
-                    </span>
+        <!----------------------------------->
+        <!------------- STUDIO -------------->
+        <!----------------------------------->
 
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        2027
-                    </span>
-                </div>
-            </a>
-
-            <a href="/thestudio/" class="schematic-card">
-                <span class="card-id">Design Office - [ 401 ]</span>
-                <h2 class="card-title">
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 401 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/thestudio/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="3" width="18" height="18" rx="1" />
-                        <line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="2 2" />
-                        <line x1="12" y1="3" x2="12" y2="21" stroke-dasharray="2 2" />
-                        <circle cx="12" cy="12" r="3" />
+                        <use href="#icon-studio"></use>
                     </svg>
                     The Studio
-                </h2>
-                <p class="card-desc">Central design office, creative archives, and comprehensive résumé &amp; portfolio.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">Central design office, creative archives, and comprehensive résumé &amp; portfolio.</p>
 
-                <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-closed"></span>
-                        FUTURE
-                    </span>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-closed"></span>
+                    FUTURE
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    PLANNING
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    2027
+                </span>
+            </div>
+        </div>
 
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        PLANNING
-                    </span>
+        <!-------------------------------------->
+        <!------------- PHOTO LAB -------------->
+        <!-------------------------------------->
 
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        2027
-                    </span>
-                </div>
-            </a>
-
-            <a href="/photolab/" class="schematic-card">
-                <span class="card-id">Design Office - [ 501 ]</span>
-                <h2 class="card-title">
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 501 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/photolab/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="9" />
-                        <line x1="12" y1="3" x2="18" y2="12" />
-                        <line x1="18" y1="12" x2="9" y2="20" />
-                        <line x1="9" y1="20" x2="4" y2="10" />
-                        <line x1="4" y1="10" x2="15" y2="4" />
+                        <use href="#icon-photo"></use>
                     </svg>
                     Photo Lab
-                </h2>
-                <p class="card-desc">Visual asset management, high-fidelity photography and darkroom environment.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">Visual asset management, high-fidelity photography and darkroom environment.</p>
 
-                 <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-closed"></span>
-                        FUTURE
-                    </span>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-closed"></span>
+                    FUTURE
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    PLANNING
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    2027
+                </span>
+            </div>
+        </div>
 
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        PLANNING
-                    </span>
+        <!------------------------------------->
+        <!------------- TECH LAB -------------->
+        <!------------------------------------->
 
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        2027
-                    </span>
-                </div>
-            </a>
-
-            <a href="/techlab/" class="schematic-card">
-                <span class="card-id">Design Office - [ 601 ]</span>
-                <h2 class="card-title">
+        <div class="schematic-card">
+            <span class="card-id">Design Office - [ 601 ]</span>
+            
+            <h2 class="card-title">
+                <a href="/techlab/" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="M6 9l3 3-3 3M11 15h7" />
+                        <use href="#icon-tech"></use>
                     </svg>
                     Tech Lab
-                </h2>
-                <p class="card-desc">Laboratory for multimedia engineering and testing ground for online components.</p>
+                </a>
+            </h2>
+            
+            <p class="card-desc">Laboratory for multimedia engineering and testing ground for online components.</p>
 
-                <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
-                    <span class="meta-item">
-                        <span class="status-led led-open"></span>
-                        OPEN
-                    </span>
+            <div class="card-meta">
+                <span class="meta-item">
+                    <span class="status-led led-open"></span>
+                    &nbsp;OPEN
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                    &nbsp;ACTIVE
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                    2026
+                </span>
+            </div>
+        </div>
 
-                    <!-- Animated Timer Icon -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line>
-                        </svg>
-                        ACTIVE
-                    </span>
-
-                    <!-- Calendar Icon & Date -->
-                    <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        JUL 2026
-                    </span>
-                </div>
-            </a>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
     <script src="zz-scripts/3291-nav.js"></script>
+
+    <!-- Dynamic SVG Injector -->
+    <script type="module">
+        import { loadSVGSprites } from './zz-scripts/ui-core.js';
+        loadSVGSprites();
+    </script>
 </body>
 </html>
