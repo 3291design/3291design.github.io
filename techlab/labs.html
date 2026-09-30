@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>3291design // TechLab</title>
     
     <link rel="stylesheet" href="../zz-css/3291-nav.css">
-    <link rel="stylesheet" href="../zz-css/3291-page.css">
+    <link rel="stylesheet" href="../zz-css/3291-core.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Smooch+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -19,100 +19,81 @@
 
         <!-- Workspace Header -->
         <header class="workspace-header">
-            <h1><svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="M6 9l3 3-3 3M11 15h7" />
-                    </svg> Labs</h1>
+            <h1>
+                <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <use href="#icon-tech"></use>
+                </svg> 
+                Labs
+            </h1>
             <p class="subtitle"><a href="index.html">TechLab Workspace</a> // Department A // Labs - [ Ongoing Projects ]</p>
         </header>
 
         <section class="workspace-content" style="border: 0px solid #ff0000;">
             
             <article class="text-block">
-                <p>Select a project below.
+                <p>Select a project below.</p>
             </article>
 
         </section>
 
         <section class="blueprint-grid" style="border: 0px solid #ff0000;">
             
+        <!--------------------------------------->
+        <!------------- BIKE WALES -------------->
+        <!--------------------------------------->
+
             <div class="schematic-card">
                 <span class="card-id">[ Project 01 ]</span>
                 <h2 class="card-title">Bike Wales</h2>
-                <p class="subtitle"><a href="/bikewales/workshop/gear-calculator.html">1. <b>Gear Ratio Calculator 3.0</b></a></p>
+                <p class="subtitle">1. <a href="/bikewales/workshop/gear-calculator.html"><b>Gear Ratio Calculator 3.0</b></a></p>
                 <p class="subtitle">2. Spoke Length Calculator</p>
                 
-               <!-- SVG Timer and Date Block -->
-                <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
+               <div class="card-meta">
                     <span class="meta-item">
-                        <span class="status-led led-dev"></span>
-                        In-Dev
+                        <span class="status-led led-open"></span>
+                        &nbsp;OPEN
                     </span>
-
-                    <!-- Animated Timer Icon -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
-                        HOLD
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
+                        &nbsp;ACTIVE
                     </span>
-
-                    <!-- Calendar Icon & Date -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
-                        JUL 2026
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                        2026
                     </span>
                 </div>
             </div>
+
+        <!----------------------------------------->
+        <!----------- ROUTES TO RIDE -------------->
+        <!----------------------------------------->
 
             <div class="schematic-card">
                 <span class="card-id">[ Project 02 ]</span>
                 <h2 class="card-title">Routes to Ride</h2>
                 <p class="subtitle">1. Carousel Image Viewer</p>
-                <p class="subtitle">2. Page Layout &amp Design</p>
+                <p class="subtitle">2. Page Layout &amp; Design</p>
+                <p class="subtitle">3. Responsive Menu</p>
 
-                <!-- SVG Timer and Date Block -->
                 <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
                     <span class="meta-item">
                         <span class="status-led led-closed"></span>
                         Closed
                     </span>
-
-                    <!-- Animated Timer Icon -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
                         HOLD
                     </span>
-
-                    <!-- Calendar Icon & Date -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
                         JUL 2026
                     </span>
                 </div>
             </div>
+
+        <!----------------------------------------->
+        <!------------- WAR MEMORIAL -------------->
+        <!----------------------------------------->
 
             <a href="#" class="schematic-card">
                 <span class="card-id">[ Project 03 ]</span>
@@ -120,38 +101,25 @@
                 <p class="card-desc">1. Interactive Map</p>
                 <p class="card-desc">2. Timeline Template</p>
                 
-                <!-- SVG Timer and Date Block -->
                 <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
                     <span class="meta-item">
                         <span class="status-led led-dev"></span>
                         In-Dev
                     </span>
-
-                    <!-- Animated Timer Icon -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
                         HOLD
                     </span>
-
-                    <!-- Calendar Icon & Date -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
                         JUL 2026
                     </span>
                 </div>
             </a>
+
+        <!----------------------------------------->
+        <!------------- 3291 DESIGN --------------->
+        <!----------------------------------------->
 
             <a href="#" class="schematic-card">
                 <span class="card-id">[ Project 04 ]</span>
@@ -159,54 +127,42 @@
                 <p class="card-desc">1. Navigation &amp; Site Map</p>
                 <p class="card-desc">2. Modal Lightbox</p>
                 
-                
-               <!-- SVG Timer and Date Block -->
                 <div class="card-meta">
-                    
-                    <!-- Status Indicator -->
                     <span class="meta-item">
                         <span class="status-led led-dev"></span>
                         In-Dev
                     </span>
-
-                    <!-- Animated Timer Icon -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <circle cx="12" cy="13" r="8"></circle>
-                            <path d="M10 3h4"></path>
-                            <path d="M12 3v2"></path>
-                            <!-- The animated hand -->
-                            <!-- <line x1="12" y1="13" x2="12" y2="8" class="stopwatch-hand"></line> -->
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-timer"></use></svg>
                         HOLD
                     </span>
-
-                    <!-- Calendar Icon & Date -->
                     <span class="meta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" width="16" height="16">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
-                        </svg>
+                        <svg class="meta-icon" viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
                         JUL 2026
                     </span>
                 </div>
             </a> 
         </section>
 
-            <article class="link-block" style="border: 0px solid #ff0000;">
-                <h3>Primary Departments</h3>
-                <ul class="resource-list">
-                    <li><a href="projects.html">Labs - [ Ongoning Projects ]</a></li>
-                    <li><a href="directory.html">Library - [ Asset Directory ]</a></li>
-                    <!-- <li><a href="resources.html">Reference Desk - [ External Resources ]</a></li> -->
-                </ul>
-            </article>
+        <article class="link-block" style="border: 0px solid #ff0000;">
+            <h3>Primary Departments</h3>
+            <ul class="resource-list">
+                <li><a href="projects.html">Labs - [ Ongoing Projects ]</a></li>
+                <li><a href="directory.html">Library - [ Asset Directory ]</a></li>
+                <!-- <li><a href="resources.html">Reference Desk - [ External Resources ]</a></li> -->
+            </ul>
+        </article>
         
     </main>
 
     <div id="footer-placeholder"></div>
 
     <script src="https://3291design.com/zz-scripts/3291-nav.js"></script>
+    
+    <!-- Dynamic SVG Injector -->
+    <script type="module">
+        import { loadSVGSprites } from '../zz-scripts/ui-core.js';
+        loadSVGSprites();
+    </script>
 </body>
 </html>
