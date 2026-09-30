@@ -17,48 +17,117 @@ window.closeModal = function() {
 /* --- 2. COMPREHENSIVE CASSETTE PRESET LIBRARY --- */
 const GEARING_PRESETS = {
     "5": [
-        { label: "13-24T Close Ratio", cogs: [13, 15, 17, 20, 24] },
-        { label: "14-28T Standard Tour", cogs: [14, 16, 18, 21, 28] },
-        { label: "14-32T Wide Range", cogs: [14, 17, 20, 24, 32] }
+        // Vintage 5-Speed Standards (Mostly Threaded Freewheels)
+        { label: "14-24T Vintage Road Close-Ratio", cogs: [14, 16, 18, 21, 24] },
+        { label: "14-28T Vintage All-Rounder (Shimano/SunRace)", cogs: [14, 17, 20, 24, 28] },
+        { label: "14-32T Vintage Touring Wide-Range", cogs: [14, 17, 21, 26, 32] },
+        { label: "14-34T Vintage Alpine / Megarange", cogs: [14, 17, 22, 28, 34] },
+        
+        // Ultra-Modern Specialist Folding Bike (e.g., Brompton Custom Hubs)
+        { label: "11-28T Modern Specialist Folding", cogs: [11, 13, 17, 22, 28] }
     ],
     "6": [
-        { label: "13-26T Sport", cogs: [13, 15, 17, 20, 23, 26] },
-        { label: "14-28T Standard 6-Speed", cogs: [14, 16, 18, 21, 24, 28] },
-        { label: "14-34T MegaRange", cogs: [14, 17, 20, 24, 28, 34] }
+        // Vintage 6-Speed Road Standards (Friction Shifting Era)
+        { label: "13-24T Vintage Road Tight-Ratio", cogs: [13, 15, 17, 19, 21, 24] },
+        { label: "13-28T Vintage Touring (Sachs Maillard)", cogs: [13, 15, 18, 21, 24, 28] },
+        { label: "14-24T Vintage Criterium Standard", cogs: [14, 16, 18, 20, 22, 24] },
+        
+        // Modern & Entry-Level Standards (Shimano Tourney / SunRace)
+        { label: "14-28T Everyday Hybrid / MTB (Shimano TZ500)", cogs: [14, 16, 18, 21, 24, 28] },
+        { label: "14-34T Utility MegaRange (Super Climbing Gear)", cogs: [14, 16, 18, 21, 24, 34] }
     ],
     "7": [
-        { label: "11-28T Sport", cogs: [11, 13, 15, 18, 21, 24, 28] },
-        { label: "12-28T Road/Tour", cogs: [12, 14, 16, 18, 21, 24, 28] },
-        { label: "13-32T Wide Range", cogs: [13, 15, 18, 21, 24, 28, 32] }
+        // 7-Speed Road & Criterium
+        { label: "13-21T Vintage 7-Speed Corncob (Shimano J)", cogs: [13, 14, 15, 16, 17, 19, 21] },
+        
+        // 7-Speed Standard Utility / Hybrid
+        { label: "12-28T Hybrid / Urban (Shimano HG200-7)", cogs: [12, 14, 16, 18, 21, 24, 28] },
+        { label: "11-28T Wide Road (Shimano Acera)", cogs: [11, 13, 15, 18, 21, 24, 28] },
+        
+        // 7-Speed Touring & Trail Climbing
+        { label: "12-32T All-Terrain (SRAM PG-730 / Shimano)", cogs: [12, 14, 16, 18, 21, 26, 32] },
+        { label: "14-34T Utility MegaRange (Freewheel Standard)", cogs: [14, 16, 18, 20, 22, 24, 34] }
     ],
+    
     "8": [
-        { label: "11-28T Standard 8-Speed", cogs: [11, 13, 15, 18, 21, 24, 28] },
-        { label: "12-32T Touring", cogs: [12, 14, 16, 18, 21, 24, 28, 32] },
-        { label: "11-34T MegaRange", cogs: [11, 13, 15, 18, 21, 24, 28, 34] }
+        // 8-Speed Road Performance (Shimano Claris R2000)
+        { label: "12-23T Smooth Cadence Road", cogs: [12, 13, 14, 15, 17, 19, 21, 23] },
+        { label: "12-25T Flatland Criterium", cogs: [12, 13, 15, 17, 19, 21, 23, 25] },
+        { label: "11-28T Road All-Rounder", cogs: [11, 13, 15, 17, 19, 21, 24, 28] },
+        { label: "11-30T Hilly Road (Shimano HG50)", cogs: [11, 13, 15, 17, 20, 23, 26, 30] },
+        
+        // 8-Speed Mountain Bike & Gravel (Shimano Altus / Acera)
+        { label: "11-32T MTB Light Trail (Shimano HG41)", cogs: [11, 13, 15, 18, 21, 24, 28, 32] },
+        { label: "11-34T MTB Alpine Climbing", cogs: [11, 13, 15, 17, 20, 23, 26, 34] },
+        { label: "12-32T Everyday Hybrid (Shimano HG200-8)", cogs: [12, 14, 16, 18, 21, 24, 28, 32] }
     ],
     "9": [
-        { label: "12-25T Road Standard", cogs: [12, 13, 14, 15, 17, 19, 21, 23, 25] },
-        { label: "11-32T Shimano Deore", cogs: [11, 12, 14, 16, 18, 21, 24, 28, 32] },
-        { label: "11-34T Wide Range", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 34] },
-        { label: "12-36T Touring / Trekking", cogs: [12, 14, 16, 18, 21, 24, 28, 32, 36] }
+        // 9-Speed Road Performance (Shimano Sora R3000 / MicroSHIFT R9)
+        { label: "11-25T Smooth Cadence Road", cogs: [11, 12, 13, 15, 17, 19, 21, 23, 25] },
+        { label: "11-28T Road All-Rounder (Shimano HG50)", cogs: [11, 12, 13, 14, 16, 18, 21, 24, 28] },
+        { label: "11-30T Hilly Road Endurance", cogs: [11, 12, 14, 16, 18, 20, 23, 26, 30] },
+        { label: "11-32T Hilly Road / Gravel (Shimano HG400)", cogs: [11, 12, 14, 16, 18, 21, 24, 28, 32] },
+        { label: "12-27T Classic Criterium", cogs: [12, 13, 14, 15, 17, 19, 21, 24, 27] },
+        
+        // 9-Speed Mountain Bike & Wide-Range Trekking (Shimano Alivio / SRAM PG-970)
+        { label: "11-34T Classic MTB Standard", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 34] },
+        { label: "11-36T Wide-Range Trail (Shimano HG201)", cogs: [11, 13, 15, 17, 20, 23, 26, 30, 36] },
+        { label: "12-36T Low-Gear Adventure", cogs: [12, 14, 16, 18, 21, 24, 28, 32, 36] },
+        
+        // Modern 1x9 Wide-Range (MicroSHIFT Advent / Box Components)
+        { label: "11-42T Modern 1x9 Trail (MicroSHIFT Advent)", cogs: [11, 13, 15, 18, 21, 24, 30, 36, 42] }
     ],
     "10": [
-        { label: "12-25T Tight Road", cogs: [12, 13, 14, 15, 16, 17, 19, 21, 23, 25] },
-        { label: "11-32T Road / Gravel", cogs: [11, 12, 14, 16, 18, 20, 22, 25, 28, 32] },
-        { label: "11-36T Classic MTB / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
-        { label: "11-42T Wide 1x Off-Road", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] }
+        // 10-Speed Road & Time Trial
+        { label: "11-25T Road Tight-Ratio", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 23, 25] },
+        { label: "11-28T Road All-Rounder", cogs: [11, 12, 13, 14, 15, 17, 19, 22, 25, 28] },
+        { label: "12-28T Road Smooth Cadence", cogs: [12, 13, 14, 15, 17, 19, 21, 23, 25, 28] },
+        
+        // 10-Speed All-Road, Hilly Road & Gravel Double
+        { label: "11-32T Hilly Road Endurance", cogs: [11, 12, 14, 16, 18, 20, 22, 25, 28, 32] },
+        { label: "11-34T Road Alpine / Touring", cogs: [11, 13, 15, 17, 19, 21, 23, 26, 30, 34] },
+        { label: "11-38T Microshift Sword Gravel 2x10", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 38] },
+        { label: "11-42T Microshift Sword Advent 2x10", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
+        
+        // 10-Speed Mountain Bike & Wide-Range 1x10
+        { label: "11-36T Classic MTB Standard", cogs: [11, 13, 15, 17, 19, 22, 25, 28, 32, 36] },
+        { label: "11-46T MTB Extreme Climbing", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 46] },
+        { label: "11-48T Microshift Advent X 1x10", cogs: [11, 13, 15, 18, 21, 24, 28, 34, 40, 48] }
     ],
     "11": [
+        { label: "11-23T Road & Criterium", cogs: [11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 23] },
+        { label: "11-25T Road Standard", cogs: [11, 12, 13, 14, 15, 16, 17, 19, 21, 23, 25] },
+        { label: "12-25T Road Tight Rhythm", cogs: [12, 13, 14, 15, 16, 17, 18, 19, 21, 23, 25] },
+        { label: "11-28T All-Rounder Road", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 23, 25, 28] },
+        { label: "11-30T Hilly Road / Ultegra", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 24, 27, 30] },
         { label: "11-32T Road Performance", cogs: [11, 12, 13, 14, 16, 18, 20, 22, 25, 28, 32] },
-        { label: "11-34T Gravel / Touring", cogs: [11, 13, 15, 17, 19, 21, 24, 27, 30, 34] },
-        { label: "11-42T Wide Adventure", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42] },
-        { label: "11-46T Extreme Climbing", cogs: [11, 13, 15, 18, 21, 24, 28, 32, 37, 42, 46] }
+        { label: "11-34T Gravel / Touring", cogs: [11, 13, 15, 17, 19, 21, 23, 25, 27, 30, 34] },
+        { label: "11-40T MTB / Wide Gravel", cogs: [11, 13, 15, 17, 19, 21, 24, 27, 31, 35, 40] },
+        { label: "10-42T SRAM XD Gravel", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42] },
+        { label: "11-42T Wide Adventure", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 37, 42] },
+        { label: "11-46T Extreme Climbing", cogs: [11, 13, 15, 17, 19, 21, 24, 28, 32, 37, 46] },
+        { label: "11-51T Ultra-Wide MTB", cogs: [11, 13, 15, 18, 21, 24, 28, 33, 39, 45, 51] }
     ],
     "12": [
-        { label: "11-34T Road / Gravel 12-Speed", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 24, 27, 30, 34] },
-        { label: "10-36T SRAM Force / Rival XPLR", cogs: [10, 11, 12, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
-        { label: "10-50T MTB Wide Range", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 50] },
-        { label: "10-52T SRAM Eagle", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 52] }
+        // Shimano HG+ Standard (Road)
+        { label: "11-30T Road Race", cogs: [11, 12, 13, 14, 15, 16, 17, 19, 21, 24, 27, 30] },
+        { label: "11-34T Road Endurance", cogs: [11, 12, 13, 14, 15, 17, 19, 21, 24, 27, 30, 34] },
+        
+        // SRAM XDR Standard (Road & Gravel AXS)
+        { label: "10-28T Aero Sprint", cogs: [10, 11, 12, 13, 14, 15, 16, 17, 19, 21, 24, 28] },
+        { label: "10-30T All-Road", cogs: [10, 11, 12, 13, 14, 15, 17, 19, 21, 24, 27, 30] },
+        { label: "10-33T Hilly Terrain", cogs: [10, 11, 12, 13, 14, 15, 17, 19, 21, 24, 28, 33] },
+        { label: "10-36T Gravel Adventure", cogs: [10, 11, 12, 13, 15, 17, 19, 21, 24, 28, 32, 36] },
+        { label: "10-44T XPLR Gravel 1x", cogs: [10, 11, 13, 15, 17, 19, 21, 24, 28, 32, 38, 44] },
+        
+        // Shimano Micro Spline (MTB)
+        { label: "10-45T MTB Cross Country", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 40, 45] },
+        { label: "10-51T MTB Trail / Enduro", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 33, 39, 45, 51] },
+        
+        // SRAM Eagle Standard (MTB)
+        { label: "10-50T Eagle Hyper-Range", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 50] },
+        { label: "10-52T Eagle Extreme Range", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 36, 42, 52] },
+        { label: "10-52T Eagle Transmission (T-Type)", cogs: [10, 12, 14, 16, 18, 21, 24, 28, 32, 38, 44, 52] }
     ]
 };
 
