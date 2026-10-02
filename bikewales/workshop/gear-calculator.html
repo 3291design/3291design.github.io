@@ -1,7 +1,7 @@
 <!-- ==========================================================================
    PROJECT:     Bike Wales - 2026 Factory Restoration
-   COMPONENT:   Gear Ratio Calculator 3.1 (Standalone Tool)
-   VERSION:     3.1 (Extended Crankset Types & Compatability Guard)
+   COMPONENT:   Gear Ratio Calculator 3.0 (Standalone Tool)
+   VERSION:     3.0
    DATE:        30 September 2026
    AUTHOR:      Muse Kidd | 3291design.com
    
@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <!-- CRITICAL: Enforces mobile responsiveness on devices like tablets/phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Wales - Gear Ratio Calculator 3.1</title>
+    <title>Bike Wales - Gear Ratio Calculator 3.0</title>
     
     <!-- 1. GLOBAL FONTS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&family=Josefin+Sans:wght@300&display=block">
@@ -58,7 +58,7 @@
          2. HERO HEADER
          ======================================================================= -->
     <header class="bw-hero-header">
-        <span class="title">Gear Ratio Calculator 3.1</span>
+        <span class="title">Gear Ratio Calculator 3.0</span>
     </header>
 
     <!-- =======================================================================
@@ -73,182 +73,123 @@
             
             <div class="bcalc-outer-wrap" id="bcalc-outer-wrap">
                 
-               <div class="bcalc-help-header bcalc-btn-row">
-                <span class="plain-text">Configure your drivetrain parameters below to calculate ratios.</span>
-                
-                    <label class="help-term bcalc-tooltip-hover" data-ghost-tip="<b>HOW TO USE THIS CALCULATOR</b><br>
-                    1. Choose your wheel &amp; tyre size<br>
-                    2. Choose chainset type and groupset<br>
-                    3. Choose chainset gearing<br>
-                    4. Choose freewheel / cassette speed and gearing<br>
-                    5. Specify gear inches (default) or cadence/speed<br>
-                    6. Enable Compatibility Guard for diagnostic checks (optional)<br><br>
-                    <b>&#8702; Click Calculate to display your results</b><br><br>
-                    You may then save your results into the Comparison Bay (4 comparisons max.). You may also print one or ALL of your results.<br><br>
-                    <b>NOTE:</b> This calculator is not designed for internal hubs, fixed gear, or single-speed setups."><span style="font-size: .85em; color:#485175; font-weight: 800; text-transform: uppercase;">How to Use This Calculator</span>
-                    </label>
+                <div class="bcalc-intro-wrapper">
+                    <span class="help-term bcalc-intro-title" data-ghost-tip="<b>HOW TO USE THIS CALCULATOR</b><br>1. Select Wheel &amp; Tyre Size.<br>2. Select Crankset Type (1x, 2x, 3x).<br>3. Select Freewheel / Cassette (speed)<br>4. Specify Gearing.<br>5. Click Calculate, your results will then display.<br>6. You may save your results into the Comparison Bay (4 comparisons max.).<br>7. You may print one or ALL of your results.<br><br><b>NOTE:</b> This calculator is not designed for internal hubs, fixed gear, or single-speeds.">How to Use This Calculator &#9432;</span>
                 </div>
 
-                <!-- BEGIN CALCULATOR DROPDOWNS & SELECTORS -->
                 <div id="bcalc-main-container" style="border: 0px solid #ff0000;">
-                        <div class="bcalc-layout">
-                            
-                            <!-- COLUMN 1: Wheel & Chainset Ecosystem Hierarchy -->
-                            <div class="bcalc-box">
-                                <!-- 1. Wheel & Tyre Size First -->
-                                <label class="bcalc-label">Wheel &amp; Tyre Size</label>
-                                <select id="bcalc-wheel-size" class="bcalc-select">
-                                    <option value="" selected>choose below...</option>
+                    <div class="bcalc-layout">
+                        <div class="bcalc-box">
+                            <label class="bcalc-label">Wheel &amp; Tyre Size</label>
+                            <select id="bcalc-wheel-size" class="bcalc-select">
+                                <option value="" selected>Select below...</option>
 
-                                    <optgroup label="Road (700c / 622mm ISO)">
-                                        <option value="26.5">700c x 25mm</option>
-                                        <option value="26.7">700c x 28mm</option>
-                                        <option value="26.9">700c x 30mm</option>
-                                        <option value="27.1">700c x 32mm</option>
-                                    </optgroup>
+                                <optgroup label="Road (700c / 622mm ISO)">
+                                    <option value="26.5">700c x 25mm</option>
+                                    <option value="26.7">700c x 28mm</option>
+                                    <option value="26.9">700c x 30mm</option>
+                                    <option value="27.1">700c x 32mm</option>
+                                </optgroup>
 
-                                    <optgroup label="Gravel & CX (700c / 622mm ISO)">
-                                        <option value="27.3">700c x 35mm</option>
-                                        <option value="27.5">700c x 38mm</option>
-                                        <option value="27.7">700c x 40mm</option>
-                                        <option value="27.8">700c x 42mm</option>
-                                        <option value="28.0">700c x 45mm</option>
-                                        <option value="28.4">700c x 50mm (29" x 2.0")</option>
-                                    </optgroup>
+                                <optgroup label="Gravel & CX (700c / 622mm ISO)">
+                                    <option value="27.3">700c x 35mm</option>
+                                    <option value="27.5">700c x 38mm</option>
+                                    <option value="27.7">700c x 40mm</option>
+                                    <option value="27.8">700c x 42mm</option>
+                                    <option value="28.0">700c x 45mm</option>
+                                    <option value="28.4">700c x 50mm (29" x 2.0")</option>
+                                </optgroup>
 
-                                    <optgroup label="Road Plus & Gravel (650b / 584mm ISO)">
-                                        <option value="26.3">650b x 42mm</option>
-                                        <option value="26.5">650b x 45mm</option>
-                                        <option value="26.7">650b x 47mm</option>
-                                        <option value="26.9">650b x 50mm (27.5" x 2.0")</option>
-                                    </optgroup>
+                                <optgroup label="Road Plus & Gravel (650b / 584mm ISO)">
+                                    <option value="26.3">650b x 42mm</option>
+                                    <option value="26.5">650b x 45mm</option>
+                                    <option value="26.7">650b x 47mm</option>
+                                    <option value="26.9">650b x 50mm (27.5" x 2.0")</option>
+                                </optgroup>
 
-                                    <optgroup label="Modern MTB (29er / 622mm ISO)">
-                                        <option value="28.7">29" x 2.1"</option>
-                                        <option value="29.0">29" x 2.25"</option>
-                                        <option value="29.3">29" x 2.4"</option>
-                                        <option value="29.5">29" x 2.5" / 2.6"</option>
-                                    </optgroup>
+                                <optgroup label="Modern MTB (29er / 622mm ISO)">
+                                    <option value="28.7">29" x 2.1"</option>
+                                    <option value="29.0">29" x 2.25"</option>
+                                    <option value="29.3">29" x 2.4"</option>
+                                    <option value="29.5">29" x 2.5" / 2.6"</option>
+                                </optgroup>
 
-                                    <optgroup label="Modern MTB & Plus (27.5" / 584mm ISO)">
-                                        <option value="27.3">27.5" x 2.25"</option>
-                                        <option value="27.6">27.5" x 2.4"</option>
-                                        <option value="28.0">27.5" x 2.8" (Plus Size)</option>
-                                    </optgroup>
+                                <optgroup label="Modern MTB & Plus (27.5" / 584mm ISO)">
+                                    <option value="27.3">27.5" x 2.25"</option>
+                                    <option value="27.6">27.5" x 2.4"</option>
+                                    <option value="28.0">27.5" x 2.8" (Plus Size)</option>
+                                </optgroup>
 
-                                    <optgroup label="Classic 26" Standards (559mm ISO)">
-                                        <option value="25.0">26" x 1.5"</option>
-                                        <option value="25.5">26" x 1.75"</option>
-                                        <option value="26.0">26" x 2.0"</option>
-                                        <option value="26.4">26" x 2.2"</option>
-                                        <option value="26.8">26" x 2.4"</option>
-                                    </optgroup>
+                                <optgroup label="Classic 26" Standards (559mm ISO)">
+                                    <option value="25.0">26" x 1.5"</option>
+                                    <option value="25.5">26" x 1.75"</option>
+                                    <option value="26.0">26" x 2.0"</option>
+                                    <option value="26.4">26" x 2.2"</option>
+                                    <option value="26.8">26" x 2.4"</option>
+                                </optgroup>
 
-                                    <optgroup label="Vintage & Retro Standards">
-                                        <option value="27.0">26" x 1-3/8" (Three-Speed Standard / 590mm ISO)</option>
-                                        <option value="27.2">27" x 1-1/4" (Vintage 70-80s Road / 630mm ISO)</option>
-                                    </optgroup>
-                                </select>
+                                <optgroup label="Vintage & Retro Standards">
+                                    <option value="27.0">26" x 1-3/8" (Three-Speed Standard / 590mm ISO)</option>
+                                    <option value="27.2">27" x 1-1/4" (Vintage 70-80s Road / 630mm ISO)</option>
+                                </optgroup>
+                            </select>
 
-                                <!-- 2. Primary Type Selector (1x, 2x, 3x only) -->
-                                <div class="bcalc-label">Chainset Type</div>
-                                <select id="bcalc-crank-type-select" class="bcalc-select">
-                                    <option value="" selected disabled>choose below</option>
-                                    <option value="1x">1x / Single Chainring</option>
-                                    <option value="2x">2x / Double Chainring</option>
-                                    <option value="3x">3x / Triple Chainring</option>
-                                </select>
-
-                                <!-- 3. Brand Ecosystem Selector -->
-                                <div id="bcalc-ecosystem-wrap" style="display: block;">
-                                    <label class="bcalc-label">Groupset / Custom</label>
-                                    <select id="bcalc-ecosystem-select" class="bcalc-select" disabled>
-                                        <option value="" selected disabled>choose below</option>
-                                    </select>
-                                </div>
-
-                                <!-- 4. Chainset Gearing Preset -->
-                                <div id="bcalc-crank-preset-wrap" style="display: block;">
-                                    <label class="bcalc-label">Chainset Gearing</label>
-                                    <select id="bcalc-crank-preset-select" class="bcalc-select" disabled>
-                                        <option value="" selected disabled>choose below</option>
-                                    </select>
-                                </div>
-
-                                <!-- 5. Dynamic custom input container for 2x or 3x bespoke ring builds -->
-                                <div id="bcalc-custom-crankset-wrap" style="display: none; margin-top: 15px;">
-                                    <label class="bcalc-label" style="font-size: 12px; color: #4a5568; margin-bottom: 6px;">Enter Custom Chainring Teeth</label>
-                                    <div id="bcalc-custom-inputs-flex" style="display: flex; gap: 8px;"></div>
-                                    <span style="font-size: 11px; color: #777; display: block; margin-top: 6px;">Adjust values from largest to smallest.</span>
-                                </div>
-
-                            </div><!-- END OF COLUMN 1 -->
-
-                            <!-- COLUMN 2: Cassette Speeds, Gearing & Custom Cogs -->
-                            <div class="bcalc-box">
-                                <label class="bcalc-label">Freewheel / Cassette Speeds</label>
-                                <select id="bcalc-speed-select" class="bcalc-select">
-                                    <option value="" selected>choose below...</option>
-                                    <option value="5">5-Speed</option>
-                                    <option value="6">6-Speed</option>
-                                    <option value="7">7-Speed</option>
-                                    <option value="8">8-Speed</option>
-                                    <option value="9">9-Speed</option>
-                                    <option value="10">10-Speed</option>
-                                    <option value="11">11-Speed</option>
-                                    <option value="12">12-Speed</option>
-                                </select>
-
-                                <!-- Secondary Preset Dropdown -->
-                                <div id="bcalc-preset-wrap" style="display: block;">
-                                    <label class="bcalc-label">Gearing</label>
-                                    <select id="bcalc-preset-select" class="bcalc-select" disabled>
-                                        <option value="" selected>choose Freewheel / Cassette Speeds first...</option>
-                                    </select>
-                                </div>
-
-                                <!-- Read-Only Progression Text Display -->
-                                <div id="bcalc-progression-text" style="display: none; margin-top: 8px; font-size: 13px; color: #4a5568; font-family: monospace; background: #edf2f7; padding: 8px; border-radius: 4px;"></div>
-
-                                <!-- Dynamic Input Grid for Custom Options (Sits neatly underneath) -->
-                                <div id="bcalc-cog-container" class="bcalc-input-grid" style="display: none; margin-top: 10px;"></div>
-                            </div><!-- END OF COLUMN 2 -->
-
+                            <label class="bcalc-label">Crankset Type</label>
+                            <select id="bcalc-ring-count" class="bcalc-select">
+                                <option value="" selected>Select below...</option>
+                                <option value="1">1x (Single)</option>
+                                <option value="2">2x (Double)</option>
+                                <option value="3">3x (Triple)</option>
+                            </select>
+                            <div id="bcalc-ring-container" class="bcalc-input-grid"></div>
                         </div>
-                    </div><!-- END CALCULATOR DROPDOWNS & SELECTORS -->
 
-                    <div class="bcalc-mode-panel">
-                        <label class="bcalc-label bcalc-mode-label">Please specify:</label>
-                        
-                        <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>GEAR INCHES</b><br>A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher = Harder.">
-                            <input type="radio" name="bcalc-mode" id="mode-inches" value="inches" checked> GEAR INCHES
-                        </label>
-                        
-                        <div class="bcalc-speed-group">
-                            <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>CADENCE / SPEED</b><br>Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is usually between 80–95 RPM.">
-                                <input type="radio" name="bcalc-mode" id="mode-speed" value="speed"> CADENCE / SPEED
-                            </label>
-                            
-                            <div id="bcalc-cadence-wrap" class="bcalc-cadence-wrapper" style="display: none;">
-                                <input type="number" id="bcalc-cadence-val" class="bcalc-val-input" value="90">
-                                <span class="bcalc-rpm-label">RPM</span>
+                        <!-- VERSION 20.2: Always-Visible Gearing Box -->
+                        <div class="bcalc-box">
+                            <label class="bcalc-label">Freewheel / Cassette Speeds</label>
+                            <select id="bcalc-speed-select" class="bcalc-select">
+                                <option value="" selected>Select below...</option>
+                                <option value="5">5-Speed</option>
+                                <option value="6">6-Speed</option>
+                                <option value="7">7-Speed</option>
+                                <option value="8">8-Speed</option>
+                                <option value="9">9-Speed</option>
+                                <option value="10">10-Speed</option>
+                                <option value="11">11-Speed</option>
+                                <option value="12">12-Speed</option>
+                            </select>
+
+                            <!-- Secondary Preset Dropdown -->
+                            <div id="bcalc-preset-wrap" style="display: block; margin-top: 0px;">
+                                <label class="bcalc-label">Gearing</label>
+                                <select id="bcalc-preset-select" class="bcalc-select" disabled>
+                                    <option value="" selected>Select speeds first...</option>
+                                </select>
                             </div>
+
+                            <!-- Read-Only Progression Text Display -->
+                            <div id="bcalc-progression-text" style="display: none; margin-top: 8px; font-size: 13px; color: #4a5568; font-family: monospace; background: #edf2f7; padding: 8px; border-radius: 4px;"></div>
+
+                            <!-- Dynamic Input Grid for Custom Options -->
+                            <div id="bcalc-cog-container" class="bcalc-input-grid" style="display: none; margin-top: 10px;"></div>
                         </div>
 
-                        <!-- Compact Inline Compatibility Guard (Fits on the same row!) -->
-                        <div style="display: flex; align-items: center; gap: 10px; margin-left: auto; border-left: 1px solid #cbd5e0; padding-left: 15px;">
-                            <span class="help-term" data-ghost-tip="<b>COMPATABILITY GUARD</b><br>This feature will automatically run diagnostic checks to confirm compatability for chain wrap capacity, front shift limits, and modern chain-width pitch mismatches.">
-                                <label class="bcalc-label bcalc-tooltip-hover" style="margin:0; font-size: 11px; cursor: help;">Compatibility Guard</label>
-                            </span>
-                            <label class="bcalc-switch" style="transform: scale(0.8);">
-                                <input type="checkbox" id="bcalc-compatibility-toggle">
-                                <span class="bcalc-slider"></span>
-                            </label>
+                    </div>
+
+                    <div class="bcalc-radio-group" style="height: 70px; display: flex; align-items: center; gap: 20px; background: #f8f9fb; padding: 15px; border-radius: 8px; border: 1px solid #eef0f5; margin-top: 10px;">
+                        <label class="bcalc-label" style="margin:0; margin-left:16px;">Please specify:</label>
+                        <label class="bcalc-radio-item help-term" data-ghost-tip="<b>GEAR INCHES</b><br>A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher = Harder."><input type="radio" name="bcalc-mode" id="mode-inches" value="inches" checked> GEAR INCHES</label>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <label class="bcalc-radio-item help-term" data-ghost-tip="<b>CADENCE / SPEED</b><br>Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is usually between 80–95 RPM."><input type="radio" name="bcalc-mode" id="mode-speed" value="speed"> CADENCE / SPEED</label>
+                            <div id="bcalc-cadence-wrap" style="display:none; align-items:center; gap:8px; border-left: 1px solid #cbd5e0; padding-left: 15px;">
+                                <input type="number" id="bcalc-cadence-val" class="bcalc-val-input" value="90">
+                                <span style="font-size: 11px; font-weight: bold; color: #718096;">RPM</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- DEFAULT BUTTONS -->
-                    <div class="bcalc-btn-row" style="margin-bottom: 20px;">
+                    <div class="bcalc-btn-row">
                         <button class="bcalc-btn-sec" id="bcalc-reset-all">Reset All</button>
                         <button class="bcalc-btn-pri" id="bcalc-run">Calculate Gear Chart</button>
                     </div>
@@ -293,24 +234,19 @@
                     <!-- Saved calculation cards will dynamically inject here -->
                 </div>
 
-                <!------BEGIN LAB LAUNCHER ------->
                 <div id="bcalc-lab-launcher" style="text-align: center; margin-top: 30px; display: none;">
-                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
-                        <button onclick="openModal('infoLabModal')" class="bcalc-btn-pri" style="width: 270px; background-color: #485175; border-color: #485175; color: #ffffff;">Definition of Terms</button>
-                        <button onclick="openModal('howItWorksModal')" class="bcalc-btn-pri" style="width: 270px; background-color: #485175; border-color: #485175; color: #ffffff;">How it Works</button>
-                    </div>
-                    <hr class="main">
+                    <button onclick="openModal()" class="bcalc-btn-pri" style="width: 270px;">Definition of Terms</button>
+                <hr class="main">
                 </div>
-                <!------END LAB LAUNCHER ------->
             
             </div><!-- close bcalc-outer-wrapper -->
 
         </div>
 
-        <!------BEGIN INFOLAB MODAL ------->
+    <!------BEGIN INFOLAB MODAL ------->
         <div id="infoLabModal" class="bcalc-modal">
             <div class="bcalc-modal-content">
-                <span class="bcalc-close" onclick="closeModal('infoLabModal')">&times;</span>
+                <span class="bcalc-close" onclick="closeModal()">&times;</span>
                 <span class="modal-head">Definition of Terms</span>
                 
                 <div class="bcalc-modal-grid">
@@ -318,12 +254,12 @@
                         <div style="margin-top: 15px; margin-bottom: 25px;">
                             <p class="modal-subhead">Gear Inches</p>
                             <span class="plain-text">A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher numbers = harder resistance.</span>
-                                <p class="formula-box">Formula: (Chainring ÷ Cog) × Tyre Diameter</p>
+                            <p class="formula-box">Formula: (Chainring ÷ Cog) × Tyre Diameter</p>
                         </div>
                         <div style="margin-bottom: 25px;">
                             <p class="modal-subhead">Cadence / Speed</p>
                             <span class="plain-text">Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is 80–95 RPM.</span>
-                                <p class="formula-box">Speed: (GI × π × Cadence × 60) ÷ 63,360</p>
+                            <p class="formula-box">Speed: (GI × π × Cadence × 60) ÷ 63,360</p>
                         </div>
                         <div style="margin-bottom: 25px;">
                             <p class="modal-subhead">Cross-Chaining</p>
@@ -332,7 +268,7 @@
                         <div style="margin-bottom: 25px;">
                             <p class="modal-subhead">Drivetrain Capacity</p>
                             <span class="plain-text">The total 'chain slack' managed by the rear derailleur. Critical for determining the required rear derailleur cage length.</span>
-                                <p class="formula-box">Formula: (Big Ring - Small Ring) + (Big Cog - Small Cog)</p>
+                            <p class="formula-box">Formula: (Big Ring - Small Ring) + (Big Cog - Small Cog)</p>
                         </div>
                         <div style="margin-bottom: 25px;">
                             <p class="modal-subhead">Total Gear Range</p>
@@ -342,39 +278,9 @@
                     </div>
                 </div>
 
-                <div style="text-align: center;"><button onclick="closeModal('infoLabModal')" class="bcalc-btn-pri" style="width: 270px; margin: 30px; background-color: #485175; border-color: #485175; color: #ffffff;">Return to Calculator</button></div>
+                <div style="text-align: center;"><button onclick="closeModal()" class="bcalc-btn-pri" style="width: 270px; margin: 30px;">Return to Calculator</button></div>
             </div>
         </div>
-        <!------END INFOLAB MODAL ------->
-
-        <!------BEGIN HOW IT WORKS MODAL ------->
-        <div id="howItWorksModal" class="bcalc-modal">
-            <div class="bcalc-modal-content">
-                <span class="bcalc-close" onclick="closeModal('howItWorksModal')">&times;</span>
-                <span class="modal-head">How the Calculator Works</span>
-                
-                <div class="bcalc-modal-grid">
-                    <div>
-                    <div style="margin-top: 15px; margin-bottom: 25px;">
-                            <p class="modal-subhead">The Compatibility Guard Engine</p>
-                                <span class="plain-text">The Compatibility Guard analyzes your selected chainrings and cassette cogs in real-time. It calculates total wrap capacity to flag setups that exceed standard rear derailleur limits, and warns against extreme ratios like oversized gravel cogs paired with racing doubles.</span>
-                            </div>
-                            <div style="margin-bottom: 25px;">
-                                <p class="modal-subhead">Chainwrap & Derailleur Capacity</p>
-                                <span class="plain-text">Capacity measures the physical chain slack your rear mech must accommodate. If a setup exceeds 47T of total capacity, a long-cage (SGS) or wide-clutch derailleur is typically required to keep the chain from sagging in small-small combinations.</span>
-                            </div>
-                            <div style="margin-bottom: 25px;">
-                                <p class="modal-subhead">Cross-Chaining Mechanics</p>
-                                <span class="plain-text">The engine automatically highlights severe chain angles (big-ring-to-big-cog or small-ring-to-small-cog). These combinations cause lateral friction, premature chain wear, and power loss, which is why they are visually muted in the output chart.</span>
-                            </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center;"><button onclick="closeModal('howItWorksModal')" class="bcalc-btn-pri" style="width: 270px; margin: 30px; background-color: #485175; border-color: #485175; color: #ffffff;">Return to Calculator</button></div>
-            </div>
-        </div>
-        <!------END HOW IT WORKS MODAL ------->
-    
     <!------END INFOLAB MODAL ------->
 
     </main>
