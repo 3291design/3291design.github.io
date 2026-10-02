@@ -58,20 +58,6 @@
     display: block !important;
 }
 
-/* Add interactive affordance to all hoverable tooltip terms */
-.bcalc-tooltip-wrap, [data-ghost-tip] {
-    text-decoration: underline dotted 2px #a0aec0;
-    text-underline-offset: 4px;
-    cursor: help;
-}
-
-/* Add interactive affordance to hoverable tooltip terms */
-.bcalc-tooltip-hover {
-    text-decoration: underline dotted 2px #a0aec0;
-    text-underline-offset: 4px;
-    cursor: help;
-}
-
 /* --- 2. TYPOGRAPHY & LABELS --- */
 
 .bcalc-intro-wrapper {
@@ -486,6 +472,13 @@
     text-transform: uppercase; 
     letter-spacing: 2px; 
     margin: 5px 0;
+}
+
+/* Add interactive affordance to hoverable tooltip terms */
+.bcalc-tooltip-hover {
+    text-decoration: underline dotted 2px #a0aec0;
+    text-underline-offset: 4px;
+    cursor: help;
 }
 
 /* --- 7. COMPARE GARAGE (V3.0) --- */
