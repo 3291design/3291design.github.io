@@ -217,23 +217,24 @@
                         </div>
                     </div><!-- END CALCULATOR DROPDOWNS & SELECTORS -->
 
-                    <div class="bcalc-mode-panel" style="width: 100%; border: 1px solid #ff0000;">
-                        <label class="bcalc-label bcalc-mode-label">Please specify:</label>
-                        
-                        <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>GEAR INCHES</b><br>A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher = Harder.">
-                            <input type="radio" name="bcalc-mode" id="mode-inches" value="inches" checked> GEAR INCHES
-                        </label>
-                        
-                        <div class="bcalc-speed-group">
-                            <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>CADENCE / SPEED</b><br>Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is usually between 80–95 RPM.">
-                                <input type="radio" name="bcalc-mode" id="mode-speed" value="speed"> CADENCE / SPEED
-                            </label>
-                            
-                            <div id="bcalc-cadence-wrap" class="bcalc-cadence-wrapper" style="display: none;">
-                                <input type="number" id="bcalc-cadence-val" class="bcalc-val-input" value="90">
-                                <span class="bcalc-rpm-label">RPM</span>
-                            </div>
-                        </div>
+                    <div class="bcalc-mode-panel">
+                      <label class="bcalc-label bcalc-mode-label">Please specify:</label>
+                      
+                      <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>GEAR INCHES</b><br>A traditional measure representing the equivalent diameter of a direct-drive wheel. Higher = Harder.">
+                          <input type="radio" name="bcalc-mode" id="mode-inches" value="inches" checked> GEAR INCHES
+                      </label>
+                      
+                      <div class="bcalc-speed-group">
+                          <label class="bcalc-radio-item help-term bcalc-tooltip-hover" data-ghost-tip="<b>CADENCE / SPEED</b><br>Calculates your ground speed based on your pedaling rate (revolutions per minute). Efficiency is usually between 80–95 RPM.">
+                              <input type="radio" name="bcalc-mode" id="mode-speed" value="speed"> CADENCE / SPEED
+                          </label>
+                          
+                          <div id="bcalc-cadence-wrap" class="bcalc-cadence-wrapper" style="display: none;">
+                              <input type="number" id="bcalc-cadence-val" class="bcalc-val-input" value="90">
+                              <span class="bcalc-rpm-label">RPM</span>
+                          </div>
+                      </div>
+                  </div>
 
                         <!-- Compact Inline Compatibility Guard (Fits on the same row!) -->
                         <div style="display: flex; align-items: center; gap: 10px; margin-left: auto; border-left: 1px solid #cbd5e0; padding-left: 15px;">
