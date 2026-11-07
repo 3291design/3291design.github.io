@@ -42,6 +42,27 @@
         margin: 0 15px 15px 0 !important; 
     }
 }
+
+/* =========================================================
+   EXTRA SMALL MOBILE FIX (iPhone / screens under 380px)
+   ========================================================= */
+@media (max-width: 380px) {
+    .bio-inline-thumb,
+    .bio-inline-thumb.float-left {
+        float: none !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 270px !important;
+        margin: 15px auto !important;
+        clear: both !important;
+    }
+
+    /* Forces the text paragraph following the thumbnail to clear completely */
+    .bio-text {
+        clear: both !important;
+    }
+}
+
 .bio-inline-thumb img {
     width: 100%;                        
     height: auto;
