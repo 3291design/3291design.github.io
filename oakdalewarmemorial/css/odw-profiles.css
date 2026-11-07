@@ -44,7 +44,7 @@
 }
 
 /* EXTRA SMALL MOBILE FIX (iPhone / screens under 380px) */
-@media (max-width: 380px) {
+@media (max-width: 490px) {
     .bio-inline-thumb,
     .bio-inline-thumb.float-left {
         float: none !important;
