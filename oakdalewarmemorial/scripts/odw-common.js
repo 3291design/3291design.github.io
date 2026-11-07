@@ -1,9 +1,9 @@
 /* ==========================================================================
-   OAKDALE WAR MEMORIAL - UNIFIED INJECTION ENGINE (v5.2)
+   OAKDALE WAR MEMORIAL - UNIFIED INJECTION ENGINE (v5.3)
    Purpose: Centralized orchestrator using ES6 Modules.
    Features: Universal Lightbox, Navigation Injection, Hybrid Fetch, Dynamic Path Routing, Interactive Maps, Bookmark Routing
-   Notes: v5.2 Migrates map modals to standalone physical files fetched via 
-          Hybrid Fetch, integrating the external v7 map zoom engine.
+   Notes: v5.3 Migrates map modals to standalone physical files fetched via 
+          Hybrid Fetch, integrating the external v7 map zoom engine. Plus new subnav snippet for WWII.
    ========================================================================== */
 
 import { initRouter } from './odw-router.js';
@@ -56,35 +56,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const storyNavSocket = document.getElementById("story-nav-socket");
     if (storyNavSocket) {
-        fetch(rootPrefix + "snippets/odw-story-nav-snippet.html")
+        // Determine which snippet to fetch based on the era type or body data-era
+        const navSnippetFile = (eraType && eraType.includes("ww2")) 
+            ? "snippets/odw-ww2-story-nav-snippet.html" 
+            : "snippets/odw-story-nav-snippet.html";
+        
+        fetch(rootPrefix + navSnippetFile)
             .then(res => res.text())
             .then(html => {
                 storyNavSocket.innerHTML = html.replace(/\{ROOT\}/g, rootPrefix);
+                
+                // === UNIFIED FOOTNOTE HIGHLIGHTING ENGINE ===
+                // This fires immediately after either the 4-panel or 6-panel grid is injected
+                const currentUrl = window.location.href.split('#')[0].split('?')[0];
+                const footnoteLinks = document.querySelectorAll('.story-footnote-link, .story-footnote-link-02, .story-top-tab');                
+                footnoteLinks.forEach(link => {
+                    // link.href gets the absolute parsed URL from the DOM
+                    if (link.href === currentUrl) {
+                        link.classList.add('selected');
+                    }
+                });
             })
             .catch(err => console.error("Story Nav Injection Error:", err));
     }
     
+    // === PROFILE NAVIGATION ENGINE ===
     if (eraType === "ww1-profile" || eraType === "ww2-profile") {
         const navSocket = document.getElementById("profile-nav-engine");
         if (navSocket) {
-            const roster = [
-                "coombs_t_g.html", "daniels_j.html", "davies_t.html", "dyer_a_e.html", 
-                "ellway_m.html", "evans_d_j.html", "farrell_m.html", "fisher_s.html", 
-                "goodman_f_g.html", "harvey_r_h.html", "havard_e.html", "havard_t_b.html", 
-                "howard_f_h.html", "john_j_r.html", "john_w_c.html", "lloyd_w_a.html", 
-                "lovell_g.html", "nelmes_i_j.html", "onions_w_j.html", "owens_a.html", 
-                "paulk_w_j.html", "phillips_g.html", "price_a_s.html", "prosser_e.html", 
-                "rees_d_j.html", "rowlands_e_s.html", "shaw_f.html", "symons_f_j.html",
-                "watkins_e.html", "williams_j_t.html", "williams_p_a.html", "wiltshire_g.html", 
-                "workman_w.html", "young_a.html"
+            const ww1Roster = [
+                "coombs_t_g.html", 
+                "daniels_j.html", 
+                "davies_t.html", 
+                "dyer_a_e.html", 
+                "ellway_m.html", 
+                "evans_d_j.html", 
+                "farrell_m.html", 
+                "fisher_s.html", 
+                "goodman_f_g.html", 
+                "harvey_r_h.html", 
+                "havard_e.html", 
+                "havard_t_b.html", 
+                "howard_f_h.html", 
+                "john_j_r.html", 
+                "john_w_c.html", 
+                "lloyd_w_a.html", 
+                "lovell_g.html", 
+                "nelmes_i_j.html", 
+                "onions_w_j.html", 
+                "owens_a.html", 
+                "paulk_w_j.html", 
+                "phillips_g.html", 
+                "price_a_s.html", 
+                "prosser_e.html", 
+                "rees_d_j.html", 
+                "rowlands_e_s.html", 
+                "shaw_f.html", 
+                "symons_f_j.html",
+                "watkins_e.html", 
+                "williams_j_t.html", 
+                "williams_p_a.html", 
+                "wiltshire_g.html", 
+                "workman_w.html", 
+                "young_a.html"
             ];
+
+            const ww2Roster = [
+                "adams_k_t_j.html",
+                "canniff_j.html",
+                "charles_w_j.html",
+                "daniels_l_g.html",
+                "davies_g.html",
+                "davies_j_i.html",
+                "davies_w_w.html",
+                "ellway_v.html",
+                "hancock_r_f.html",
+                "harris_f_m_c_h.html",
+                "harris_w_h_b.html",
+                "jenkins_j_h_m.html",
+                "lewis_a_r.html",
+                "lewis_t_v.html",
+                "morgan_i_t.html",
+                "parry_a_s.html",
+                "pepper_f_h_e.html",
+                "reardon_g.html",
+                "shipman_c.html",
+                "silcocks_w_r.html",
+                "thomas_a.html",
+                "watkins_i_w.html",
+                "williams_g_r.html",
+                "williams_g_j.html"
+                ];
+
+            const roster = (eraType === "ww1-profile") ? ww1Roster : ww2Roster;
             const currentFile = window.location.pathname.split("/").pop();
             const index = roster.indexOf(currentFile);
 
             if (index !== -1) {
                 const prev = index > 0 ? roster[index - 1] : null;
                 const next = index < roster.length - 1 ? roster[index + 1] : null;
-                const backLink = eraType.includes("ww1") ? "ww1-fallen.html" : "ww2-fallen.html";
+                const backLink = (eraType === "ww1-profile") ? "ww1-fallen.html" : "ww2-fallen.html";
 
                 navSocket.innerHTML = `
                     <div class="nav-btn-box left">${prev ? `<a href="${prev}" class="profile-nav-btn">&larr; Prev</a>` : ''}</div>

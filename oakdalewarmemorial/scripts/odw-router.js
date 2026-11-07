@@ -1,25 +1,22 @@
 // ==========================================================================
 // ODW ROUTER ENGINE (v5.4 - FOLDER-PATH ROUTING & CLEAN TITLES)
 // ==========================================================================
-
 export function initRouter(eraType, rootPrefix = "./") {
     const headerSocket = document.getElementById("header-socket");
     if (!headerSocket) return; // Silent fail if socket missing
-
+    
     // Fetch the sub-nav snippet using the dynamic prefix!
     fetch(rootPrefix + "snippets/odw-subnav-snippet.html")
         .then(res => res.text())
         .then(html => {
             // Dynamically swap any {ROOT} placeholders in the sub-nav snippet first!
             const dynamicHtml = html.replace(/\{ROOT\}/g, rootPrefix);
-
             // 1. Inject the entire menu structure
             headerSocket.innerHTML = dynamicHtml;
             
             // 2. Contextual Flexi-Zone Toggling Logic (Folder-Path Priority)
             let targetZone = "zone-master"; // Default fallback for root & footer pages
             const currentPath = window.location.pathname;
-
             if (currentPath.includes("/ww1/")) {
                 targetZone = "zone-ww1";
             } else if (currentPath.includes("/ww2/")) {
@@ -29,7 +26,6 @@ export function initRouter(eraType, rootPrefix = "./") {
             // Explicitly wipe out all flexi-zones first so they never overlap or linger
             const allZones = headerSocket.querySelectorAll(".flexi-zone");
             allZones.forEach(zone => zone.style.display = "none");
-
             const activeZone = document.getElementById(targetZone);
             if (activeZone) {
                 activeZone.style.display = "flex"; // Turn on ONLY the relevant era flexi-zone
@@ -38,19 +34,31 @@ export function initRouter(eraType, rootPrefix = "./") {
             // 3. Title Promotion, Pruning, & PATH FIXING Logic
             const titleSocket = document.getElementById("dynamic-title-link");
             let currentFile = currentPath.split("/").pop();
-
+            
             // Profile & Sub-story Parenting Override
             if (eraType === "ww1-profile" || (currentPath.includes("/ww1/") && currentFile !== "ww1-overview.html" && currentFile !== "ww1-fallen.html" && currentFile !== "ww1-stories.html" && currentFile !== "ww1-timeline.html" && currentFile !== "ww1-map-master.html" && !currentFile.includes("western") && !currentFile.includes("prisoners") && !currentFile.includes("beyond") && !currentFile.includes("return"))) {
-                // If it's a individual soldier profile inside ww1, parent it back to Fallen list
+                // If it's an individual soldier profile inside ww1, parent it back to Fallen list
                 currentFile = "ww1-fallen.html";
             } else if (eraType === "ww2-profile") {
+                // If it's an individual soldier profile inside ww2, parent it back to Fallen list
                 currentFile = "ww2-fallen.html";
+            } else if (
+                currentFile === "ww2-bomber-command.html" ||
+                currentFile === "ww2-home-front.html" ||
+                currentFile === "ww2-italian-campaign.html" ||
+                currentFile === "ww2-nw-europe.html" ||
+                currentFile === "ww2-mediterranean.html" ||
+                currentFile === "ww2-far-east.html" 
+            ) {
+                // WWII campaigns route back to WWII stories
+                currentFile = "ww2-stories.html";
             } else if (
                 currentFile === "ww1-western-front.html" ||
                 currentFile === "ww1-beyond-western.html" ||
                 currentFile === "ww1-prisoners-missing.html" ||
                 currentFile === "ww1-return-home.html"
             ) {
+                // WWI campaigns route back to WWI stories
                 currentFile = "ww1-stories.html";
             }
 
@@ -59,7 +67,6 @@ export function initRouter(eraType, rootPrefix = "./") {
             
             menuLinks.forEach(link => {
                 const updatedHref = link.getAttribute("href");
-
                 // Compare just the filenames so path differences don't break pruning
                 if (updatedHref && updatedHref.split("/").pop() === currentFile) {
                     matchFound = true;
