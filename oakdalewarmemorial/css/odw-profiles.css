@@ -2,13 +2,12 @@
    OAKDALE WAR MEMORIAL - MASTER PRESENTATION ENGINE (odw-profiles.css)
    Purpose: Unified stylesheet driving both the dynamic WWI/WWII 
             roster registries and individual historical profile pages.
-   File Version: v2.2 (Added responsive portrait scaling & harmonized breakpoints)
+   File Version: v2.8 (Implemented explicit state classes for dynamic medal counts and
+   added custom medal modal widths!)
    ========================================================================== */
-
 * {
     box-sizing: border-box;
 }
-
 /* Archive Primary Source Citations */
 .archive-source-note {
     background-color: var(--bg-note);
@@ -18,24 +17,21 @@
     font-family: var(--font-sans);
     font-size: 0.9em;
 }
-
 /* Archival Inline Media Thumbnails (Wikipedia Style Layout) */
 .bio-inline-thumb {
     float: right;                       
     width: 100%;
     max-width: 270px;   
-    margin: 4px 0 0px 20px;          
+    margin: 4px 0 15px 20px;          
     background-color: #fbf9f4;          
     border: 1px solid var(--border-light);          
     padding: 6px;                       
     box-shadow: var(--shadow-subtle); 
 }
-
 .bio-inline-thumb.float-left {
     float: left;
     margin: 4px 20px 15px 0;          
 }
-
 @media (max-width: 530px) {
     .bio-inline-thumb,
     .bio-inline-thumb.float-left {
@@ -46,27 +42,27 @@
         margin: 0 15px 15px 0 !important; 
     }
 }
-
 .bio-inline-thumb img {
     width: 100%;                        
     height: auto;
     display: block;
     margin-bottom: 5px;
-    cursor: zoom-in;                 
+    cursor: zoom-in; 
+    transition: opacity 0.2s ease-in-out;                
 }
-
+.bio-inline-thumb img:hover {
+    opacity: 0.85;             
+}
 .bio-paragraph-wrap {
     background-color: var(--bg-panel); 
     width: 100%; 
     padding: 0 30px 20px 30px;
 }
-
 @media (max-width: 500px) {
     .bio-paragraph-wrap {
         padding: 0 20px 20px 20px; 
     }
 }
-
 .bio-text {
     font-family: var(--font-serif);
     font-size: clamp(14px, 2vw, 16px); 
@@ -75,7 +71,6 @@
     color: #2b2b2b;
     margin-bottom: 20px;
 }
-
 .bio-text a {
     color: var(--text-dark);
     font-weight: 800;
@@ -83,15 +78,14 @@
     text-underline-offset: 3px;            
     transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
 }
-
 .bio-text a:hover {
-    color: var(--odw-red);                        
+    color: var(--odw-red-hover);                        
     text-decoration: underline dashed 1px;  
 }
-
 .bio-thumb-caption {
     font-family: var(--font-sans);
-    font-size: 11px;                    
+    font-size: 13px; 
+    font-weight: 800;                   
     color: var(--text-muted);                     
     line-height: 1.3em;
     display: block;
@@ -99,7 +93,39 @@
     margin-bottom: 0px;
     text-align: center;
 }
-
+.bio-thumb-sub {
+    font-family: var(--font-sans);
+    font-size: 11px; 
+    font-weight: 400;                   
+    color: var(--text-muted);                     
+    line-height: 1.3em;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.bio-casualty {
+    background-color: var(--bg-note);
+    border-left: 6px solid var(--odw-node-blue);
+    padding: 15px 20px;
+    margin: 20px 0 30px 0;
+    font-size: clamp(13px, 2vw, 15px); 
+    font-style: italic;
+    text-align: left;
+    letter-spacing: .5px;
+    line-height: clamp(1.45em, 2.5vw, 1.7em); 
+}
+.bio-casualty a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;  
+}
+.bio-casualty a {
+    color: var(--text-dark);
+    font-weight: 800;
+    text-decoration: none; 
+    text-underline-offset: 3px;            
+    transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+}
 /* Profile Fluid Flexbox Presentation Row */
 .flex-container {
     max-width: 900px;
@@ -108,65 +134,52 @@
     background-color: var(--bg-panel);
     padding: 30px 30px 20px 30px;
     gap: 20px;
+    border: 0px solid #ff0000;
 }
-
 @media (max-width: 500px) {
     .flex-container {
         padding: 15px; 
     }
 }
-
 @media (max-width: 220px) {
     .flex-container {
         flex-direction: column; 
         align-items: flex-start; 
     }
 }
-
-/* UPDATED: Allows the image container to shrink if needed */
 .image {
     flex: 0 1 160px;
     width: 100%;
     max-width: 160px;
     display: block;
 }
-
 .image a {
     cursor: zoom-in; 
     transition: opacity 0.2s ease-in-out;
 }
-
 .image a:hover {
     opacity: 0.85; 
 }
-
-/* NEW: Ensures the image scales down proportionally within the .image wrapper */
 .soldier-portrait-img {
     width: 100%;
     height: auto;
     display: block;
 }
-
-/* NEW: Forces the image container to shrink slightly on mid-sized screens to save horizontal space */
-@media (max-width: 720px) {
-    .image {
-        flex-basis: 120px;
-        max-width: 120px;
-    }
-}
-
 .img {
     flex: 0 0 160px; 
     width: 100%;
     margin: 0;
     padding: 0;
     background-color: var(--bg-panel);
-    border: 1px solid #ff0000;
+    border: 0px solid #ff0000;
 }
 
+/* =========================================================
+   MEDAL PRESENTATION MODULE
+========================================================= */
+/* Shared Container Properties */
 .medal {
-    flex: 1 1 150px; 
-    max-width: 225px; 
+    flex: 1 1 auto; 
     min-width: 75px; 
     display: flex;
     flex-wrap: wrap;         
@@ -177,24 +190,24 @@
     background-color: var(--bg-panel);
 }
 
-@media (max-width: 720px) {
-    .medal {
-        justify-content: left;
-    }
-}
+/* DESKTOP WIDTHS (95px per medal) */
+.medal-1 { max-width: 75px; }
+.medal-2 { max-width: 150px; }
+.medal-3 { max-width: 225px; }
 
-@media (max-width: 220px) {
-    .medal {
-        text-align: left;     
-        width: 100%;
-    }
+.soldier-medals-box  {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 75px; /* Desktop medal width */
+    background-color: var(--bg-panel);
 }
 
 .medal-ribbon-img {
-    width: 75px; 
-    height: 105px;
+    width: 100%; 
+    height: auto;
     cursor: zoom-in;              
 }
+/* ========================================================= */
 
 .nav-btn-box { flex: 1 1 33.333%; }
 .nav-btn-box.center { text-align: center; }
@@ -202,28 +215,12 @@
 .nav-btn-box.right { text-align: right; }
 
 .profile {
-    flex: 0 1 auto; 
-    min-width: 325px; 
+    flex: 1 1 250px; 
     max-width: 420px; 
     margin: 0;
     background-color: var(--bg-panel);
     border: 0px solid #ff0000;
 }
-
-/* UPDATED: Shifted this from 500px to 720px to coordinate with the medals & portrait scaling */
-@media (max-width: 720px) {
-    .profile {
-        min-width: 0; 
-    }
-}
-
-@media (max-width: 220px) {
-    .profile {
-        text-align: left;     
-        width: 100%;
-    }
-}
-
 .profile-artifact-dock {
     display: flex;
     gap: 12px;
@@ -231,14 +228,6 @@
     margin-bottom: 25px;
     flex-wrap: wrap;
 }
-
-@media (max-width: 768px) {
-    .profile-artifact-dock {
-        margin-left: 0; 
-        justify-content: left;
-    }
-}
-
 .profile-nav-btn {
     font-family: var(--font-sans);
     font-size: clamp(12px, 1.2vw, 13px); 
@@ -249,13 +238,10 @@
     letter-spacing: 1.5px;               
     transition: color 0.2s ease;
 }
-
 .profile-nav-btn:hover {
     color: var(--odw-red);                        
     text-decoration: underline dashed 1px;  
 }
-
-/* System-Injected Profile Navigation Row */
 .profile-navigation-row {
     display: flex;
     justify-content: space-between; 
@@ -265,22 +251,18 @@
     border-top: 1px solid var(--border-light); 
     clear: both; 
 }
-
 .roster-content-panel {
     width: 100%;
     background-color: var(--bg-panel) !important;
     margin: 0px auto; 
     border: 0px solid #ff0000;
 }
-
-/* Roster Footnotes */
 .roster-footnote {
     position: relative;
     margin-top: 30px;
     margin-bottom: 10px;  
     border: 0px;
 }
-
 .roster-footnote::before {
     content: "";
     display: block;
@@ -289,7 +271,6 @@
     margin: 0px auto 0px auto;
     border-top: 0px solid var(--border-light); 
 }
-
 .roster-footnote-text {
     font-family: var(--font-serif);
     font-style: italic;
@@ -299,14 +280,12 @@
     text-align: center;
     margin-top: 20px; 
 }
-
 .roster-instruction-text {
     font-size: clamp(14px, 1.5vw, 16px);
     text-align: center;
     color: var(--text-body);
     margin-bottom: clamp(10px, 1.5vw, 15px);
 }
-
 .roster-lead-text {
     font-family: var(--font-serif);
     font-size: clamp(18px, 4vw, 22px);
@@ -318,57 +297,29 @@
     margin-top: clamp(10px, 1.5vw, 15px);
     margin-bottom: 15px;
 }
-
-@media (max-width: 500px) {
-    .roster-lead-text {
-        text-align: center; 
-        margin: 10px 20px 10px 20px;
-    }
-}
-
-/* ========================================== */
-/* SHARED BROTHERS PROFILE - FLEX LAYOUT      */
-/* ========================================== */
-
 .shared-profile-header {
   max-width: 800px;
   margin: 40px auto 20px auto;
   padding: 0 20px;
   text-align: center;
 }
-
 .shared-profile-header hr {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .shared-profile-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   margin: 0px auto 40px auto; 
   padding: 0 20px;
 }
-
 .shared-profile-card {
   background-color: #ffffff;
   text-align: left;
   max-width: 360px;
   width: 100%;
 }
-
-/* RESPONSIVE STACKING FOR MOBILE/TABLETS */
-@media (max-width: 768px) {
-  .shared-profile-container {
-    flex-direction: column; 
-    align-items: center; 
-  }
-  
-  .shared-profile-card {
-    max-width: 100%;        
-  }
-}
-
 .soldier-detail {
     font-family: var(--font-sans);
     font-size: clamp(14px, 2vw, 16px); 
@@ -377,29 +328,20 @@
     margin: 0px 0px 4px 0px;
     word-wrap: break-word; 
     overflow-wrap: break-word;
-    max-width: 325px;
+    max-width: 400px;
     border: 0px solid #ff0000; 
 }
-
-@media (max-width: 500px) {
-    .soldier-detail {
-        max-width: 100%; 
-    }
+.soldier-detail a {
+    color: var(--odw-node-blue);
+    font-weight: 800;
+    text-decoration: none; 
+    text-underline-offset: 3px;            
+    transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
 }
-
-.soldier-medals-box  {
-    display: flex;
-    flex: 0 0 75px; 
-    background-color: var(--bg-panel);
+.soldier-detail a:hover {
+    color: var(--odw-red-hover);                        
+    text-decoration: underline dashed 1px;  
 }
-
-@media (max-width: 720px) {
-    .soldier-medals-box {
-        justify-content: left;
-        flex-wrap: wrap; 
-    }
-}
-
 .soldier-name {
     font-family: var(--font-serif);
     font-size: clamp(20px, 4vw, 28px); 
@@ -410,13 +352,21 @@
     flex-shrink: 0;
     white-space: normal;
 }
-
-@media (max-width: 720px) {
-    .soldier-name {
-        white-space: normal; 
-    }
+.source-data-italic {
+    font-style: italic;
+    line-height: 1.4em;
+    color: var(--text-muted);
+}
+.source-heading {
+    display: block;
+    font-weight: bold;
+    color: var(--text-body);
+    margin-bottom: 5px;
 }
 
+/* ==========================================================================
+   SOLDIER ROSTER GRID & LINKS
+   ========================================================================== */
 .soldier-roster-grid {
     display: block;
     column-count: 3;
@@ -424,29 +374,13 @@
     margin-left: 20px;
     width: 100%;
     max-width: 740px;
-    border: 0px solid #ff0000;
 }
-
-@media (max-width: 768px) {
-    .soldier-roster-grid {
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-        justify-content: center; 
-        column-gap: clamp(30px, 6vw, 60px); 
-        margin: 15px auto;
-    }
+.soldier-roster-grid.ww2-roster {
+    column-count: 2;
+    column-gap: 80px;
+    max-width: max-content;
+    margin: 0 auto;
 }
-
-@media (max-width: 500px) {
-    .soldier-roster-grid {
-        grid-template-columns: 1fr;
-        justify-content: center;
-        column-gap: 0;
-        margin-top: 10px;
-        margin-left: 0px; 
-    }
-}
-
 .soldier-roster-grid a {
     display: block;
     font-family: var(--font-serif);
@@ -455,40 +389,136 @@
     line-height: 2.2em; 
     color: var(--text-dark);
     text-decoration: none;
+    text-align: left;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
 }
-
-@media (max-width: 768px) {
-    .soldier-roster-grid a {
-        text-align: left; 
-    }
-}
-
-@media (max-width: 500px) {
-    .soldier-roster-grid a {
-        text-align: center; 
-        line-height: 2.6; 
-        font-size: 16px;
-    }
-}
-
-.soldier-roster-grid a:hover {
-    font-style: none;
+.soldier-roster-grid a:hover,
+.soldier-roster-grid a:focus {
     color: var(--odw-red); 
     text-decoration: underline dashed 1px;
     text-underline-offset: 4px;
 }
 
-.source-data-italic {
-    font-style: italic;
-    line-height: 1.4em;
-    color: var(--text-muted);
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (MUST BE ORDERED LARGEST TO SMALLEST)
+   ========================================================================== */
+
+/* 1. MEDAL STACK VIEW (810px and below) */
+@media (max-width: 810px) {
+    /* Matches natural flex wrap, shrinking individual boxes */
+    .soldier-medals-box {
+        flex: 0 0 75px; 
+    }
+    
+    /* TABLET CONTAINER WIDTHS (75px per medal) */
+    .medal-1 { max-width: 75px; }
+    .medal-2 { max-width: 150px; }
+    
+    /* The 3-medal stack trick: Force 150px width so the 3rd wraps */
+    .medal-3 { 
+        max-width: 150px; 
+        justify-content: center;
+    }
 }
 
-.source-heading {
-    display: block;
-    font-weight: bold;
-    color: var(--text-body);
-    margin-bottom: 5px;
+/* 2. TABLET (768px and below) */
+@media (max-width: 768px) {
+    .soldier-roster-grid:not(.ww2-roster) {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center; 
+        column-gap: clamp(30px, 6vw, 60px); 
+        margin: 15px auto;
+        width: auto;
+    }
+    .soldier-roster-grid.ww2-roster {
+        display: block;                        
+        column-count: 2;                       
+        column-gap: clamp(30px, 6vw, 60px);    
+        margin: 15px auto;                     
+        max-width: max-content;
+    }
+    .soldier-roster-grid a { text-align: left; }
+    
+    .shared-profile-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .shared-profile-card { max-width: 100%; }
+    .profile-artifact-dock {
+        margin-left: 0; 
+        justify-content: left;
+    }
+    
+    /* Layout shrink BEFORE flex wrap at ~625px */
+    .image {
+        flex-basis: 120px;
+        max-width: 120px;
+    }
+    .profile { min-width: 0; }
+    .soldier-name { white-space: normal; }
+}
+
+/* 3. MEDAL ROW 2 WRAP (~630px and below) */
+@media (max-width: 630px) {
+    /* Releases the caps exactly when flexbox forces medals to the next line */
+    .medal-1, .medal-2, .medal-3 {
+        max-width: 100%; 
+        justify-content: flex-start; 
+    }
+}
+
+/* 4. MOBILE NARROW - WWII (600px and below) */
+@media (max-width: 600px) {
+    .soldier-roster-grid.ww2-roster {
+        display: grid;
+        grid-template-columns: 1fr; 
+        justify-content: start;
+        column-gap: 0;
+        margin: 10px 0 0 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .soldier-roster-grid.ww2-roster a {
+        text-align: center;          
+        line-height: 1.5;          
+        margin-bottom: 12px;       
+        font-size: 15px;
+    }
+}
+
+/* 5. MOBILE NARROW - WWI (520px and below) */
+@media (max-width: 520px) {
+    .soldier-roster-grid:not(.ww2-roster) {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: start;
+        column-gap: 0;
+        margin: 10px 0 0 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .soldier-roster-grid:not(.ww2-roster) a {
+        text-align: center;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        font-size: 15px;
+    }
+}
+
+/* 6. NARROWEST MOBILE (500px / 320px and below) */
+@media (max-width: 500px) {
+    .roster-lead-text {
+        text-align: center; 
+        margin: 10px 20px 10px 20px;
+    }
+    .soldier-detail { max-width: 100%; }
+}
+
+@media (max-width: 320px) {
+    .medal, .profile {
+        text-align: left;     
+        width: 100%;
+    }
 }

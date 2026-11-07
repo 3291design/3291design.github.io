@@ -12,8 +12,7 @@
     SECTION 3: Floated Feature Images, Galleries & Media Blocks
     SECTION 4: Timeline Grid Engine & Markers
     SECTION 5: Story Cards & Footer Card Grids
-    SECTION 6: Story Footnote Grids & Thumbnails
-    SECTION 7: Two-Column TOC Grid Layout
+    SECTION 6: Two-Column TOC Grid Layout
 ========================================================================== */
 
 /* ==========================================================================
@@ -420,79 +419,24 @@ a.feature-image-main:hover img,
 }
 
 /* ==========================================================================
-   SECTION 6. STORY FOOTNOTE GRIDS & THUMBNAILS
+   SECTION 6. TOC & References SPECIFIC TWO-COLUMN GRID LAYOUT
    ========================================================================== */
 
-.story-footnote-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
-    margin-bottom: 30px;
+.toc-grid-layout ul {
+    column-count: 2;
+    column-gap: 10px;
+    list-style-type: none;
+    margin: 15px auto;
+    padding-left: 20px;
+    border: 0px solid #ff0000; 
+    width: 100%;
 }
-
-@media (max-width: 545px) {
-    .story-footnote-grid {
-        flex-direction: column;
-    }
-}
-
-.story-footnote-link {
-    background-color: #fff;
-    border-left: 4px solid var(--odw-red-hover);
-    box-sizing: border-box;
-    color: inherit;
-    display: flex;
-    flex: 1 1 calc(25% - 15px);
-    flex-direction: column;
-    gap: 12px; 
-    min-width: 120px;
-    border: 1px solid #ccc;
-    padding: 12px 15px;
-    text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.story-footnote-link:hover {
-    background-color: #f7f7f7; 
-    box-shadow: var(--shadow-subtle);
-    text-decoration: none;
-    transform: translateY(-2px); 
-}
-
-.story-footnote-part {
-    color: var(--text-muted); 
-    display: block;
-    font-family: Georgia, serif;
-    font-size: 0.75em;
-    font-weight: 800; 
-    letter-spacing: 2px; 
-    margin-bottom: 5px;
-    text-transform: uppercase; 
-}
-
-.story-footnote-thumb {
-    border-radius: 4px; 
-    box-shadow: var(--shadow-subtle); 
-    height: auto;
-    max-width: 100px;
-    object-fit: cover; 
-    width: 100%; 
-}
-
-.story-footnote-title {
-    display: block;
-    font-size: 0.95em;
-    font-weight: bold;
-}
-
-
-/* ==========================================================================
-   SECTION 7. TOC & References SPECIFIC TWO-COLUMN GRID LAYOUT
-   ========================================================================== */
 
 .toc-grid-layout li {
-    break-inside: avoid;
+    break-inside: avoid-column; /* Prevents an item from splitting across columns */
+    white-space: auto; /* Forces the text to stay on a single line, killing the widow */
+    margin-bottom: 12px; /* Adds vertical spacing between items */
+    border: 0px solid #ff0000; 
 }
 
 .toc-grid-layout li::before {
@@ -516,17 +460,13 @@ a.feature-image-main:hover img,
     text-underline-offset: 4px;
 }
 
-.toc-grid-layout ul {
-    column-count: 2;
-    column-gap: 40px;
-    list-style-type: none;
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
 @media (max-width: 768px) {
     .toc-grid-layout ul {
-        column-count: 1;
+        column-count: 1; /* Stacks to a single column on mobile */
+    }
+    
+    .toc-grid-layout li {
+        white-space: normal; /* Allows wrapping on small phone screens to prevent overflow */
     }
 }
 
