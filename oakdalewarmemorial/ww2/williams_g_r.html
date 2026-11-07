@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Rowland Williams - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War II.">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS - ABSOLUTE PATHS -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
+</head>
+<body data-era="ww2-profile" data-root="/oakdalewarmemorial/">
+  
+  <div class="main-container">
+    <!-- TIER 1: AUTOMATED HEADER SOCKET -->
+    <div id="header-socket"></div>
+   
+    <!-- TIER 2: PAGE CORE -->
+    <div class="page-core profile-core-flush">
+        <div class="flex-container">
+            
+            <!-- PORTRAIT IMAGE (Active Placeholder) -->
+            <div class="image">
+                <img src="/oakdalewarmemorial/images/blank_man.gif" alt="George Rowland Williams Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+            
+            <!-- PROFILE DETAILS -->
+            <div class="profile">
+                <div class="soldier-name">George R. Williams</div>
+                <div class="soldier-detail">Died: <strong>22 January 1944</strong></div>
+                <div class="soldier-detail">Age: <strong>29 years old</strong></div>
+                <div class="soldier-detail">Rank: <strong>Driver</strong></div>
+                <div class="soldier-detail">Service No.: <a href="https://www.cwgc.org/find-records/find-war-dead/casualty-details/2353730/george-rowland-williams/" target="_blank" class="soldier-link">T/247912</a></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Army Service Corps</strong></div>
+                <div class="soldier-detail">Medals: <strong>1939-1945 Star, Burma Star, <br />War Medal 1939-1945</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied for WWII Ribbons) -->
+            <a href="#modal-medals" class="medal medal-3 hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="/oakdalewarmemorial/images/medal_1939-45-star_plain-sm_tall.jpg">
+                        <img alt="1939-1945 Star" src="/oakdalewarmemorial/images/medal_1939-45-star_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="/oakdalewarmemorial/images/medal_burma-star_sm_tall.jpg">
+                        <img alt="Burma Star" src="/oakdalewarmemorial/images/medal_burma-star_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="/oakdalewarmemorial/images/medal_1939-45-war_sm_tall.jpg">
+                        <img alt="1939-1945 War" src="/oakdalewarmemorial/images/medal_1939-45-war_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+            </a>
+        </div> 
+        <!-- END FLEX-CONTAINER -->
+        
+        <!-- NARRATIVE BIOGRAPHY -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <a href="/oakdalewarmemorial/stories/mh-ww2-burma.html" 
+                    class="artifact-btn btn-story hybrid-fetch-trigger" 
+                    data-target="sidebar"><span class="artifact-label">Far East Campaign</span>
+                </a>
+                <a href="#" 
+                    class="artifact-btn btn-timeline">
+                    <span class="artifact-label">View Timeline</span>
+                </a>
+            </div>
+            
+            <!-- BIOGRAPHY TEXT -->
+            <div class="bio-text">
+                <strong>George Rowland Williams</strong> entered military service in the Royal Army Service Corps (RASC) under service number T/247912, where the "T" prefix designated his specialised role as a Driver. He was attached to the 196th Field Ambulance, Royal Army Medical Corps (RAMC)—a mobile front-line medical unit responsible for collecting, treating, and evacuating casualties from the immediate combat zone.
+            </div>
+            <!-- Bio Inline Thumbnail Trigger -->
+            <div class="bio-inline-thumb">
+                <a href="#modal-cemetery" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                    <img src="/oakdalewarmemorial/images/chungkai-war-cemetery.jpg" alt="Chungkai War Cemetery, Thailand">
+                </a>
+                <span class="bio-thumb-caption">
+                    Chungkai War Cemetery<br>
+                    <span class="bio-thumb-sub">CWGC Commemorative Site</span>
+                </span>
+            </div>
+            <div class="bio-text">
+                In autumn 1941, as threats escalated in the Pacific, George’s unit was selected for Far East reinforcements. Embarking in October 1941 on an immense, circuitous maritime voyage to evade Axis submarines, his troopship route spanned the globe: crossing the North Atlantic to Halifax, Nova Scotia, south to Trinidad, across to Cape Town, onward to Bombay (Mumbai), and finally down through the Malacca Straits.
+            </div>
+            <div class="bio-text">
+                Driver Williams stepped ashore in Singapore on 29 January 1942, just as Japanese forces pressed down the Malayan Peninsula. Barely two weeks later, following relentless assault, the Allied garrison surrendered on 15 February 1942. George was captured at the Fall of Singapore and processed into the brutal Japanese Prisoner of War system.
+            </div>
+            <div class="bio-text">
+                Drafted into forced labor pools in the jungles of Thailand to build the infamous Burma-Siam Death Railway, prisoners endured systematic starvation, physical abuse, tropical downpours, and rampant disease. Held at the major base and transit camp of Nong Pladuk near the railway's southern terminus, Driver Williams passed away in captivity on 22 January 1944 at the age of 29.
+            </div>
+            <div class="bio-casualty">
+                After the war, his remains were recovered from isolated jungle sites and reinterred in the <a href="#modal-cemetery" class="hybrid-fetch-trigger soldier-link" data-target="modal">Chungkai War Cemetery</a>, Thailand, where his grave is meticulously registered and cared for by the Commonwealth War Graves Commission (view listing: <a href="https://www.cwgc.org/find-records/find-war-dead/casualty-details/2353730/george-rowland-williams/" class="soldier-detail soldier-link" target="_blank">T/247912</a>). His name remains proudly honoured within the local history of Oakdale, keeping his memory alive for the generations that follow on the <a href="/oakdalewarmemorial/odw-memorial.html">Oakdale War Memorial</a>.
+            </div>
+            
+            <!-- NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> 
+    </div> 
+        
+    <!-- TIER 3: ROSTER PHOTO BRIDGE (WWII Specific) -->
+    <div class="roster-photo-bridge-2"></div>
+    
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET -->
+    <div id="footer-placeholder"></div>
+</div> 
+<!-- END MAIN-CONTAINER -->
+    <!-- ========================================== -->
+    <!-- MODALS AND TEMPLATES                       -->
+    <!-- ========================================== -->
+    
+    <!-- MINI-PROFILE MODAL -->
+    <template id="hybrid-summary-payload">
+        <div class="mini-profile-content">
+            <div class="sidebar-abbreviated-story">
+                <div class="war-front">Far East Campaign | POW & Burma-Siam Railway</div>
+                <h2 class="subhead_sm">Dvr. George Rowland Williams</h2>
+                <div class="bio-text">
+                    <strong>Fate:</strong> Died as Prisoner of War, 22 January 1944 (Age: 29 years old)
+                </div>
+                <hr class="basic">
+                <p class="display-text">Attached as a Driver to the 196th Field Ambulance RAMC, George Williams arrived in Singapore in January 1942[cite: 10]. Captured at the Fall of Singapore, he was forced into brutal labor building the Burma-Siam Death Railway[cite: 10]. He died in captivity at Nong Pladuk camp, Thailand, on 22 January 1944 and rests in Chungkai War Cemetery[cite: 10]. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/williams_g_r.html">Read Full Profile</a></p>
+                
+                <a href="/oakdalewarmemorial/stories/mh-ww2-burma.html" class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                    <span class="artifact-label">Far East Campaign</span>
+                </a>
+            </div>
+        </div>
+    </template>
+    <!-- END PROFILE MODAL -->
+    
+    <!-- MEDAL MODAL -->
+    <template id="modal-medals">
+        <div class="mini-profile-content modal-medals-3">
+            <div class="award-verify">Award Verification</div>
+            <h2 class="subhead_sm">Medals Awarded: Dvr. George Rowland Williams</h2>
+            <hr class="basic">
+            
+            <div class="medal-display-row">
+                <div class="medal-item">
+                    <img alt="1939-1945 Star Medal" src="/oakdalewarmemorial/images/medal_1939-45-star_plain-lg.jpg">
+                    <p class="medal-title">1939-1945 Star</p>
+                </div>
+                <div class="medal-item">
+                    <img alt="Burma Star" src="/oakdalewarmemorial/images/medal_burma-star_lg.jpg">
+                    <p class="medal-title">Burma Star</p>
+                </div>
+                <div class="medal-item">
+                    <img alt="1939-1945 War" src="/oakdalewarmemorial/images/medal_1939-45-war_lg.jpg">
+                    <p class="medal-title">War Medal 1939–1945</p>
+                </div>
+            </div>
+            <!-- Archive Source Note (if applicable) -->
+        </div>
+    </template>
+    <!-- End Medal Modal -->
+    <!-- THUMBNAIL MODAL -->
+    <template id="modal-cemetery">
+        <div class="modal-photo-showcase">
+            <img src="/oakdalewarmemorial/images/chungkai-war-cemetery.jpg" alt="Chungkai War Cemetery, Thailand">
+            
+            <div class="modal-caption">
+                Chungkai War Cemetery, Thailand
+            </div>
+            
+            <div class="modal-showcase-link-wrap">
+                <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/2035000/chungkai-war-cemetery/" target="_blank" rel="noopener" class="plain-text">
+                    <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+                </a>
+            </div>
+        </div>
+    </template>
+    <!-- END THUMBNAIL MODAL -->
+  
+  <!-- MASTER UNIFIED INJECTION ENGINE - ABSOLUTE PATH -->
+  <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
+</body>
+</html>

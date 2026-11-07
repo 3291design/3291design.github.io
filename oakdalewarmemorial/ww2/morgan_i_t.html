@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ithel Morgan - Oakdale War Memorial</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War II.">
+    
+    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS - RELATIVE PATHS -->
+    <link rel="stylesheet" href="../css/odw-core.css">
+    <link rel="stylesheet" href="../css/odw-typography.css">
+    <link rel="stylesheet" href="../css/odw-profiles.css">
+    <link rel="stylesheet" href="../css/odw-components.css">
+</head>
+<body data-era="ww2-profile" data-root="../">
+  
+  <div class="main-container">
+    <!-- TIER 1: AUTOMATED HEADER SOCKET -->
+    <div id="header-socket"></div>
+   
+    <!-- TIER 2: PAGE CORE -->
+    <div class="page-core profile-core-flush">
+        <div class="flex-container">
+            
+            <!-- PORTRAIT IMAGE (Active Placeholder) -->
+            <div class="image">
+                <img src="../images/blank_man.gif" alt="Ithel Morgan Portrait Placeholder" class="soldier-portrait-img">
+            </div>
+            
+            <!-- PROFILE DETAILS -->
+            <div class="profile">
+                <div class="soldier-name">Ithel Thomas Morgan</div>
+                <div class="soldier-detail">Died: <strong>23 May 1944</strong></div>
+                <div class="soldier-detail">Age: <strong>28 years old</strong></div>
+                <div class="soldier-detail">Rank: <strong>Leading Aircraftman</strong></div>
+                <div class="soldier-detail">Service No.: <a href="https://www.cwgc.org/find-records/find-war-dead/casualty-details/2209542/itehl-thomas-morgan/" target="_blank" class="soldier-link">1179248</a></div>
+                <div class="soldier-detail">Regiment: <strong>Royal Air Force Volunteer</strong></div>
+                <div class="soldier-detail">Medals: <strong>1939–1945 Star, Africa Star, <br />War Medal 1939–1945</strong></div>
+            </div>
+            
+            <!-- Medal Trigger Structure (Gold Standard Applied for WWII Ribbons) -->
+            <a href="#modal-medals" class="medal medal-3 hybrid-fetch-trigger" data-target="modal" title="Click to view enlarged medals">
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="../images/medal_1939-45-star_plain-sm_tall.jpg">
+                        <img alt="1939-1945 Star" src="/oakdalewarmemorial/images/medal_1939-45-star_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="../images/medal_africa-star_sm_tall.jpg">
+                        <img alt="Africa Star" src="/oakdalewarmemorial/images/medal_africa-star_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+                <div class="soldier-medals-box">
+                    <picture>
+                        <!-- Swap to TALL image only when 810px or wider to match medal layout state -->
+                        <source media="(min-width: 810px)" srcset="../images/medal_1939-45-war_sm_tall.jpg">
+                        <img alt="1939-1945 War" src="/oakdalewarmemorial/images/medal_1939-45-war_sm.jpg" class="medal-ribbon-img">
+                    </picture>
+                </div>
+            </a>
+        </div> 
+        <!-- END FLEX-CONTAINER -->
+        
+        <!-- NARRATIVE BIOGRAPHY -->
+        <div class="bio-paragraph-wrap">
+            
+            <!-- Interactive Artifact Action Dock -->
+            <div class="profile-artifact-dock">
+                <a href="/oakdalewarmemorial/stories/mh-ww2-egypt-greece.html" 
+                   class="artifact-btn btn-story hybrid-fetch-trigger" 
+                   data-target="sidebar"><span class="artifact-label">Mediterranean Campaign</span>
+                </a>
+                <a href="#" 
+                    class="artifact-btn btn-timeline">
+                    <span class="artifact-label">View Timeline</span>
+                </a>
+            </div>
+            
+            <!-- BIOGRAPHY TEXT -->
+            <div class="bio-text">
+                <strong>Ithel Thomas Morgan</strong> was born around 1916 in the rural and industrial parish of Mynyddislwyn, Monmouthshire, the son of Tom and Mary Anna Morgan. According to the 1921 Census, a five-year-old Ithel was living with his parents at 24 Aberconway Place in Oakdale. He later married Catherine Morgan, and the couple established their family home a short distance away in neighbouring Pontllanfraith.
+            </div>
+            <!-- Bio Inline Thumbnail Trigger -->
+            <div class="bio-inline-thumb">
+                <a href="#modal-cemetery" class="hybrid-fetch-trigger" data-target="modal" title="Click to enlarge">
+                    <img src="../images/heliopolis-war-cemetery.jpg" alt="Heliopolis War Cemetery, Egypt">
+                </a>
+                <span class="bio-thumb-caption">
+                    Heliopolis War Cemetery, Egypt<br>
+                    <span class="bio-thumb-sub">CWGC Commemorative Site</span>
+                </span>
+            </div>
+            <div class="bio-text">
+                Ithel volunteered to join the Royal Air Force Volunteer Reserve. Upon completion of his training, he earned the rank of Leading Aircraftman in the RAF's ground echelon, providing the technical skill and logistical support that kept Allied aircraft flying during critical campaigns.
+            </div>
+            <div class="bio-text">
+                Leading Aircraftman Morgan was deployed overseas to the Mediterranean and Middle East Command. Ground crews in this region faced extreme hardships, working long hours in the desert heat to repair, refuel, and maintain combat aircraft tasked with securing shipping lanes and striking enemy targets across Southern Europe. 
+            </div>
+            <div class="bio-text">
+                While stationed on active duty in Egypt, Ithel passed away on 23 May 1944 at the age of 28. 
+            </div>
+            <div class="bio-casualty">
+                Following his death, he was laid to rest in the <a href="#modal-cemetery" class="hybrid-fetch-trigger soldier-link" data-target="modal">Heliopolis War Cemetery</a> in Cairo, Egypt. This Commonwealth cemetery serves as the final resting place for thousands of airmen and soldiers who lost their lives maintaining the crucial Allied base of operations in Northeast Africa (view listing: <a href="https://www.cwgc.org/find-records/find-war-dead/casualty-details/2209542/itehl-thomas-morgan/" target="_blank" class="soldier-link">1179248</a>). His name remains proudly honoured within the local history of Oakdale, keeping his memory alive for the generations that follow on the <a href="../odw-memorial.html">Oakdale War Memorial</a>.
+            </div>
+            
+           <!-- NAVIGATION ENGINE SOCKET -->
+            <div class="profile-navigation-row" id="profile-nav-engine"></div>
+        </div> 
+    </div> 
+        
+    <!-- TIER 3: ROSTER PHOTO BRIDGE (WWII Specific) -->
+    <div class="roster-photo-bridge-2"></div>
+    
+    <!-- TIER 4: UNIVERSAL FOOTER SOCKET -->
+    <div id="footer-placeholder"></div>
+</div> 
+<!-- END MAIN-CONTAINER -->
+    <!-- ========================================== -->
+    <!-- MODALS AND TEMPLATES                       -->
+    <!-- ========================================== -->
+    
+    <!-- MINI-PROFILE MODAL -->
+    <template id="hybrid-summary-payload">
+        <div class="mini-profile-content">
+            <div class="sidebar-abbreviated-story">
+                <div class="war-front">Mediterranean Campaign | Desert & Greek Operations</div>
+                <h2 class="subhead_sm">LAC Ithel Morgan</h2>
+                <div class="bio-text">
+                    <strong>Fate:</strong> Died on Active Duty, 23 May 1944 (Age: 28 years old)
+                </div>
+                <hr class="basic">
+                <p class="display-text">Serving in the RAF ground echelon, LAC Morgan deployed to the Mediterranean and Middle East Command. Working in extreme desert heat to repair and refuel Allied combat aircraft, he passed away on active duty in Egypt on 23 May 1944. He is buried in the Heliopolis War Cemetery in Cairo. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/morgan_i_t.html">Read Full Profile</a></p>
+                <a href="/oakdalewarmemorial/stories/mh-ww2-egypt-greece.html" class="artifact-btn btn-story hybrid-fetch-trigger" style="margin-top: 20px;" data-target="sidebar">
+                    <span class="artifact-label">Mediterranean Campaign</span>
+                </a>
+            </div>
+        </div>
+    </template>
+    <!-- END PROFILE MODAL -->
+    
+    <!-- MEDAL MODAL -->
+    <template id="modal-medals">
+        <div class="mini-profile-content modal-medals-3">
+            <div class="award-verify">Award Verification</div>
+            <h2 class="subhead_sm">Medals Awarded: LAC Ithel Morgan</h2>
+            <hr class="basic">
+            
+            <div class="medal-display-row">
+                <div class="medal-item">
+                    <img alt="1939-1945 Star Medal" src="/oakdalewarmemorial/images/medal_1939-45-star_plain-lg.jpg">
+                    <p class="medal-title">1939-1945 Star</p>
+                </div>
+                <div class="medal-item">
+                    <img alt="Africa Star" src="/oakdalewarmemorial/images/medal_africa-star_lg.jpg">
+                    <p class="medal-title">Africa Star</p>
+                </div>
+                <div class="medal-item">
+                    <img alt="1939-1945 War" src="/oakdalewarmemorial/images/medal_1939-45-war_lg.jpg">
+                    <p class="medal-title">War Medal 1939–1945</p>
+                </div>
+            </div>
+            <!-- Archive Source Note (if applicable) -->
+        </div>
+    </template>
+    <!-- End Medal Modal -->
+    <!-- THUMBNAIL MODAL -->
+    <template id="modal-cemetery">
+        <div class="modal-photo-showcase">
+             <img src="../images/heliopolis-war-cemetery.jpg" alt="Heliopolis War Cemetery, Egypt">
+            
+            <div class="modal-caption">
+                Heliopolis War Cemetery, Egypt
+            </div>
+            
+            <div class="modal-showcase-link-wrap">
+                <a href="https://www.cwgc.org/visit-us/find-cemeteries-memorials/cemetery-details/2018702/heliopolis-war-cemetery/" target="_blank" rel="noopener" class="plain-text">
+                    <span class="pointer">&#9658;&nbsp;</span>Visit Official Cemetery Registry Website
+                </a>
+            </div>
+        </div>
+    </template>
+    <!-- END THUMBNAIL MODAL -->
+  
+  <!-- MASTER UNIFIED INJECTION ENGINE - RELATIVE PATH -->
+  <script type="module" src="../scripts/odw-common.js"></script>
+</body>
+</html>
