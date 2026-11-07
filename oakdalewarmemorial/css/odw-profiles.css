@@ -43,9 +43,7 @@
     }
 }
 
-/* =========================================================
-   EXTRA SMALL MOBILE FIX (iPhone / screens under 380px)
-   ========================================================= */
+/* EXTRA SMALL MOBILE FIX (iPhone / screens under 380px) */
 @media (max-width: 380px) {
     .bio-inline-thumb,
     .bio-inline-thumb.float-left {
