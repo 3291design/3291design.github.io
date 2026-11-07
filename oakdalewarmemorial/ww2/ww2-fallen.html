@@ -3,107 +3,216 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oakdale War Memorial - WWII: The Fallen</title>
-    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War I.">
-    <meta name="keywords" content="Oakdale, Wales, Memorial, World War One, WWI, soldiers, died, commemorate, family history, Gwent, Caerphilly">
-    <meta name="author" content="Melanie Copleston">
+    <title>Oakdale War Memorial - WWII Stories Overview</title>
+    <meta name="description" content="A website dedicated to the memory of men from Oakdale, Wales, UK who served during World War II.">
+    <meta name="keywords" content="Oakdale, Wales, Memorial, World War Two, WWII, soldiers, died, commemorate, family history, Gwent, Caerphilly">
+    <meta name="author" content="Melanie Copleston, 3291design">
     
-    <!-- SYSTEM LAYOUT MODULAR STYLESHEETS -- USING ABOSLUTE PATHS!-->
+    <!-- 1. Master Foundation & Variables -->
     <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-core.css">
     <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-typography.css">
+    <!-- 2. Interactive UI & Modals -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-ui-components.css">
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-lightbox.css">
+    <!-- 3. Layout Blocks & Features -->
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-story-blocks.css">
     <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-profiles.css">
-    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-components.css">
-
+    <link rel="stylesheet" href="/oakdalewarmemorial/css/odw-maps.css">
 </head>
-
 <body data-era="ww2-master" data-root="../">
-
   <div class="main-container">
-
-    <!-- Automated Header Sockets (Grid Tier 1) -->
     <div id="header-socket"></div>
-   
-    <!-- =======================================================================
-         THE FIXED CORE HOLDER: Groups content blocks into Grid Tier 2 
-         ======================================================================= -->
-    <div class="page-core">
+    <main class="page-core">
         
-        <main class="roster-content-panel">
-            
-           <div class="subhead" style="font-size: clamp(18px, 4vw, 28px) !important;">With everlasting honour we keep their memories green...</div>
-
-            <!-- INTRO BLURB FOR THE FALLEN -->
-            <div class="plain-text" style="text-align: center;">
-                [ Select a soldiers name to read his details... ]
-            </div>
-            
-            <div class="soldier-roster-grid ww2-roster">
-                <a href="adams_k_t_j.html">Kenneth Thomas John Adams</a>
-                <a href="canniff_j.html">James Canniff</a>
-                <a href="charles_w_j.html">William James Charles</a>
-                <a href="daniels_l_g.html">Lemuel George Daniels</a>
-                <a href="davies_g.html">Gwyn Davies</a>
-                <a href="davies_j_i.html">John Ivor Davies</a>
-                <a href="davies_w_w.html">William Ward Davies</a>
-                <a href="ellway_v.html">Vernon Ellway</a>
-                <a href="hancock_r_f.html">Raymond F. Hancock</a>
-                <a href="harris_f_m_c_h.html">Frederick Moses Cyril Henry Harris</a>
-                <a href="harris_w_h_b.html">William Herbert Beddow Harris</a>
-                <a href="jenkins_j_h_m.html">John Henry Morris Jenkins</a>
-                <a href="lewis_a_r.html">Alfred Richard Lewis</a>
-                <a href="lewis_t_v.html">Thomas Vadre Lewis</a>
-                <a href="morgan_i_t.html">Itehl Thomas Morgan</a>
-                <a href="parry_a_s.html">Albert Stewart Parry</a>
-                <a href="pepper_f_h_e.html">Frederick Hugh Edwin Pepper</a>
-                <a href="reardon_g.html">Glyndwr Reardon</a>
-                <a href="shipman_c.html">Charles Shipman</a>
-                <a href="silcocks_w_r.html">Wyndham Royce Silcocks</a>
-                <a href="thomas_a.html">Albert Thomas</a>
-                <a href="watkins_i_w.html">Iowerth Walter Watkins</a>
-                <a href="williams_g_r.html">George Rowland Williams</a>
-                <a href="williams_g_j.html">Gwilym James Williams</a>
-            </div>
-        </main>
-
-        <div class="roster-content-panel roster-footnote">
-            <p class="roster-footnote-text">* Indicates name that does not appear on the Oakdale Memorial.</p>
+        <div class="subhead">The Soldiers of Oakdale - World War II</div>
+        <div class="deck">
+            A six-part chronicle tracing the global theaters, home front sacrifices, operational aircrews, and the ultimate price paid by the men of Oakdale.
         </div>
+        <hr class="main">
+        
+        <!-- REBUILT OPENER -->
+        <div class="feature-block" style="margin-bottom: 40px;">
+            <div class="subhead_sm" style="margin-top: 6px !important;">A Global Conflict</div>
+            <div class="display-text" style="margin-top: 0px !important;">
+                The Second World War was a conflict of unprecedented scale, drawing the young men of the Sirhowy Valley away from their tight-knit mining communities and into theatres of war spanning the globe. Unlike the linear trench warfare of their fathers' generation, this war was fought simultaneously across vastly different environments—from the freezing night skies over occupied Europe and the treacherous convoy routes of the Mediterranean, to the blistering deserts of North Africa and the unforgiving jungles of Burma.
+                <br /><br />
+                To accurately reflect this overlapping reality, our history is organized into six distinct Parts. Each section focuses on a specific operational command or geographic theatre, honouring how Oakdale’s servicemen fought, endured, and ultimately gave their lives across the diverse battlefields of a truly world war.
+            </div>
+        </div>
+        <hr class="main-half">
+        
+        <!---------------------------------------------------->
+        <!-- Part I - Bomber Command & Operational Aircrews -->
+        <!---------------------------------------------------->
 
-    <hr class="main-half">
+        <div class="feature-block">
+            <div class="chapter">Part I</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-bomber-command.html">Bomber Command & Operational Aircrews</a></div>
+            
+            <!-- Photo Block Part I -->
+            <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/bomber-command_01_lg.jpg" data-lightbox="artifact" data-caption="Aircrew from No. 106 Squadron walking across the dispersal area at RAF Syerston, Nottinghamshire,<br /> after safely returning from a raid on Genoa,Italy,<br />  22–23 October 1942."> 
+                <img src="/oakdalewarmemorial/images/bomber-command_01_sm.jpg" style="width: 400px; height: 240px;" alt="Aircrew from No. 106 Squadron walking across the dispersal area at RAF Syerston, Nottinghamshire, after safely returning from a raid on Genoa, Italy, 22–23 October 1942.">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">Aircrew Squadron at RAF Syerston, Nottinghamshire.</span><br>
+                <span class="credit">Photo credit: <a href="https://www.iwm.org.uk/history/second-world-war/bombing/bomber-command-in-pictures" target="_blank">Imperial War Museums</a></span>
+              </div>
+            </div>
+            
+            <div class="display-text" style="margin-top: 10px;">Either over Europe or the Mediterranean, men who flew combat missions from the United Kingdom immediately qualified for the 1939–1945 Star. In this section we chronicle the exceptionally high attrition rates, through the long, dark skies, and courageous service of Oakdale’s aircrews. We honour the local sons who never returned, their final missions etched forever into the village’s sacred roll of honour. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-bomber-command.html">Read more...</a>
+            </div>
+        </div>
+        <hr class="main-half">
+        
+        <!---------------------------------------------------->
+        <!-- Part II - HThe UK Home Front -------------------->
+        <!---------------------------------------------------->
 
+        <div class="feature-block">
+            <div class="chapter">Part II</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-home-front.html">The UK Home Front</a></div>
+            
+            <!-- Photo Block Part II -->
+             <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/home-guard_01_lg.jpg" data-lightbox="artifact" data-caption="The Local Defence Volunteers, soon to be renamed the Home Guard, 1 July 1940"> 
+                <img src="/oakdalewarmemorial/images/home-guard_01_sm.jpg" style="width: 400px; height: 240px;" alt="The Local Defence Volunteers, soon to be renamed the Home Guard, 1 July 1940">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">The Home Guard, July 1940</span><br>
+                <span class="credit">Photo credit: <a href="https://www.iwm.org.uk/collections/item/object/205195181" target="_blank">Imperial War Museums</a></span>
+              </div>
+            </div>
+            
+            <div class="display-text" style="margin-top: 10px;">Military personnel serving within the United Kingdom often faced hazards just as lethal as those on distant battlefields. We honour those soldiers who died from catastrophic training accidents or early wartime service during the demanding home-defence duties. Their sudden losses deeply impacted this tight-knit valley community, bringing the harsh realities of global conflict directly to Oakdale’s doorstep. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-home-front.html">Read more...</a>
+            </div>
+        </div>
+        <hr class="main-half">
+        
+        <!---------------------------------------------------->
+        <!-- Part III - The Italian Campaign ----------------->
+        <!---------------------------------------------------->
+
+        <div class="feature-block">
+            <div class="chapter">Part III</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-italian-campaign.html">The Italian Campaign</a></div>
+            
+            <!-- Photo Block Part III -->
+             <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/italian-campaign_lg_01.jpg" data-lightbox="artifact" data-caption="British Sherman tanks and infantry during the advance on Caen, Normandy, 9 July 1944."> 
+                <img src="/oakdalewarmemorial/images/italian-campaign_01_sm.jpg" style="width: 400px; height: 240px;" alt="British Sherman tanks and infantry during the advance on Caen, Normandy, 9 July 1944.">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">British Sherman tanks and infantry, July 1944.</span><br>
+                <span class="credit">Photo credit: <a href="https://commons.wikimedia.org/wiki/File:British_Sherman_tanks_and_infantry_during_the_advance_on_Caen,_Normandy,_9_July_1944._B6758.jpg" target="_blank">Wikimedia Commons / Malindine E G (Capt)</a></span>
+              </div>
+            </div>
+            
+           <div class="display-text" style="margin-top: 10px;">Following the Allied invasions of Sicily and the Italian mainland, local infantrymen and artillery units pushed through the grueling mountainous terrain and through legendary strongholds like Anzio and Monte Cassino to break the Axis grip on southern Europe. This section details the formidable battles fought by the soldiers of Oakdale, who endured these relentless campaigns and made the ultimate sacrifice. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-italian-campaign.html">Read more...</a>
+          </div>
+        </div>
+        <hr class="main-half">
+        
+        <!---------------------------------------------------->
+        <!-- Part IV - Mediterranean, Egypt & Greece  -------->
+        <!---------------------------------------------------->
+
+        <div class="feature-block">
+            <div class="chapter">Part IV</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-mediterranean.html">Mediterranean, Egypt & Greece</a></div>
+            
+            <!-- Photo Block Part IV -->
+             <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/mediterranean_01_lg.jpg" data-lightbox="artifact" data-caption="British Naval Escort in the Mediterranean, September 1941.<br />HMS EURYALUS, HERMIONE, and EDINBURGH."> 
+                <img src="/oakdalewarmemorial/images/mediterranean_01_sm.jpg" style="width: 400px; height: 240px;" alt="British Naval Escort in the Mediterranean, September 1941.">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">British Naval Escort in the Mediterranean, September 1941.</span><br>
+                <span class="credit">Photo credit: <a href="https://www.iwm.org.uk/collections/item/object/205139955" target="_blank">Imperial War Museums</a></span>
+              </div>
+            </div>
+            
+           <div class="display-text" style="margin-top: 10px;">Deployments across North Africa and the Mediterranean were made by aggressive naval patrols with wide-spread campaigns in both Egypt and Greece. Here we outline the complex logistics, intense desert warfare, and perilous sea lanes braved by our  servicemen. This stands as a lasting tribute to the local men lost in combat across the sprawling Mediterranean theatres. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-mediterranean.html">Read more...</a>
+          </div>
+        </div>
+        <hr class="main-half">
+
+        <!------------------------------------------------------>
+        <!-- Part V - Far East & Pacific Campaigns (MOVED UP) -->
+        <!------------------------------------------------------>
+
+        <div class="feature-block">
+            <div class="chapter">Part V</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-far-east.html">Far East & Pacific Campaigns</a></div>
+            
+            <!-- Photo Block Part V -->
+             <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/far-east_01_lg.jpg" data-lightbox="artifact" data-caption="The British Army in Burma 1944.<br /> Troops attack a native 'basha' (bamboo hut) in a banana grove, 6 November 1944."> 
+                <img src="/oakdalewarmemorial/images/far-east_01_sm.jpg" style="width: 400px; height: 240px;" alt="The British Army in Burma 1944.<br /> Troops attack a native 'basha' (bamboo hut) in a banana grove, 6 November 1944.">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">The British Army in Burma, 1944</span><br>
+                <span class="credit">Photo credit: <a href="https://commons.wikimedia.org/wiki/File:The_British_Army_in_Burma_1944_SE198.jpg" target="_blank">Wikimedia Commons / Stubbs A (Sgt)</a></span>
+              </div>
+            </div>
+            
+           <div class="display-text" style="margin-top: 10px;">In this section we chronicle the grueling details of the Burma Campaign. From the sacrifices of Pacific naval operations to the horrors of jungle warfare to those who faced disease, isolation, and the ultimate brutality of being held prisoner of war on the notorious Thailand-Burma Railway, we honour the Oakdale lives lost in these distant, often overlooked battlefields. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-far-east.html">Read more...</a>
+          </div>
+        </div>
+        <hr class="main-half">
+        
+        <!------------------------------------------------------>
+        <!-- Part VI - Northwest Europe Infantry (MOVED DOWN) -->
+        <!------------------------------------------------------>
+
+        <div class="feature-block">
+            <div class="chapter">Part VI</div>
+            <div class="subhead_sm"><a href="/oakdalewarmemorial/ww2/ww2-nw-europe.html">Northwest Europe Infantry (Post D-Day)</a></div>
+            
+            <!-- Photo Block Part VI -->
+             <div class="feature-image" style="max-width: 400px; margin: 10px 30px 0px 0px;">
+                <a href="/oakdalewarmemorial/images/ne-europe_01_lg.jpg" data-lightbox="artifact" data-caption="British infantry and Sherman tanks wait to advance at the start of Operation 'Goodwood', Normandy, 18 July 1944."> 
+                <img src="/oakdalewarmemorial/images/ne-europe_01_sm.jpg" style="width: 400px; height: 240px;" alt="British infantry and Sherman tanks wait to advance at the start of Operation 'Goodwood', Normandy, 18 July 1944.">
+              </a>
+               <div class="caption-wrapper">
+                <span class="caption">British infantry and Sherman tanks, Normandy, 18 July 1944.</span><br>
+                <span class="credit">Photo credit: <a href="https://commons.wikimedia.org/wiki/File:British_infantry_and_Sherman_tanks_wait_to_advance_at_the_start_of_Operation_%27Goodwood%27,_Normandy,_18_July_1944._B7513.jpg" target="_blank">Wikimedia Commons / Laing (Sgt)</a></span>
+              </div>
+            </div>
+            
+           <div class="display-text" style="margin-top: 10px;">Between the historic Normandy landings of June 1944 and the final Allied victory in May 1945, we cover the brave soldiers who fought across Western Europe during the final chapter of WWII. Here we detail the rapid advances, fierce pockets of German resistance, and the ultimate liberation of occupied towns. We commemorate the Oakdale infantrymen who fell during these climactic battles to secure European peace. <span class="pointer">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-nw-europe.html">Read more...</a>
+          </div>
+        </div>
+        <hr class="main-half">
+        
         <!-- Responsive Footer Cards Container (Horizontal Sub-Section Nav) -->
         <div class="story-card-grid story-card-grid-footer">
             
-            <!-- Footer Card: WWI - Stories -->
-            <div class="story-card-item"">
-                <div>
-                    <img class="story-card-img" src="#" alt="#" class="story-footnote-thumb">
-                    <span class="subhead_sm2"><a href="/oakdalewarmemorial/ww2/ww2-stories.html">WWII - Stories</a></span>
-                    <span class="story-card-text">Explore the experiences of the soldiers from Oakdale who paid the ultimate price.<span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-stories.html">Read more...</a></span>
-                </div>
-            </div> 
-            
-             <!-- Footer Card: WWI - Timeline -->
+            <!-- Footer Card: WWII - The Fallen -->
             <div class="story-card-item">
               <div>
-                  <img class="story-card-img" src="#" alt="#" class="story-footnote-thumb">
+                  <img class="story-card-img" src="/oakdalewarmemorial/images/blank_man_square.jpg" alt="WWII The Fallen Thumbnail" class="story-footnote-thumb">
+                  <span class="subhead_sm2"><a href="/oakdalewarmemorial/ww2/ww2-fallen.html">WWII - The Fallen</a></span>
+                  <span class="story-card-text">View the complete registry of the WWII soldiers commemorated on the Oakddale War Memorial. <span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-fallen.html">Read more...</a></span>
+              </div>
+            </div>
+            
+            <!-- Footer Card: WWII - Timeline -->
+            <div class="story-card-item">
+              <div>
+                  <img class="story-card-img" src="/oakdalewarmemorial/images/timeline_01_square.jpg" alt="WWII Timeline Thumbnail" class="story-footnote-thumb">
                   <span class="subhead_sm2"><a href="/oakdalewarmemorial/ww2/ww2-timeline.html">WWII - Timeline</a></span>
-                  <span class="story-card-text">World events and their impact to the Oakdale community listed side-by-side.<span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-timeline.html">Read more...</a></span>
+                  <span class="story-card-text">Global wartime events and their direct impact on the Oakdale community listed side-by-side.<span class="pointer" style="color: #903; vertical-align: top;">&#9658;&nbsp;</span><a href="/oakdalewarmemorial/ww2/ww2-timeline.html">Read more...</a></span>
               </div>
             </div> 
 
         </div><!-- END Responsive Footer Cards Container -->
-        
-    </div> <!-- CLOSE THE PAGE-CORE EARLY (Grid Tier 2) -->
-
-   <!-- NOW THE BRIDGE SITS DIRECTLY IN THE MAIN-CONTAINER -->
+    </main> <!-- CLOSE THE PAGE-CORE EARLY -->
+    <!-- NOW THE BRIDGE SITS DIRECTLY IN THE MAIN-CONTAINER -->
     <div class="roster-photo-bridge-2"></div>
-
     <!-- THE UNIVERSAL FOOTER SOCKET (Grid Tier 4 Floor) -->
     <div id="footer-placeholder"></div>
-
   </div> <!-- /main-container -->
-
   <!-- MASTER UNIFIED SCRIPT LOADER ENGINE -->
   <script type="module" src="/oakdalewarmemorial/scripts/odw-common.js"></script>
 </body>
